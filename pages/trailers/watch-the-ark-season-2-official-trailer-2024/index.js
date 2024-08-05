@@ -614,7 +614,7 @@ const trailersDetail = ({ trailers }) => {
               fjs.parentNode.appendChild(js);
             }(window, document, 'script', 'webpushr-jssdk'));
 
-            webpushr('setup', { 'key': 'BIHpgrvLvdxGSRA7cHudMTBdr7EWGon3q4reCUGbDcm5uiM2CkypC83diBbYhTMaD8pY_5G0L817DCPB3UqY2CI' });
+            webpushr('setup', { 'key': 'BOuic2nh-qk0sm0846T84my5yaHHRUOFIsif_OEwQXV0CRQMQbaRhqkCbpuGwX2EssCbADsVnqq9YvlVCuA7Hyc' });
           `
             }}
           />

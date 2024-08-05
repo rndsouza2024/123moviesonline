@@ -71,7 +71,7 @@ function Application({ Component, pageProps }) {
   return (
     <div className='center'>
     
-      <GoogleAnalytics measurementId='G-LCHSB7E5RC' />
+      <GoogleAnalytics measurementId='G-MHJ16WWPSB' />
       {/* <Script async data-id="101459579" src="//static.getclicky.com/js"></Script> */}
       
 

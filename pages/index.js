@@ -385,7 +385,7 @@ const MoviesPage = ({ movies, tvshows, trailers, adults }) => {
                     <h3 className={styles.movieTitle}>
                       {item.title || 'Default Title'}
                     </h3>
-                    <div className={styles.movieDetails}>
+                    {/* <div className={styles.movieDetails}>
                       <strong
                         style={{
                           fontFamily: 'Poppins, sans-serif',
@@ -456,7 +456,7 @@ const MoviesPage = ({ movies, tvshows, trailers, adults }) => {
                       <span className={styles.movieDescription}>
                         {item.news1 || 'Default Description'}
                       </span>
-                    </div>
+                    </div> */}
                   </motion>
                 </Link>
               ))

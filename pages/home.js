@@ -106,9 +106,9 @@ const HomePage = () => {
     '@graph': [
       {
         '@type': 'Person',
-        '@id': 'https://123moviesonline.vercel.app/author/justwatchfree/',
+        '@id': 'https://123moviesonline.vercel.app/author/123moviesonline/',
         name: 'Dr Trailer',
-        url: 'https://123moviesonline.vercel.app/author/justwatchfree/',
+        url: 'https://123moviesonline.vercel.app/author/123moviesonline/',
         image: {
           '@type': 'ImageObject',
           '@id': 'https://gravatar.com/drtrailer2022',
@@ -147,9 +147,9 @@ const HomePage = () => {
         dateModified: '2024-01-13T13:13:00+00:00',
         about: {
           '@type': 'Person',
-          '@id': 'https://123moviesonline.vercel.app/author/justwatchfree/',
+          '@id': 'https://123moviesonline.vercel.app/author/123moviesonline/',
           name: 'Dr Trailer',
-          url: 'https://123moviesonline.vercel.app/author/justwatchfree/',
+          url: 'https://123moviesonline.vercel.app/author/123moviesonline/',
           image: {
             '@type': 'ImageObject',
             '@id': 'https://gravatar.com/drtrailer2022',
@@ -172,9 +172,9 @@ const HomePage = () => {
             dateModified: '2024-01-13T13:13:00+00:00',
             author: {
               '@type': 'Person',
-              '@id': 'https://123moviesonline.vercel.app/author/justwatchfree/',
+              '@id': 'https://123moviesonline.vercel.app/author/123moviesonline/',
               name: 'Dr Trailer',
-              url: 'https://123moviesonline.vercel.app/author/justwatchfree/',
+              url: 'https://123moviesonline.vercel.app/author/123moviesonline/',
               image: {
                 '@type': 'ImageObject',
                 '@id': 'https://gravatar.com/drtrailer2022',
@@ -199,9 +199,9 @@ const HomePage = () => {
             dateModified: '2024-01-13T13:13:00+00:00',
             author: {
               '@type': 'Person',
-              '@id': 'https://123moviesonline.vercel.app/author/justwatchfree/',
+              '@id': 'https://123moviesonline.vercel.app/author/123moviesonline/',
               name: 'Dr Trailer',
-              url: 'https://123moviesonline.vercel.app/author/justwatchfree/',
+              url: 'https://123moviesonline.vercel.app/author/123moviesonline/',
               image: {
                 '@type': 'ImageObject',
                 '@id': 'https://gravatar.com/drtrailer2022',
@@ -226,9 +226,9 @@ const HomePage = () => {
             dateModified: '2024-01-13T13:13:00+00:00',
             author: {
               '@type': 'Person',
-              '@id': 'https://123moviesonline.vercel.app/author/justwatchfree/',
+              '@id': 'https://123moviesonline.vercel.app/author/123moviesonline/',
               name: 'Dr Trailer',
-              url: 'https://123moviesonline.vercel.app/author/justwatchfree/',
+              url: 'https://123moviesonline.vercel.app/author/123moviesonline/',
               image: {
                 '@type': 'ImageObject',
                 '@id': 'https://gravatar.com/drtrailer2022',

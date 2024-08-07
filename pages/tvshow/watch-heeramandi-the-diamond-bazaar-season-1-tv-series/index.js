@@ -332,9 +332,9 @@ const tvshowDetail = ({ tvshow }) => {
       },
       {
         '@type': 'Person',
-        '@id': 'https://123moviesonline.vercel.app/author/justwatchfree/',
+        '@id': 'https://123moviesonline.vercel.app/author/123moviesonline/',
         name: 'Dr Trailer',
-        url: 'https://123moviesonline.vercel.app/author/justwatchfree/',
+        url: 'https://123moviesonline.vercel.app/author/123moviesonline/',
         image: {
           '@type': 'ImageObject',
           '@id': 'https://gravatar.com/drtrailer2022',
@@ -352,7 +352,7 @@ const tvshowDetail = ({ tvshow }) => {
         dateModified: tvshow.dateModified,
         articleSection: 'TvShow',
         author: {
-          '@id': 'https://123moviesonline.vercel.app/author/justwatchfree/'
+          '@id': 'https://123moviesonline.vercel.app/author/123moviesonline/'
         },
         publisher: {
           '@id': 'https://gravatar.com/drtrailer2022/#person'
@@ -376,7 +376,7 @@ const tvshowDetail = ({ tvshow }) => {
         dateModified: tvshow.dateModified,
         articleSection: 'TvShow',
         author: {
-          '@id': 'https://123moviesonline.vercel.app/author/justwatchfree/'
+          '@id': 'https://123moviesonline.vercel.app/author/123moviesonline/'
         },
         publisher: {
           '@id': 'https://gravatar.com/drtrailer2022/#person'

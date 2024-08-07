@@ -138,7 +138,7 @@ const latestDetail = ({ latest }) => {
       },
       {
         '@type': 'Person',
-        '@id': 'https://123moviesonline.vercel.app/author/justwatchfree/',
+        '@id': 'https://123moviesonline.vercel.app/author/123moviesonline/',
         name: 'Dr Trailer',
         url: 'https://123moviesonline.vercel.appauthor/justwatchfree/',
         image: {

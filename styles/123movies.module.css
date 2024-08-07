@@ -13,13 +13,26 @@
   }
   
   .sectionTitle {
-    font-size: 3rem;
+    font-size: 2rem;
     color: #444;
     margin: 2rem 0 1rem;
     font-family: Poppins, sans-serif;
     font-weight: bold;
-    text-shadow: 1px 2px 1px #555 ; 
+    text-shadow: 1px 2px 1px #555;
+    background: linear-gradient(to right, #f43f5e, #fbbf24);
+
+    -webkit-text-fill-color: transparent;
+    padding: 10px;
+    text-align: center;
+    border-radius: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   }
+  
+  .sectionTitle:hover {
+    background: linear-gradient(to right, #fbbf24, #f43f5e);
+    cursor: pointer;
+  }
+  
   
   .movieList {
     display: flex;
@@ -57,7 +70,7 @@
   }
   
   .title {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     font-family: Poppins, sans-serif;
     font-weight: bold;
         
@@ -101,7 +114,7 @@
   /* Responsive styles */
 @media (max-width: 768px) {
     .sectionTitle {
-        font-size: 3rem; /* Smaller font size for tablets and smaller screens */
+        font-size: 2rem; /* Smaller font size for tablets and smaller screens */
     }
 
     .movieCard {
@@ -127,7 +140,7 @@
 
 @media (max-width: 480px) {
     .sectionTitle {
-        font-size: 2.5rem; /* Smaller font size for mobile screens */
+        font-size: 1.5rem; /* Smaller font size for mobile screens */
     }
 
     .title {

@@ -13,7 +13,7 @@ import Script from 'next/script'
 
 const MoviesPage = ({ movies, tvshows, trailers, adults }) => {
   const sections = [
-    // { title: 'Latest Trailer', items: trailers },
+    { title: 'Latest Trailer', items: trailers },
     { title: 'Latest Movies.', items: movies },
     { title: 'Latest TV Series.', items: tvshows },
     { title: 'Adult Content.', items: adults }
@@ -53,9 +53,9 @@ const MoviesPage = ({ movies, tvshows, trailers, adults }) => {
     '@graph': [
       {
         '@type': 'Person',
-        '@id': 'https://123moviesonline.vercel.app/author/justwatchfree/',
+        '@id': 'https://123moviesonline.vercel.app/author/123moviesonline/',
         name: 'Dr Trailer',
-        url: 'https://123moviesonline.vercel.app/author/justwatchfree/',
+        url: 'https://123moviesonline.vercel.app/author/123moviesonline/',
         image: {
           '@type': 'ImageObject',
           '@id': 'https://gravatar.com/drtrailer2022',
@@ -94,9 +94,9 @@ const MoviesPage = ({ movies, tvshows, trailers, adults }) => {
         dateModified: '2024-01-13T13:13:00+00:00',
         about: {
           '@type': 'Person',
-          '@id': 'https://123moviesonline.vercel.app/author/justwatchfree/',
+          '@id': 'https://123moviesonline.vercel.app/author/123moviesonline/',
           name: 'Dr Trailer',
-          url: 'https://123moviesonline.vercel.app/author/justwatchfree/',
+          url: 'https://123moviesonline.vercel.app/author/123moviesonline/',
           image: {
             '@type': 'ImageObject',
             '@id': 'https://gravatar.com/drtrailer2022',
@@ -119,9 +119,9 @@ const MoviesPage = ({ movies, tvshows, trailers, adults }) => {
             dateModified: '2024-01-13T13:13:00+00:00',
             author: {
               '@type': 'Person',
-              '@id': 'https://123moviesonline.vercel.app/author/justwatchfree/',
+              '@id': 'https://123moviesonline.vercel.app/author/123moviesonline/',
               name: 'Dr Trailer',
-              url: 'https://123moviesonline.vercel.app/author/justwatchfree/',
+              url: 'https://123moviesonline.vercel.app/author/123moviesonline/',
               image: {
                 '@type': 'ImageObject',
                 '@id': 'https://gravatar.com/drtrailer2022',
@@ -146,9 +146,9 @@ const MoviesPage = ({ movies, tvshows, trailers, adults }) => {
             dateModified: '2024-01-13T13:13:00+00:00',
             author: {
               '@type': 'Person',
-              '@id': 'https://123moviesonline.vercel.app/author/justwatchfree/',
+              '@id': 'https://123moviesonline.vercel.app/author/123moviesonline/',
               name: 'Dr Trailer',
-              url: 'https://123moviesonline.vercel.app/author/justwatchfree/',
+              url: 'https://123moviesonline.vercel.app/author/123moviesonline/',
               image: {
                 '@type': 'ImageObject',
                 '@id': 'https://gravatar.com/drtrailer2022',
@@ -173,9 +173,9 @@ const MoviesPage = ({ movies, tvshows, trailers, adults }) => {
             dateModified: '2024-01-13T13:13:00+00:00',
             author: {
               '@type': 'Person',
-              '@id': 'https://123moviesonline.vercel.app/author/justwatchfree/',
+              '@id': 'https://123moviesonline.vercel.app/author/123moviesonline/',
               name: 'Dr Trailer',
-              url: 'https://123moviesonline.vercel.app/author/justwatchfree/',
+              url: 'https://123moviesonline.vercel.app/author/123moviesonline/',
               image: {
                 '@type': 'ImageObject',
                 '@id': 'https://gravatar.com/drtrailer2022',
@@ -344,16 +344,100 @@ const MoviesPage = ({ movies, tvshows, trailers, adults }) => {
           />
         </Head>
 
-        <GoogleTranslate />
+      
+
+        <div
+        className='shadow-lg flex items-center justify-center'
+        role='navigation'
+      >
+        <ul
+          id='menu-header-menu'
+          className='menu flex flex-wrap justify-center'
+        >
+          <button className='border border-black p-2 m-1 hover:bg-orange-100'>
+            <li id='menu-item-35' className='menu-home active'>
+              <a
+                href='/'
+                className='text-black hover:px-0 text-bg font-black bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-xl'
+              >
+                Home<span className='p'></span>
+              </a>
+            </li>
+          </button>
+
+          <button className='border border-black p-2 m-1 hover:bg-orange-100'>
+            <li id='menu-item-284913' className='menu-softwarecategories'>
+              <a href='../trailers/'>
+                <h3 className='text-black hover:px-0 text-bg font-black bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-xl'>
+                  Trailers<span className='p'></span>
+                </h3>
+              </a>
+            </li>
+          </button>
+          <button className='border border-black p-2 m-1 hover:bg-orange-100'>
+            <li id='menu-item-11610' className='menu-graphicdesign'>
+              <a
+                href='../movies/'
+                className='text-black hover:px-0 text-bg font-black bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-xl'
+              >
+                Movies<span className='p'></span>
+              </a>
+            </li>
+          </button>
+          <button className='border border-black p-2 m-1 hover:bg-orange-100'>
+            <li id='menu-item-84' className='menu-antivirus'>
+              <a
+                href='../tvshow/'
+                className='text-black hover:px-0 text-bg font-black bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-xl'
+              >
+                TV Series <span className='p'></span>
+              </a>
+            </li>
+          </button>
+          <button className='border border-black p-2 m-1 hover:bg-orange-100'>
+            <li id='menu-item-84' className='menu-antivirus'>
+              <a
+                href='../adult/'
+                className='text-black hover:px-0 text-bg font-black bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-xl'
+              >
+                Adult<span className='p'></span>
+              </a>
+            </li>
+          </button>
+          <button className='border border-black p-2 m-1 hover:bg-orange-100'>
+            <li id='menu-item-194' className='menu-tutorials'>
+              <a
+                href='../latest/'
+                className='text-black hover:px-0 text-bg font-black bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-xl'
+              >
+                Latest News<span className='p'></span>
+              </a>
+            </li>
+          </button>
+        </ul>
+      </div>
+      <a
+        href='https://t.me/watchmoviemovies/'
+        target='_blank'
+        rel='noopener noreferrer'
+        className='bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent font-bold text-3xl mt-2 flex items-center justify-center'
+        style={{ marginTop: '25px', marginBottom: '25px' }}
+      >
+        <span className='px-0 bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-3xl hover:text-blue-800 font-bold mt-2'>
+          For Request or Demand Movies & TV Series Join Telegram
+          <i className='fab fa-telegram text-blue-600 hover:text-gray-600 ml-2 w-12 h-12 animate-pulse '></i>
+        </span>
+      </a>
 
         <h1 className={styles.title}>
           {' '}
           123Movies Online™ - Explore. Stream. Online.{' '}
         </h1>
+        <GoogleTranslate />
         <SearchComponent />
-
-        <SocialSharing />
+      
       </motion.div>
+      <SocialSharing />
       {sections.map((section, index) => (
         <div key={index}>
           <h2 className={styles.sectionTitle}>{section.title}</h2>
@@ -377,12 +461,17 @@ const MoviesPage = ({ movies, tvshows, trailers, adults }) => {
                       alt={item.title || 'Default Title'}
                       className={styles.movieImage}
                       style={{
+                        width:'100%',
+                        height:'200px',
                         boxShadow: '0 0 10px 0 #000',
                         filter:
                           'contrast(1.1) saturate(1.1) brightness(1.0) hue-rotate(0deg)'
                       }}
                     />
-                    <h3 className={styles.movieTitle}>
+                    <h3 className={styles.movieTitle}   style={{
+                        width:'100%',
+                        height:'100px',
+                         }}>
                       {item.title || 'Default Title'}
                     </h3>
                     {/* <div className={styles.movieDetails}>

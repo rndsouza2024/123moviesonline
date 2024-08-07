@@ -1,5 +1,4 @@
 import React from 'react'
-import { motion } from 'framer-motion'
 import Link from 'next/link'
 import fs from 'fs'
 import path from 'path'
@@ -192,12 +191,7 @@ const MoviePage = ({ movies }) => {
 
   return (
     <div className={styles.container}>
-      <motion.div
-        className={styles.header}
-        initial={{ y: -250 }}
-        animate={{ y: 0 }}
-        transition={{ type: 'spring', stiffness: 120 }}
-      >
+     
         <Head>
           <title>123Movies Online™ - Explore. Stream. Online.</title>
           <link
@@ -448,25 +442,20 @@ const MoviePage = ({ movies }) => {
         <SocialSharing />
         {/* <Script src='../../propler/ads.js' defer /> */}
         <Script src='../../propler/ads2.js' defer />
-      </motion.div>
+ 
       {sections.map((section, index) => (
-        <div key={index}>
-          {/* <h2 className={styles.sectionTitle}>{section.title}</h2> */}
-          {/* <motion.div
+        <div key={index}   style={{
+          marginTop: '25px'
+        }}>
+        
+           <div
             className={styles.movieList}
-            initial="hidden"
-            animate="visible"
-          > */}
-           <motion.div
-            className={styles.movieList}
-            initial={{ y: -250 }}
-            animate={{ y: 0 }}
-            transition={{ type: 'spring', stiffness: 120 }}
+          
           >
             {section.items.length > 0 ? (
               section.items.map(item => (
                 <Link key={item.id} href={item.siteurl || '/'} passHref>
-                  <motion className={styles.movieCard}>
+                  <div className={styles.movieCard}>
                     <img
                       src={item.image1 || '/default-image.jpg'}
                       alt={item.title || 'Default Title'}
@@ -559,13 +548,13 @@ const MoviePage = ({ movies }) => {
                         {item.news1 || 'Default Description'}
                       </span>
                     </div>
-                  </motion>
+                  </div>
                 </Link>
               ))
             ) : (
               <p>No items to display.</p>
             )}
-          </motion.div>
+          </div>
         </div>
       ))}
     </div>

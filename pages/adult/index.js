@@ -324,7 +324,9 @@ const AdultPage = ({ adults }) => {
             crossorigin='anonymous'
             referrerpolicy='no-referrer'
           />
-          <Script
+        
+        </Head>
+        <Script
             dangerouslySetInnerHTML={{
               __html: `
             (function (w, d, s, id) {
@@ -340,8 +342,6 @@ const AdultPage = ({ adults }) => {
           `
             }}
           />
-        </Head>
-
         <div
           className='shadow-lg flex items-center justify-center'
           role='navigation'
@@ -447,11 +447,11 @@ const AdultPage = ({ adults }) => {
         <SearchComponent />
         <SocialSharing />
         {/* <Script src='../../propler/ads.js' defer /> */}
-        {/* <Script src='../propler/ads2.js' defer /> */}
+        <Script src='../../propler/ads2.js' defer />
       </motion.div>
       {sections.map((section, index) => (
         <div key={index}>
-          <h2 className={styles.sectionTitle}>{section.title}</h2>
+          {/* <h2 className={styles.sectionTitle}>{section.title}</h2> */}
           {/* <motion.div
             className={styles.movieList}
             initial="hidden"

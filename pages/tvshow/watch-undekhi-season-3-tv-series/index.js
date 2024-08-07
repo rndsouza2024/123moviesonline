@@ -125,8 +125,7 @@ const tvshowDetail = ({ tvshow }) => {
     const linkTargets = [
       {
         text: 'Undekhi Season 3 - 2024',
-         url: `https://www.imdb.com/title/${tvshow.imdb}/`
-     
+        url: `https://www.imdb.com/title/${tvshow.imdb}/`
       }
     ]
 
@@ -156,14 +155,13 @@ const tvshowDetail = ({ tvshow }) => {
     return {
       name: `Episode ${episode}`,
       urls: [
-         `https://short.ink/${videoItems[currentEpisodeIndex]}`,
+        `https://short.ink/${videoItems[currentEpisodeIndex]}`,
         `https://vidsrc.me/embed/tv?imdb=${id}&season=${season}&episode=${episode}`,
         `https://vidsrc.pro/embed/tv/${id}/${season}/${episode}`,
         `https://vidsrc.cc/v2/embed/tv/${id}/${season}/${episode}`,
         `https://www.2embed.cc/embedtv/${id}&s=${season}&e=${episode}`,
         `https://autoembed.co/tv/imdb/${id}-${season}-${episode}`,
-        `https://multiembed.mov/directstream.php?video_id=${id}&s=${season}&e=${episode}`,
-       
+        `https://multiembed.mov/directstream.php?video_id=${id}&s=${season}&e=${episode}`
       ]
     }
   })
@@ -188,9 +186,10 @@ const tvshowDetail = ({ tvshow }) => {
   const src = currentVideoSources[currentPlayerIndex] || ''
   const { episode } = parseVideoItem(tvshow.videotvshow[currentEpisodeIndex])
 
-  const episodeNumber = currentEpisodeIndex + 1;
-  const prevEpisodeNumber = currentEpisodeIndex === 0 ? videoSources.length : episodeNumber - 1;
-  const nextEpisodeNumber = episodeNumber % videoSources.length + 1;
+  const episodeNumber = currentEpisodeIndex + 1
+  const prevEpisodeNumber =
+    currentEpisodeIndex === 0 ? videoSources.length : episodeNumber - 1
+  const nextEpisodeNumber = (episodeNumber % videoSources.length) + 1
 
   useEffect(() => {
     const detectMobileDevice = () => {
@@ -527,7 +526,10 @@ const tvshowDetail = ({ tvshow }) => {
         <meta property='og:video:width' content='1280px' />
         <meta property='og:video:height' content='720px' />
         <meta property='og:video:type' content='video/mp4' />
-        <meta property='og:title' content={`${tvshow && tvshow.name} - 123Movies™`} />
+        <meta
+          property='og:title'
+          content={`${tvshow && tvshow.name} - 123Movies™`}
+        />
         <meta
           property='og:description'
           content='Stream HD movies and TV series for free on 123Movies Online. Explore, stream, and download full-length movies and shows in HD quality without registration.'
@@ -551,18 +553,15 @@ const tvshowDetail = ({ tvshow }) => {
         <meta property='og:image:height' content='630' />
         <meta property='og:image:type' content='image/webp' />
         <meta name='twitter:card' content='summary_large_image' />
-          <meta
-            name='twitter:title'
-            content='123Movies Online™ - Explore. Stream. Online.  HD Movies and TV Series Free'
-          />
-          <meta
-            name='twitter:description'
-            content='Stream HD movies and TV series for free on 123Movies Online™. Explore, stream, and download full-length movies and shows in HD quality without registration.'
-          />
-          <meta
-            name='twitter:image'
-            content={`${tvshow && tvshow.image1}`}
-          />
+        <meta
+          name='twitter:title'
+          content='123Movies Online™ - Explore. Stream. Online.  HD Movies and TV Series Free'
+        />
+        <meta
+          name='twitter:description'
+          content='Stream HD movies and TV series for free on 123Movies Online™. Explore, stream, and download full-length movies and shows in HD quality without registration.'
+        />
+        <meta name='twitter:image' content={`${tvshow && tvshow.image1}`} />
         <meta name='twitter:label1' content='Est. reading time' />
         <meta name='twitter:data1' content='1 minute' />
         <meta
@@ -630,7 +629,8 @@ const tvshowDetail = ({ tvshow }) => {
       />
       <GoogleTranslate />
       <SocialSharing />
-
+      {/* <Script src='../../propler/ads.js' defer /> */}
+      <Script src='../../propler/ads2.js' defer />
       <div
         className={`w-full`}
         style={{
@@ -925,21 +925,24 @@ const tvshowDetail = ({ tvshow }) => {
                   layout='responsive'
                 />
               </div>
-              <h2 className='px-0 bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-4xl hover:text-blue-800 font-bold mt-2' >
+              <h2 className='px-0 bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-4xl hover:text-blue-800 font-bold mt-2'>
                 Watch {tvshow.name}
               </h2>
 
-              <div className='flex flex-col items-center mb-4'  style={{
-             marginBottom: '20px'
-          }}>
-              <button
-          onClick={handleNextEpisode}
-          disabled={videoSources.length === 0}
-          className='px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 ml-4 text-xl hover:text-green-600 font-bold mt-2'
-         
-        >
-          Next Episode {episode + 1 > videoSources.length ? 1 : episode + 1}
-        </button>
+              <div
+                className='flex flex-col items-center mb-4'
+                style={{
+                  marginBottom: '20px'
+                }}
+              >
+                <button
+                  onClick={handleNextEpisode}
+                  disabled={videoSources.length === 0}
+                  className='px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 ml-4 text-xl hover:text-green-600 font-bold mt-2'
+                >
+                  Next Episode{' '}
+                  {episode + 1 > videoSources.length ? 1 : episode + 1}
+                </button>
               </div>
               <div
                 style={{
@@ -961,8 +964,8 @@ const tvshowDetail = ({ tvshow }) => {
                   className='mb-4'
                   style={{
                     filter:
-                    'contrast(1.0) saturate(1.0) brightness(1.0) hue-rotate(0deg)'
-                }}
+                      'contrast(1.0) saturate(1.0) brightness(1.0) hue-rotate(0deg)'
+                  }}
                 ></iframe>
                 <p
                   className='text-black hover:px-0 text-bg font-black bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-sm'
@@ -978,17 +981,17 @@ const tvshowDetail = ({ tvshow }) => {
                 </p>
               </div>
               <div className='flex flex-col items-center mb-4'>
-              <button
-          onClick={handlePreviousEpisode}
-          disabled={videoSources.length === 0}
-          className='px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600 text-xl hover:text-blue-600 font-bold mt-2'
-          style={{
-            marginTop: '10px',
-            marginBottom: '10px'
-          }}
-        >
-          Previous Episode {prevEpisodeNumber}
-        </button>
+                <button
+                  onClick={handlePreviousEpisode}
+                  disabled={videoSources.length === 0}
+                  className='px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600 text-xl hover:text-blue-600 font-bold mt-2'
+                  style={{
+                    marginTop: '10px',
+                    marginBottom: '10px'
+                  }}
+                >
+                  Previous Episode {prevEpisodeNumber}
+                </button>
               </div>
               <h2
                 className='px-0 bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-4xl hover:text-blue-800 font-bold mt-2'
@@ -997,23 +1000,23 @@ const tvshowDetail = ({ tvshow }) => {
                 Select Player To Watch.
               </h2>
               <div className='flex flex-col items-center mt-4 gap-2'>
-              <div className='flex flex-wrap justify-center mb-4'>
-              {currentVideoSources.map((source, index) => (
-                  <button
-                    key={index}
-                    onClick={() => handlePlayerSelect(index)}
-                    className={`px-4 py-2 border rounded mx-2 my-1 ${
-                      currentPlayerIndex === index
-                        ? 'bg-red-500 text-white'
-                        : 'bg-gray-200'
-                    }`}
-                  >
-                    Player {index + 1}
-                  </button>
-                ))}
-              </div> 
+                <div className='flex flex-wrap justify-center mb-4'>
+                  {currentVideoSources.map((source, index) => (
+                    <button
+                      key={index}
+                      onClick={() => handlePlayerSelect(index)}
+                      className={`px-4 py-2 border rounded mx-2 my-1 ${
+                        currentPlayerIndex === index
+                          ? 'bg-red-500 text-white'
+                          : 'bg-gray-200'
+                      }`}
+                    >
+                      Player {index + 1}
+                    </button>
+                  ))}
+                </div>
               </div>
-  
+
               <h2
                 className='px-0 bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-3xl hover:text-blue-800 font-bold mt-2'
                 style={{ fontFamily: 'Poppins, sans-serif' }}

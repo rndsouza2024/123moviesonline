@@ -326,7 +326,10 @@ const MoviesPage = ({ movies, tvshows, trailers, adults }) => {
             crossorigin='anonymous'
             referrerpolicy='no-referrer'
           />
-          <Script
+        
+        </Head>
+
+        <Script
             dangerouslySetInnerHTML={{
               __html: `
             (function (w, d, s, id) {
@@ -342,9 +345,6 @@ const MoviesPage = ({ movies, tvshows, trailers, adults }) => {
           `
             }}
           />
-        </Head>
-
-      
 
         <div
         className='shadow-lg flex items-center justify-center'

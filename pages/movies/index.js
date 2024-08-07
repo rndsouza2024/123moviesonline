@@ -72,8 +72,8 @@ const MoviePage = ({ movies }) => {
       },
       {
         '@type': 'WebSite',
-        '@id': 'https://123moviesonline.vercel.app/#website',
-        url: 'https://123moviesonline.vercel.app',
+        '@id': 'https://123moviesonline.vercel.app/movies/#website',
+        url: 'https://123moviesonline.vercel.app/movies',
         name: '123Movies Online™ - Explore. Stream. Online. ',
         publisher: {
           '@type': 'Organization',
@@ -87,8 +87,8 @@ const MoviePage = ({ movies }) => {
       },
       {
         '@type': 'WebPage',
-        '@id': 'https://123moviesonline.vercel.app/#webpage',
-        url: 'https://123moviesonline.vercel.app/',
+        '@id': 'https://123moviesonline.vercel.app/movies/#webpage',
+        url: 'https://123moviesonline.vercel.app/movies',
         name: 'Movie',
         datePublished: '2024-01-13T13:00:00+00:00',
         dateModified: '2024-01-13T13:13:00+00:00',
@@ -112,8 +112,8 @@ const MoviePage = ({ movies }) => {
         mainEntity: [
           {
             '@type': 'Article',
-            '@id': 'https://123moviesonline.vercel.app/',
-            url: 'https://123moviesonline.vercel.app/',
+            '@id': 'https://123moviesonline.vercel.app/movies',
+            url: 'https://123moviesonline.vercel.app/movies',
             headline: '123Movies Online™ - Explore. Stream. Online. ',
             datePublished: '2024-01-13T13:00:00+00:00',
             dateModified: '2024-01-13T13:13:00+00:00',
@@ -139,8 +139,8 @@ const MoviePage = ({ movies }) => {
           },
           {
             '@type': 'Article',
-            '@id': 'https://123moviesonline.vercel.app/',
-            url: 'https://123moviesonline.vercel.app/',
+            '@id': 'https://123moviesonline.vercel.app/movies',
+            url: 'https://123moviesonline.vercel.app/movies',
             headline: '123Movies Online™ - Explore. Stream. Online. ',
             datePublished: '2024-01-13T13:00:00+00:00',
             dateModified: '2024-01-13T13:13:00+00:00',
@@ -166,8 +166,8 @@ const MoviePage = ({ movies }) => {
           },
           {
             '@type': 'Article',
-            '@id': 'https://123moviesonline.vercel.app/',
-            url: 'https://123moviesonline.vercel.app/',
+            '@id': 'https://123moviesonline.vercel.app/movies',
+            url: 'https://123moviesonline.vercel.app/movies',
             headline: '123Movies Online™ - Explore. Stream. Online. ',
             datePublished: '2024-01-13T13:00:00+00:00',
             dateModified: '2024-01-13T13:13:00+00:00',

@@ -72,8 +72,8 @@ const AdultPage = ({ adults }) => {
       },
       {
         '@type': 'WebSite',
-        '@id': 'https://123moviesonline.vercel.app/#website',
-        url: 'https://123moviesonline.vercel.app',
+        '@id': 'https://123moviesonline.vercel.app/adult/#website',
+        url: 'https://123moviesonline.vercel.app/adult',
         name: '123Movies Online™ - Explore. Stream. Online. ',
         publisher: {
           '@type': 'Organization',
@@ -106,7 +106,7 @@ const AdultPage = ({ adults }) => {
           }
         },
         isPartOf: {
-          '@id': 'https://123moviesonline.vercel.app/#website'
+          '@id': 'https://123moviesonline.vercel.app/adult/#website'
         },
         inLanguage: 'en-US',
         mainEntity: [

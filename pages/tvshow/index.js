@@ -72,8 +72,8 @@ const TvshowPage = ({ tvshows }) => {
       },
       {
         '@type': 'WebSite',
-        '@id': 'https://123moviesonline.vercel.app/#website',
-        url: 'https://123moviesonline.vercel.app',
+        '@id': 'https://123moviesonline.vercel.app/tvshow/#website',
+        url: 'https://123moviesonline.vercel.app/tvshow',
         name: '123Movies Online™ - Explore. Stream. Online. ',
         publisher: {
           '@type': 'Organization',
@@ -87,8 +87,8 @@ const TvshowPage = ({ tvshows }) => {
       },
       {
         '@type': 'WebPage',
-        '@id': 'https://123moviesonline.vercel.app/#webpage',
-        url: 'https://123moviesonline.vercel.app/',
+        '@id': 'https://123moviesonline.vercel.app/tvshows/#webpage',
+        url: 'https://123moviesonline.vercel.app/tvshows',
         name: 'Movie',
         datePublished: '2024-01-13T13:00:00+00:00',
         dateModified: '2024-01-13T13:13:00+00:00',
@@ -106,14 +106,14 @@ const TvshowPage = ({ tvshows }) => {
           }
         },
         isPartOf: {
-          '@id': 'https://123moviesonline.vercel.app/#website'
+          '@id': 'https://123moviesonline.vercel.app/tvshow/#website'
         },
         inLanguage: 'en-US',
         mainEntity: [
           {
             '@type': 'Article',
-            '@id': 'https://123moviesonline.vercel.app/',
-            url: 'https://123moviesonline.vercel.app/',
+            '@id': 'https://123moviesonline.vercel.app/tvshows',
+            url: 'https://123moviesonline.vercel.app/tvshows',
             headline: '123Movies Online™ - Explore. Stream. Online. ',
             datePublished: '2024-01-13T13:00:00+00:00',
             dateModified: '2024-01-13T13:13:00+00:00',
@@ -139,8 +139,8 @@ const TvshowPage = ({ tvshows }) => {
           },
           {
             '@type': 'Article',
-            '@id': 'https://123moviesonline.vercel.app/',
-            url: 'https://123moviesonline.vercel.app/',
+            '@id': 'https://123moviesonline.vercel.app/tvshows',
+            url: 'https://123moviesonline.vercel.app/tvshows',
             headline: '123Movies Online™ - Explore. Stream. Online. ',
             datePublished: '2024-01-13T13:00:00+00:00',
             dateModified: '2024-01-13T13:13:00+00:00',
@@ -166,8 +166,8 @@ const TvshowPage = ({ tvshows }) => {
           },
           {
             '@type': 'Article',
-            '@id': 'https://123moviesonline.vercel.app/',
-            url: 'https://123moviesonline.vercel.app/',
+            '@id': 'https://123moviesonline.vercel.app/tvshows',
+            url: 'https://123moviesonline.vercel.app/tvshows',
             headline: '123Movies Online™ - Explore. Stream. Online. ',
             datePublished: '2024-01-13T13:00:00+00:00',
             dateModified: '2024-01-13T13:13:00+00:00',

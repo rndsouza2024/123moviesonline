@@ -72,8 +72,8 @@ const TrailerPage = ({ trailers }) => {
       },
       {
         '@type': 'WebSite',
-        '@id': 'https://123moviesonline.vercel.app/#website',
-        url: 'https://123moviesonline.vercel.app',
+        '@id': 'https://123moviesonline.vercel.app/trailers/#website',
+        url: 'https://123moviesonline.vercel.app/trailers',
         name: '123Movies Online™ - Explore. Stream. Online. ',
         publisher: {
           '@type': 'Organization',
@@ -87,8 +87,8 @@ const TrailerPage = ({ trailers }) => {
       },
       {
         '@type': 'WebPage',
-        '@id': 'https://123moviesonline.vercel.app/#webpage',
-        url: 'https://123moviesonline.vercel.app/',
+        '@id': 'https://123moviesonline.vercel.app/trailers/#webpage',
+        url: 'https://123moviesonline.vercel.app/trailers',
         name: 'Movie',
         datePublished: '2024-01-13T13:00:00+00:00',
         dateModified: '2024-01-13T13:13:00+00:00',
@@ -106,14 +106,14 @@ const TrailerPage = ({ trailers }) => {
           }
         },
         isPartOf: {
-          '@id': 'https://123moviesonline.vercel.app/#website'
+          '@id': 'https://123moviesonline.vercel.app/trailers/#website'
         },
         inLanguage: 'en-US',
         mainEntity: [
           {
             '@type': 'Article',
-            '@id': 'https://123moviesonline.vercel.app/',
-            url: 'https://123moviesonline.vercel.app/',
+            '@id': 'https://123moviesonline.vercel.app/trailers',
+            url: 'https://123moviesonline.vercel.app/trailers',
             headline: '123Movies Online™ - Explore. Stream. Online. ',
             datePublished: '2024-01-13T13:00:00+00:00',
             dateModified: '2024-01-13T13:13:00+00:00',
@@ -139,8 +139,8 @@ const TrailerPage = ({ trailers }) => {
           },
           {
             '@type': 'Article',
-            '@id': 'https://123moviesonline.vercel.app/',
-            url: 'https://123moviesonline.vercel.app/',
+            '@id': 'https://123moviesonline.vercel.app/trailers',
+            url: 'https://123moviesonline.vercel.app/trailers',
             headline: '123Movies Online™ - Explore. Stream. Online. ',
             datePublished: '2024-01-13T13:00:00+00:00',
             dateModified: '2024-01-13T13:13:00+00:00',
@@ -166,8 +166,8 @@ const TrailerPage = ({ trailers }) => {
           },
           {
             '@type': 'Article',
-            '@id': 'https://123moviesonline.vercel.app/',
-            url: 'https://123moviesonline.vercel.app/',
+            '@id': 'https://123moviesonline.vercel.app/trailers',
+            url: 'https://123moviesonline.vercel.app/trailers',
             headline: '123Movies Online™ - Explore. Stream. Online. ',
             datePublished: '2024-01-13T13:00:00+00:00',
             dateModified: '2024-01-13T13:13:00+00:00',

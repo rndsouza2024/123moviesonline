@@ -199,6 +199,10 @@ const MoviesPage = ({ movies, tvshows, trailers, adults }) => {
         transition={{ type: 'spring', stiffness: 120 }}
       >
         <Head>
+            <title>
+            123Movies Online™ - Explore. Stream. Online. 
+          </title>
+
           <link
             rel='sitemap'
             type='application/xml'
@@ -344,8 +348,8 @@ const MoviesPage = ({ movies, tvshows, trailers, adults }) => {
         <GoogleTranslate />
 
         <h1 className={styles.title}>
-          {/* {' '} */}
-          123Movies Online™ - Explore. Stream. Online.
+          {' '}
+          123Movies Online™ - Explore. Stream. Online.  {' '}
         </h1>
         <SearchComponent />
 

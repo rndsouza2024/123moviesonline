@@ -40,7 +40,7 @@ const moviesDetail = ({ movie }) => {
 
   // const [latest, setLatest] = useState(latestData)
   const [playerReady, setPlayerReady] = useState(false)
-  const [Tera Kya Hoga Lovelyr, setTera Kya Hoga Lovelyr] = useState(false)
+  const [showTimer, setShowTimer] = useState(false)
   const [seconds, setSeconds] = useState(30) // Example timer duration
   const [accordionExpanded, setAccordionExpanded] = useState(false)
   const [isMobileDevice, setIsMobileDevice] = useState(false)
@@ -253,13 +253,13 @@ const moviesDetail = ({ movie }) => {
 
   useEffect(() => {
     let timer
-    if (Tera Kya Hoga Lovelyr && accordionExpanded && seconds > 0) {
+    if (showTimer && accordionExpanded && seconds > 0) {
       timer = setInterval(() => {
         setSeconds(prevSeconds => (prevSeconds > 0 ? prevSeconds - 1 : 0))
       }, 1000)
     }
     return () => clearInterval(timer)
-  }, [Tera Kya Hoga Lovelyr, accordionExpanded, seconds])
+  }, [showTimer, accordionExpanded, seconds])
 
   const toggleAccordion = () => {
     setAccordionExpanded(prevState => !prevState)
@@ -269,7 +269,7 @@ const moviesDetail = ({ movie }) => {
   }
 
   const handleStartTimer = () => {
-    setTera Kya Hoga Lovelyr(true)
+    setShowTimer(true)
     setAccordionExpanded(true)
   }
 
@@ -1117,7 +1117,7 @@ const moviesDetail = ({ movie }) => {
                     'contrast(1.1) saturate(1.1) brightness(1.0) hue-rotate(0deg)'
                 }}
               >
-                {!Tera Kya Hoga Lovelyr ? (
+                {!showTimer ? (
                   <button
                     onClick={handleStartTimer}
                     className='animate-pulse bg-gradient-to-r from-amber-500 to-pink-500 text-black font-bold py-3 px-6 rounded-lg shadow-lg hover:from-amber-600 hover:to-pink-600 transition duration-300 text-2xl'

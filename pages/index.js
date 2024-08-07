@@ -453,12 +453,12 @@ const MoviesPage = ({ movies, tvshows, trailers, adults }) => {
                           'contrast(1.1) saturate(1.1) brightness(1.1) hue-rotate(0deg)'
                       }}
                     />
-                    <h3 className={styles.movieTitle}  style={{
+                    <h2 className={styles.movieTitle}  style={{
                           width:'100%',
                           height:'100px',
                         }}>
                       {item.title || 'Default Title'}
-                    </h3>
+                    </h2>
                     {/* <div className={styles.movieDetails}>
                       <strong
                         style={{

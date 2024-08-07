@@ -468,9 +468,9 @@ const AdultPage = ({ adults }) => {
                           'contrast(1.1) saturate(1.1) brightness(1.1) hue-rotate(0deg)'
                       }}
                     />
-                    <h3 className={styles.movieTitle}>
+                    <h2 className={styles.movieTitle}>
                       {item.title || 'Default Title'}
-                    </h3>
+                    </h2>
                     <div className={styles.movieDetails} style={{
                           width:'100%',
                           height:'200px',

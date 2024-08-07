@@ -344,8 +344,8 @@ const MoviesPage = ({ movies, tvshows, trailers, adults }) => {
         <GoogleTranslate />
 
         <h1 className={styles.title}>
-          {' '}
-          123Movies Online™ - Explore. Stream. Online.{' '}
+          {/* {' '} */}
+          123Movies Online™ - Explore. Stream. Online.
         </h1>
         <SearchComponent />
 

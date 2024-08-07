@@ -470,49 +470,26 @@ const MoviesPage = ({ movies, tvshows, trailers, adults }) => {
   )
 }
 
-export async function getStaticProps() {
-  try {
-    const moviesFilePath = path.join(process.cwd(), 'data', 'movies.json')
-    const tvshowsFilePath = path.join(process.cwd(), 'data', 'tvshows.json')
-    const trailersFilePath = path.join(process.cwd(), 'data', 'trailers.json')
-    const adultsFilePath = path.join(process.cwd(), 'data', 'adults.json')
+export async function getStaticProps () {
+  const readFile = filename => {
+    const filePath = path.join(process.cwd(), 'public', filename)
+    const fileContent = fs.readFileSync(filePath, 'utf-8')
+    return JSON.parse(fileContent)
+  }
 
-    if (!fs.existsSync(moviesFilePath)) {
-      throw new Error(`Movies file not found: ${moviesFilePath}`)
-    }
-    if (!fs.existsSync(tvshowsFilePath)) {
-      throw new Error(`TV Shows file not found: ${tvshowsFilePath}`)
-    }
-    if (!fs.existsSync(trailersFilePath)) {
-      throw new Error(`Trailers file not found: ${trailersFilePath}`)
-    }
-    if (!fs.existsSync(adultsFilePath)) {
-      throw new Error(`Adults file not found: ${adultsFilePath}`)
-    }
+  const movies = readFile('movies.json')
+  const tvshows = readFile('tvshow.json')
+  const trailers = readFile('trailers.json')
+  const adults = readFile('adult.json')
 
-    const moviesData = fs.readFileSync(moviesFilePath, 'utf8')
-    const tvshowsData = fs.readFileSync(tvshowsFilePath, 'utf8')
-    const trailersData = fs.readFileSync(trailersFilePath, 'utf8')
-    const adultsData = fs.readFileSync(adultsFilePath, 'utf8')
-
-    const movies = JSON.parse(moviesData).slice(0, 10)
-    const tvshows = JSON.parse(tvshowsData).slice(0, 10)
-    const trailers = JSON.parse(trailersData).slice(0, 10)
-    const adults = JSON.parse(adultsData).slice(0, 10)
-
-    return {
-      props: {
-        movies,
-        tvshows,
-        trailers,
-        adults
-      }
-    }
-  } catch (error) {
-    console.error('Error reading data files:', error.message)
-    return {
-      notFound: true
+  return {
+    props: {
+      movies,
+      tvshows,
+      trailers,
+      adults
     }
   }
 }
+
 export default MoviesPage

@@ -1,21 +1,20 @@
 import React from 'react'
-import { motion } from 'framer-motion'
 import Link from 'next/link'
 import fs from 'fs'
 import path from 'path'
-import styles from '../../styles/123movies.module.css'
-import SearchComponent from '../../components/SearchComponent'
-import GoogleTranslate from '../../components/GoogleTranslate'
-import SocialSharing from '../../components/SocialSharing'
+import styles from '../styles/123movies.module.css'
+import SearchComponent from '../components/SearchComponent'
+import GoogleTranslate from '../components/GoogleTranslate'
+import SocialSharing from '../components/SocialSharing'
 import Head from 'next/head'
 import Image from 'next/image'
 import Script from 'next/script'
 
-const AdultPage = ({ adults }) => {
+const MoviesPage = ({ movies, tvshows, trailers, adults }) => {
   const sections = [
     // { title: 'Latest Trailer', items: trailers },
-    // { title: 'Latest Movies.', items: movies },
-    // { title: 'Latest TV Series.', items: tvshows }
+    { title: 'Latest Movies.', items: movies },
+    { title: 'Latest TV Series.', items: tvshows },
     { title: 'Adult Content.', items: adults }
   ]
 
@@ -72,8 +71,8 @@ const AdultPage = ({ adults }) => {
       },
       {
         '@type': 'WebSite',
-        '@id': 'https://123moviesonline.vercel.app/adult/#website',
-        url: 'https://123moviesonline.vercel.app/adult',
+        '@id': 'https://123moviesonline.vercel.app/#website',
+        url: 'https://123moviesonline.vercel.app',
         name: '123Movies Online™ - Explore. Stream. Online. ',
         publisher: {
           '@type': 'Organization',
@@ -87,8 +86,8 @@ const AdultPage = ({ adults }) => {
       },
       {
         '@type': 'WebPage',
-        '@id': 'https://123moviesonline.vercel.app/adult/#webpage',
-        url: 'https://123moviesonline.vercel.app/adult',
+        '@id': 'https://123moviesonline.vercel.app/#webpage',
+        url: 'https://123moviesonline.vercel.app/',
         name: 'Movie',
         datePublished: '2024-01-13T13:00:00+00:00',
         dateModified: '2024-01-13T13:13:00+00:00',
@@ -106,14 +105,14 @@ const AdultPage = ({ adults }) => {
           }
         },
         isPartOf: {
-          '@id': 'https://123moviesonline.vercel.app/adult/#website'
+          '@id': 'https://123moviesonline.vercel.app/#website'
         },
         inLanguage: 'en-US',
         mainEntity: [
           {
             '@type': 'Article',
-            '@id': 'https://123moviesonline.vercel.app/adult',
-            url: 'https://123moviesonline.vercel.app/adult',
+            '@id': 'https://123moviesonline.vercel.app/',
+            url: 'https://123moviesonline.vercel.app/',
             headline: '123Movies Online™ - Explore. Stream. Online. ',
             datePublished: '2024-01-13T13:00:00+00:00',
             dateModified: '2024-01-13T13:13:00+00:00',
@@ -139,8 +138,8 @@ const AdultPage = ({ adults }) => {
           },
           {
             '@type': 'Article',
-            '@id': 'https://123moviesonline.vercel.app/adult',
-            url: 'https://123moviesonline.vercel.app/adult',
+            '@id': 'https://123moviesonline.vercel.app/',
+            url: 'https://123moviesonline.vercel.app/',
             headline: '123Movies Online™ - Explore. Stream. Online. ',
             datePublished: '2024-01-13T13:00:00+00:00',
             dateModified: '2024-01-13T13:13:00+00:00',
@@ -166,8 +165,8 @@ const AdultPage = ({ adults }) => {
           },
           {
             '@type': 'Article',
-            '@id': 'https://123moviesonline.vercel.app/adult',
-            url: 'https://123moviesonline.vercel.app/adult',
+            '@id': 'https://123moviesonline.vercel.app/',
+            url: 'https://123moviesonline.vercel.app/',
             headline: '123Movies Online™ - Explore. Stream. Online. ',
             datePublished: '2024-01-13T13:00:00+00:00',
             dateModified: '2024-01-13T13:13:00+00:00',
@@ -190,34 +189,10 @@ const AdultPage = ({ adults }) => {
     ]
   })
 
-  const languagesSchema = JSON.stringify({
-    '@context': 'https://schema.org',
-    '@type': 'WebPage',
-    url: 'https://123moviesonline.vercel.app/adult',
-    name: '123Movies Online™ - Adult Content',
-    alternateName: [
-      '123Movies Online™ - Contenido para adultos',
-      '123Movies Online™ - Contenu pour adultes',
-      '123Movies Online™ - Erwachsene Inhalte',
-      '123Movies Online™ - 成人内容',
-      '123Movies Online™ - アダルトコンテンツ',
-      '123Movies Online™ - 성인 콘텐츠',
-      '123Movies Online™ - Conteúdo adulto',
-      '123Movies Online™ - Contenuto per adulti',
-      '123Movies Online™ - Контент для взрослых',
-      '123Movies Online™ - محتوى للبالغين'
-    ],
-    inLanguage: [
-      'es', 'fr', 'de', 'zh-Hans', 'ja', 'ko', 'pt', 'it', 'ru', 'ar'
-    ]
-  });
-   
-  
   return (
     <div className={styles.container}>
-   
+    
         <Head>
-          <title>123Movies Online™ - Explore. Stream. Online.</title>
           <link
             rel='sitemap'
             type='application/xml'
@@ -256,13 +231,13 @@ const AdultPage = ({ adults }) => {
           />
           <meta
             name='keywords'
-            content='123movies, 123moviesHUB, 123moviesFREE, 123movies-hd, 123moviesx, 123movies-org, 123movies-com, 123movies official, 123movies, 123movies free, free movies, movies online, watch movies online, watch movies free, 123movies, gomovies, putlocker, putlockers, soap2day'
+            content='watch free movies, free movies online, download movies, full movies, HD movies, movie streaming, stream TV series, watch TV shows free'
           />
           <meta
             name='description'
             content='Stream HD movies and TV series for free on 123Movies Online. Explore, stream, and download full-length movies and shows in HD quality without registration.'
           />
-          <link rel='canonical' href='https://123moviesonline.vercel.app/adult' />
+          <link rel='canonical' href='https://123moviesonline.vercel.app/' />
           <meta property='og:locale' content='en_US' />
           <meta property='og:type' content='video.movie' />
           <meta property='og:type' content='website' />
@@ -270,7 +245,7 @@ const AdultPage = ({ adults }) => {
             property='og:title'
             content='123Movies Online™ - Explore. Stream. Online. '
           />
-          <meta property='og:url' content='https://123moviesonline.vercel.app/adult' />
+          <meta property='og:url' content='https://123moviesonline.vercel.app/' />
           <meta
             property='og:site_name'
             content='123Movies Online™ - Explore. Stream. Online. '
@@ -309,11 +284,7 @@ const AdultPage = ({ adults }) => {
             name='twitter:image'
             content='https://123moviesonline.vercel.app/og_image.jpg'
           />
-          <meta
-            name='google-site-verification'
-            content='4gdbnCGat0T4Ow3Y_RYzPM4vwtsXvhUel5Q-2yULK6k'
-          />
-          <meta
+           <meta
             name='google-site-verification'
             content='4gdbnCGat0T4Ow3Y_RYzPM4vwtsXvhUel5Q-2yULK6k'
           />
@@ -335,10 +306,6 @@ const AdultPage = ({ adults }) => {
             type='application/ld+json'
             dangerouslySetInnerHTML={{ __html: uwatchfreeSchema }}
           />
-           <script
-            type='application/ld+json'
-            dangerouslySetInnerHTML={{ __html: languagesSchema }}
-          />
           <link
             rel='stylesheet'
             href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css'
@@ -346,9 +313,7 @@ const AdultPage = ({ adults }) => {
             crossorigin='anonymous'
             referrerpolicy='no-referrer'
           />
-        
-        </Head>
-        <Script
+          <Script
             dangerouslySetInnerHTML={{
               __html: `
             (function (w, d, s, id) {
@@ -364,6 +329,9 @@ const AdultPage = ({ adults }) => {
           `
             }}
           />
+        </Head>
+
+      
         <div
           className='shadow-lg flex items-center justify-center'
           role='navigation'
@@ -446,35 +414,24 @@ const AdultPage = ({ adults }) => {
             <i className='fab fa-telegram text-blue-600 hover:text-gray-600 ml-2 w-12 h-12 animate-pulse '></i>
           </span>
         </a>
-        <GoogleTranslate />
-        <h1
-          className='badge bg-gradient-to-r from-pink-500 to-amber-500 font-bold py-3 px-6 rounded-xl shadow-lg hover:from-amber-600 hover:to-pink-600 transition duration-300'
-          style={{
-            justifyContent: 'center',
-            alignItems: 'center',
-            padding: '10px',
-            fontSize: '35px',
-            fontFamily: 'Poppins, sans-serif',
-            fontWeight: 'bold',
-            textAlign: 'center',
-            marginBottom: '15px'
-          }}
-        >
-          123Movies Online™ - Adult Content Section.
+        <h1 className={styles.title}>
+          {' '}
+          123Movies Online™ - Explore. Stream. Online.{' '}
         </h1>
-        
+        <GoogleTranslate />
         <SearchComponent />
+
         <SocialSharing />
-        {/* <Script src='../../propler/ads.js' defer /> */}
-        <Script src='../../propler/ads2.js' defer />
-     
+ 
       {sections.map((section, index) => (
-      <div key={index}   style={{
-        marginTop: '25px'
-      }}>
+        <div key={index}   style={{
+          marginTop: '25px'
+        }}>
+          <h2 className={styles.sectionTitle}>{section.title}</h2>
+        
           <div
             className={styles.movieList}
-           
+         
           >
             {section.items.length > 0 ? (
               section.items.map(item => (
@@ -492,20 +449,19 @@ const AdultPage = ({ adults }) => {
                           'contrast(1.1) saturate(1.1) brightness(1.1) hue-rotate(0deg)'
                       }}
                     />
-                    <h3 className={styles.movieTitle}>
-                      {item.title || 'Default Title'}
-                    </h3>
-                    <div className={styles.movieDetails} style={{
+                    <h2 className={styles.movieTitle}  style={{
                           width:'100%',
-                          height:'400px',
+                          height:'100px',
                         }}>
+                      {item.title || 'Default Title'}
+                    </h2>
+                    {/* <div className={styles.movieDetails}>
                       <strong
                         style={{
                           fontFamily: 'Poppins, sans-serif',
                           textShadow: '1px 1px 1px #000',
                           fontWeight: 'bold',
                           fontSize: '16px'
-                          
                         }}
                       >
                         {' '}
@@ -561,8 +517,7 @@ const AdultPage = ({ adults }) => {
                           fontFamily: 'Poppins, sans-serif',
                           textShadow: '1px 1px 1px #000',
                           fontWeight: 'bold',
-                          fontSize: '16px',
-                          
+                          fontSize: '16px'
                         }}
                       >
                         {' '}
@@ -571,7 +526,7 @@ const AdultPage = ({ adults }) => {
                       <span className={styles.movieDescription}>
                         {item.news1 || 'Default Description'}
                       </span>
-                    </div>
+                    </div> */}
                   </div>
                 </Link>
               ))
@@ -592,19 +547,19 @@ export async function getStaticProps () {
     return JSON.parse(fileContent)
   }
 
-  // const movies = readFile('movies.json')
-  // const tvshows = readFile('tvshow.json')
-  // const trailers = readFile('trailers.json')
+  const movies = readFile('movies.json')
+  const tvshows = readFile('tvshow.json')
+  const trailers = readFile('trailers.json')
   const adults = readFile('adult.json')
 
   return {
     props: {
-      // movies,
-      // tvshows,
-      // trailers,
-      adults,
+      movies,
+      tvshows,
+      trailers,
+      adults
     }
   }
 }
 
-export default AdultPage
+export default MoviesPage

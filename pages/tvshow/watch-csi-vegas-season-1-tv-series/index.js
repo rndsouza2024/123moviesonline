@@ -634,13 +634,7 @@ const tvshowDetail = ({ tvshow }) => {
             type='application/ld+json'
             dangerouslySetInnerHTML={{ __html: languagesSchema }}
           />
-        <link
-          rel='stylesheet'
-          href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css'
-          integrity='sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=='
-          crossorigin='anonymous'
-          referrerpolicy='no-referrer'
-        />
+        
       </Head>
       <Script
         dangerouslySetInnerHTML={{
@@ -1086,7 +1080,7 @@ const tvshowDetail = ({ tvshow }) => {
 
                     {accordionExpanded && (
                       <>
-                        <Script src='https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js'></Script>
+                        {/* <Script src='https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js'></Script>
                         <lottie-player
                           src='https://lottie.host/58d9c7ed-a39e-4cb6-b78a-e7cb1f9bf9cd/RHWR24wQSd.json'
                           background='#D3D3D3'
@@ -1096,7 +1090,7 @@ const tvshowDetail = ({ tvshow }) => {
                           autoplay
                           direction='1'
                           mode='normal'
-                        ></lottie-player>
+                        ></lottie-player> */}
                         {seconds > 0 ? (
                           <p
                             className='text-3xl font-bold mb-4'

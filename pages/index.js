@@ -289,7 +289,7 @@ const HomePage = () => {
           />
           <meta
             name='keywords'
-            content='watch free movies, free movies online, download movies, full movies, HD movies, movie streaming, stream TV series, watch TV shows free'
+            content='123movies, 123moviesHUB, 123moviesFREE, 123movies-hd, 123moviesx, 123movies-org, 123movies-com, 123movies official, 123movies, 123movies free, free movies, movies online, watch movies online, watch movies free, 123movies, gomovies, putlocker, putlockers, soap2day'
           />
           <meta
             name='description'
@@ -365,13 +365,7 @@ const HomePage = () => {
             type='application/ld+json'
             dangerouslySetInnerHTML={{ __html: uwatchfreeSchema }}
           />
-          <link
-            rel='stylesheet'
-            href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css'
-            integrity='sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=='
-            crossorigin='anonymous'
-            referrerpolicy='no-referrer'
-          />
+        
           <Script
             dangerouslySetInnerHTML={{
               __html: `

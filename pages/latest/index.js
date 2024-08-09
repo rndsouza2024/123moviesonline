@@ -118,7 +118,7 @@ const latestPage = ({ items }) => {
         <meta property='og:type' content='video.movie' />
         {/* <meta property='og:type' content='website' /> */}
         <meta property='og:title' content=' Entertainment News | 123Movies™' />
-        <meta name="keywords" content="watch free movies, free movies online, download movies, full movies, HD movies, movie streaming, stream TV series, watch TV Series s free" />
+        <meta name="keywords" content="123movies, 123moviesHUB, 123moviesFREE, 123movies-hd, 123moviesx, 123movies-org, 123movies-com, 123movies official, 123movies, 123movies free, free movies, movies online, watch movies online, watch movies free, 123movies, gomovies, putlocker, putlockers, soap2day" />
        
          <meta name="description" content="Stream HD movies and TV series for free on 123Movies Online. Explore, stream, and download full-length movies and shows in HD quality without registration."/>
 
@@ -179,13 +179,7 @@ const latestPage = ({ items }) => {
           type='application/ld+json'
           dangerouslySetInnerHTML={{ __html: breadcrumbSchema }}
         />
-        <link
-          rel='stylesheet'
-          href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css'
-          integrity='sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=='
-          crossorigin='anonymous'
-          referrerpolicy='no-referrer'
-        />
+        
   
       </Head>
       <Script

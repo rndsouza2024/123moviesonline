@@ -409,7 +409,7 @@ const MoviePage = ({ tvshows }) => {
             textAlign: 'center'
           }}
         >
-          123Movies Online™ - Movies Section.
+          123Movies Online™ - Tv Show Section.
         </h1>
       {/* </div> */}
       <SearchComponent />

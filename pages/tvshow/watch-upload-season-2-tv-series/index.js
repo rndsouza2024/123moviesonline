@@ -69,7 +69,7 @@ const tvshowDetail = ({ tvshow }) => {
   // Function to fetch data and set state
   const fetchData = async () => {
     try {
-      const response = await fetch('https://123moviesonline.vercel.app/tvshow.json')
+      const response = await fetch('https://123moviesonline.vercel.app/tvshowfinal.json')
       const data = await response.json()
 
       // Get 6 random TV Series s

@@ -149,7 +149,7 @@ const adultDetail = ({ adult }) => {
   // Function to fetch data and set state
   const fetchData = async () => {
     try {
-      const response = await fetch('https://123moviesonline.vercel.app/adult.json')
+      const response = await fetch('https://123moviesonline.vercel.app/adultfinal.json')
       const data = await response.json()
 
       // Get 5 random items

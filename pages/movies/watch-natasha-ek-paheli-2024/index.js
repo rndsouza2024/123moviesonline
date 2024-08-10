@@ -70,7 +70,7 @@ const moviesDetail = ({ movie }) => {
   // Function to fetch data and set state
   const fetchData = async () => {
     try {
-      const response = await fetch('https://123moviesonline.vercel.app/movies.json')
+      const response = await fetch('https://123moviesonline.vercel.app/moviesfinal.json')
       const data = await response.json()
 
       // Get 5 random trailers

@@ -409,7 +409,7 @@ const MoviePage = ({ adults }) => {
             textAlign: 'center'
           }}
         >
-          123Movies Online™ - Movies Section.
+          123Movies Online™ - Adult Content Section.
         </h1>
       {/* </div> */}
       <SearchComponent />

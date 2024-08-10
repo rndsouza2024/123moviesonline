@@ -409,7 +409,7 @@ const MoviePage = ({ trailers }) => {
             textAlign: 'center'
           }}
         >
-          123Movies Online™ - Movies Section.
+          123Movies Online™ - Movie Trailer Section.
         </h1>
       {/* </div> */}
       <SearchComponent />

@@ -347,7 +347,7 @@ const MoviePage = ({ trailers }) => {
           href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css'
           integrity='sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=='
           crossorigin='anonymous'
-          referrerpolicy='no-referrer'
+          referrerPolicy='no-referrer'
         />
       </Head>
       {/* <Script
@@ -425,7 +425,7 @@ const MoviePage = ({ trailers }) => {
           className='menu flex flex-wrap justify-center'
           style={{ marginTop: '25px' }}
         >
-          <button className='border border-black p-2 m-1 hover:bg-orange-100'>
+          <button className='border border-pink-600 p-2 m-1 hover:bg-orange-100'>
             <li id='menu-item-35' className='menu-home active'>
               <a
                 href='/'
@@ -436,7 +436,7 @@ const MoviePage = ({ trailers }) => {
             </li>
           </button>
 
-          <button className='border border-black p-2 m-1 hover:bg-orange-100'>
+          <button className='border border-pink-600 p-2 m-1 hover:bg-orange-100'>
             <li id='menu-item-284913' className='menu-softwarecategories'>
               <a
                 href='../trailers/'
@@ -446,7 +446,7 @@ const MoviePage = ({ trailers }) => {
               </a>
             </li>
           </button>
-          <button className='border border-black p-2 m-1 hover:bg-orange-100'>
+          <button className='border border-pink-600 p-2 m-1 hover:bg-orange-100'>
             <li id='menu-item-11610' className='menu-graphicdesign'>
               <a
                 href='../movies/'
@@ -456,7 +456,7 @@ const MoviePage = ({ trailers }) => {
               </a>
             </li>
           </button>
-          <button className='border border-black p-2 m-1 hover:bg-orange-100'>
+          <button className='border border-pink-600 p-2 m-1 hover:bg-orange-100'>
             <li id='menu-item-84' className='menu-antivirus'>
               <a
                 href='../tvshow/'
@@ -467,7 +467,7 @@ const MoviePage = ({ trailers }) => {
             </li>
           </button>
 
-          <button className='border border-black p-2 m-1 hover:bg-orange-100'>
+          <button className='border border-pink-600 p-2 m-1 hover:bg-orange-100'>
             <li id='menu-item-84' className='menu-antivirus'>
               <a
                 href='../adult/'
@@ -478,7 +478,7 @@ const MoviePage = ({ trailers }) => {
             </li>
           </button>
 
-          <button className='border border-black p-2 m-1 hover:bg-orange-100'>
+          <button className='border border-pink-600 p-2 m-1 hover:bg-orange-100'>
             <li id='menu-item-194' className='menu-tutorials'>
               <a
                 href='../latest/'

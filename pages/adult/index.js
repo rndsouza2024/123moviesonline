@@ -2,6 +2,8 @@ import React from 'react'
 import Link from 'next/link'
 import fs from 'fs'
 import path from 'path'
+import { useRouter } from 'next/router'
+import { useEffect, useState, useRef } from 'react'
 import styles from '../../styles/movies.module.css'
 import SearchComponent from '../../components/SearchComponent'
 import GoogleTranslate from '../../components/GoogleTranslate'
@@ -10,13 +12,20 @@ import Head from 'next/head'
 import Image from 'next/image'
 import Script from 'next/script'
 
-const MoviePage = ({ adults }) => {
+const AdultPage = ({ adults }) => {
+  const router = useRouter(); // Initialize the router
   const sections = [
     // { title: 'Latest Trailer', items: trailers },
     // { title: 'Latest Movies.', items: movies }
     // { title: 'Latest TV Series.', items: tvshows }
     { title: 'Adult Content.', items: adults }
   ]
+
+  const [currentPage, setCurrentPage] = useState(1)
+
+  const handlePageSelect = (page) => {
+    setCurrentPage(page)
+  }
 
   const uwatchfreeSchema = JSON.stringify([
     {
@@ -71,8 +80,8 @@ const MoviePage = ({ adults }) => {
       },
       {
         '@type': 'WebSite',
-        '@id': 'https://123moviesonline.vercel.app/movies/#website',
-        url: 'https://123moviesonline.vercel.app/movies',
+        '@id': 'https://123moviesonline.vercel.app/addult/#website',
+        url: 'https://123moviesonline.vercel.app/adult',
         name: '123Movies Online™ - Explore. Stream. Online. ',
         publisher: {
           '@type': 'Organization',
@@ -86,8 +95,8 @@ const MoviePage = ({ adults }) => {
       },
       {
         '@type': 'WebPage',
-        '@id': 'https://123moviesonline.vercel.app/movies/#webpage',
-        url: 'https://123moviesonline.vercel.app/movies',
+        '@id': 'https://123moviesonline.vercel.app/adult/#webpage',
+        url: 'https://123moviesonline.vercel.app/adult',
         name: 'Movie',
         datePublished: '2024-01-13T13:00:00+00:00',
         dateModified: '2024-01-13T13:13:00+00:00',
@@ -111,8 +120,8 @@ const MoviePage = ({ adults }) => {
         mainEntity: [
           {
             '@type': 'Article',
-            '@id': 'https://123moviesonline.vercel.app/movies',
-            url: 'https://123moviesonline.vercel.app/movies',
+            '@id': 'https://123moviesonline.vercel.app/adult',
+            url: 'https://123moviesonline.vercel.app/adult',
             headline: '123Movies Online™ - Explore. Stream. Online. ',
             datePublished: '2024-01-13T13:00:00+00:00',
             dateModified: '2024-01-13T13:13:00+00:00',
@@ -138,8 +147,8 @@ const MoviePage = ({ adults }) => {
           },
           {
             '@type': 'Article',
-            '@id': 'https://123moviesonline.vercel.app/movies',
-            url: 'https://123moviesonline.vercel.app/movies',
+            '@id': 'https://123moviesonline.vercel.app/adult',
+            url: 'https://123moviesonline.vercel.app/adult',
             headline: '123Movies Online™ - Explore. Stream. Online. ',
             datePublished: '2024-01-13T13:00:00+00:00',
             dateModified: '2024-01-13T13:13:00+00:00',
@@ -165,8 +174,8 @@ const MoviePage = ({ adults }) => {
           },
           {
             '@type': 'Article',
-            '@id': 'https://123moviesonline.vercel.app/movies',
-            url: 'https://123moviesonline.vercel.app/movies',
+            '@id': 'https://123moviesonline.vercel.app/adult',
+            url: 'https://123moviesonline.vercel.app/adult',
             headline: '123Movies Online™ - Explore. Stream. Online. ',
             datePublished: '2024-01-13T13:00:00+00:00',
             dateModified: '2024-01-13T13:13:00+00:00',
@@ -192,7 +201,7 @@ const MoviePage = ({ adults }) => {
   const languagesSchema = JSON.stringify({
     '@context': 'https://schema.org',
     '@type': 'WebPage',
-    url: 'https://123moviesonline.vercel.app/movies',
+    url: 'https://123moviesonline.vercel.app/adult',
     name: '123Movies Online™ - Movies',
     alternateName: [
       '123Movies Online™ - Películas',
@@ -265,15 +274,15 @@ const MoviePage = ({ adults }) => {
           name='description'
           content='Stream HD movies and TV series for free on 123Movies Online. Explore, stream, and download full-length movies and shows in HD quality without registration.'
         />
-        <link rel='canonical' href='https://123moviesonline.vercel.app/movies' />
+        <link rel='canonical' href='https://123moviesonline.vercel.app/adult' />
         <meta property='og:locale' content='en_US' />
         <meta property='og:type' content='video.movie' />
         <meta property='og:type' content='website' />
         <meta
           property='og:title'
           content='123Movies Online™ - Explore. Stream. Online. '
-        />
-        <meta property='og:url' content='https://123moviesonline.vercel.app/movies' />
+        />z
+        <meta property='og:url' content='https://123moviesonline.vercel.app/adult' />
         <meta
           property='og:site_name'
           content='123Movies Online™ - Explore. Stream. Online. '
@@ -347,7 +356,7 @@ const MoviePage = ({ adults }) => {
           href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css'
           integrity='sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=='
           crossorigin='anonymous'
-          referrerpolicy='no-referrer'
+          referrerPolicy='no-referrer'
         />
       </Head>
       {/* <Script
@@ -425,7 +434,7 @@ const MoviePage = ({ adults }) => {
           className='menu flex flex-wrap justify-center'
           style={{ marginTop: '25px' }}
         >
-          <button className='border border-black p-2 m-1 hover:bg-orange-100'>
+          <button className='border border-pink-600 p-2 m-1 hover:bg-orange-100'>
             <li id='menu-item-35' className='menu-home active'>
               <a
                 href='/'
@@ -436,7 +445,7 @@ const MoviePage = ({ adults }) => {
             </li>
           </button>
 
-          <button className='border border-black p-2 m-1 hover:bg-orange-100'>
+          <button className='border border-pink-600 p-2 m-1 hover:bg-orange-100'>
             <li id='menu-item-284913' className='menu-softwarecategories'>
               <a
                 href='../trailers/'
@@ -446,7 +455,7 @@ const MoviePage = ({ adults }) => {
               </a>
             </li>
           </button>
-          <button className='border border-black p-2 m-1 hover:bg-orange-100'>
+          <button className='border border-pink-600 p-2 m-1 hover:bg-orange-100'>
             <li id='menu-item-11610' className='menu-graphicdesign'>
               <a
                 href='../movies/'
@@ -456,7 +465,7 @@ const MoviePage = ({ adults }) => {
               </a>
             </li>
           </button>
-          <button className='border border-black p-2 m-1 hover:bg-orange-100'>
+          <button className='border border-pink-600 p-2 m-1 hover:bg-orange-100'>
             <li id='menu-item-84' className='menu-antivirus'>
               <a
                 href='../tvshow/'
@@ -467,7 +476,7 @@ const MoviePage = ({ adults }) => {
             </li>
           </button>
 
-          <button className='border border-black p-2 m-1 hover:bg-orange-100'>
+          <button className='border border-pink-600 p-2 m-1 hover:bg-orange-100'>
             <li id='menu-item-84' className='menu-antivirus'>
               <a
                 href='../adult/'
@@ -478,7 +487,7 @@ const MoviePage = ({ adults }) => {
             </li>
           </button>
 
-          <button className='border border-black p-2 m-1 hover:bg-orange-100'>
+          <button className='border border-pink-600 p-2 m-1 hover:bg-orange-100'>
             <li id='menu-item-194' className='menu-tutorials'>
               <a
                 href='../latest/'
@@ -502,6 +511,35 @@ const MoviePage = ({ adults }) => {
           <i className='fab fa-telegram text-blue-600 hover:text-gray-600 ml-2 w-12 h-12 animate-pulse '></i>
         </span>
       </a>
+  <div className="flex flex-wrap justify-center my-4 gap-2">
+      {/* TV Show Home button */}
+      <Link href="/adult" passHref>
+        <button
+          className={`px-4 py-2 border rounded ${
+            router.pathname === '/adult'
+              ? 'bg-red-500 text-white font-bold'
+              : 'bg-gray-200 hover:bg-green-500 text-black font-bold'
+          }`}
+        >
+           Page 1
+        </button>
+      </Link>
+
+      {/* Page 2, Page 3, Page 4 buttons */}
+      {[2, ].map((page) => (
+        <Link key={page} href={`/adult/page${page}`} passHref>
+          <button
+            className={`px-4 py-2 border rounded ${
+              router.pathname === `/adult/page${page}`
+                ? 'bg-red-500 text-white font-bold'
+                : 'bg-gray-200 hover:bg-green-500 text-black font-bold'
+            }`}
+          >
+            PAGE {page}
+          </button>
+        </Link>
+      ))}
+    </div>
 
       {sections.map((section, index) => (
         <div
@@ -648,4 +686,4 @@ export async function getStaticProps () {
   }
 }
 
-export default MoviePage
+export default AdultPage

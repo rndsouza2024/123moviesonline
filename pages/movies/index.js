@@ -1,7 +1,9 @@
 import React from 'react'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 import fs from 'fs'
 import path from 'path'
+import { useEffect, useState, useRef } from 'react'
 import styles from '../../styles/movies.module.css'
 import SearchComponent from '../../components/SearchComponent'
 import GoogleTranslate from '../../components/GoogleTranslate'
@@ -11,12 +13,19 @@ import Image from 'next/image'
 import Script from 'next/script'
 
 const MoviePage = ({ movies }) => {
+  const router = useRouter(); // Initialize the router
   const sections = [
     // { title: 'Latest Trailer', items: trailers },
     { title: 'Latest Movies.', items: movies }
     // { title: 'Latest TV Series.', items: tvshows }
     // { title: 'Adult Content.', items: adults }
   ]
+
+  const [currentPage, setCurrentPage] = useState(1)
+
+  const handlePageSelect = (page) => {
+    setCurrentPage(page)
+  }
 
   const uwatchfreeSchema = JSON.stringify([
     {
@@ -347,7 +356,7 @@ const MoviePage = ({ movies }) => {
           href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css'
           integrity='sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=='
           crossorigin='anonymous'
-          referrerpolicy='no-referrer'
+          referrerPolicy='no-referrer'
         />
       </Head>
       {/* <Script
@@ -425,7 +434,7 @@ const MoviePage = ({ movies }) => {
           className='menu flex flex-wrap justify-center'
           style={{ marginTop: '25px' }}
         >
-          <button className='border border-black p-2 m-1 hover:bg-orange-100'>
+          <button className='border border-pink-600 p-2 m-1 hover:bg-orange-100'>
             <li id='menu-item-35' className='menu-home active'>
               <a
                 href='/'
@@ -436,7 +445,7 @@ const MoviePage = ({ movies }) => {
             </li>
           </button>
 
-          <button className='border border-black p-2 m-1 hover:bg-orange-100'>
+          <button className='border border-pink-600 p-2 m-1 hover:bg-orange-100'>
             <li id='menu-item-284913' className='menu-softwarecategories'>
               <a
                 href='../trailers/'
@@ -446,7 +455,7 @@ const MoviePage = ({ movies }) => {
               </a>
             </li>
           </button>
-          <button className='border border-black p-2 m-1 hover:bg-orange-100'>
+          <button className='border border-pink-600 p-2 m-1 hover:bg-orange-100'>
             <li id='menu-item-11610' className='menu-graphicdesign'>
               <a
                 href='../movies/'
@@ -456,7 +465,7 @@ const MoviePage = ({ movies }) => {
               </a>
             </li>
           </button>
-          <button className='border border-black p-2 m-1 hover:bg-orange-100'>
+          <button className='border border-pink-600 p-2 m-1 hover:bg-orange-100'>
             <li id='menu-item-84' className='menu-antivirus'>
               <a
                 href='../tvshow/'
@@ -467,7 +476,7 @@ const MoviePage = ({ movies }) => {
             </li>
           </button>
 
-          <button className='border border-black p-2 m-1 hover:bg-orange-100'>
+          <button className='border border-pink-600 p-2 m-1 hover:bg-orange-100'>
             <li id='menu-item-84' className='menu-antivirus'>
               <a
                 href='../adult/'
@@ -478,7 +487,7 @@ const MoviePage = ({ movies }) => {
             </li>
           </button>
 
-          <button className='border border-black p-2 m-1 hover:bg-orange-100'>
+          <button className='border border-pink-600 p-2 m-1 hover:bg-orange-100'>
             <li id='menu-item-194' className='menu-tutorials'>
               <a
                 href='../latest/'
@@ -502,6 +511,35 @@ const MoviePage = ({ movies }) => {
           <i className='fab fa-telegram text-blue-600 hover:text-gray-600 ml-2 w-12 h-12 animate-pulse '></i>
         </span>
       </a>
+      <div className="flex flex-wrap justify-center my-4 gap-2">
+      {/* TV Show Home button */}
+      <Link href="/movies" passHref>
+        <button
+          className={`px-4 py-2 border rounded ${
+            router.pathname === '/movies'
+              ? 'bg-red-500 text-white font-bold'
+              : 'bg-gray-200 hover:bg-green-500 text-black font-bold'
+          }`}
+        >
+          Page 1
+        </button>
+      </Link>
+
+      {/* Page 2, Page 3, Page 4 buttons */}
+      {[2, 3, 4, ].map((page) => (
+        <Link key={page} href={`/movies/page${page}`} passHref>
+          <button
+            className={`px-4 py-2 border rounded ${
+              router.pathname === `/movies/page${page}`
+                ? 'bg-red-500 text-white font-bold'
+                : 'bg-gray-200 hover:bg-green-500 text-black font-bold'
+            }`}
+          >
+            PAGE {page}
+          </button>
+        </Link>
+      ))}
+    </div>
 
       {sections.map((section, index) => (
         <div

@@ -47,7 +47,7 @@ const tvshowDetail = ({ tvshow }) => {
   const playerRef = useRef(null)
   const currentIndexRef = useRef(0)
 
-  const [randomTvshow, setRandomTvshow] = useState([])
+  const [randomtvshow, setRandomtvshow] = useState([])
 
   const [linkTargets, setLinkTargets] = useState([])
 
@@ -74,8 +74,8 @@ const tvshowDetail = ({ tvshow }) => {
       const data = await response.json()
 
       // Get 6 random TV Series s
-      const randomTvshowData = getRandomItems(data, 7)
-      setRandomTvshow(randomTvshowData)
+      const randomtvshowData = getRandomItems(data, 7)
+      setRandomtvshow(randomtvshowData)
     } catch (error) {
       console.error('Error fetching data:', error)
     }
@@ -124,7 +124,7 @@ const tvshowDetail = ({ tvshow }) => {
   const enhancedParagraph = text => {
     const linkTargets = [
       {
-        text: 'Maharani Season 3 - 2023',
+        text: 'Maharani Season 1 - 2023',
         url: `https://www.imdb.com/title/${tvshow.imdb}/`
       }
     ]
@@ -349,7 +349,7 @@ const tvshowDetail = ({ tvshow }) => {
         headline: ` ${tvshow.name} | 123Movies™`,
         datePublished: tvshow.datePublished,
         dateModified: tvshow.dateModified,
-        articleSection: 'TvShow',
+        articleSection: 'tvshow',
         author: {
           '@id': 'https://123moviesonline.vercel.app/author/123moviesonline/'
         },
@@ -373,7 +373,7 @@ const tvshowDetail = ({ tvshow }) => {
         headline: ` ${tvshow.name} | 123Movies™`,
         datePublished: tvshow.datePublished,
         dateModified: tvshow.dateModified,
-        articleSection: 'TvShow',
+        articleSection: 'tvshow',
         author: {
           '@id': 'https://123moviesonline.vercel.app/author/123moviesonline/'
         },
@@ -512,7 +512,7 @@ const tvshowDetail = ({ tvshow }) => {
     '@context': 'https://schema.org',
     '@type': 'WebPage',
     url: 'https://123moviesonline.vercel.app/tvshow/watch-Maharani-season-1-tv-series',
-    name: 'Watch Maharani Season 3 (2020) | 123Movies™',
+    name: 'Watch Maharani Season 1 (2020) | 123Movies™',
     alternateName: [
       'Ver Maharani Temporada 3 (2024) | 123Movies™',
       'Regarder Maharani Saison 3 (2024) | 123Movies™',
@@ -537,7 +537,7 @@ const tvshowDetail = ({ tvshow }) => {
           name='robots'
           content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1'
         />
-        <title>Watch Maharani Season 3 (2024) | 123Movies™</title>
+        <title>Watch Maharani Season 1 (2024) | 123Movies™</title>
         <link rel='canonical' href={tvshow && tvshow.siteurl} />
         <meta name='robots' content='index, follow' />
         <meta name='googlebot' content='index,follow' />
@@ -560,7 +560,7 @@ const tvshowDetail = ({ tvshow }) => {
         {/* <meta property='og:type' content='article' /> */}
         <meta property=' og:image:alt' content={`${tvshow && tvshow.group}`} />
         <meta name='mobile-web-app-capable' content='yes' />
-        <meta property='article:section' content='Tvshow' />
+        <meta property='article:section' content='tvshow' />
         <meta name='author' content='admin' />
         <meta
           property='article:modified_time'
@@ -696,7 +696,7 @@ const tvshowDetail = ({ tvshow }) => {
             id='menu-header-menu'
             className='menu flex flex-wrap justify-center'
           >
-            <button className='border border-black p-2 m-1 hover:bg-orange-100'>
+            <button className='border border-pink-600 p-2 m-1 hover:bg-orange-100'>
               <li id='menu-item-35' className='menu-home active'>
                 <a
                   href='/'
@@ -707,7 +707,7 @@ const tvshowDetail = ({ tvshow }) => {
               </li>
             </button>
 
-            <button className='border border-black p-2 m-1 hover:bg-orange-100'>
+            <button className='border border-pink-600 p-2 m-1 hover:bg-orange-100'>
               <li id='menu-item-284913' className='menu-softwarecategories'>
                 <a href='../trailers/'>
                   <h3 className='text-black hover:px-0 text-bg font-black bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-xl'>
@@ -716,7 +716,7 @@ const tvshowDetail = ({ tvshow }) => {
                 </a>
               </li>
             </button>
-            <button className='border border-black p-2 m-1 hover:bg-orange-100'>
+            <button className='border border-pink-600 p-2 m-1 hover:bg-orange-100'>
               <li id='menu-item-11610' className='menu-graphicdesign'>
                 <a
                   href='../movies/'
@@ -726,7 +726,7 @@ const tvshowDetail = ({ tvshow }) => {
                 </a>
               </li>
             </button>
-            <button className='border border-black p-2 m-1 hover:bg-orange-100'>
+            <button className='border border-pink-600 p-2 m-1 hover:bg-orange-100'>
               <li id='menu-item-84' className='menu-antivirus'>
                 <a
                   href='../tvshow/'
@@ -736,7 +736,7 @@ const tvshowDetail = ({ tvshow }) => {
                 </a>
               </li>
             </button>
-            <button className='border border-black p-2 m-1 hover:bg-orange-100'>
+            <button className='border border-pink-600 p-2 m-1 hover:bg-orange-100'>
               <li id='menu-item-84' className='menu-antivirus'>
                 <a
                   href='../adult/'
@@ -746,7 +746,7 @@ const tvshowDetail = ({ tvshow }) => {
                 </a>
               </li>
             </button>
-            <button className='border border-black p-2 m-1 hover:bg-orange-100'>
+            <button className='border border-pink-600 p-2 m-1 hover:bg-orange-100'>
               <li id='menu-item-194' className='menu-tutorials'>
                 <a
                   href='../latest/'
@@ -1333,7 +1333,7 @@ const tvshowDetail = ({ tvshow }) => {
             </h2>
             <div className='categorylatest-container'>
               <div className='cardlatest-container'>
-                {randomTvshow.map(tvshow => (
+                {randomtvshow.map(tvshow => (
                   <div key={tvshow.id} className='cardlatest'>
                     <a href={tvshow['tvshow.watch']} id={tvshow.id}>
                       <div className='relative'>
@@ -1505,10 +1505,10 @@ const tvshowDetail = ({ tvshow }) => {
 export async function getServerSideProps () {
   const res = await fetch('https://123moviesonline.vercel.app/tvshow.json')
   const data = await res.json()
-  const selectedTvshow = data.find(tvshow => tvshow.id === 'INDEX30')
+  const selectedtvshow = data.find(tvshow => tvshow.id === 'INDEX30')
   return {
     props: {
-      tvshow: selectedTvshow
+      tvshow: selectedtvshow
     }
   }
 }

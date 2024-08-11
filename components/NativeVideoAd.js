@@ -321,10 +321,9 @@ const NativeVideoAd = ({ id }) => {
             Close
           </button>
           <a
-            href={`https://www.dailymotion.com/video/${ad.videourl}`}
+            href={ad.link} // Use the link from the JSON data
             className={styles.noButton}
-            target="_blank"
-            rel="noopener noreferrer"
+            
           >
             Watch Now
           </a>

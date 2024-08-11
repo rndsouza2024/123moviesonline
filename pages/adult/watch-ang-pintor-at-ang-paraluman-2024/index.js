@@ -489,18 +489,18 @@ const adultDetail = ({ adult }) => {
     '@context': 'https://schema.org',
     '@type': 'WebPage',
     url: 'https://123moviesonline.vercel.app/adult/watch-pretty-boys-2024',
-    name: 'Watch Adult Gustakhiyan (2024) | 123Movies™',
+    name: 'Watch Adult Ang Pintor At Ang Paraluman (2024) | 123Movies™',
     alternateName: [
-      'Ver Gustakhiyan Parte (2024) para adultos | 123Movies™',
-      'Regarder Gustakhiyan Partie (2024) pour adultes | 123Movies™',
-      'Gustakhiyan Teil (2024) für Erwachsene ansehen | 123Movies™',
-      '观看 Gustakhiyan (2024) 成人内容 | 123Movies™',
-      'Gustakhiyan パート (2024) 大人向け | 123Movies™',
-      'Gustakhiyan 파트 (2024) 성인 전용 | 123Movies™',
-      'Assistir Gustakhiyan Parte (2024) para adultos | 123Movies™',
-      'Guarda Gustakhiyan Parte (2024) per adulti | 123Movies™',
-      'Посмотреть Gustakhiyan Часть (2024) для взрослых | 123Movies™',
-      'مشاهدة Gustakhiyan (2024) للكبار فقط | 123Movies™'
+      'Ver Ang Pintor At Ang Paraluman Parte (2024) para adultos | 123Movies™',
+      'Regarder Ang Pintor At Ang Paraluman Partie (2024) pour adultes | 123Movies™',
+      'Ang Pintor At Ang Paraluman Teil (2024) für Erwachsene ansehen | 123Movies™',
+      '观看 Ang Pintor At Ang Paraluman (2024) 成人内容 | 123Movies™',
+      'Ang Pintor At Ang Paraluman パート (2024) 大人向け | 123Movies™',
+      'Ang Pintor At Ang Paraluman 파트 (2024) 성인 전용 | 123Movies™',
+      'Assistir Ang Pintor At Ang Paraluman Parte (2024) para adultos | 123Movies™',
+      'Guarda Ang Pintor At Ang Paraluman Parte (2024) per adulti | 123Movies™',
+      'Посмотреть Ang Pintor At Ang Paraluman Часть (2024) для взрослых | 123Movies™',
+      'مشاهدة Ang Pintor At Ang Paraluman (2024) للكبار فقط | 123Movies™'
     ],
     inLanguage: [
       'es', 'fr', 'de', 'zh-Hans', 'ja', 'ko', 'pt', 'it', 'ru', 'ar'
@@ -514,7 +514,7 @@ const adultDetail = ({ adult }) => {
           name='robots'
           content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1'
         />
-        <title> Watch Gustakhiyan (2024) | 123Movies™</title>
+        <title> Watch Ang Pintor At Ang Paraluman (2024) | 123Movies™</title>
         <link rel='canonical' href={adult && adult.siteurl} />
         <meta name='robots' content='index, follow' />
         <meta name='googlebot' content='index,follow' />
@@ -1379,9 +1379,9 @@ const adultDetail = ({ adult }) => {
 }
 
 export async function getServerSideProps () {
-  const res = await fetch('https://123moviesonline.vercel.app/adultp2.json')
+  const res = await fetch('https://123moviesonline.vercel.app/adult.json')
   const data = await res.json()
-  const selectedAdult = data.find(adult => adult.id === 'INDEX11')
+  const selectedAdult = data.find(adult => adult.id === 'INDEX25')
   return {
     props: {
       adult: selectedAdult

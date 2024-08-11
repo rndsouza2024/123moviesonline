@@ -805,7 +805,7 @@ const moviesDetail = ({ movie }) => {
             <i className='fab fa-telegram text-blue-600 hover:text-gray-600 ml-2 w-12 h-12 animate-pulse '></i>
           </span>
         </a>
-        <NativeVideoAd />
+        <NativeVideoAd id="ADS03" />
         <Pagination
           currentPage={currentPage}
           totalPages={totalPages}

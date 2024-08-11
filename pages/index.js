@@ -398,6 +398,7 @@ const HomePage = () => {
             backgroundColor: '#0e0e0e'
           }}
         >
+          
           <h1
             className='text-black bg-gradient-to-r from-pink-500 to-amber-500 font-bold py-3 px-6 rounded-lg shadow-lg hover:from-amber-600 hover:to-pink-600 transition duration-300 text-3xl'
             style={{

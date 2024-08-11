@@ -298,7 +298,6 @@ const HomePage = () => {
           <link rel='canonical' href='https://123moviesonline.vercel.app/' />
           <meta property='og:locale' content='en_US' />
           <meta property='og:type' content='video.movie' />
-          <meta property='og:type' content='website' />
           <meta
             property='og:title'
             content='123Movies Online™ - Explore. Stream. Online. '
@@ -365,7 +364,7 @@ const HomePage = () => {
             dangerouslySetInnerHTML={{ __html: uwatchfreeSchema }}
           />
         
-          <Script
+          {/* <Script
             dangerouslySetInnerHTML={{
               __html: `
             (function (w, d, s, id) {
@@ -380,7 +379,7 @@ const HomePage = () => {
             webpushr('setup', { 'key': 'BIHpgrvLvdxGSRA7cHudMTBdr7EWGon3q4reCUGbDcm5uiM2CkypC83diBbYhTMaD8pY_5G0L817DCPB3UqY2CI' });
           `
             }}
-          />
+          /> */}
         </Head>
 
         <GoogleTranslate />

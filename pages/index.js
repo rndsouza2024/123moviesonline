@@ -425,7 +425,7 @@ const HomePage = () => {
               id='menu-header-menu'
               className='menu flex flex-wrap justify-center'  style={{ marginTop: '25px' }}
             >
-              <button className='border border-black p-2 m-1 hover:bg-orange-100'>
+              <button className='border border-pink-600 p-2 m-1 hover:bg-orange-100'>
                 <li id='menu-item-35' className='menu-home active'>
                   <a
                     href='/'
@@ -436,14 +436,14 @@ const HomePage = () => {
                 </li>
               </button>
 
-              <button className='border border-black p-2 m-1 hover:bg-orange-100'>
+              <button className='border border-pink-600 p-2 m-1 hover:bg-orange-100'>
                 <li id='menu-item-284913' className='menu-softwarecategories'>
                   <a href='../trailers/' className='text-black hover:px-0 text-bg font-black bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-xl'>
                       Trailers<span className='p'></span>
                    </a>
                 </li>
               </button>
-              <button className='border border-black p-2 m-1 hover:bg-orange-100'>
+              <button className='border border-pink-600 p-2 m-1 hover:bg-orange-100'>
                 <li id='menu-item-11610' className='menu-graphicdesign'>
                   <a
                     href='../movies/'
@@ -453,7 +453,7 @@ const HomePage = () => {
                   </a>
                 </li>
               </button>
-              <button className='border border-black p-2 m-1 hover:bg-orange-100'>
+              <button className='border border-pink-600 p-2 m-1 hover:bg-orange-100'>
                 <li id='menu-item-84' className='menu-antivirus'>
                   <a
                     href='../tvshow/'
@@ -464,7 +464,7 @@ const HomePage = () => {
                 </li>
               </button>
 
-              <button className='border border-black p-2 m-1 hover:bg-orange-100'>
+              <button className='border border-pink-600 p-2 m-1 hover:bg-orange-100'>
                 <li id='menu-item-84' className='menu-antivirus'>
                   <a
                     href='../adult/'
@@ -475,7 +475,7 @@ const HomePage = () => {
                 </li>
               </button>
 
-              <button className='border border-black p-2 m-1 hover:bg-orange-100'>
+              <button className='border border-pink-600 p-2 m-1 hover:bg-orange-100'>
                 <li id='menu-item-194' className='menu-tutorials'>
                   <a
                     href='../latest/'

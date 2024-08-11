@@ -507,18 +507,18 @@ const adultDetail = ({ adult }) => {
     '@type': 'WebPage',
     url: 'https://123moviesonline.vercel.app
 /adult/watch-pretty-boys-2024',
-    name: 'Watch Adult Kaskasero (2024) | 123Movies™',
+    name: 'Watch Adult Robotina (2024) | 123Movies™',
     alternateName: [
-      'Ver Kaskasero Parte (2024) para adultos | 123Movies™',
-      'Regarder Kaskasero Partie (2024) pour adultes | 123Movies™',
-      'Kaskasero Teil (2024) für Erwachsene ansehen | 123Movies™',
-      '观看 Kaskasero (2024) 成人内容 | 123Movies™',
-      'Kaskasero パート (2024) 大人向け | 123Movies™',
-      'Kaskasero 파트 (2024) 성인 전용 | 123Movies™',
-      'Assistir Kaskasero Parte (2024) para adultos | 123Movies™',
-      'Guarda Kaskasero Parte (2024) per adulti | 123Movies™',
-      'Посмотреть Kaskasero Часть (2024) для взрослых | 123Movies™',
-      'مشاهدة Kaskasero (2024) للكبار فقط | 123Movies™'
+      'Ver Robotina Parte (2024) para adultos | 123Movies™',
+      'Regarder Robotina Partie (2024) pour adultes | 123Movies™',
+      'Robotina (2024) für Erwachsene | 123Movies™',
+      '观看 Robotina (2024) 成人内容 | 123Movies™',
+      'Robotina パート (2024) 大人向け | 123Movies™',
+      'Robotina 파트 (2024) 성인 전용 | 123Movies™',
+      'Assistir Robotina Parte (2024) para adultos | 123Movies™',
+      'Guarda Robotina Parte (2024) per adulti | 123Movies™',
+      'Посмотреть Robotina Часть (2024) для взрослых | 123Movies™',
+      'مشاهدة Robotina (2024) للكبار فقط | 123Movies™'
     ],
     inLanguage: [
       'es', 'fr', 'de', 'zh-Hans', 'ja', 'ko', 'pt', 'it', 'ru', 'ar'
@@ -532,7 +532,7 @@ const adultDetail = ({ adult }) => {
           name='robots'
           content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1'
         />
-        <title> Watch Kaskasero (2024) | 123Movies™</title>
+        <title> Watch Robotina (2024) | 123Movies™</title>
         <link rel='canonical' href={adult && adult.siteurl} />
         <meta name='robots' content='index, follow' />
         <meta name='googlebot' content='index,follow' />
@@ -1398,9 +1398,9 @@ const adultDetail = ({ adult }) => {
 
 export async function getServerSideProps () {
   const res = await fetch('https://123moviesonline.vercel.app
-/adultp2.json')
+/adult.json')
   const data = await res.json()
-  const selectedAdult = data.find(adult => adult.id === 'INDEX10')
+  const selectedAdult = data.find(adult => adult.id === 'INDEX23')
   return {
     props: {
       adult: selectedAdult

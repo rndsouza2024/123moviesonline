@@ -346,7 +346,7 @@ const HomePage = () => {
             name='google-site-verification'
             content='4gdbnCGat0T4Ow3Y_RYzPM4vwtsXvhUel5Q-2yULK6k'
           />
-          <meta name="google-site-verification" content="4gdbnCGat0T4Ow3Y_RYzPM4vwtsXvhUel5Q-2yULK6k" />
+        
           <meta
             name='facebook-domain-verification'
             content='du918bycikmo1jw78wcl9ih6ziphd7'
@@ -573,7 +573,7 @@ const HomePage = () => {
                   </h3>
                 </a>
                 {/* <InPagePushAd /> */}
-                <NativeBannerAd />
+                {/* <NativeBannerAd /> */}
                 {/* Movies section */}
                 {movies.map(item => (
                   <div key={item.id} className='card'>

@@ -260,6 +260,15 @@
 // export default NativeVideoAd;
 
 
+
+
+
+
+
+
+
+
+
 import React, { useState, useEffect } from 'react';
 import styles from '../styles/NativeVideoAd.module.css';
 
@@ -277,6 +286,7 @@ const NativeVideoAd = ({ id }) => {
 
   useEffect(() => {
     const fetchAd = async () => {
+      if (!id) return; // Exit if no id is provided
       try {
         const res = await fetch('/ads.json');
         const data = await res.json();
@@ -289,7 +299,7 @@ const NativeVideoAd = ({ id }) => {
     };
 
     fetchAd();
-  }, [id]);
+  }, [id]); // Depend on id to refetch data when it changes
 
   const closeAd = () => {
     setVisible(false);
@@ -329,3 +339,4 @@ const NativeVideoAd = ({ id }) => {
 };
 
 export default NativeVideoAd;
+

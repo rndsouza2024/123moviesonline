@@ -344,9 +344,9 @@ const HomePage = () => {
           />
           <meta
             name='google-site-verification'
-            content='4gdbnCGat0T4Ow3Y_RYzPM4vwtsXvhUel5Q-2yULK6k'
+            content='o8uNsADswyHnNPA69n9gI7u6L4_cdjN4iT5lRhHHtMU'
           />
-          <meta name="google-site-verification" content="4gdbnCGat0T4Ow3Y_RYzPM4vwtsXvhUel5Q-2yULK6k" />
+          <meta name="google-site-verification" content="o8uNsADswyHnNPA69n9gI7u6L4_cdjN4iT5lRhHHtMU" />
           <meta
             name='facebook-domain-verification'
             content='du918bycikmo1jw78wcl9ih6ziphd7'

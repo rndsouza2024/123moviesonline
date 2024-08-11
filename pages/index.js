@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react'
-import adultData from '../public/adult.json'
+import adultData from '../public/adultfinal.json'
 import latestData from '../public/latest.json'
-import moviesData from '../public/movies.json'
-import tvshowData from '../public/tvshow.json'
+import moviesData from '../public/moviesfinal.json'
+import tvshowData from '../public/tvshowfinal.json'
 import trailersData from '../public/trailers.json'
 import styles from '../styles/Home.module.css'
 import GoogleTranslate from '../components/GoogleTranslate'
@@ -35,9 +35,9 @@ const HomePage = () => {
       const [latestRes, adultRes, moviesRes, tvShowRes, trailersRes] =
         await Promise.all([
           fetch('https://123moviesonline.vercel.app/latest.json'),
-          fetch('https://123moviesonline.vercel.app/adult.json'),
-          fetch('https://123moviesonline.vercel.app/movies.json'),
-          fetch('https://123moviesonline.vercel.app/tvshow.json'),
+          fetch('https://123moviesonline.vercel.app/adultfinal.json'),
+          fetch('https://123moviesonline.vercel.app/moviesfinal.json'),
+          fetch('https://123moviesonline.vercel.app/tvshowfinal.json'),
           fetch('https://123moviesonline.vercel.app/trailers.json')
         ])
 
@@ -65,7 +65,7 @@ const HomePage = () => {
 
     const interval = setInterval(() => {
       fetchData()
-    }, 10000) // 30000 seconds interval , 10000
+    }, 15000) // 30000 seconds interval , 10000
 
     return () => clearInterval(interval) // Cleanup interval on unmount
   }, [])
@@ -366,7 +366,7 @@ const HomePage = () => {
             dangerouslySetInnerHTML={{ __html: uwatchfreeSchema }}
           />
         
-          {/* <Script
+          <Script
             dangerouslySetInnerHTML={{
               __html: `
             (function (w, d, s, id) {
@@ -381,7 +381,7 @@ const HomePage = () => {
             webpushr('setup', { 'key': 'BIHpgrvLvdxGSRA7cHudMTBdr7EWGon3q4reCUGbDcm5uiM2CkypC83diBbYhTMaD8pY_5G0L817DCPB3UqY2CI' });
           `
             }}
-          /> */}
+          />
         </Head>
 
         <GoogleTranslate />

@@ -79,7 +79,7 @@ const NativeBannerAd = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setVisible(true); // Show the ad after 30 seconds
-    }, 30000); // 30000 milliseconds = 30 seconds
+    }, 10000); // 30000 milliseconds = 30 seconds
 
     return () => clearTimeout(timer); // Clear the timer if the component is unmounted
   }, []);

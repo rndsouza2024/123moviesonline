@@ -70,7 +70,7 @@ const tvshowDetail = ({ tvshow }) => {
   // Function to fetch data and set state
   const fetchData = async () => {
     try {
-      const response = await fetch('http://localhost:3000/tvshowfinal.json')
+      const response = await fetch('https://123moviesonline.vercel.app/tvshowfinal.json')
       const data = await response.json()
 
       // Get 6 random TV Series s
@@ -250,11 +250,11 @@ const tvshowDetail = ({ tvshow }) => {
       '@context': 'https://schema.org',
       '@type': 'Organization',
       name: '123Movies Online™',
-      url: 'http://localhost:3000/',
-      image: ['http://localhost:3000/favicon.ico'],
+      url: 'https://123moviesonline.vercel.app/',
+      image: ['https://123moviesonline.vercel.app/favicon.ico'],
       logo: {
         '@type': 'ImageObject',
-        url: 'http://localhost:3000/logo.png',
+        url: 'https://123moviesonline.vercel.app/logo.png',
         width: 280,
         height: 100
       }
@@ -262,12 +262,12 @@ const tvshowDetail = ({ tvshow }) => {
     {
       '@context': 'https://schema.org',
       '@type': 'WebSite',
-      url: 'http://localhost:3000/',
+      url: 'https://123moviesonline.vercel.app/',
       potentialAction: {
         '@type': 'SearchAction',
         target: {
           '@type': 'EntryPoint',
-          urlTemplate: 'http://localhost:3000/search?q={search_term_string}'
+          urlTemplate: 'https://123moviesonline.vercel.app/search?q={search_term_string}'
         },
         'query-input': 'required name=search_term_string'
       }
@@ -282,7 +282,7 @@ const tvshowDetail = ({ tvshow }) => {
         '@type': 'ListItem',
         position: 1,
         name: '123Movies Online™',
-        item: 'http://localhost:3000/'
+        item: 'https://123moviesonline.vercel.app/'
       },
       {
         '@type': 'ListItem',
@@ -309,8 +309,8 @@ const tvshowDetail = ({ tvshow }) => {
       },
       {
         '@type': 'WebSite',
-        '@id': 'http://localhost:3000#website',
-        url: 'http://localhost:3000',
+        '@id': 'https://123moviesonline.vercel.app#website',
+        url: 'https://123moviesonline.vercel.app',
         name: '123Movies Online™',
         publisher: {
           '@id': 'https://gravatar.com/drtrailer2022/#person'
@@ -325,15 +325,15 @@ const tvshowDetail = ({ tvshow }) => {
         datePublished: tvshow.datePublished,
         dateModified: tvshow.dateModified,
         isPartOf: {
-          '@id': 'http://localhost:3000#website'
+          '@id': 'https://123moviesonline.vercel.app#website'
         },
         inLanguage: 'en-US'
       },
       {
         '@type': 'Person',
-        '@id': 'http://localhost:3000/author/123moviesonline/',
+        '@id': 'https://123moviesonline.vercel.app/author/123moviesonline/',
         name: 'Dr Trailer',
-        url: 'http://localhost:3000/author/123moviesonline/',
+        url: 'https://123moviesonline.vercel.app/author/123moviesonline/',
         image: {
           '@type': 'ImageObject',
           '@id': 'https://gravatar.com/drtrailer2022',
@@ -341,7 +341,7 @@ const tvshowDetail = ({ tvshow }) => {
           caption: 'Dr Trailer',
           inLanguage: 'en-US'
         },
-        sameAs: ['http://localhost:3000']
+        sameAs: ['https://123moviesonline.vercel.app']
       },
       {
         '@type': 'Article',
@@ -351,7 +351,7 @@ const tvshowDetail = ({ tvshow }) => {
         dateModified: tvshow.dateModified,
         articleSection: 'TvShow',
         author: {
-          '@id': 'http://localhost:3000/author/123moviesonline/'
+          '@id': 'https://123moviesonline.vercel.app/author/123moviesonline/'
         },
         publisher: {
           '@id': 'https://gravatar.com/drtrailer2022/#person'
@@ -375,7 +375,7 @@ const tvshowDetail = ({ tvshow }) => {
         dateModified: tvshow.dateModified,
         articleSection: 'TvShow',
         author: {
-          '@id': 'http://localhost:3000/author/123moviesonline/'
+          '@id': 'https://123moviesonline.vercel.app/author/123moviesonline/'
         },
         publisher: {
           '@id': 'https://gravatar.com/drtrailer2022/#person'
@@ -426,7 +426,7 @@ const tvshowDetail = ({ tvshow }) => {
       name: '123Movies Online™',
       logo: {
         '@type': 'ImageObject',
-        url: 'http://localhost:3000/og_image.jpg'
+        url: 'https://123moviesonline.vercel.app/og_image.jpg'
       }
     },
     additionalProperty: {
@@ -487,7 +487,7 @@ const tvshowDetail = ({ tvshow }) => {
       name: '123Movies Online™',
       logo: {
         '@type': 'ImageObject',
-        url: 'http://localhost:3000/og_image.jpg'
+        url: 'https://123moviesonline.vercel.app/og_image.jpg'
       }
     },
     additionalProperty: {
@@ -511,7 +511,7 @@ const tvshowDetail = ({ tvshow }) => {
   const languagesSchema = JSON.stringify({
     '@context': 'https://schema.org',
     '@type': 'WebPage',
-    url: 'http://localhost:3000/tvshow/watch-Maharani-season-1-tv-series',
+    url: 'https://123moviesonline.vercel.app/tvshow/watch-Maharani-season-1-tv-series',
     name: 'Watch Ripley Season 1 (2020) | 123Movies™',
     alternateName: [
       'Ver Maharani Temporada 3 (2024) | 123Movies™',
@@ -1503,7 +1503,7 @@ const tvshowDetail = ({ tvshow }) => {
 }
 
 export async function getServerSideProps () {
-  const res = await fetch('http://localhost:3000/tvshowp2.json')
+  const res = await fetch('https://123moviesonline.vercel.app/tvshowp2.json')
   const data = await res.json()
   const selectedTvshow = data.find(tvshow => tvshow.id === 'INDEX14')
   return {

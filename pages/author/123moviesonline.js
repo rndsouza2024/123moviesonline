@@ -11,9 +11,9 @@ export default function ytmag({ movie }) {
         let searchTermLower = searchTerm.toLowerCase();
         let searchURL;
         if (searchTermLower.includes('TV Series ')) {
-            searchURL = `https://www.google.com/search?q=site:http://localhost:3000tvshow/${encodeURIComponent(searchTermLower)}-2024`;
+            searchURL = `https://www.google.com/search?q=site:https://123moviesonline.vercel.apptvshow/${encodeURIComponent(searchTermLower)}-2024`;
         } else {
-            searchURL = `https://www.google.com/search?q=site:http://localhost:3000movie/${encodeURIComponent(searchTermLower)}-2024`;
+            searchURL = `https://www.google.com/search?q=site:https://123moviesonline.vercel.appmovie/${encodeURIComponent(searchTermLower)}-2024`;
         }
         router.push(searchURL);
     };
@@ -34,9 +34,9 @@ export default function ytmag({ movie }) {
                             "@type": "Person",
                             "@id": "https://gravatar.com/drtrailer2022/#person",
                             "name": "Dr Trailer",
-                            "url": "http://localhost:3000author/ytmag/",
+                            "url": "https://123moviesonline.vercel.appauthor/ytmag/",
                             "sameAs": [
-                                "http://localhost:3000"
+                                "https://123moviesonline.vercel.app"
                             ]
                         }`
                     }}
@@ -63,7 +63,7 @@ export default function ytmag({ movie }) {
                 <h1 className="flex flex-col text-center py-5 font-bold text-3xl items-center justify-center" style={{ color: "#40D7BC", textShadow: "5px 5px 2px #000" }}>123Movies Online - Explore. Stream. Online.  </h1>
                 <div className="container" style={{ justifyContent: 'center', alignItems: 'center', height: '10vh', marginTop: '100px', }}>
                     <div className="home-main">
-                        <div className="hm-logo"><a title="" href="http://localhost:3000" id="logo-home"></a></div>
+                        <div className="hm-logo"><a title="" href="https://123moviesonline.vercel.app" id="logo-home"></a></div>
                         <div className="addthis_inline_share_toolbox mb10"></div>
                         <div id="hm-search">
                             <div id="search-homepage" className="search-content">

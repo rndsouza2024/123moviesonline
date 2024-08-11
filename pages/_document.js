@@ -10,7 +10,7 @@ class MyDocument extends Document {
             rel='sitemap'
             type='application/xml'
             title='Sitemap'
-            href='http://localhost:3000/sitemap.xml'
+            href='https://123moviesonline.vercel.app/sitemap.xml'
           />
         <link rel='icon' type='image/x-icon' href='/favicon.ico' />
           <link
@@ -46,7 +46,7 @@ class MyDocument extends Document {
             name='description'
             content='Stream HD movies and TV series for free on 123Movies Online. Explore, stream, and download full-length movies and shows in HD quality without registration.'
           />
-          <link rel='canonical' href='http://localhost:3000/' />
+          <link rel='canonical' href='https://123moviesonline.vercel.app/' />
           <meta property='og:locale' content='en_US' />
           <meta property='og:type' content='video.movie' />
           <meta property='og:type' content='website' />
@@ -54,14 +54,14 @@ class MyDocument extends Document {
             property='og:title'
             content='123Movies Online™ - Explore. Stream. Online. '
           />
-          <meta property='og:url' content='http://localhost:3000/' />
+          <meta property='og:url' content='https://123moviesonline.vercel.app/' />
           <meta
             property='og:site_name'
             content='123Movies Online™ - Explore. Stream. Online. '
           />
           <meta
             property='og:image'
-            content='http://localhost:3000/og_image.jpg'
+            content='https://123moviesonline.vercel.app/og_image.jpg'
           />
           <meta property='og:image:width' content='1200' />
           <meta property='og:image:height' content='630' />
@@ -78,7 +78,7 @@ class MyDocument extends Document {
             rel='sitemap'
             type='application/xml'
             title='Sitemap'
-            href='http://localhost:3000/sitemap.xml'
+            href='https://123moviesonline.vercel.app/sitemap.xml'
           />
           <meta name='twitter:card' content='summary_large_image' />
           <meta
@@ -91,7 +91,7 @@ class MyDocument extends Document {
           />
           <meta
             name='twitter:image'
-            content='http://localhost:3000/og_image.jpg'
+            content='https://123moviesonline.vercel.app/og_image.jpg'
           />
           <meta
             name='google-site-verification'

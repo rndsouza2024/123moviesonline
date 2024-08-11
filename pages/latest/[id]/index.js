@@ -41,12 +41,12 @@ const latestDetail = ({ latest }) => {
 
   const enhancedParagraph = (text) => {
     const linkTargets = [
-      { text: 'Watch Online Wild Wild Punjab', url: 'http://localhost:3000/movies/watch-wild-wild-punjab-2024' },
-      { text: 'Watch The Killer Trailer', url: 'http://localhost:3000/trailers/watch-the-killer-official-trailer-2024' },
-      { text: 'JWM Trailers', url: 'http://localhost:3000/trailers/' },
-      { text: 'JWM Movies', url: 'http://localhost:3000/movies/' },
-      { text: 'JWM TV Series s', url: 'http://localhost:3000/yvshow/' },
-      { text: 'JWM Adult Content', url: 'http://localhost:3000/adult/' },
+      { text: 'Watch Online Wild Wild Punjab', url: 'https://123moviesonline.vercel.app/movies/watch-wild-wild-punjab-2024' },
+      { text: 'Watch The Killer Trailer', url: 'https://123moviesonline.vercel.app/trailers/watch-the-killer-official-trailer-2024' },
+      { text: 'JWM Trailers', url: 'https://123moviesonline.vercel.app/trailers/' },
+      { text: 'JWM Movies', url: 'https://123moviesonline.vercel.app/movies/' },
+      { text: 'JWM TV Series s', url: 'https://123moviesonline.vercel.app/yvshow/' },
+      { text: 'JWM Adult Content', url: 'https://123moviesonline.vercel.app/adult/' },
     
     ];
 
@@ -79,13 +79,13 @@ const latestDetail = ({ latest }) => {
       '@context': 'https://schema.org',
       '@type': 'Organization',
       name: '123Movies Online™ - Explore. Stream. Online. ',
-      url: 'http://localhost:3000/',
+      url: 'https://123moviesonline.vercel.app/',
       image: [
-        'http://localhost:3000/favicon.ico'
+        'https://123moviesonline.vercel.app/favicon.ico'
       ],
       logo: {
         '@type': 'ImageObject',
-        url: 'http://localhost:3000/logo.png',
+        url: 'https://123moviesonline.vercel.app/logo.png',
         width: 280,
         height: 80
       }
@@ -93,13 +93,13 @@ const latestDetail = ({ latest }) => {
     {
       '@context': 'https://schema.org',
       '@type': 'WebSite',
-      url: 'http://localhost:3000/',
+      url: 'https://123moviesonline.vercel.app/',
       potentialAction: {
         '@type': 'SearchAction',
         target: {
           '@type': 'EntryPoint',
           urlTemplate:
-            'http://localhost:3000/search?q={search_term_string}'
+            'https://123moviesonline.vercel.app/search?q={search_term_string}'
         },
         'query-input': 'required name=search_term_string'
       }
@@ -116,8 +116,8 @@ const latestDetail = ({ latest }) => {
       },
       {
         '@type': 'WebSite',
-        '@id': 'http://localhost:3000#website',
-        url: 'http://localhost:3000',
+        '@id': 'https://123moviesonline.vercel.app#website',
+        url: 'https://123moviesonline.vercel.app',
         name: '123Movies Online™',
         publisher: {
           '@id': 'https://gravatar.com/drtrailer2022/#person'
@@ -132,15 +132,15 @@ const latestDetail = ({ latest }) => {
         datePublished: '2024-01-13T13:00:00+00:00',
         dateModified: '2024-01-13T13:13:00+00:00',
         isPartOf: {
-          '@id': 'http://localhost:3000#website'
+          '@id': 'https://123moviesonline.vercel.app#website'
         },
         inLanguage: 'en-US'
       },
       {
         '@type': 'Person',
-        '@id': 'http://localhost:3000/author/123moviesonline/',
+        '@id': 'https://123moviesonline.vercel.app/author/123moviesonline/',
         name: 'Dr Trailer',
-        url: 'http://localhost:3000author/justwatchfree/',
+        url: 'https://123moviesonline.vercel.appauthor/justwatchfree/',
         image: {
           '@type': 'ImageObject',
           '@id': 'https://gravatar.com/drtrailer2022',
@@ -148,7 +148,7 @@ const latestDetail = ({ latest }) => {
           caption: 'Dr Trailer',
           inLanguage: 'en-US'
         },
-        sameAs: ['http://localhost:3000']
+        sameAs: ['https://123moviesonline.vercel.app']
       },
       {
         '@type': 'Article',
@@ -158,7 +158,7 @@ const latestDetail = ({ latest }) => {
         dateModified: '2024-01-13T13:13:00+00:00',
         articleSection: 'latest',
         author: {
-          '@id': 'http://localhost:3000author/justwatchfree/'
+          '@id': 'https://123moviesonline.vercel.appauthor/justwatchfree/'
         },
         publisher: {
           '@id': 'https://gravatar.com/drtrailer2022/#person'
@@ -182,7 +182,7 @@ const latestDetail = ({ latest }) => {
         dateModified: '2024-01-13T13:13:00+00:00',
         articleSection: 'latest',
         author: {
-          '@id': 'http://localhost:3000author/justwatchfree/'
+          '@id': 'https://123moviesonline.vercel.appauthor/justwatchfree/'
         },
         publisher: {
           '@id': 'https://gravatar.com/drtrailer2022/#person'
@@ -233,7 +233,7 @@ const latestDetail = ({ latest }) => {
       name: '123Movies Online™',
       logo: {
         '@type': 'ImageObject',
-        url: 'http://localhost:3000/og_image.jpg'
+        url: 'https://123moviesonline.vercel.app/og_image.jpg'
       }
     },
     additionalProperty: {

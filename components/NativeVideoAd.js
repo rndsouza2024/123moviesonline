@@ -189,90 +189,10 @@
 
 
 
-// import React, { useState, useEffect } from 'react';
-// import styles from '../styles/NativeVideoAd.module.css';
-
-// const NativeVideoAd = () => {
-//   const [ad, setAd] = useState(null);
-//   const [visible, setVisible] = useState(false);
-
-//   useEffect(() => {
-//     const timer = setTimeout(() => {
-//       setVisible(true);
-//     }, 10000); // Show the ad after 10 seconds
-
-//     return () => clearTimeout(timer); // Clear the timer if the component unmounts
-//   }, []);
-
-//   useEffect(() => {
-//     const fetchAd = async () => {
-//       try {
-//         const res = await fetch('/ads.json');
-//         const data = await res.json();
-//         const selectedAd = data.find(ad => ad.id === 'ADS01');
-//         setAd(selectedAd || null);
-//       } catch (error) {
-//         console.error('Error fetching ad data:', error);
-//         setAd(null);
-//       }
-//     };
-
-//     fetchAd();
-//   }, []);
-
-//   const closeAd = () => {
-//     setVisible(false);
-//   };
-
-//   if (!visible || !ad) return null;
-
-//   return (
-//     <div className={styles.adOverlay}>
-//       <div className={styles.adContent}>
-//         <div className={styles.adInnerContent}>
-//           <iframe
-//             className={styles.iframeAd}
-//             src={`https://geo.dailymotion.com/player/xkdl0.html?video=${ad.videourl}&mute=true&Autoquality=1080p`}
-//             frameBorder="0"
-//             allowFullScreen
-//             title="Advertisement"
-//           ></iframe>
-//           <p className={styles.adText}>{ad.text}</p>
-//         </div>
-//         <div className={styles.bookmarkPrompt}>
-//           <button className={styles.yesButton} onClick={closeAd}>
-//             Close
-//           </button>
-//           <a
-//             href={`https://www.dailymotion.com/video/${ad.videourl}`}
-//             className={styles.noButton}
-//             target="_blank"
-//             rel="noopener noreferrer"
-//           >
-//             Watch Now
-//           </a>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default NativeVideoAd;
-
-
-
-
-
-
-
-
-
-
-
 import React, { useState, useEffect } from 'react';
 import styles from '../styles/NativeVideoAd.module.css';
 
-const NativeVideoAd = ({ id }) => {
+const NativeVideoAd = () => {
   const [ad, setAd] = useState(null);
   const [visible, setVisible] = useState(false);
 
@@ -286,11 +206,10 @@ const NativeVideoAd = ({ id }) => {
 
   useEffect(() => {
     const fetchAd = async () => {
-      if (!id) return; // Exit if no id is provided
       try {
         const res = await fetch('/ads.json');
         const data = await res.json();
-        const selectedAd = data.find(ad => ad.id === id);
+        const selectedAd = data.find(ad => ad.id === 'ADS01');
         setAd(selectedAd || null);
       } catch (error) {
         console.error('Error fetching ad data:', error);
@@ -299,7 +218,7 @@ const NativeVideoAd = ({ id }) => {
     };
 
     fetchAd();
-  }, [id]); // Depend on id to refetch data when it changes
+  }, []);
 
   const closeAd = () => {
     setVisible(false);
@@ -339,4 +258,85 @@ const NativeVideoAd = ({ id }) => {
 };
 
 export default NativeVideoAd;
+
+
+
+
+
+
+
+
+
+
+
+// import React, { useState, useEffect } from 'react';
+// import styles from '../styles/NativeVideoAd.module.css';
+
+// const NativeVideoAd = ({ id }) => {
+//   const [ad, setAd] = useState(null);
+//   const [visible, setVisible] = useState(false);
+
+//   useEffect(() => {
+//     const timer = setTimeout(() => {
+//       setVisible(true);
+//     }, 10000); // Show the ad after 10 seconds
+
+//     return () => clearTimeout(timer); // Clear the timer if the component unmounts
+//   }, []);
+
+//   useEffect(() => {
+//     const fetchAd = async () => {
+//       if (!id) return; // Exit if no id is provided
+//       try {
+//         const res = await fetch('/ads.json');
+//         const data = await res.json();
+//         const selectedAd = data.find(ad => ad.id === id);
+//         setAd(selectedAd || null);
+//       } catch (error) {
+//         console.error('Error fetching ad data:', error);
+//         setAd(null);
+//       }
+//     };
+
+//     fetchAd();
+//   }, [id]); // Depend on id to refetch data when it changes
+
+//   const closeAd = () => {
+//     setVisible(false);
+//   };
+
+//   if (!visible || !ad) return null;
+
+//   return (
+//     <div className={styles.adOverlay}>
+//       <div className={styles.adContent}>
+//         <div className={styles.adInnerContent}>
+//           <iframe
+//             className={styles.iframeAd}
+//             src={`https://geo.dailymotion.com/player/xkdl0.html?video=${ad.videourl}&mute=true&Autoquality=1080p`}
+//             frameBorder="0"
+//             allowFullScreen
+//             title="Advertisement"
+//           ></iframe>
+//           <p className={styles.adText}>{ad.text}</p>
+//         </div>
+//         <div className={styles.bookmarkPrompt}>
+//           <button className={styles.yesButton} onClick={closeAd}>
+//             Close
+//           </button>
+//           <a
+//             href={`https://www.dailymotion.com/video/${ad.videourl}`}
+//             className={styles.noButton}
+//             target="_blank"
+//             rel="noopener noreferrer"
+//           >
+//             Watch Now
+//           </a>
+//         </div>
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default NativeVideoAd;
 

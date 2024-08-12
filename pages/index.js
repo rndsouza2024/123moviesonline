@@ -248,7 +248,7 @@ const HomePage = () => {
       <div className='container'>
         <Head>
           <title>
-          123Movies Online™ - Explore. Stream. Online. HD Movies & TV Series.
+          123Movies Online™ - Explore. Stream. Online.
           </title>
 
           <link

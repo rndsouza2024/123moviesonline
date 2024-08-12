@@ -488,7 +488,7 @@ const adultDetail = ({ adult }) => {
   const languagesSchema = JSON.stringify({
     '@context': 'https://schema.org',
     '@type': 'WebPage',
-    url: 'https://123moviesonline.vercel.app/adult/watch-pretty-boys-2024',
+    url: 'https://123moviesonline.vercel.app/adult/watch-anokhi-Part-2-2024',
     name: 'Watch Adult Anokhi Part 2 (2024) | 123Movies™',
     alternateName: [
       'Ver Anokhi Part 2 Parte (2024) para adultos | 123Movies™',

@@ -37,9 +37,9 @@ export default function Footer() {
 
 
             <div className="lg:w-1/4 md:w-1/2 w-full px-4">
-              <h2 className="flex flex-col items-center justify-center px-0 bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-xl font-bold hover:text-blue-800">
+              <p className="flex flex-col items-center justify-center px-0 bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-xl font-bold hover:text-blue-800">
                 About Us
-              </h2>
+              </p>
               <nav className="flex flex-col items-center justify-center list-none mb-10">
                 <li>
                   <a href="/intro/contact" className="px-0 bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-xl font-bold hover:text-blue-800">Contact</a>

@@ -686,6 +686,27 @@ const tvshowDetail = ({ tvshow }) => {
         >
           {tvshow.title}
         </h1>
+        <h2 className='px-0 bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-2xl hover:text-blue-800 font-bold mt-2'>
+   {tvshow.title} Online - Stream Your Favorite TV Series
+</h2>
+ <p className='text-lg text-yellow-500 mt-4'>
+  Explore the captivating world of <strong>{tvshow.title}</strong>, the TV series that has everyone talking. At 
+  <strong>123Movies Online™</strong>, you can stream <strong>{tvshow.title}</strong> and immerse yourself in its exciting 
+  episodes, whether you're catching up on past seasons or tuning in to the latest releases. Our platform offers a seamless 
+  streaming experience, making it easy to watch your favorite TV series online.
+</p>
+ <p className='text-lg text-yellow-500 mt-4'>
+  Streaming <strong>{tvshow.title}</strong> on <strong>123Movies Online™</strong> ensures that you won't miss a single 
+  moment of the action, drama, or comedy that makes this TV series a must-watch. With high-quality streaming and 
+  user-friendly navigation, <strong>123Movies Online™</strong> provides everything you need to enjoy <strong>{tvshow.title}</strong> 
+  and other top TV series. Our library is frequently updated, so you can always find the latest episodes as soon as they air.
+</p>
+ <p className='text-lg text-yellow-500 mt-4'>
+  Whether you're binge-watching or following along weekly, <strong>{tvshow.title}</strong> on <strong>123Movies 
+  Online™</strong> is your go-to destination for streaming TV series online. Join our community of viewers and start 
+  watching <strong>{tvshow.title}</strong> today. With <strong>123Movies Online™</strong>, your favorite TV series is just 
+  a click away.
+</p>
       </div>
       <div
         className={`w-full`}

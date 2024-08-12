@@ -124,7 +124,7 @@ const tvshowDetail = ({ tvshow }) => {
   const enhancedParagraph = text => {
     const linkTargets = [
       {
-        text: 'Passenger Season 1 - 2023',
+        text: 'Bad Cop Season 1 - 2024',
         url: `https://www.imdb.com/title/${tvshow.imdb}/`
       }
     ]
@@ -155,7 +155,7 @@ const tvshowDetail = ({ tvshow }) => {
     return {
       name: `Episode ${episode}`,
       urls: [
-         `https://short.ink/${videoItems[currentEpisodeIndex]}?thumbnail=${tvshow.image1}`,
+        `https://short.ink/${videoItems[currentEpisodeIndex]}?thumbnail=${tvshow.image1}`,
         `https://vidsrc.me/embed/tv?imdb=${id}&season=${season}&episode=${episode}`,
         `https://vidsrc.pro/embed/tv/${id}/${season}/${episode}`,
         `https://vidsrc.cc/v2/embed/tv/${id}/${season}/${episode}`,
@@ -511,19 +511,19 @@ const tvshowDetail = ({ tvshow }) => {
   const languagesSchema = JSON.stringify({
     '@context': 'https://schema.org',
     '@type': 'WebPage',
-    url: 'https://123moviesonline.vercel.app/tvshow/watch-Maharani-season-1-tv-series',
-    name: 'Watch Passenger Season 1 (2020) | 123Movies™',
+    url: 'https://123moviesonline.vercel.app/tvshow/watch-bad-cop-season-1-tv-series',
+    name: 'Watch Bad Cop Season 1 (2020) | 123Movies™',
     alternateName: [
-      'Ver Maharani Temporada 3 (2024) | 123Movies™',
-      'Regarder Maharani Saison 3 (2024) | 123Movies™',
-      'Maharani Staffel 3 (2024) ansehen | 123Movies™',
+      'Ver Bad Cop Temporada 1 (2024) | 123Movies™',
+      'Regarder Bad Cop Saison 1 (2024) | 123Movies™',
+      'Bad Cop Staffel 1 (2024) ansehen | 123Movies™',
       '观看黑暗物质 第一季 (2024) | 123Movies™',
-      'ダークマター シーズン 3 (2024) を見る | 123Movies™',
-      '다크 매터 시즌 3 (2024) 보기 | 123Movies™',
-      'Assistir Maharani Temporada 3 (2024) | 123Movies™',
-      'Guarda Maharani Stagione 3 (2024) | 123Movies™',
-      'Посмотреть Maharani Сезон 3 (2024) | 123Movies™',
-      'مشاهدة Maharani الموسم 3 (2024) | جِي دبليو إف™'
+      'ダークマター シーズン 1 (2024) を見る | 123Movies™',
+      '다크 매터 시즌 1 (2024) 보기 | 123Movies™',
+      'Assistir Bad Cop Temporada 1 (2024) | 123Movies™',
+      'Guarda Bad Cop Stagione 1 (2024) | 123Movies™',
+      'Посмотреть Bad Cop Сезон 1 (2024) | 123Movies™',
+      'مشاهدة Bad Cop الموسم 1 (2024) | جِي دبليو إف™'
     ],
     inLanguage: [
       'es', 'fr', 'de', 'zh-Hans', 'ja', 'ko', 'pt', 'it', 'ru', 'ar'
@@ -537,7 +537,7 @@ const tvshowDetail = ({ tvshow }) => {
           name='robots'
           content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1'
         />
-        <title>Watch Passenger Season 1 (2024) | 123Movies™</title>
+        <title>Watch Bad Cop Season 1 (2024) | 123Movies™</title>
         <link rel='canonical' href={tvshow && tvshow.siteurl} />
         <meta name='robots' content='index, follow' />
         <meta name='googlebot' content='index,follow' />
@@ -1503,9 +1503,9 @@ const tvshowDetail = ({ tvshow }) => {
 }
 
 export async function getServerSideProps () {
-  const res = await fetch('https://123moviesonline.vercel.app/tvshowp2.json')
+  const res = await fetch('https://123moviesonline.vercel.app/tvshow.json')
   const data = await res.json()
-  const selectedTvshow = data.find(tvshow => tvshow.id === 'INDEX09')
+  const selectedTvshow = data.find(tvshow => tvshow.id === 'INDEX31')
   return {
     props: {
       tvshow: selectedTvshow

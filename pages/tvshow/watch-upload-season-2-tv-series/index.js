@@ -154,7 +154,7 @@ const tvshowDetail = ({ tvshow }) => {
     return {
       name: `Episode ${episode}`,
       urls: [
-        `https://short.ink/${videoItems[currentEpisodeIndex]}`,
+         `https://short.ink/${videoItems[currentEpisodeIndex]}?thumbnail=${tvshow.image1}`,
         `https://vidsrc.me/embed/tv?imdb=${id}&season=${season}&episode=${episode}`,
         `https://vidsrc.pro/embed/tv/${id}/${season}/${episode}`,
         `https://vidsrc.cc/v2/embed/tv/${id}/${season}/${episode}`,

@@ -337,7 +337,7 @@ const MoviePage = ({ tvshows }) => {
         />
         <meta
           name='dailymotion-domain-verification'
-          content='dmlp2t3912gbq4occ'
+          content='dm0x7o2qx13altq75'
         />
         <meta name='monetag' content='98a412cb5612b9188cd76b9744304b6c' />
 
@@ -662,7 +662,29 @@ const MoviePage = ({ tvshows }) => {
                           fontSize: '16px'
                         }}
                       >
-                        {' '}
+                       {' '}
+                        Total Episodes: {' '}
+                      </strong>{' '}
+                      <span className={styles.movieDescription}>
+                      <h2
+                        style={{
+                          fontFamily: 'Poppins, sans-serif',
+                          textShadow: '1px 1px 1px #000',
+                          fontWeight: 'bold',
+                          fontSize: '16px'
+                        }}
+                      >     {item.episode || 'Default Description'}
+                         </h2>
+                      </span>
+                      <strong
+                        style={{
+                          fontFamily: 'Poppins, sans-serif',
+                          textShadow: '1px 1px 1px #000',
+                          fontWeight: 'bold',
+                          fontSize: '16px'
+                        }}
+                      > 
+                         {' '}
                         Synopsis:{' '}
                       </strong>{' '}
                       <span className={styles.movieDescription}>

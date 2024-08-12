@@ -265,7 +265,7 @@ const Privacy = () => {
           />
           <meta
             name='dailymotion-domain-verification'
-            content='dmlp2t3912gbq4occ'
+            content='dm0x7o2qx13altq75'
           />
           <meta name='monetag' content='98a412cb5612b9188cd76b9744304b6c' />
 

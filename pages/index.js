@@ -346,14 +346,14 @@ const HomePage = () => {
             name='google-site-verification'
             content='4gdbnCGat0T4Ow3Y_RYzPM4vwtsXvhUel5Q-2yULK6k'
           />
-        
+       
           <meta
             name='facebook-domain-verification'
             content='du918bycikmo1jw78wcl9ih6ziphd7'
           />
           <meta
             name='dailymotion-domain-verification'
-            content='dmlp2t3912gbq4occ'
+            content='dm0x7o2qx13altq75'
           />
           <meta name='monetag' content='98a412cb5612b9188cd76b9744304b6c' />
 
@@ -366,22 +366,7 @@ const HomePage = () => {
             dangerouslySetInnerHTML={{ __html: uwatchfreeSchema }}
           />
         
-          <Script
-            dangerouslySetInnerHTML={{
-              __html: `
-            (function (w, d, s, id) {
-              if (typeof (w.webpushr) !== 'undefined') return;
-              w.webpushr = w.webpushr |function () { (w.webpushr.q = w.webpushr.q |[]).push(arguments) };
-              var js, fjs = d.getElementsByTagName(s)[0];
-              js = d.createElement(s); js.id = id; js.async = 1;
-              js.src = "https://cdn.webpushr.com/app.min.js";
-              fjs.parentNode.appendChild(js);
-            }(window, document, 'script', 'webpushr-jssdk'));
-
-            webpushr('setup', { 'key': 'BIHpgrvLvdxGSRA7cHudMTBdr7EWGon3q4reCUGbDcm5uiM2CkypC83diBbYhTMaD8pY_5G0L817DCPB3UqY2CI' });
-          `
-            }}
-          />
+        
         </Head>
 
         <GoogleTranslate />

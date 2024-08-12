@@ -397,11 +397,9 @@ const HomePage = () => {
               textAlign: 'center'
             }}
           >
-            123Movies Online™ - Explore. Stream. Online. HD Movies & TV Series.
+            123Movies Online™ - Explore. Stream. Online.
           </h1>
-          <p className='px-0 bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-2xl hover:text-blue-800 font-bold mt-2'>
-            Explore. Stream. Online. 
-          </p>
+         
           <div
             className='shadow-lg flex items-center justify-center'
             role='navigation'

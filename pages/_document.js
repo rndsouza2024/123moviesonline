@@ -1,11 +1,12 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document'
 
+
 class MyDocument extends Document {
-  render() {
+  render () {
     return (
       <Html lang='en'>
         <Head>
-          <link
+        <link
             rel='sitemap'
             type='application/xml'
             title='Sitemap'
@@ -47,13 +48,10 @@ class MyDocument extends Document {
             crossorigin='anonymous'
             referrerPolicy='no-referrer'
           />
-          {/* This is where the languagesSchema will be injected if it's the index page */}
-          <script
-            id='languages-schema'
-            type='application/ld+json'
-            dangerouslySetInnerHTML={{ __html: '' }} // Default to empty
-          />
+          
+        
         </Head>
+
         <body>
           <Main />
           <NextScript />
@@ -62,7 +60,7 @@ class MyDocument extends Document {
               __html: `
             (function (w, d, s, id) {
               if (typeof (w.webpushr) !== 'undefined') return;
-              w.webpushr = w.webpushr || function () { (w.webpushr.q = w.webpushr.q || []).push(arguments) };
+              w.webpushr = w.webpushr |function () { (w.webpushr.q = w.webpushr.q |[]).push(arguments) };
               var js, fjs = d.getElementsByTagName(s)[0];
               js = d.createElement(s); js.id = id; js.async = 1;
               js.src = "https://cdn.webpushr.com/app.min.js";

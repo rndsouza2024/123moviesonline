@@ -397,7 +397,7 @@ const HomePage = () => {
               textAlign: 'center'
             }}
           >
-            Welcome to 123Movies Online™
+            123Movies Online™ - Explore. Stream. Online. HD Movies & TV Series.
           </h1>
           <p className='px-0 bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-2xl hover:text-blue-800 font-bold mt-2'>
             Explore. Stream. Online. 

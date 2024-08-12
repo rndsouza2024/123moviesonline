@@ -12,13 +12,13 @@ import Head from 'next/head'
 import Image from 'next/image'
 import Script from 'next/script'
 
-const MoviePage = ({ tvshows }) => {
+const TvshowPage = ({ tvshow }) => {
   
   const router = useRouter(); // Initialize the router
   const sections = [
     // { title: 'Latest Trailer', items: trailers },
     // { title: 'Latest Movies.', items: movies }
-    { title: 'Latest TV Series.', items: tvshows }
+    { title: 'Latest TV Series.', items: tvshow }
     // { title: 'Adult Content.', items: adults }
   ]
 
@@ -361,52 +361,8 @@ const MoviePage = ({ tvshows }) => {
           referrerPolicy='no-referrer'
         />
       </Head>
-      {/* <Script
-        dangerouslySetInnerHTML={{
-          __html: `
-            (function (w, d, s, id) {
-              if (typeof (w.webpushr) !== 'undefined') return;
-              w.webpushr = w.webpushr |function () { (w.webpushr.q = w.webpushr.q |[]).push(arguments) };
-              var js, fjs = d.getElementsByTagName(s)[0];
-              js = d.createElement(s); js.id = id; js.async = 1;
-              js.src = "https://cdn.webpushr.com/app.min.js";
-              fjs.parentNode.appendChild(js);
-            }(window, document, 'script', 'webpushr-jssdk'));
-
-            webpushr('setup', { 'key': 'BIHpgrvLvdxGSRA7cHudMTBdr7EWGon3q4reCUGbDcm5uiM2CkypC83diBbYhTMaD8pY_5G0L817DCPB3UqY2CI' });
-          `
-        }}
-      /> */}
-
       <GoogleTranslate />
-      {/* <h1
-        className='badge bg-gradient-to-r from-pink-500 to-amber-500 font-bold py-3 px-6 rounded-xl shadow-lg hover:from-amber-600 hover:to-pink-600 transition duration-300'
-        style={{
-          justifyContent: 'center',
-          alignItems: 'center',
-          padding: '10px',
-          fontSize: '25px',
-          fontFamily: 'Poppins, sans-serif',
-          fontWeight: 'bold',
-          textAlign: 'center',
-          marginBottom: '15px'
-        }}
-      >
-        123Movies Online™ - Movies Section.
-      </h1> */}
-      {/* <div
-        className={`w-full`}
-        style={{
-          display: 'flex',
-          flexDirection: 'column',
-          justifyContent: 'center',
-          alignItems: 'center',
-          fontFamily: 'Poppins, sans-serif',
-          fontWeight: 500,
-          textAlign: 'center',
-          backgroundColor: '#0e0e0e'
-        }}
-      > */}
+   
         <h1
           className='text-black bg-gradient-to-r from-pink-500 to-amber-500 font-bold py-3 px-6 rounded-lg shadow-lg hover:from-amber-600 hover:to-pink-600 transition duration-300 text-3xl'
           style={{
@@ -513,24 +469,7 @@ const MoviePage = ({ tvshows }) => {
           <i className='fab fa-telegram text-blue-600 hover:text-gray-600 ml-2 w-12 h-12 animate-pulse '></i>
         </span>
       </a>
-      {/* <div className="flex justify-center my-4">
-      {[ 2, 3].map((page, index) => (
-        <Link key={index} href={`/tvshow/page${page}`} passHref>
-          <button
-            className={`px-4 py-2 border rounded mx-2 my-1 ${
-              index === 0
-                ? 'bg-red-500 text-white hover:bg-green-500'
-                : router.pathname === `/tvshow/page${page}`
-                ? 'bg-red-500 text-white'
-                : 'bg-gray-200 hover:bg-green-500 hover:text-white'
-            }`}
-          >
-            PAGE {page}
-          </button>
-        </Link>
-      ))}
-    </div> */}
-     <div className="flex flex-wrap justify-center my-4 gap-2">
+      <div className="flex flex-wrap justify-center my-4 gap-2">
       {/* TV Show Home button */}
       <Link href="/tvshow" passHref>
         <button
@@ -559,6 +498,7 @@ const MoviePage = ({ tvshows }) => {
         </Link>
       ))}
     </div>
+
       {sections.map((section, index) => (
         <div
           key={index}
@@ -662,29 +602,7 @@ const MoviePage = ({ tvshows }) => {
                           fontSize: '16px'
                         }}
                       >
-                       {' '}
-                        Total Episodes: {' '}
-                      </strong>{' '}
-                      <span className={styles.movieDescription}>
-                      <h2
-                        style={{
-                          fontFamily: 'Poppins, sans-serif',
-                          textShadow: '1px 1px 1px #000',
-                          fontWeight: 'bold',
-                          fontSize: '16px'
-                        }}
-                      >     {item.episode || 'Default Description'}
-                         </h2>
-                      </span>
-                      <strong
-                        style={{
-                          fontFamily: 'Poppins, sans-serif',
-                          textShadow: '1px 1px 1px #000',
-                          fontWeight: 'bold',
-                          fontSize: '16px'
-                        }}
-                      > 
-                         {' '}
+                        {' '}
                         Synopsis:{' '}
                       </strong>{' '}
                       <span className={styles.movieDescription}>
@@ -712,18 +630,18 @@ export async function getStaticProps () {
   }
 
   // const movies = readFile('movies.json')
-  const tvshows = readFile('tvshow.json')
+  const tvshow = readFile('tvshow.json')
   // const trailers = readFile('trailers.json')
   // const adults = readFile('adult.json')
 
   return {
     props: {
       // movies
-      tvshows
+      tvshow
       // trailers,
       // adults
     }
   }
 }
 
-export default MoviePage
+export default TvshowPage

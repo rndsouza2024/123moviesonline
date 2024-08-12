@@ -526,9 +526,18 @@ const tvshowDetail = ({ tvshow }) => {
       'مشاهدة Bad Cop الموسم 1 (2024) | جِي دبليو إف™'
     ],
     inLanguage: [
-      'es', 'fr', 'de', 'zh-Hans', 'ja', 'ko', 'pt', 'it', 'ru', 'ar'
+      'es',
+      'fr',
+      'de',
+      'zh-Hans',
+      'ja',
+      'ko',
+      'pt',
+      'it',
+      'ru',
+      'ar'
     ]
-});
+  })
 
   return (
     <div>
@@ -548,12 +557,18 @@ const tvshowDetail = ({ tvshow }) => {
         <meta property='og:video:width' content='1280px' />
         <meta property='og:video:height' content='720px' />
         <meta property='og:video:type' content='video/mp4' />
-        <meta property='og:title' content={`${tvshow && tvshow.name} - 123Movies™`} />
+        <meta
+          property='og:title'
+          content={`${tvshow && tvshow.name} - 123Movies™`}
+        />
         <meta
           property='og:description'
           content='Stream HD movies and TV series for free on 123Movies Online. Explore, stream, and download full-length movies and shows in HD quality without registration.'
         />
-
+        <meta
+          name='description'
+          content={`${tvshow.title} available on 123Movies™. Enjoy free streaming of full-length movies and TV series online with no registration required.`}
+        />
         <meta property='og:url' content={`${tvshow && tvshow.siteurl}`} />
         <meta name='keywords' content={`${tvshow && tvshow.keywords}`} />
         <meta property='og:site_name' content='123Movies Online' />
@@ -622,11 +637,10 @@ const tvshowDetail = ({ tvshow }) => {
           type='application/ld+json'
           dangerouslySetInnerHTML={{ __html: breadcrumbSchema }}
         />
-         <script
-            type='application/ld+json'
-            dangerouslySetInnerHTML={{ __html: languagesSchema }}
-          />
-        
+        <script
+          type='application/ld+json'
+          dangerouslySetInnerHTML={{ __html: languagesSchema }}
+        />
       </Head>
       {/* <Script
         dangerouslySetInnerHTML={{
@@ -644,7 +658,7 @@ const tvshowDetail = ({ tvshow }) => {
           `
         }}
       /> */}
-      
+
       <SocialSharing />
 
       <div
@@ -661,7 +675,7 @@ const tvshowDetail = ({ tvshow }) => {
           backgroundColor: '#0e0e0e'
         }}
       >
-           <GoogleTranslate />
+        <GoogleTranslate />
         <h1
           className='text-black bg-gradient-to-r from-pink-500 to-amber-500 font-bold py-3 px-6 rounded-lg shadow-lg hover:from-amber-600 hover:to-pink-600 transition duration-300 text-3xl'
           style={{
@@ -1017,64 +1031,66 @@ const tvshowDetail = ({ tvshow }) => {
                 Select Player To Watch.
               </h2>
               <div className='flex flex-col items-center mt-4 gap-2'>
-              <div className='flex flex-wrap justify-center mb-4 bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text  hover:text-blue-800 text-bg font-semibold mt-2'>
-              {currentVideoSources.map((source, index) => (
-                  <button
-                    key={index}
-                    onClick={() => handlePlayerSelect(index)}
-                   className={`px-4 py-2 border rounded mx-2 my-1 ${
-                 currentPlayerIndex === index
-                   ? 'bg-red-500 text-white'
-                   : 'bg-gray-200'
-               } hover:bg-green-500 hover:text-white`}
-                  >
-                    Player {index + 1}
-                  </button>
-                ))}
-              </div> 
+                <div className='flex flex-wrap justify-center mb-4 bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text  hover:text-blue-800 text-bg font-semibold mt-2'>
+                  {currentVideoSources.map((source, index) => (
+                    <button
+                      key={index}
+                      onClick={() => handlePlayerSelect(index)}
+                      className={`px-4 py-2 border rounded mx-2 my-1 ${
+                        currentPlayerIndex === index
+                          ? 'bg-red-500 text-white'
+                          : 'bg-gray-200'
+                      } hover:bg-green-500 hover:text-white`}
+                    >
+                      Player {index + 1}
+                    </button>
+                  ))}
+                </div>
               </div>
               <div className='flex flex-col items-center justify-center'>
-  {/* {trailers.mp3player && (
+                {/* {trailers.mp3player && (
     <MP3Player mp3Url={trailers.mp3player} />
   )} */}
-  {tvshow.linkurl && (
-    <Link href={tvshow.linkurl}>
-      <div
-        className={`px-4 py-2 border rounded mx-2 my-1 ${
-          tvshow.linkurl ? 'bg-red-500 text-white' : 'bg-gray-200'
-        }  hover:bg-green-700 hover:text-white`}
-        style={{
-          fontFamily: 'Poppins, sans-serif',
-          marginTop: '20px',
-          filter: 'contrast(1.2) saturate(1.3) brightness(1.1) hue-rotate(15deg)'
-        }}
-      >
-        Click to Watch Season 2
-      </div>
-    </Link>
-  )}
-</div>
-<div className='flex flex-col items-center justify-center'>
-  {/* {trailers.mp3player && (
+                {tvshow.linkurl && (
+                  <Link href={tvshow.linkurl}>
+                    <div
+                      className={`px-4 py-2 border rounded mx-2 my-1 ${
+                        tvshow.linkurl ? 'bg-red-500 text-white' : 'bg-gray-200'
+                      }  hover:bg-green-700 hover:text-white`}
+                      style={{
+                        fontFamily: 'Poppins, sans-serif',
+                        marginTop: '20px',
+                        filter:
+                          'contrast(1.2) saturate(1.3) brightness(1.1) hue-rotate(15deg)'
+                      }}
+                    >
+                      Click to Watch Season 2
+                    </div>
+                  </Link>
+                )}
+              </div>
+              <div className='flex flex-col items-center justify-center'>
+                {/* {trailers.mp3player && (
     <MP3Player mp3Url={trailers.mp3player} />
   )} */}
-  {tvshow.linkurl && (
-    <Link href={tvshow.linkurl2}>
-      <div
-        className={`px-4 py-2 border rounded mx-2 my-1 ${
-          tvshow.linkurl ? 'bg-red-500 text-white' : 'bg-gray-200'
-        }  hover:bg-green-700 hover:text-white`}
-        style={{
-          fontFamily: 'Poppins, sans-serif',
-          marginTop: '20px',
-          filter: 'contrast(1.2) saturate(1.3) brightness(1.1) hue-rotate(15deg)'
-        }}
-      >
-        Click to Watch Season 1
-      </div>
-    </Link>
-  )}
-</div>
+                {tvshow.linkurl && (
+                  <Link href={tvshow.linkurl2}>
+                    <div
+                      className={`px-4 py-2 border rounded mx-2 my-1 ${
+                        tvshow.linkurl ? 'bg-red-500 text-white' : 'bg-gray-200'
+                      }  hover:bg-green-700 hover:text-white`}
+                      style={{
+                        fontFamily: 'Poppins, sans-serif',
+                        marginTop: '20px',
+                        filter:
+                          'contrast(1.2) saturate(1.3) brightness(1.1) hue-rotate(15deg)'
+                      }}
+                    >
+                      Click to Watch Season 1
+                    </div>
+                  </Link>
+                )}
+              </div>
               <h2
                 className='px-0 bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-3xl hover:text-blue-800 font-bold mt-2'
                 style={{ fontFamily: 'Poppins, sans-serif' }}
@@ -1324,10 +1340,10 @@ const tvshowDetail = ({ tvshow }) => {
           </div>
           <div className='sidebar'>
             <h2
-            className='bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-3xl font-bold mt-2'
-            style={{
-              marginTop: '15px',
-            }}
+              className='bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-3xl font-bold mt-2'
+              style={{
+                marginTop: '15px'
+              }}
             >
               MOST POPULAR TV Series
             </h2>
@@ -1354,7 +1370,7 @@ const tvshowDetail = ({ tvshow }) => {
                               'contrast(1.1) saturate(1.1) brightness(1.0) hue-rotate(0deg)'
                           }}
                         />
-                       <h2 className='bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-xl font-semibold mt-2'>
+                        <h2 className='bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-xl font-semibold mt-2'>
                           {tvshow.name}
                         </h2>
                         <h3 className='bg-gradient-to-r from-pink-700 to-blue-700 bg-clip-text text-transparent text-bg font-semibold mt-2'>

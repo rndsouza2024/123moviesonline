@@ -247,6 +247,37 @@ const HomePage = () => {
     ]
   })
 
+  const languagesSchema = JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    url: 'https://123moviesonline.vercel.app/',
+    name: '123Movies Online™ - Explore. Stream. Online.',
+    alternateName: [
+      '123Movies Online™ - Explorar. Transmitir. En línea.',
+      '123Movies Online™ - Explorer. Diffuser. En ligne.',
+      '123Movies Online™ - Entdecken. Streamen. Online.',
+      '123Movies Online™ - 探索。串流。在线。',
+      '123Movies Online™ - 探索する。ストリーミング。オンライン。',
+      '123Movies Online™ - 탐험하다. 스트리밍. 온라인.',
+      '123Movies Online™ - Explorar. Transmitir. Online.',
+      '123Movies Online™ - Esplora. Streaming. Online.',
+      '123Movies Online™ - Исследовать. Поток. Онлайн.',
+      '123Movies Online™ - استكشاف. بث. اون لاين.'
+    ],
+    inLanguage: [
+      'es',
+      'fr',
+      'de',
+      'zh-Hans',
+      'ja',
+      'ko',
+      'pt',
+      'it',
+      'ru',
+      'ar'
+    ]
+  })
+
   return (
     <div className='w-full' style={{ backgroundColor: '#000' }}>
       <div className='container'>
@@ -370,6 +401,10 @@ const HomePage = () => {
             type='application/ld+json'
             dangerouslySetInnerHTML={{ __html: uwatchfreeSchema }}
           />
+           <script
+          type='application/ld+json'
+          dangerouslySetInnerHTML={{ __html: languagesSchema }}
+        />
         </Head>
 
         <GoogleTranslate />

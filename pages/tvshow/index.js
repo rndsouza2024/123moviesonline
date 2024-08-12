@@ -269,9 +269,9 @@ const TvshowPage = ({ tvshow }) => {
           content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1'
         />
         <meta
-          name='keywords'
-          content='watch free movies, free movies online, download movies, full movies, HD movies, movie streaming, stream TV series, watch TV shows free'
-        />
+            name='keywords'
+            content='123movies, 123moviesHUB, 123moviesFREE, 123movies-hd, 123moviesx, 123movies-org, 123movies-com, 123movies official, 123movies, 123movies free, free movies, movies online, watch movies online, watch movies free, 123movies, gomovies, putlocker, putlockers, soap2day'
+          />
         <meta
           name='description'
           content='Stream HD movies and TV series for free on 123Movies Online. Explore, stream, and download full-length movies and shows in HD quality without registration.'

@@ -437,10 +437,10 @@ const HomePage = () => {
           >
             123Movies Online™ - Explore. Stream. Online.
           </h1>
-          <h2 className='px-0 bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-2xl hover:text-blue-800 font-bold mt-2'>
+          <h2 className='px-0 bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-2xl  font-bold mt-2'>
             Discover the Best Movies and TV Shows to Stream on 123Movies Online™
           </h2>
-          <p className='text-lg bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent  hover:text-blue-800 mt-4'>
+          <p className='text-lg bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent  mt-4'>
             Welcome to <strong>123Movies Online™</strong>, your premier
             destination for streaming the latest and most popular movies and TV
             shows. Our platform offers an extensive collection of entertainment
@@ -449,7 +449,7 @@ const HomePage = () => {
             thrillers, heartwarming dramas, or laugh-out-loud comedies,{' '}
             <strong>123Movies Online™</strong> has something for everyone.
           </p>
-          <p className='text-lg bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent  hover:text-blue-800 mt-4'>
+          <p className='text-lg bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent mt-4'>
             With a user-friendly interface and high-quality streaming,{' '}
             <strong>123Movies Online™</strong> makes it easy to find and enjoy
             your favorite content. Our library is regularly updated with the
@@ -458,7 +458,7 @@ const HomePage = () => {
             and enjoy an immersive viewing experience from the comfort of your
             home.
           </p>
-          <p className='text-lg bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent  hover:text-blue-800 mt-4'>
+          <p className='text-lg bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent mt-4'>
             At <strong>123Movies Online™</strong>, we are committed to providing
             a top-notch streaming service that meets all your entertainment
             needs. Join us today and explore the vast world of movies and TV

@@ -720,7 +720,7 @@ const moviesDetail = ({ movie }) => {
         >
           {movie.title}
         </h1>
-        <h2 className='px-0 text-yellow-500 text-2xl font-bold mt-2'>
+        <h2 className='px-0 bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-2xl hover:text-blue-800 font-bold mt-2'>
           {movie.title} Online and Experience Top-Tier Streaming
         </h2>
         <p className='text-lg text-yellow-500 mt-4'>

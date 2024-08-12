@@ -267,9 +267,9 @@ const MoviePage = ({ movies }) => {
           content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1'
         />
         <meta
-          name='keywords'
-          content='watch free movies, free movies online, download movies, full movies, HD movies, movie streaming, stream TV series, watch TV shows free'
-        />
+            name='keywords'
+            content='123movies, 123moviesHUB, 123moviesFREE, 123movies-hd, 123moviesx, 123movies-org, 123movies-com, 123movies official, 123movies, 123movies free, free movies, movies online, watch movies online, watch movies free, 123movies, gomovies, putlocker, putlockers, soap2day'
+          />
         <meta
           name='description'
           content='Stream HD movies and TV series for free on 123Movies Online. Explore, stream, and download full-length movies and shows in HD quality without registration.'
@@ -359,52 +359,9 @@ const MoviePage = ({ movies }) => {
           referrerPolicy='no-referrer'
         />
       </Head>
-      {/* <Script
-        dangerouslySetInnerHTML={{
-          __html: `
-            (function (w, d, s, id) {
-              if (typeof (w.webpushr) !== 'undefined') return;
-              w.webpushr = w.webpushr |function () { (w.webpushr.q = w.webpushr.q |[]).push(arguments) };
-              var js, fjs = d.getElementsByTagName(s)[0];
-              js = d.createElement(s); js.id = id; js.async = 1;
-              js.src = "https://cdn.webpushr.com/app.min.js";
-              fjs.parentNode.appendChild(js);
-            }(window, document, 'script', 'webpushr-jssdk'));
-
-            webpushr('setup', { 'key': 'BIHpgrvLvdxGSRA7cHudMTBdr7EWGon3q4reCUGbDcm5uiM2CkypC83diBbYhTMaD8pY_5G0L817DCPB3UqY2CI' });
-          `
-        }}
-      /> */}
-
+   
       <GoogleTranslate />
-      {/* <h1
-        className='badge bg-gradient-to-r from-pink-500 to-amber-500 font-bold py-3 px-6 rounded-xl shadow-lg hover:from-amber-600 hover:to-pink-600 transition duration-300'
-        style={{
-          justifyContent: 'center',
-          alignItems: 'center',
-          padding: '10px',
-          fontSize: '25px',
-          fontFamily: 'Poppins, sans-serif',
-          fontWeight: 'bold',
-          textAlign: 'center',
-          marginBottom: '15px'
-        }}
-      >
-        123Movies Online™ - Movies Section.
-      </h1> */}
-      {/* <div
-        className={`w-full`}
-        style={{
-          display: 'flex',
-          flexDirection: 'column',
-          justifyContent: 'center',
-          alignItems: 'center',
-          fontFamily: 'Poppins, sans-serif',
-          fontWeight: 500,
-          textAlign: 'center',
-          backgroundColor: '#0e0e0e'
-        }}
-      > */}
+   
         <h1
           className='text-black bg-gradient-to-r from-pink-500 to-amber-500 font-bold py-3 px-6 rounded-lg shadow-lg hover:from-amber-600 hover:to-pink-600 transition duration-300 text-3xl'
           style={{

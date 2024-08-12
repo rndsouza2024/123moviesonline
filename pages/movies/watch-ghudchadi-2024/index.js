@@ -7,6 +7,7 @@ import trailersData from '../../../public/trailers.json'
 import latestData from '../../../public/latest.json'
 import GoogleTranslate from '../../../components/GoogleTranslate'
 import SocialSharing from '../../../components/SocialSharing'
+import SearchComponent from '../../../components/SearchComponent'
 import { useEffect, useState, useRef } from 'react'
 import Pagination from '../../../components/Pagination'
 import NativeVideoAd from '../../../components/NativeVideoAd'
@@ -127,7 +128,6 @@ const moviesDetail = ({ movie }) => {
       {
         text: 'Ghudchadi - 2024',
         url: `https://www.imdb.com/title/${movie.videomovies}/`
-       
       }
     ]
 
@@ -187,7 +187,10 @@ const moviesDetail = ({ movie }) => {
 
   // Define video sources
   const videoSources = [
-    { name: 'Abyss.to', url: `https://short.ink/${movieVideoItem.id}?thumbnail=${movie.image1}` },
+    {
+      name: 'Abyss.to',
+      url: `https://short.ink/${movieVideoItem.id}?thumbnail=${movie.image1}`
+    },
     { name: 'Vidsrc.me', url: `https://vidsrc.me/embed/movie?imdb=${movieId}` },
     { name: 'Vidsrc.pro', url: `https://vidsrc.pro/embed/movie/${movieId}` },
     { name: 'Vidsrc.cc', url: `https://vidsrc.cc/v2/embed/movie/${movieId}` },
@@ -196,8 +199,7 @@ const moviesDetail = ({ movie }) => {
     {
       name: 'Multiembed.mov',
       url: `https://multiembed.mov/directstream.php?video_id=${movieId}`
-    },
-   
+    }
   ]
 
   // Handle player selection
@@ -540,7 +542,7 @@ const moviesDetail = ({ movie }) => {
   const languagesSchema = JSON.stringify({
     '@context': 'https://schema.org',
     '@type': 'WebPage',
-    url: 'https://123moviesonline.vercel.app/movies/watch-bhaiyya-ji-2024',
+    url: 'https://123moviesonline.vercel.app/movies/watch-ghudchadi-2024',
     name: 'Watch Movie Ghudchadi (2024) | 123Movies™',
     alternateName: [
       'Ver película Ghudchadi (2024) | 123Movies™',
@@ -553,12 +555,20 @@ const moviesDetail = ({ movie }) => {
       'Guarda il film Ghudchadi (2024) | 123Movies™',
       'Посмотреть фильм Ghudchadi (2024) | 123Movies™',
       'مشاهدة فيلم Ghudchadi (2024) | جي دبليو إف™'
-    ]
-   ,
+    ],
     inLanguage: [
-      'es', 'fr', 'de', 'zh-Hans', 'ja', 'ko', 'pt', 'it', 'ru', 'ar'
+      'es',
+      'fr',
+      'de',
+      'zh-Hans',
+      'ja',
+      'ko',
+      'pt',
+      'it',
+      'ru',
+      'ar'
     ]
-  });
+  })
 
   return (
     <div>
@@ -579,7 +589,10 @@ const moviesDetail = ({ movie }) => {
         <meta property='og:video:width' content='1280px' />
         <meta property='og:video:height' content='720px' />
         <meta property='og:video:type' content='video/mp4' />
-        <meta property='og:title' content={`${movie && movie.name} - 123Movies™`} />
+        <meta
+          property='og:title'
+          content={`${movie && movie.name} - 123Movies™`}
+        />
         <meta
           property='og:description'
           content='Stream HD movies and TV series for free on 123Movies Online. Explore, stream, and download full-length movies and shows in HD quality without registration.'
@@ -602,18 +615,15 @@ const moviesDetail = ({ movie }) => {
         <meta property='og:image:height' content='630' />
         <meta property='og:image:type' content='image/webp' />
         <meta name='twitter:card' content='summary_large_image' />
-          <meta
-            name='twitter:title'
-            content='123Movies Online™ - Explore. Discover. Online. '
-          />
-          <meta
-            name='twitter:description'
-            content='Stream HD movies and TV series for free on 123Movies Online. Explore, stream, and download full-length movies and shows in HD quality without registration.'
-          />
-          <meta
-            name='twitter:image'
-            content={`${movie && movie.image1}`}
-          />
+        <meta
+          name='twitter:title'
+          content='123Movies Online™ - Explore. Discover. Online. '
+        />
+        <meta
+          name='twitter:description'
+          content='Stream HD movies and TV series for free on 123Movies Online. Explore, stream, and download full-length movies and shows in HD quality without registration.'
+        />
+        <meta name='twitter:image' content={`${movie && movie.image1}`} />
         <meta name='twitter:label1' content='Est. reading time' />
         <meta name='twitter:data1' content='1 minute' />
         <meta
@@ -655,11 +665,10 @@ const moviesDetail = ({ movie }) => {
           type='application/ld+json'
           dangerouslySetInnerHTML={{ __html: breadcrumbSchema }}
         />
-         <script
-            type='application/ld+json'
-            dangerouslySetInnerHTML={{ __html: languagesSchema }}
-          />
-        
+        <script
+          type='application/ld+json'
+          dangerouslySetInnerHTML={{ __html: languagesSchema }}
+        />
       </Head>
       {/* <Script
         dangerouslySetInnerHTML={{
@@ -677,7 +686,7 @@ const moviesDetail = ({ movie }) => {
           `
         }}
       /> */}
-      
+
       <SocialSharing />
       {/* <Script src='../../propler/ads.js' defer /> */}
       <Script src='../../propler/ads2.js' defer />
@@ -696,7 +705,7 @@ const moviesDetail = ({ movie }) => {
           backgroundColor: '#0e0e0e'
         }}
       >
-           <GoogleTranslate />
+        <GoogleTranslate />
         <h1
           className='text-black bg-gradient-to-r from-pink-500 to-amber-500 font-bold py-3 px-6 rounded-lg shadow-lg hover:from-amber-600 hover:to-pink-600 transition duration-300 text-3xl'
           style={{
@@ -707,7 +716,42 @@ const moviesDetail = ({ movie }) => {
         >
           {movie.title}
         </h1>
+        <h2 className='px-0 text-yellow-500 text-2xl font-bold mt-2'>
+          {movie.title} Online and Experience Top-Tier Streaming
+        </h2>
+        <p className='text-lg text-yellow-500 mt-4'>
+          Dive into the world of cinema with <strong>{movie.title}</strong>,
+          available to stream right here. At <strong>123Movies Online™</strong>,
+          we bring you the best in entertainment, offering an extensive library
+          of movies and TV shows, including the latest blockbusters like{' '}
+          <strong>{movie.title}</strong>. Whether you're a fan of action, drama,
+          comedy, or any other genre, you'll find exactly what you're looking
+          for.
+        </p>
+        <p className='text-lg text-yellow-500 mt-4'>
+          Streaming <strong>{movie.title}</strong> on{' '}
+          <strong>123Movies Online™</strong> guarantees a seamless viewing
+          experience with high-definition quality and uninterrupted playback.
+          Our platform is designed to make it easy for you to discover and enjoy
+          your favorite films. With regularly updated content, you’ll always
+          have access to the newest releases, ensuring you can watch{' '}
+          <strong>{movie.title}</strong> and other top titles as soon as they’re
+          available.
+        </p>
+        <p className='text-lg text-yellow-500 mt-4'>
+          Whether you're revisiting a classic or catching a new release,{' '}
+          <strong>{movie.title}</strong> on <strong>123Movies Online™</strong>{' '}
+          is the perfect way to enjoy your movie night. Join the countless users
+          who trust us for their streaming needs and start watching{' '}
+          <strong>{movie.title}</strong> online today. At{' '}
+          <strong>123Movies Online™</strong>, your entertainment is just a click
+          away.
+        </p>
+        <span className='px-0 bg-clip-text text-sm text-black font-bold mt-2'>
+          <SearchComponent />
+        </span>
       </div>
+
       <div
         className={`w-full`}
         style={{
@@ -805,7 +849,7 @@ const moviesDetail = ({ movie }) => {
             <i className='fab fa-telegram text-blue-600 hover:text-gray-600 ml-2 w-12 h-12 animate-pulse '></i>
           </span>
         </a>
-        <NativeVideoAd id="ADS03" />
+        <NativeVideoAd id='ADS03' />
         <Pagination
           currentPage={currentPage}
           totalPages={totalPages}
@@ -996,7 +1040,6 @@ const moviesDetail = ({ movie }) => {
                 }}
                 className='rounded-xl mr-8 flex flex-col border-1 border-blue-600 bg-black p-2 '
               >
-               
                 {isMovie && (
                   <button
                     onClick={handleNextEpisode}
@@ -1079,23 +1122,23 @@ const moviesDetail = ({ movie }) => {
               >
                 Select Player To Watch.
               </p>
-             
-        <div className='flex flex-wrap justify-center mb-4 bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text  hover:text-blue-800 text-bg font-semibold mt-2'>
+
+              <div className='flex flex-wrap justify-center mb-4 bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text  hover:text-blue-800 text-bg font-semibold mt-2'>
                 {videoSources.map((source, index) => (
-          <button
-            key={index}
-            onClick={() => handlePlayerSelect(index)}
-           className={`px-4 py-2 border rounded mx-2 my-1 ${
-                 currentPlayerIndex === index
-                   ? 'bg-red-500 text-white'
-                   : 'bg-gray-200'
-               } hover:bg-green-500 hover:text-white`}
-          >
-            Player {index + 1}
-          </button>
-        ))}
-      </div>
-              
+                  <button
+                    key={index}
+                    onClick={() => handlePlayerSelect(index)}
+                    className={`px-4 py-2 border rounded mx-2 my-1 ${
+                      currentPlayerIndex === index
+                        ? 'bg-red-500 text-white'
+                        : 'bg-gray-200'
+                    } hover:bg-green-500 hover:text-white`}
+                  >
+                    Player {index + 1}
+                  </button>
+                ))}
+              </div>
+
               <h2
                 className='px-0 bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-3xl hover:text-blue-800 font-bold mt-2'
                 style={{ fontFamily: 'Poppins, sans-serif' }}
@@ -1158,7 +1201,7 @@ const moviesDetail = ({ movie }) => {
                           </p>
                         ) : (
                           <p
-                             className='px-0 bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-3xl hover:text-blue-800 font-bold mt-2  mb-4'
+                            className='px-0 bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-3xl hover:text-blue-800 font-bold mt-2  mb-4'
                             style={{ marginTop: '50px' }}
                           >
                             Your download link is ready.
@@ -1350,7 +1393,7 @@ const moviesDetail = ({ movie }) => {
             <h2
               className='bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-3xl font-bold mt-2'
               style={{
-                marginTop: '15px',
+                marginTop: '15px'
               }}
             >
               MOST POPULAR MOVIES
@@ -1378,7 +1421,7 @@ const moviesDetail = ({ movie }) => {
                               'contrast(1.1) saturate(1.1) brightness(1.0) hue-rotate(0deg)'
                           }}
                         />
-                     <h2 className='bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-xl font-semibold mt-2'>
+                        <h2 className='bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-xl font-semibold mt-2'>
                           {movies.name}
                         </h2>
                         <h3 className='bg-gradient-to-r from-pink-700 to-blue-700 bg-clip-text text-transparent text-bg font-semibold mt-2'>
@@ -1521,7 +1564,6 @@ const moviesDetail = ({ movie }) => {
             }
           }
         `}</style>
-
       </div>
     </div>
   )

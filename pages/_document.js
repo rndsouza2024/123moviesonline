@@ -42,10 +42,10 @@ class MyDocument extends Document {
             name='keywords'
             content='123movies, 123moviesHUB, 123moviesFREE, 123movies-hd, 123moviesx, 123movies-org, 123movies-com, 123movies official, 123movies, 123movies free, free movies, movies online, watch movies online, watch movies free, 123movies, gomovies, putlocker, putlockers, soap2day'
           />
-          <meta
+          {/* <meta
             name='description'
             content='Stream HD movies and TV series for free on 123Movies Online. Explore, stream, and download full-length movies and shows in HD quality without registration.'
-          />
+          /> */}
           {/* <link rel='canonical' href='https://123moviesonline.vercel.app/' /> */}
           <meta property='og:locale' content='en_US' />
           <meta property='og:type' content='video.movie' />

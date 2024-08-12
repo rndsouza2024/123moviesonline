@@ -46,7 +46,7 @@ class MyDocument extends Document {
             name='description'
             content='Stream HD movies and TV series for free on 123Movies Online. Explore, stream, and download full-length movies and shows in HD quality without registration.'
           />
-          <link rel='canonical' href='https://123moviesonline.vercel.app/' />
+          {/* <link rel='canonical' href='https://123moviesonline.vercel.app/' /> */}
           <meta property='og:locale' content='en_US' />
           <meta property='og:type' content='video.movie' />
           <meta property='og:type' content='website' />

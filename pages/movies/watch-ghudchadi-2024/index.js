@@ -597,6 +597,10 @@ const moviesDetail = ({ movie }) => {
           property='og:description'
           content='Stream HD movies and TV series for free on 123Movies Online. Explore, stream, and download full-length movies and shows in HD quality without registration.'
         />
+        <meta
+          name='description'
+          content={`${movie.title} available on 123Movies™. Enjoy free streaming of HD movies with no registration required. Explore full-length movies and TV series online.`}
+        />
         <meta property='description' content={`${movie && movie.synopsis}`} />
         <meta property='og:url' content={`${movie && movie.siteurl}`} />
         <meta name='keywords' content={`${movie && movie.keywords}`} />

@@ -94,7 +94,8 @@ const HomePage = () => {
         '@type': 'SearchAction',
         target: {
           '@type': 'EntryPoint',
-          urlTemplate: 'https://123moviesonline.vercel.app/search?q={search_term_string}'
+          urlTemplate:
+            'https://123moviesonline.vercel.app/search?q={search_term_string}'
         },
         'query-input': 'required name=search_term_string'
       }
@@ -172,7 +173,8 @@ const HomePage = () => {
             dateModified: '2024-01-13T13:13:00+00:00',
             author: {
               '@type': 'Person',
-              '@id': 'https://123moviesonline.vercel.app/author/123moviesonline/',
+              '@id':
+                'https://123moviesonline.vercel.app/author/123moviesonline/',
               name: 'Dr Trailer',
               url: 'https://123moviesonline.vercel.app/author/123moviesonline/',
               image: {
@@ -199,7 +201,8 @@ const HomePage = () => {
             dateModified: '2024-01-13T13:13:00+00:00',
             author: {
               '@type': 'Person',
-              '@id': 'https://123moviesonline.vercel.app/author/123moviesonline/',
+              '@id':
+                'https://123moviesonline.vercel.app/author/123moviesonline/',
               name: 'Dr Trailer',
               url: 'https://123moviesonline.vercel.app/author/123moviesonline/',
               image: {
@@ -226,7 +229,8 @@ const HomePage = () => {
             dateModified: '2024-01-13T13:13:00+00:00',
             author: {
               '@type': 'Person',
-              '@id': 'https://123moviesonline.vercel.app/author/123moviesonline/',
+              '@id':
+                'https://123moviesonline.vercel.app/author/123moviesonline/',
               name: 'Dr Trailer',
               url: 'https://123moviesonline.vercel.app/author/123moviesonline/',
               image: {
@@ -247,9 +251,7 @@ const HomePage = () => {
     <div className='w-full' style={{ backgroundColor: '#000' }}>
       <div className='container'>
         <Head>
-          <title>
-          123Movies Online™ - Explore. Stream. Online.
-          </title>
+          <title>123Movies Online™ - Explore. Stream. Online.</title>
 
           <link
             rel='sitemap'
@@ -303,7 +305,10 @@ const HomePage = () => {
             property='og:title'
             content='123Movies Online™ - Explore. Stream. Online. '
           />
-          <meta property='og:url' content='https://123moviesonline.vercel.app/' />
+          <meta
+            property='og:url'
+            content='https://123moviesonline.vercel.app/'
+          />
           <meta
             property='og:site_name'
             content='123Movies Online™ - Explore. Stream. Online. '
@@ -346,7 +351,7 @@ const HomePage = () => {
             name='google-site-verification'
             content='4gdbnCGat0T4Ow3Y_RYzPM4vwtsXvhUel5Q-2yULK6k'
           />
-       
+
           <meta
             name='facebook-domain-verification'
             content='du918bycikmo1jw78wcl9ih6ziphd7'
@@ -365,8 +370,6 @@ const HomePage = () => {
             type='application/ld+json'
             dangerouslySetInnerHTML={{ __html: uwatchfreeSchema }}
           />
-        
-        
         </Head>
 
         <GoogleTranslate />
@@ -399,14 +402,34 @@ const HomePage = () => {
           >
             123Movies Online™ - Explore. Stream. Online.
           </h1>
-         
+          <h2 className='px-0 bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-2xl hover:text-blue-800 font-bold mt-2'>
+            Discover the Best Movies and TV Shows to Stream on 123Movies Online™
+          </h2>
+          <p className='text-lg text-gray-800 mt-4'>
+            Welcome to 123Movies Online™, your ultimate destination for
+            streaming the latest and greatest movies and TV shows. Our platform
+            offers a vast selection of films and series across various genres,
+            ensuring that there's something for everyone. Whether you're in the
+            mood for action, romance, comedy, or documentaries, 123Movies
+            Online™ has got you covered. Enjoy seamless streaming with our
+            user-friendly interface, allowing you to explore and discover new
+            content with ease. Our extensive library is updated regularly, so
+            you can stay up to date with the latest releases. From blockbuster
+            hits to indie gems, 123Movies Online™ is your go-to source for all
+            your entertainment needs. Stream online from the comfort of your
+            home and experience high-quality video playback with minimal
+            buffering. Don't miss out on the excitement—start your streaming
+            journey today with 123Movies Online™ and dive into a world of
+            endless entertainment.
+          </p>
           <div
             className='shadow-lg flex items-center justify-center'
             role='navigation'
           >
             <ul
               id='menu-header-menu'
-              className='menu flex flex-wrap justify-center'  style={{ marginTop: '25px' }}
+              className='menu flex flex-wrap justify-center'
+              style={{ marginTop: '25px' }}
             >
               <button className='border border-pink-600 p-2 m-1 hover:bg-orange-100'>
                 <li id='menu-item-35' className='menu-home active'>
@@ -421,9 +444,12 @@ const HomePage = () => {
 
               <button className='border border-pink-600 p-2 m-1 hover:bg-orange-100'>
                 <li id='menu-item-284913' className='menu-softwarecategories'>
-                  <a href='../trailers/' className='text-black hover:px-0 text-bg font-black bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-xl'>
-                      Trailers<span className='p'></span>
-                   </a>
+                  <a
+                    href='../trailers/'
+                    className='text-black hover:px-0 text-bg font-black bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-xl'
+                  >
+                    Trailers<span className='p'></span>
+                  </a>
                 </li>
               </button>
               <button className='border border-pink-600 p-2 m-1 hover:bg-orange-100'>
@@ -484,11 +510,10 @@ const HomePage = () => {
           </a>
         </div>
 
-       
         <span className='px-0 bg-clip-text text-sm text-black font-bold mt-2'>
           <SearchComponent />
         </span>
-    
+
         <div className='container'>
           <div className='flex-container'>
             <div className='category-container'>
@@ -503,7 +528,7 @@ const HomePage = () => {
                           marginBottom: '20px',
                           // boxShadow: '0 0 10px 0 #fff',
                           filter:
-                                'contrast(1.1) saturate(1.3) brightness(1.2) hue-rotate(0deg)'
+                            'contrast(1.1) saturate(1.3) brightness(1.2) hue-rotate(0deg)'
                         }}
                       >
                         {item.name}
@@ -567,7 +592,7 @@ const HomePage = () => {
                           marginBottom: '20px',
                           // boxShadow: '0 0 10px 0 #fff',
                           filter:
-                                'contrast(1.1) saturate(1.3) brightness(1.2) hue-rotate(0deg)'
+                            'contrast(1.1) saturate(1.3) brightness(1.2) hue-rotate(0deg)'
                         }}
                       >
                         {item.name}
@@ -629,7 +654,7 @@ const HomePage = () => {
                           marginBottom: '20px',
                           // boxShadow: '0 0 10px 0 #fff',
                           filter:
-                                'contrast(1.1) saturate(1.3) brightness(1.2) hue-rotate(0deg)'
+                            'contrast(1.1) saturate(1.3) brightness(1.2) hue-rotate(0deg)'
                         }}
                       >
                         {item.name}
@@ -691,7 +716,7 @@ const HomePage = () => {
                           marginBottom: '20px',
                           // boxShadow: '0 0 10px 0 #fff',
                           filter:
-                                'contrast(1.1) saturate(1.3) brightness(1.2) hue-rotate(0deg)'
+                            'contrast(1.1) saturate(1.3) brightness(1.2) hue-rotate(0deg)'
                         }}
                       >
                         {item.name}
@@ -749,7 +774,7 @@ const HomePage = () => {
               <h2
                 className='bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-3xl font-bold mt-2'
                 style={{
-                  marginTop: '15px',
+                  marginTop: '15px'
                 }}
               >
                 LATEST ENTERTAINMENT NEWS{' '}

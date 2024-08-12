@@ -405,7 +405,7 @@ const HomePage = () => {
           <h2 className='px-0 bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-2xl hover:text-blue-800 font-bold mt-2'>
             Discover the Best Movies and TV Shows to Stream on 123Movies Online™
           </h2>
-          <p className='text-lg text-gray-800 mt-4'>
+          <p className='text-lg bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent  hover:text-blue-800 mt-4'>
             Welcome to 123Movies Online™, your ultimate destination for
             streaming the latest and greatest movies and TV shows. Our platform
             offers a vast selection of films and series across various genres,

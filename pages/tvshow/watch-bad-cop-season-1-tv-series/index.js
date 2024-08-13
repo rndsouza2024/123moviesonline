@@ -7,6 +7,7 @@ import trailersData from '../../../public/trailers.json'
 import latestData from '../../../public/latest.json'
 import GoogleTranslate from '../../../components/GoogleTranslate'
 import SocialSharing from '../../../components/SocialSharing'
+import SearchComponent from '../../../components/SearchComponent'
 import { useEffect, useState, useRef } from 'react'
 import Pagination from '../../../components/Pagination'
 import Head from 'next/head'
@@ -511,31 +512,31 @@ const tvshowDetail = ({ tvshow }) => {
   const languagesSchema = JSON.stringify({
     '@context': 'https://schema.org',
     '@type': 'WebPage',
-    url: 'https://123moviesonline.vercel.app/tvshow/watch-bad-cop-season-1-tv-series',
-    name: 'Watch Bad Cop Season 1 (2020) | 123Movies™',
+    url: tvshow.siteurl, // Ensure this URL is correctly set
+    name: 'Bad Cop Season 1 (2024) | 123Movies™',
     alternateName: [
-      'Ver Bad Cop Temporada 1 (2024) | 123Movies™',
-      'Regarder Bad Cop Saison 1 (2024) | 123Movies™',
-      'Bad Cop Staffel 1 (2024) ansehen | 123Movies™',
-      '观看黑暗物质 第一季 (2024) | 123Movies™',
-      'ダークマター シーズン 1 (2024) を見る | 123Movies™',
-      '다크 매터 시즌 1 (2024) 보기 | 123Movies™',
-      'Assistir Bad Cop Temporada 1 (2024) | 123Movies™',
-      'Guarda Bad Cop Stagione 1 (2024) | 123Movies™',
-      'Посмотреть Bad Cop Сезон 1 (2024) | 123Movies™',
-      'مشاهدة Bad Cop الموسم 1 (2024) | جِي دبليو إف™'
+      'Bad Cop Temporada 1 (2024) | 123Movies™', // Spanish
+      'Bad Cop Saison 1 (2024) | 123Movies™', // French
+      'Bad Cop Staffel 1 (2024) | 123Movies™', // German
+      '黑暗物质 第一季 (2024) | 123Movies™', // Simplified Chinese
+      'ダークマター シーズン 1 (2024) | 123Movies™', // Japanese
+      '다크 매터 시즌 1 (2024) | 123Movies™', // Korean
+      'Bad Cop Temporada 1 (2024) | 123Movies™', // Portuguese
+      'Bad Cop Stagione 1 (2024) | 123Movies™', // Italian
+      'Bad Cop Сезон 1 (2024) | 123Movies™', // Russian
+      'Bad Cop الموسم 1 (2024) | جِي دبليو إف™' // Arabic
     ],
     inLanguage: [
-      'es',
-      'fr',
-      'de',
-      'zh-Hans',
-      'ja',
-      'ko',
-      'pt',
-      'it',
-      'ru',
-      'ar'
+      'es', // Spanish
+      'fr', // French
+      'de', // German
+      'zh-Hans', // Simplified Chinese
+      'ja', // Japanese
+      'ko', // Korean
+      'pt', // Portuguese
+      'it', // Italian
+      'ru', // Russian
+      'ar' // Arabic
     ]
   })
 
@@ -642,22 +643,7 @@ const tvshowDetail = ({ tvshow }) => {
           dangerouslySetInnerHTML={{ __html: languagesSchema }}
         />
       </Head>
-      {/* <Script
-        dangerouslySetInnerHTML={{
-          __html: `
-            (function (w, d, s, id) {
-              if (typeof (w.webpushr) !== 'undefined') return;
-              w.webpushr = w.webpushr |function () { (w.webpushr.q = w.webpushr.q |[]).push(arguments) };
-              var js, fjs = d.getElementsByTagName(s)[0];
-              js = d.createElement(s); js.id = id; js.async = 1;
-              js.src = "https://cdn.webpushr.com/app.min.js";
-              fjs.parentNode.appendChild(js);
-            }(window, document, 'script', 'webpushr-jssdk'));
-
-            webpushr('setup', { 'key': 'BIHpgrvLvdxGSRA7cHudMTBdr7EWGon3q4reCUGbDcm5uiM2CkypC83diBbYhTMaD8pY_5G0L817DCPB3UqY2CI' });
-          `
-        }}
-      /> */}
+  
 
       <SocialSharing />
 
@@ -687,26 +673,39 @@ const tvshowDetail = ({ tvshow }) => {
           {tvshow.title}
         </h1>
         <h2 className='px-0 bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-2xl hover:text-blue-800 font-bold mt-2'>
-   {tvshow.title} Online - Stream Your Favorite TV Series
-</h2>
- <p className='text-lg text-yellow-500 mt-4'>
-  Explore the captivating world of <strong>{tvshow.title}</strong>, the TV series that has everyone talking. At 
-  <strong>123Movies Online™</strong>, you can stream <strong>{tvshow.title}</strong> and immerse yourself in its exciting 
-  episodes, whether you're catching up on past seasons or tuning in to the latest releases. Our platform offers a seamless 
-  streaming experience, making it easy to watch your favorite TV series online.
-</p>
- <p className='text-lg text-yellow-500 mt-4'>
-  Streaming <strong>{tvshow.title}</strong> on <strong>123Movies Online™</strong> ensures that you won't miss a single 
-  moment of the action, drama, or comedy that makes this TV series a must-watch. With high-quality streaming and 
-  user-friendly navigation, <strong>123Movies Online™</strong> provides everything you need to enjoy <strong>{tvshow.title}</strong> 
-  and other top TV series. Our library is frequently updated, so you can always find the latest episodes as soon as they air.
-</p>
- <p className='text-lg text-yellow-500 mt-4'>
-  Whether you're binge-watching or following along weekly, <strong>{tvshow.title}</strong> on <strong>123Movies 
-  Online™</strong> is your go-to destination for streaming TV series online. Join our community of viewers and start 
-  watching <strong>{tvshow.title}</strong> today. With <strong>123Movies Online™</strong>, your favorite TV series is just 
-  a click away.
-</p>
+          {tvshow.title} Online - Stream Your Favorite TV Series
+        </h2>
+        <p className='text-lg text-yellow-500 mt-4'>
+          Explore the captivating world of <strong>{tvshow.title}</strong>, the
+          TV series that has everyone talking. At
+          <strong> 123Movies Online™</strong>, you can stream{' '}
+          <strong>{tvshow.title}</strong> and immerse yourself in its exciting
+          episodes, whether you're catching up on past seasons or tuning in to
+          the latest releases. Our platform offers a seamless streaming
+          experience, making it easy to watch your favorite TV series online.
+        </p>
+        <p className='text-lg text-yellow-500 mt-4'>
+          Streaming <strong>{tvshow.title}</strong> on{' '}
+          <strong>123Movies Online™</strong> ensures that you won't miss a
+          single moment of the action, drama, or comedy that makes this TV
+          series a must-watch. With high-quality streaming and user-friendly
+          navigation, <strong>123Movies Online™</strong> provides everything you
+          need to enjoy <strong>{tvshow.title}</strong>
+          and other top TV series. Our library is frequently updated, so you can
+          always find the latest episodes as soon as they air.
+        </p>
+        <p className='text-lg text-yellow-500 mt-4'>
+          Whether you're binge-watching or following along weekly,{' '}
+          <strong>{tvshow.title}</strong> on <strong>123Movies Online™</strong>{' '}
+          is your go-to destination for streaming TV series online. Join our
+          community of viewers and start watching{' '}
+          <strong>{tvshow.title}</strong> today. With{' '}
+          <strong>123Movies Online™</strong>, your favorite TV series is just a
+          click away.
+        </p>
+        <span className='px-0 bg-clip-text text-sm text-black font-bold mt-2'>
+          <SearchComponent />
+        </span>
       </div>
       <div
         className={`w-full`}
@@ -1091,9 +1090,6 @@ const tvshowDetail = ({ tvshow }) => {
                 )}
               </div>
               <div className='flex flex-col items-center justify-center'>
-                {/* {trailers.mp3player && (
-    <MP3Player mp3Url={trailers.mp3player} />
-  )} */}
                 {tvshow.linkurl && (
                   <Link href={tvshow.linkurl2}>
                     <div

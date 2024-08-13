@@ -7,6 +7,7 @@ import trailersData from '../../../public/trailers.json'
 import latestData from '../../../public/latest.json'
 import GoogleTranslate from '../../../components/GoogleTranslate'
 import SocialSharing from '../../../components/SocialSharing'
+import SearchComponent from '../../../components/SearchComponent'
 import { useEffect, useState, useRef } from 'react'
 import Pagination from '../../../components/Pagination'
 import Head from 'next/head'
@@ -124,7 +125,7 @@ const tvshowDetail = ({ tvshow }) => {
   const enhancedParagraph = text => {
     const linkTargets = [
       {
-        text: 'Cobra Kai Part 1 Season 6 - 2023',
+        text: 'Cobra Kai Part 1 Season 6 - 2024',
         url: `https://www.imdb.com/title/${tvshow.imdb}/`
       }
     ]
@@ -548,12 +549,18 @@ const tvshowDetail = ({ tvshow }) => {
         <meta property='og:video:width' content='1280px' />
         <meta property='og:video:height' content='720px' />
         <meta property='og:video:type' content='video/mp4' />
-        <meta property='og:title' content={`${tvshow && tvshow.name} - 123Movies™`} />
+        <meta
+          property='og:title'
+          content={`${tvshow && tvshow.name} - 123Movies™`}
+        />
         <meta
           property='og:description'
           content='Stream HD movies and TV series for free on 123Movies Online. Explore, stream, and download full-length movies and shows in HD quality without registration.'
         />
-
+        <meta
+          name='description'
+          content={`${tvshow.title} available on 123Movies™. Enjoy free streaming of full-length movies and TV series online with no registration required.`}
+        />
         <meta property='og:url' content={`${tvshow && tvshow.siteurl}`} />
         <meta name='keywords' content={`${tvshow && tvshow.keywords}`} />
         <meta property='og:site_name' content='123Movies Online' />
@@ -622,29 +629,13 @@ const tvshowDetail = ({ tvshow }) => {
           type='application/ld+json'
           dangerouslySetInnerHTML={{ __html: breadcrumbSchema }}
         />
-         <script
-            type='application/ld+json'
-            dangerouslySetInnerHTML={{ __html: languagesSchema }}
-          />
-        
+        <script
+          type='application/ld+json'
+          dangerouslySetInnerHTML={{ __html: languagesSchema }}
+        />
       </Head>
-      {/* <Script
-        dangerouslySetInnerHTML={{
-          __html: `
-            (function (w, d, s, id) {
-              if (typeof (w.webpushr) !== 'undefined') return;
-              w.webpushr = w.webpushr |function () { (w.webpushr.q = w.webpushr.q |[]).push(arguments) };
-              var js, fjs = d.getElementsByTagName(s)[0];
-              js = d.createElement(s); js.id = id; js.async = 1;
-              js.src = "https://cdn.webpushr.com/app.min.js";
-              fjs.parentNode.appendChild(js);
-            }(window, document, 'script', 'webpushr-jssdk'));
+  
 
-            webpushr('setup', { 'key': 'BIHpgrvLvdxGSRA7cHudMTBdr7EWGon3q4reCUGbDcm5uiM2CkypC83diBbYhTMaD8pY_5G0L817DCPB3UqY2CI' });
-          `
-        }}
-      /> */}
-      
       <SocialSharing />
 
       <div
@@ -661,7 +652,7 @@ const tvshowDetail = ({ tvshow }) => {
           backgroundColor: '#0e0e0e'
         }}
       >
-           <GoogleTranslate />
+        <GoogleTranslate />
         <h1
           className='text-black bg-gradient-to-r from-pink-500 to-amber-500 font-bold py-3 px-6 rounded-lg shadow-lg hover:from-amber-600 hover:to-pink-600 transition duration-300 text-3xl'
           style={{
@@ -672,6 +663,40 @@ const tvshowDetail = ({ tvshow }) => {
         >
           {tvshow.title}
         </h1>
+        <h2 className='px-0 bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-2xl hover:text-blue-800 font-bold mt-2'>
+          {tvshow.title} Online - Stream Your Favorite TV Series
+        </h2>
+        <p className='text-lg text-yellow-500 mt-4'>
+          Explore the captivating world of <strong>{tvshow.title}</strong>, the
+          TV series that has everyone talking. At
+          <strong> 123Movies Online™</strong>, you can stream{' '}
+          <strong>{tvshow.title}</strong> and immerse yourself in its exciting
+          episodes, whether you're catching up on past seasons or tuning in to
+          the latest releases. Our platform offers a seamless streaming
+          experience, making it easy to watch your favorite TV series online.
+        </p>
+        <p className='text-lg text-yellow-500 mt-4'>
+          Streaming <strong>{tvshow.title}</strong> on{' '}
+          <strong>123Movies Online™</strong> ensures that you won't miss a
+          single moment of the action, drama, or comedy that makes this TV
+          series a must-watch. With high-quality streaming and user-friendly
+          navigation, <strong>123Movies Online™</strong> provides everything you
+          need to enjoy <strong>{tvshow.title}</strong>
+          and other top TV series. Our library is frequently updated, so you can
+          always find the latest episodes as soon as they air.
+        </p>
+        <p className='text-lg text-yellow-500 mt-4'>
+          Whether you're binge-watching or following along weekly,{' '}
+          <strong>{tvshow.title}</strong> on <strong>123Movies Online™</strong>{' '}
+          is your go-to destination for streaming TV series online. Join our
+          community of viewers and start watching{' '}
+          <strong>{tvshow.title}</strong> today. With{' '}
+          <strong>123Movies Online™</strong>, your favorite TV series is just a
+          click away.
+        </p>
+        <span className='px-0 bg-clip-text text-sm text-black font-bold mt-2'>
+          <SearchComponent />
+        </span>
       </div>
       <div
         className={`w-full`}
@@ -1070,7 +1095,7 @@ const tvshowDetail = ({ tvshow }) => {
           filter: 'contrast(1.2) saturate(1.3) brightness(1.1) hue-rotate(15deg)'
         }}
       >
-        Click to Watch Season 1
+        Click to Watch Season 6
       </div>
     </Link>
   )}

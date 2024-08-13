@@ -8,6 +8,8 @@ import latestData from '../../../public/latest.json'
 import GoogleTranslate from '../../../components/GoogleTranslate'
 import SocialSharing from '../../../components/SocialSharing'
 import SearchComponent from '../../../components/SearchComponent'
+import AdComponent from '../../../components/AdComponent'
+import Videoads from '../../../components/Videoads'
 import { useEffect, useState, useRef } from 'react'
 import Pagination from '../../../components/Pagination'
 import Head from 'next/head'
@@ -52,6 +54,7 @@ const moviesDetail = ({ movie }) => {
 
   const [linkTargets, setLinkTargets] = useState([])
 
+  
   useEffect(() => {
     // Fetch the initial random links
     setLinkTargets(
@@ -718,7 +721,7 @@ const moviesDetail = ({ movie }) => {
         >
           {movie.title}
         </h1>
-        <h2 className='px-0 bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-2xl hover:text-blue-800 font-bold mt-2'>
+        <h2 className='px-0 bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-2xl  font-bold mt-2'>
           {movie.title} Online and Experience Top-Tier Streaming
         </h2>
         <p className='text-lg text-yellow-500 mt-4'>
@@ -845,11 +848,13 @@ const moviesDetail = ({ movie }) => {
           className='bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent font-bold text-3xl mt-2 flex items-center justify-center'
           style={{ marginTop: '25px', marginBottom: '25px' }}
         >
-          <span className='px-0 bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-3xl hover:text-blue-800 font-bold mt-2'>
+          <span className='px-0 bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-3xl  font-bold mt-2'>
             For Request or Demand Movies & TV Series Join Telegram
             <i className='fab fa-telegram text-blue-600 hover:text-yellow-600 ml-2 w-12 h-12 animate-pulse '></i>
           </span>
         </a>
+        <AdComponent id='ADS01' />
+        <Videoads id='ADS01' />
         <Pagination
           currentPage={currentPage}
           totalPages={totalPages}
@@ -887,22 +892,22 @@ const moviesDetail = ({ movie }) => {
             <div
               style={{ maxWidth: '800px', width: '100%', marginBottom: '20px' }}
             >
-              <h2 className='bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent hover:text-blue-800 text-bg font-semibold mt-2'>
+              <h2 className='bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent  text-bg font-semibold mt-2'>
                 Genre: {movie.genre}
               </h2>
-              <h2 className='bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent hover:text-blue-800 text-bg font-semibold mt-2'>
+              <h2 className='bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent  text-bg font-semibold mt-2'>
                 Director: {movie.directorname}
               </h2>
-              <h2 className='bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent hover:text-blue-800 text-bg font-semibold mt-2'>
+              <h2 className='bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent  text-bg font-semibold mt-2'>
                 Starring: {movie.starring}
               </h2>
-              <h2 className='bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent hover:text-blue-800 text-bg font-semibold mt-2'>
+              <h2 className='bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent  text-bg font-semibold mt-2'>
                 Origin Country: {movie.country}
               </h2>
-              <h2 className='bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent hover:text-blue-800 text-bg font-semibold mt-2'>
+              <h2 className='bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent  text-bg font-semibold mt-2'>
                 Language: {movie.language}
               </h2>
-              <div className=' bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent hover:text-blue-800 text-bg font-semibold mt-2'>
+              <div className=' bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent  text-bg font-semibold mt-2'>
                 Synopsis :-
                 {movie.news1 &&
                   movie.news1.split('\n\n').map((paragraph, idx) => (
@@ -1026,7 +1031,7 @@ const moviesDetail = ({ movie }) => {
               </div>
 
               <h2
-                className='px-0 bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-4xl hover:text-blue-800 font-bold mt-2'
+                className='px-0 bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-4xl  font-bold mt-2'
                 style={{ fontFamily: 'Poppins, sans-serif' }}
               >
                 Watch Online {movie.name}
@@ -1117,30 +1122,30 @@ const moviesDetail = ({ movie }) => {
                 )}
               </div>
               <p
-                className='px-0 bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-4xl hover:text-blue-800 font-bold mt-2'
+                className='px-0 bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-4xl  font-bold mt-2'
                 style={{ fontFamily: 'Poppins, sans-serif' }}
               >
                 Select Player To Watch.
               </p>
 
-              <div className='flex flex-wrap justify-center mb-4 bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text  hover:text-blue-800 text-bg font-semibold mt-2'>
+              <div className='flex flex-wrap justify-center mb-4 bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text  text-bg font-semibold mt-2'>
                 {videoSources.map((source, index) => (
-                  <button
-                    key={index}
-                    onClick={() => handlePlayerSelect(index)}
-                    className={`px-4 py-2 border rounded mx-2 my-1 ${
-                      currentPlayerIndex === index
-                        ? 'bg-red-500 text-white'
-                        : 'bg-yellow-200'
-                    } hover:bg-green-500 hover:text-white`}
-                  >
-                    Player {index + 1}
-                  </button>
-                ))}
-              </div>
+          <button
+            key={index}
+            onClick={() => handlePlayerSelect(index)}
+           className={`px-4 py-2 border rounded mx-2 my-1 ${
+                 currentPlayerIndex === index
+                   ? 'bg-red-500 text-white'
+                   : 'bg-gray-200'
+               } hover:bg-green-500 hover:text-white`}
+          >
+            Player {index + 1}
+          </button>
+        ))}
+      </div>
 
               <h2
-                className='px-0 bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-3xl hover:text-blue-800 font-bold mt-2'
+                className='px-0 bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-3xl  font-bold mt-2'
                 style={{ fontFamily: 'Poppins, sans-serif' }}
               >
                 Click to Download {movie.name}
@@ -1193,7 +1198,7 @@ const moviesDetail = ({ movie }) => {
                         ></lottie-player> */}
                         {seconds > 0 ? (
                           <p
-                            className='px-0 bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-3xl hover:text-blue-800 font-bold mt-2  mb-4'
+                            className='px-0 bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-3xl  font-bold mt-2  mb-4'
                             style={{ marginTop: '50px' }}
                           >
                             Your download link will be ready in {seconds}{' '}
@@ -1201,7 +1206,7 @@ const moviesDetail = ({ movie }) => {
                           </p>
                         ) : (
                           <p
-                            className='px-0 bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-3xl hover:text-blue-800 font-bold mt-2  mb-4'
+                            className='px-0 bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-3xl  font-bold mt-2  mb-4'
                             style={{ marginTop: '50px' }}
                           >
                             Your download link is ready.
@@ -1321,7 +1326,7 @@ const moviesDetail = ({ movie }) => {
                     'contrast(1.1) saturate(1.2) brightness(1.3) hue-rotate(0deg)'
                 }}
               />
-              <div className=' text-2xl font-semibold mt-2 px-0 bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent  hover:text-blue-800 '>
+              <div className=' text-2xl font-semibold mt-2 px-0 bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent   '>
                 See Below for Other Links to Watch Full Content.
                 <div className={`${HomeStyles.imageGrid} mt-5`}>
                   {linkTargets.map((link, idx) => (

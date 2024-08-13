@@ -9,6 +9,7 @@ import GoogleTranslate from '../../../components/GoogleTranslate'
 import { useEffect, useState, useRef } from 'react'
 import Pagination from '../../../components/Pagination'
 import SocialSharing from '../../../components/SocialSharing'
+import SearchComponent from '../../../components/SearchComponent'
 import AdultSkipAds from '../../../components/AdultSkipAds'
 import Head from 'next/head'
 import Image from 'next/image'
@@ -284,9 +285,9 @@ const adultDetail = ({ adult }) => {
       },
       {
         '@type': 'Person',
-        '@id': 'https://123moviesonline.vercel.app/author/azmovies/',
+        '@id': 'https://123moviesonline.vercel.app/author/123moviesonline/',
         name: 'Dr Trailer',
-        url: 'https://123moviesonline.vercel.app/author/azmovies/',
+        url: 'https://123moviesonline.vercel.app/author/123moviesonline/',
         image: {
           '@type': 'ImageObject',
           '@id': 'https://gravatar.com/drtrailer2022',
@@ -304,13 +305,13 @@ const adultDetail = ({ adult }) => {
         dateModified: adult.dateModified,
         articleSection: 'Adult',
         author: {
-          '@id': 'https://123moviesonline.vercel.app/author/azmovies/'
+          '@id': 'https://123moviesonline.vercel.app/author/123moviesonline/'
         },
         publisher: {
           '@id': 'https://gravatar.com/drtrailer2022/#person'
         },
         description: adult.synopsis,
-        image: adult.image,
+        image: adult.image1,
         name: ` ${adult.name} |  123Movies Online™`,
         isPartOf: {
           '@id': `${adult.siteurl}#webpage`
@@ -336,14 +337,14 @@ const adultDetail = ({ adult }) => {
         dateModified: adult.dateModified,
         articleSection: 'Adult',
         author: {
-          '@id': 'https://123moviesonline.vercel.app/author/azmovies/'
+          '@id': 'https://123moviesonline.vercel.app/author/123moviesonline/'
         },
         publisher: {
           '@id': 'https://gravatar.com/drtrailer2022/#person'
         },
         description: adult.synopsis,
-        image: adult.image,
-        name: ` ${adult.name} |  123Movies Online™`,
+        image: adult.image1,
+        name: ` ${adult.name} | 123Movies Online™`,
         '@id': `${adult.siteurl}#richSnippet`,
         isPartOf: {
           '@id': `${adult.siteurl}#webpage`
@@ -488,18 +489,18 @@ const adultDetail = ({ adult }) => {
   const languagesSchema = JSON.stringify({
     '@context': 'https://schema.org',
     '@type': 'WebPage',
-    url: 'https://123moviesonline.vercel.app/adult/watch-anokhi-Part-2-2024',
+    url: adult.siteurl, // Ensure this URL is correctly set
     name: 'Watch Adult Anokhi Part 2 (2024) | 123Movies™',
     alternateName: [
-      'Ver Anokhi Part 2 Parte (2024) para adultos | 123Movies™',
-      'Regarder Anokhi Part 2 Partie (2024) pour adultes | 123Movies™',
-      'Anokhi Part 2 Teil (2024) für Erwachsene ansehen | 123Movies™',
+      'Ver Anokhi Part 2 (2024) para adultos | 123Movies™',
+      'Regarder Anokhi Part 2 (2024) pour adultes | 123Movies™',
+      'Anokhi Part 2 (2024) für Erwachsene ansehen | 123Movies™',
       '观看 Anokhi Part 2 (2024) 成人内容 | 123Movies™',
-      'Anokhi Part 2 パート (2024) 大人向け | 123Movies™',
-      'Anokhi Part 2 파트 (2024) 성인 전용 | 123Movies™',
-      'Assistir Anokhi Part 2 Parte (2024) para adultos | 123Movies™',
-      'Guarda Anokhi Part 2 Parte (2024) per adulti | 123Movies™',
-      'Посмотреть Anokhi Part 2 Часть (2024) для взрослых | 123Movies™',
+      'Anokhi Part 2 (2024) 大人向け | 123Movies™',
+      'Anokhi Part 2 (2024) 성인 전용 | 123Movies™',
+      'Assistir Anokhi Part 2 (2024) para adultos | 123Movies™',
+      'Guarda Anokhi Part 2 (2024) per adulti | 123Movies™',
+      'Посмотреть Anokhi Part 2 (2024) для взрослых | 123Movies™',
       'مشاهدة Anokhi Part 2 (2024) للكبار فقط | 123Movies™'
     ],
     inLanguage: [
@@ -514,7 +515,7 @@ const adultDetail = ({ adult }) => {
       'ru',
       'ar'
     ]
-  })
+  });
 
   return (
     <div>
@@ -681,6 +682,9 @@ const adultDetail = ({ adult }) => {
           <strong>123Movies Online™</strong> is the trusted choice for adult
           content.
         </p>
+        <span className='px-0 bg-clip-text text-sm text-black font-bold mt-2'>
+          <SearchComponent />
+        </span>
       </div>
       <div
         className={`w-full`}

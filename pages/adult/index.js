@@ -359,52 +359,8 @@ const AdultPage = ({ adults }) => {
           referrerPolicy='no-referrer'
         />
       </Head>
-      {/* <Script
-        dangerouslySetInnerHTML={{
-          __html: `
-            (function (w, d, s, id) {
-              if (typeof (w.webpushr) !== 'undefined') return;
-              w.webpushr = w.webpushr |function () { (w.webpushr.q = w.webpushr.q |[]).push(arguments) };
-              var js, fjs = d.getElementsByTagName(s)[0];
-              js = d.createElement(s); js.id = id; js.async = 1;
-              js.src = "https://cdn.webpushr.com/app.min.js";
-              fjs.parentNode.appendChild(js);
-            }(window, document, 'script', 'webpushr-jssdk'));
-
-            webpushr('setup', { 'key': 'BIHpgrvLvdxGSRA7cHudMTBdr7EWGon3q4reCUGbDcm5uiM2CkypC83diBbYhTMaD8pY_5G0L817DCPB3UqY2CI' });
-          `
-        }}
-      /> */}
-
+    
       <GoogleTranslate />
-      {/* <h1
-        className='badge bg-gradient-to-r from-pink-500 to-amber-500 font-bold py-3 px-6 rounded-xl shadow-lg hover:from-amber-600 hover:to-pink-600 transition duration-300'
-        style={{
-          justifyContent: 'center',
-          alignItems: 'center',
-          padding: '10px',
-          fontSize: '25px',
-          fontFamily: 'Poppins, sans-serif',
-          fontWeight: 'bold',
-          textAlign: 'center',
-          marginBottom: '15px'
-        }}
-      >
-        123Movies Online™ - Movies Section.
-      </h1> */}
-      {/* <div
-        className={`w-full`}
-        style={{
-          display: 'flex',
-          flexDirection: 'column',
-          justifyContent: 'center',
-          alignItems: 'center',
-          fontFamily: 'Poppins, sans-serif',
-          fontWeight: 500,
-          textAlign: 'center',
-          backgroundColor: '#0e0e0e'
-        }}
-      > */}
         <h1
           className='text-black bg-gradient-to-r from-pink-500 to-amber-500 font-bold py-3 px-6 rounded-lg shadow-lg hover:from-amber-600 hover:to-pink-600 transition duration-300 text-3xl'
           style={{

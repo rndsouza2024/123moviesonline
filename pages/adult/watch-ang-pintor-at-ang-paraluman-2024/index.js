@@ -9,6 +9,7 @@ import GoogleTranslate from '../../../components/GoogleTranslate'
 import { useEffect, useState, useRef } from 'react'
 import Pagination from '../../../components/Pagination'
 import SocialSharing from '../../../components/SocialSharing'
+import SearchComponent from '../../../components/SearchComponent'
 import AdultSkipAds from '../../../components/AdultSkipAds'
 import Head from 'next/head'
 import Image from 'next/image'
@@ -284,9 +285,9 @@ const adultDetail = ({ adult }) => {
       },
       {
         '@type': 'Person',
-        '@id': 'https://123moviesonline.vercel.app/author/azmovies/',
+        '@id': 'https://123moviesonline.vercel.app/author/123moviesonline/',
         name: 'Dr Trailer',
-        url: 'https://123moviesonline.vercel.app/author/azmovies/',
+        url: 'https://123moviesonline.vercel.app/author/123moviesonline/',
         image: {
           '@type': 'ImageObject',
           '@id': 'https://gravatar.com/drtrailer2022',
@@ -304,13 +305,13 @@ const adultDetail = ({ adult }) => {
         dateModified: adult.dateModified,
         articleSection: 'Adult',
         author: {
-          '@id': 'https://123moviesonline.vercel.app/author/azmovies/'
+          '@id': 'https://123moviesonline.vercel.app/author/123moviesonline/'
         },
         publisher: {
           '@id': 'https://gravatar.com/drtrailer2022/#person'
         },
         description: adult.synopsis,
-        image: adult.image,
+        image: adult.image1,
         name: ` ${adult.name} |  123Movies Online™`,
         isPartOf: {
           '@id': `${adult.siteurl}#webpage`
@@ -336,14 +337,14 @@ const adultDetail = ({ adult }) => {
         dateModified: adult.dateModified,
         articleSection: 'Adult',
         author: {
-          '@id': 'https://123moviesonline.vercel.app/author/azmovies/'
+          '@id': 'https://123moviesonline.vercel.app/author/123moviesonline/'
         },
         publisher: {
           '@id': 'https://gravatar.com/drtrailer2022/#person'
         },
         description: adult.synopsis,
-        image: adult.image,
-        name: ` ${adult.name} |  123Movies Online™`,
+        image: adult.image1,
+        name: ` ${adult.name} | 123Movies Online™`,
         '@id': `${adult.siteurl}#richSnippet`,
         isPartOf: {
           '@id': `${adult.siteurl}#webpage`
@@ -488,18 +489,18 @@ const adultDetail = ({ adult }) => {
   const languagesSchema = JSON.stringify({
     '@context': 'https://schema.org',
     '@type': 'WebPage',
-    url: 'https://123moviesonline.vercel.app/adult/watch-pretty-boys-2024',
+    url: adult.siteurl, // Ensure this URL is correctly set
     name: 'Watch Adult Ang Pintor At Ang Paraluman (2024) | 123Movies™',
     alternateName: [
-      'Ver Ang Pintor At Ang Paraluman Parte (2024) para adultos | 123Movies™',
-      'Regarder Ang Pintor At Ang Paraluman Partie (2024) pour adultes | 123Movies™',
-      'Ang Pintor At Ang Paraluman Teil (2024) für Erwachsene ansehen | 123Movies™',
+      'Ver Ang Pintor At Ang Paraluman (2024) para adultos | 123Movies™',
+      'Regarder Ang Pintor At Ang Paraluman (2024) pour adultes | 123Movies™',
+      'Ang Pintor At Ang Paraluman (2024) für Erwachsene ansehen | 123Movies™',
       '观看 Ang Pintor At Ang Paraluman (2024) 成人内容 | 123Movies™',
-      'Ang Pintor At Ang Paraluman パート (2024) 大人向け | 123Movies™',
-      'Ang Pintor At Ang Paraluman 파트 (2024) 성인 전용 | 123Movies™',
-      'Assistir Ang Pintor At Ang Paraluman Parte (2024) para adultos | 123Movies™',
-      'Guarda Ang Pintor At Ang Paraluman Parte (2024) per adulti | 123Movies™',
-      'Посмотреть Ang Pintor At Ang Paraluman Часть (2024) для взрослых | 123Movies™',
+      'Ang Pintor At Ang Paraluman (2024) 大人向け | 123Movies™',
+      'Ang Pintor At Ang Paraluman (2024) 성인 전용 | 123Movies™',
+      'Assistir Ang Pintor At Ang Paraluman (2024) para adultos | 123Movies™',
+      'Guarda Ang Pintor At Ang Paraluman (2024) per adulti | 123Movies™',
+      'Посмотреть Ang Pintor At Ang Paraluman (2024) для взрослых | 123Movies™',
       'مشاهدة Ang Pintor At Ang Paraluman (2024) للكبار فقط | 123Movies™'
     ],
     inLanguage: [
@@ -514,7 +515,7 @@ const adultDetail = ({ adult }) => {
       'ru',
       'ar'
     ]
-  })
+  });
 
   return (
     <div>
@@ -542,7 +543,10 @@ const adultDetail = ({ adult }) => {
           property='og:description'
           content='Stream HD movies and TV series for free on 123Movies Online. Explore, stream, and download full-length movies and shows in HD quality without registration.'
         />
-
+        <meta
+          name='description'
+          content={`${adult.title} available on 123Movies™. Enjoy free streaming of full-length movies and TV series online with no registration required.`}
+        />
         <meta property='og:url' content={`${adult && adult.siteurl}`} />
         <meta name='keywords' content={`${adult && adult.keywords}`} />
         <meta property='og:site_name' content=' 123Movies Online' />
@@ -568,10 +572,6 @@ const adultDetail = ({ adult }) => {
         <meta
           name='twitter:description'
           content='Stream HD movies and TV series for free on 123Movies Online. Explore, stream, and download full-length movies and shows in HD quality without registration.'
-        />
-        <meta
-          name='description'
-          content={`${adult.title} available on 123Movies™. Enjoy free streaming of full-length movies and TV series online with no registration required.`}
         />
         <meta name='twitter:image' content={`${adult && adult.image1}`} />
         <meta name='twitter:label1' content='Est. reading time' />
@@ -620,7 +620,7 @@ const adultDetail = ({ adult }) => {
           dangerouslySetInnerHTML={{ __html: languagesSchema }}
         />
       </Head>
-     
+   
 
       <SocialSharing />
       <Script src='../../propler/ads2.js' defer />
@@ -653,7 +653,7 @@ const adultDetail = ({ adult }) => {
           {adult.title}
         </h1>
         <h2 className='px-0 bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-2xl hover:text-blue-800 font-bold mt-2'>
-          Watch {adult.title} Online - Stream Premium Adult Content
+           {adult.title} Online - Stream Premium Adult Content
         </h2>
         <p className='text-lg text-yellow-500 mt-4'>
           Indulge in the finest selection of adult entertainment with{' '}
@@ -682,6 +682,9 @@ const adultDetail = ({ adult }) => {
           <strong>123Movies Online™</strong> is the trusted choice for adult
           content.
         </p>
+        <span className='px-0 bg-clip-text text-sm text-black font-bold mt-2'>
+          <SearchComponent />
+        </span>
       </div>
       <div
         className={`w-full`}

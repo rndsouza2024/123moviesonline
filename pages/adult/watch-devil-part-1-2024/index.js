@@ -9,6 +9,7 @@ import GoogleTranslate from '../../../components/GoogleTranslate'
 import { useEffect, useState, useRef } from 'react'
 import Pagination from '../../../components/Pagination'
 import SocialSharing from '../../../components/SocialSharing'
+import SearchComponent from '../../../components/SearchComponent'
 import AdultSkipAds from '../../../components/AdultSkipAds'
 import Head from 'next/head'
 import Image from 'next/image'
@@ -284,9 +285,9 @@ const adultDetail = ({ adult }) => {
       },
       {
         '@type': 'Person',
-        '@id': 'https://123moviesonline.vercel.app/author/azmovies/',
+        '@id': 'https://123moviesonline.vercel.app/author/123moviesonline/',
         name: 'Dr Trailer',
-        url: 'https://123moviesonline.vercel.app/author/azmovies/',
+        url: 'https://123moviesonline.vercel.app/author/123moviesonline/',
         image: {
           '@type': 'ImageObject',
           '@id': 'https://gravatar.com/drtrailer2022',
@@ -304,13 +305,13 @@ const adultDetail = ({ adult }) => {
         dateModified: adult.dateModified,
         articleSection: 'Adult',
         author: {
-          '@id': 'https://123moviesonline.vercel.app/author/azmovies/'
+          '@id': 'https://123moviesonline.vercel.app/author/123moviesonline/'
         },
         publisher: {
           '@id': 'https://gravatar.com/drtrailer2022/#person'
         },
         description: adult.synopsis,
-        image: adult.image,
+        image: adult.image1,
         name: ` ${adult.name} |  123Movies Online™`,
         isPartOf: {
           '@id': `${adult.siteurl}#webpage`
@@ -336,14 +337,14 @@ const adultDetail = ({ adult }) => {
         dateModified: adult.dateModified,
         articleSection: 'Adult',
         author: {
-          '@id': 'https://123moviesonline.vercel.app/author/azmovies/'
+          '@id': 'https://123moviesonline.vercel.app/author/123moviesonline/'
         },
         publisher: {
           '@id': 'https://gravatar.com/drtrailer2022/#person'
         },
         description: adult.synopsis,
-        image: adult.image,
-        name: ` ${adult.name} |  123Movies Online™`,
+        image: adult.image1,
+        name: ` ${adult.name} | 123Movies Online™`,
         '@id': `${adult.siteurl}#richSnippet`,
         isPartOf: {
           '@id': `${adult.siteurl}#webpage`
@@ -488,22 +489,31 @@ const adultDetail = ({ adult }) => {
   const languagesSchema = JSON.stringify({
     '@context': 'https://schema.org',
     '@type': 'WebPage',
-    url: 'https://123moviesonline.vercel.app/adult/watch-pretty-boys-2024',
+    url: adult.siteurl, // Ensure this URL is correctly set
     name: 'Watch Adult Devil Part 1 (2024) | 123Movies™',
     alternateName: [
-      'Ver Devil Part 1 Parte (2024) para adultos | 123Movies™',
-      'Regarder Devil Part 1 Partie (2024) pour adultes | 123Movies™',
-      'Devil Part 1 Teil (2024) für Erwachsene ansehen | 123Movies™',
+      'Ver Devil Part 1 (2024) para adultos | 123Movies™',
+      'Regarder Devil Part 1 (2024) pour adultes | 123Movies™',
+      'Devil Part 1 (2024) für Erwachsene ansehen | 123Movies™',
       '观看 Devil Part 1 (2024) 成人内容 | 123Movies™',
-      'Devil Part 1 パート (2024) 大人向け | 123Movies™',
-      'Devil Part 1 파트 (2024) 성인 전용 | 123Movies™',
-      'Assistir Devil Part 1 Parte (2024) para adultos | 123Movies™',
-      'Guarda Devil Part 1 Parte (2024) per adulti | 123Movies™',
-      'Посмотреть Devil Part 1 Часть (2024) для взрослых | 123Movies™',
+      'Devil Part 1 (2024) 大人向け | 123Movies™',
+      'Devil Part 1 (2024) 성인 전용 | 123Movies™',
+      'Assistir Devil Part 1 (2024) para adultos | 123Movies™',
+      'Guarda Devil Part 1 (2024) per adulti | 123Movies™',
+      'Посмотреть Devil Part 1 (2024) для взрослых | 123Movies™',
       'مشاهدة Devil Part 1 (2024) للكبار فقط | 123Movies™'
     ],
     inLanguage: [
-      'es', 'fr', 'de', 'zh-Hans', 'ja', 'ko', 'pt', 'it', 'ru', 'ar'
+      'es',
+      'fr',
+      'de',
+      'zh-Hans',
+      'ja',
+      'ko',
+      'pt',
+      'it',
+      'ru',
+      'ar'
     ]
   });
 
@@ -533,7 +543,10 @@ const adultDetail = ({ adult }) => {
           property='og:description'
           content='Stream HD movies and TV series for free on 123Movies Online. Explore, stream, and download full-length movies and shows in HD quality without registration.'
         />
-
+        <meta
+          name='description'
+          content={`${adult.title} available on 123Movies™. Enjoy free streaming of full-length movies and TV series online with no registration required.`}
+        />
         <meta property='og:url' content={`${adult && adult.siteurl}`} />
         <meta name='keywords' content={`${adult && adult.keywords}`} />
         <meta property='og:site_name' content=' 123Movies Online' />
@@ -552,18 +565,15 @@ const adultDetail = ({ adult }) => {
         <meta property='og:image:height' content='720px' />
         <meta property='og:image:type' content='image/webp' />
         <meta name='twitter:card' content='summary_large_image' />
-          <meta
-            name='twitter:title'
-            content='123Movies Online™ - Explore. Discover. Online. '
-          />
-          <meta
-            name='twitter:description'
-            content='Stream HD movies and TV series for free on 123Movies Online. Explore, stream, and download full-length movies and shows in HD quality without registration.'
-          />
-          <meta
-            name='twitter:image'
-            content={`${adult && adult.image1}`}
-          />
+        <meta
+          name='twitter:title'
+          content='123Movies Online™ - Explore. Discover. Online. '
+        />
+        <meta
+          name='twitter:description'
+          content='Stream HD movies and TV series for free on 123Movies Online. Explore, stream, and download full-length movies and shows in HD quality without registration.'
+        />
+        <meta name='twitter:image' content={`${adult && adult.image1}`} />
         <meta name='twitter:label1' content='Est. reading time' />
         <meta name='twitter:data1' content='1 minute' />
         <meta
@@ -605,29 +615,13 @@ const adultDetail = ({ adult }) => {
           type='application/ld+json'
           dangerouslySetInnerHTML={{ __html: breadcrumbSchema }}
         />
-         <script
-            type='application/ld+json'
-            dangerouslySetInnerHTML={{ __html: languagesSchema }}
-          />
-        
+        <script
+          type='application/ld+json'
+          dangerouslySetInnerHTML={{ __html: languagesSchema }}
+        />
       </Head>
-      {/* <Script
-        dangerouslySetInnerHTML={{
-          __html: `
-            (function (w, d, s, id) {
-              if (typeof (w.webpushr) !== 'undefined') return;
-              w.webpushr = w.webpushr |function () { (w.webpushr.q = w.webpushr.q |[]).push(arguments) };
-              var js, fjs = d.getElementsByTagName(s)[0];
-              js = d.createElement(s); js.id = id; js.async = 1;
-              js.src = "https://cdn.webpushr.com/app.min.js";
-              fjs.parentNode.appendChild(js);
-            }(window, document, 'script', 'webpushr-jssdk'));
+   
 
-            webpushr('setup', { 'key': 'BIHpgrvLvdxGSRA7cHudMTBdr7EWGon3q4reCUGbDcm5uiM2CkypC83diBbYhTMaD8pY_5G0L817DCPB3UqY2CI' });
-          `
-        }}
-      /> */}
-      
       <SocialSharing />
       <Script src='../../propler/ads2.js' defer />
       {/* <Script src='../../propler/ads.js' defer /> */}
@@ -647,7 +641,7 @@ const adultDetail = ({ adult }) => {
           backgroundColor: '#0e0e0e'
         }}
       >
-           <GoogleTranslate />
+        <GoogleTranslate />
         <h1
           className='text-black bg-gradient-to-r from-pink-500 to-amber-500 font-bold py-3 px-6 rounded-lg shadow-lg hover:from-amber-600 hover:to-pink-600 transition duration-300 text-3xl'
           style={{
@@ -658,6 +652,39 @@ const adultDetail = ({ adult }) => {
         >
           {adult.title}
         </h1>
+        <h2 className='px-0 bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-2xl hover:text-blue-800 font-bold mt-2'>
+           {adult.title} Online - Stream Premium Adult Content
+        </h2>
+        <p className='text-lg text-yellow-500 mt-4'>
+          Indulge in the finest selection of adult entertainment with{' '}
+          <strong>{adult.title}</strong>. At <strong>123Movies Online™</strong>,
+          we offer a vast library of premium adult content, including the latest
+          and most popular titles like
+          <strong>{adult.title}</strong>. Our platform is designed for those who
+          seek high-quality, discreet streaming of adult films, ensuring a
+          seamless and private viewing experience.
+        </p>
+        <p className='text-lg text-yellow-500 mt-4'>
+          Streaming <strong>{adult.title}</strong> on{' '}
+          <strong>123Movies Online™</strong> provides you with a user-friendly
+          interface and crystal-clear video quality. Our adult content is
+          regularly updated, giving you access to new releases as soon as they
+          become available. Whether you're exploring new genres or returning to
+          your favorites, <strong>{adult.title}</strong>
+          and other top titles are available at your fingertips.
+        </p>
+        <p className='text-lg text-yellow-500 mt-4'>
+          For a premium experience in adult entertainment, look no further than{' '}
+          <strong>{adult.title}</strong> on
+          <strong>123Movies Online™</strong>. Our platform ensures your privacy
+          and security while you enjoy the content you love. Start streaming{' '}
+          <strong>{adult.title}</strong> today and discover why{' '}
+          <strong>123Movies Online™</strong> is the trusted choice for adult
+          content.
+        </p>
+        <span className='px-0 bg-clip-text text-sm text-black font-bold mt-2'>
+          <SearchComponent />
+        </span>
       </div>
       <div
         className={`w-full`}
@@ -808,7 +835,7 @@ const adultDetail = ({ adult }) => {
               <h2 className='bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-bg font-semibold mt-2'>
                 Language: {adult.language}
               </h2>
-            
+
               <div className={`${HomeStyles.imageGrid} mt-5`}>
                 <img
                   className={`${HomeStyles.image} img-fluid lazyload `}
@@ -1196,14 +1223,14 @@ const adultDetail = ({ adult }) => {
                     'contrast(1.1) saturate(1.1) brightness(1.0) hue-rotate(0deg)'
                 }}
               />
-          </div>
+            </div>
           </div>
           <div className='sidebar'>
-          <h2
-            className='bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-3xl font-bold mt-2'
-            style={{
-              marginTop: '15px',
-            }}
+            <h2
+              className='bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-3xl font-bold mt-2'
+              style={{
+                marginTop: '15px'
+              }}
             >
               MOST POPULAR ADULT CONTENT
             </h2>
@@ -1230,7 +1257,7 @@ const adultDetail = ({ adult }) => {
                               'contrast(1.1) saturate(1.1) brightness(1.0) hue-rotate(0deg)'
                           }}
                         />
-                         <h2 className='bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-xl font-semibold mt-2'>
+                        <h2 className='bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-xl font-semibold mt-2'>
                           {item.name}
                         </h2>
                         <h3 className='bg-gradient-to-r from-pink-700 to-blue-700 bg-clip-text text-transparent text-bg font-semibold mt-2'>

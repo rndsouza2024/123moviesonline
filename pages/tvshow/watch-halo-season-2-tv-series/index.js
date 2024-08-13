@@ -126,7 +126,7 @@ const tvshowDetail = ({ tvshow }) => {
   const enhancedParagraph = text => {
     const linkTargets = [
       {
-        text: 'Halo Season 1 - 2024',
+        text: 'Halo Season 2 - 2024',
         url: `https://www.imdb.com/title/${tvshow.imdb}/`
       }
     ]
@@ -514,18 +514,18 @@ const tvshowDetail = ({ tvshow }) => {
     '@context': 'https://schema.org',
     '@type': 'WebPage',
     url: tvshow.siteurl, // Ensure this URL is correctly set
-    name: 'Halo Season 1 (2024) | 123Movies™',
+    name: 'Halo Season 2 (2024) | 123Movies™',
     alternateName: [
-      'Halo Temporada 1 (2024) | 123Movies™', // Spanish
-      'Halo Saison 1 (2024) | 123Movies™', // French
-      'Halo Staffel 1 (2024) | 123Movies™', // German
+      'Halo Temporada 2 (2024) | 123Movies™', // Spanish
+      'Halo Saison 2 (2024) | 123Movies™', // French
+      'Halo Staffel 2 (2024) | 123Movies™', // German
       '黑暗物质 第一季 (2024) | 123Movies™', // Simplified Chinese
-      'ダークマター シーズン 1 (2024) | 123Movies™', // Japanese
-      '다크 매터 시즌 1 (2024) | 123Movies™', // Korean
-      'Halo Temporada 1 (2024) | 123Movies™', // Portuguese
-      'Halo Stagione 1 (2024) | 123Movies™', // Italian
-      'Halo Сезон 1 (2024) | 123Movies™', // Russian
-      'Halo الموسم 1 (2024) | جِي دبليو إف™' // Arabic
+      'ダークマター シーズン 2 (2024) | 123Movies™', // Japanese
+      '다크 매터 시즌 2 (2024) | 123Movies™', // Korean
+      'Halo Temporada 2 (2024) | 123Movies™', // Portuguese
+      'Halo Stagione 2 (2024) | 123Movies™', // Italian
+      'Halo Сезон 2 (2024) | 123Movies™', // Russian
+      'Halo الموسم 2 (2024) | جِي دبليو إف™' // Arabic
     ],
     inLanguage: [
       'es', // Spanish
@@ -548,7 +548,7 @@ const tvshowDetail = ({ tvshow }) => {
           name='robots'
           content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1'
         />
-        <title>Watch Halo Season 1 (2024) | 123Movies™</title>
+        <title>Watch Halo Season 2 (2024) | 123Movies™</title>
         <link rel='canonical' href={tvshow && tvshow.siteurl} />
         <meta name='robots' content='index, follow' />
         <meta name='googlebot' content='index,follow' />

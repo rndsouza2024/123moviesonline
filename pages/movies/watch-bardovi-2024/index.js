@@ -542,7 +542,7 @@ const moviesDetail = ({ movie }) => {
   const languagesSchema = JSON.stringify({
     '@context': 'https://schema.org',
     '@type': 'WebPage',
-    url: 'https://123moviesonline.vercel.app/movies/watch-bardovi-2024',
+    url: movie.siteurl, // Ensure this URL is correctly set
     name: 'Watch Movie Bardovi (2024) | 123Movies™',
     alternateName: [
       'Ver película Bardovi (2024) | 123Movies™',
@@ -673,23 +673,6 @@ const moviesDetail = ({ movie }) => {
           dangerouslySetInnerHTML={{ __html: languagesSchema }}
         />
       </Head>
-      {/* <Script
-        dangerouslySetInnerHTML={{
-          __html: `
-            (function (w, d, s, id) {
-              if (typeof (w.webpushr) !== 'undefined') return;
-              w.webpushr = w.webpushr |function () { (w.webpushr.q = w.webpushr.q |[]).push(arguments) };
-              var js, fjs = d.getElementsByTagName(s)[0];
-              js = d.createElement(s); js.id = id; js.async = 1;
-              js.src = "https://cdn.webpushr.com/app.min.js";
-              fjs.parentNode.appendChild(js);
-            }(window, document, 'script', 'webpushr-jssdk'));
-
-            webpushr('setup', { 'key': 'BIHpgrvLvdxGSRA7cHudMTBdr7EWGon3q4reCUGbDcm5uiM2CkypC83diBbYhTMaD8pY_5G0L817DCPB3UqY2CI' });
-          `
-        }}
-      /> */}
-
       <SocialSharing />
       {/* <Script src='../../propler/ads.js' defer /> */}
       <Script src='../../propler/ads2.js' defer />
@@ -851,7 +834,7 @@ const moviesDetail = ({ movie }) => {
             <i className='fab fa-telegram text-blue-600 hover:text-yellow-600 ml-2 w-12 h-12 animate-pulse '></i>
           </span>
         </a>
-      
+       
         <Pagination
           currentPage={currentPage}
           totalPages={totalPages}

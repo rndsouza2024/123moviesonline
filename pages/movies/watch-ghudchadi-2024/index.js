@@ -10,7 +10,6 @@ import SocialSharing from '../../../components/SocialSharing'
 import SearchComponent from '../../../components/SearchComponent'
 import { useEffect, useState, useRef } from 'react'
 import Pagination from '../../../components/Pagination'
-import NativeVideoAd from '../../../components/NativeVideoAd'
 import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -53,6 +52,7 @@ const moviesDetail = ({ movie }) => {
 
   const [linkTargets, setLinkTargets] = useState([])
 
+  
   useEffect(() => {
     // Fetch the initial random links
     setLinkTargets(
@@ -542,7 +542,7 @@ const moviesDetail = ({ movie }) => {
   const languagesSchema = JSON.stringify({
     '@context': 'https://schema.org',
     '@type': 'WebPage',
-    url: 'https://123moviesonline.vercel.app/movies/watch-ghudchadi-2024',
+    url: movie.siteurl, // Ensure this URL is correctly set
     name: 'Watch Movie Ghudchadi (2024) | 123Movies™',
     alternateName: [
       'Ver película Ghudchadi (2024) | 123Movies™',
@@ -601,7 +601,6 @@ const moviesDetail = ({ movie }) => {
           name='description'
           content={`${movie.title} available on 123Movies™. Enjoy free streaming of full-length movies and TV series online with no registration required.`}
         />
-        <meta property='description' content={`${movie && movie.synopsis}`} />
         <meta property='og:url' content={`${movie && movie.siteurl}`} />
         <meta name='keywords' content={`${movie && movie.keywords}`} />
         <meta property='og:site_name' content='123Movies Online' />
@@ -632,7 +631,7 @@ const moviesDetail = ({ movie }) => {
         <meta name='twitter:data1' content='1 minute' />
         <meta
           name='google-site-verification'
-          content='4gdbnCGat0T4Ow3Y_RYzPM4vwtsXvhUel5Q-2yULK6k'
+          content='o8uNsADswyHnNPA69n9gI7u6L4_cdjN4iT5lRhHHtMU'
         />
         <meta
           name='facebook-domain-verification'
@@ -674,23 +673,6 @@ const moviesDetail = ({ movie }) => {
           dangerouslySetInnerHTML={{ __html: languagesSchema }}
         />
       </Head>
-      {/* <Script
-        dangerouslySetInnerHTML={{
-          __html: `
-            (function (w, d, s, id) {
-              if (typeof (w.webpushr) !== 'undefined') return;
-              w.webpushr = w.webpushr |function () { (w.webpushr.q = w.webpushr.q |[]).push(arguments) };
-              var js, fjs = d.getElementsByTagName(s)[0];
-              js = d.createElement(s); js.id = id; js.async = 1;
-              js.src = "https://cdn.webpushr.com/app.min.js";
-              fjs.parentNode.appendChild(js);
-            }(window, document, 'script', 'webpushr-jssdk'));
-
-            webpushr('setup', { 'key': 'BIHpgrvLvdxGSRA7cHudMTBdr7EWGon3q4reCUGbDcm5uiM2CkypC83diBbYhTMaD8pY_5G0L817DCPB3UqY2CI' });
-          `
-        }}
-      /> */}
-
       <SocialSharing />
       {/* <Script src='../../propler/ads.js' defer /> */}
       <Script src='../../propler/ads2.js' defer />
@@ -720,7 +702,7 @@ const moviesDetail = ({ movie }) => {
         >
           {movie.title}
         </h1>
-        <h2 className='px-0 bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-2xl hover:text-blue-800 font-bold mt-2'>
+        <h2 className='px-0 bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-2xl  font-bold mt-2'>
           {movie.title} Online and Experience Top-Tier Streaming
         </h2>
         <p className='text-lg text-yellow-500 mt-4'>
@@ -755,7 +737,6 @@ const moviesDetail = ({ movie }) => {
           <SearchComponent />
         </span>
       </div>
-
       <div
         className={`w-full`}
         style={{
@@ -848,12 +829,12 @@ const moviesDetail = ({ movie }) => {
           className='bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent font-bold text-3xl mt-2 flex items-center justify-center'
           style={{ marginTop: '25px', marginBottom: '25px' }}
         >
-          <span className='px-0 bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-3xl hover:text-blue-800 font-bold mt-2'>
+          <span className='px-0 bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-3xl  font-bold mt-2'>
             For Request or Demand Movies & TV Series Join Telegram
-            <i className='fab fa-telegram text-blue-600 hover:text-gray-600 ml-2 w-12 h-12 animate-pulse '></i>
+            <i className='fab fa-telegram text-blue-600 hover:text-yellow-600 ml-2 w-12 h-12 animate-pulse '></i>
           </span>
         </a>
-        <NativeVideoAd id='ADS03' />
+       
         <Pagination
           currentPage={currentPage}
           totalPages={totalPages}
@@ -891,22 +872,22 @@ const moviesDetail = ({ movie }) => {
             <div
               style={{ maxWidth: '800px', width: '100%', marginBottom: '20px' }}
             >
-              <h2 className='bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent hover:text-blue-800 text-bg font-semibold mt-2'>
+              <h2 className='bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent  text-bg font-semibold mt-2'>
                 Genre: {movie.genre}
               </h2>
-              <h2 className='bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent hover:text-blue-800 text-bg font-semibold mt-2'>
+              <h2 className='bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent  text-bg font-semibold mt-2'>
                 Director: {movie.directorname}
               </h2>
-              <h2 className='bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent hover:text-blue-800 text-bg font-semibold mt-2'>
+              <h2 className='bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent  text-bg font-semibold mt-2'>
                 Starring: {movie.starring}
               </h2>
-              <h2 className='bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent hover:text-blue-800 text-bg font-semibold mt-2'>
+              <h2 className='bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent  text-bg font-semibold mt-2'>
                 Origin Country: {movie.country}
               </h2>
-              <h2 className='bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent hover:text-blue-800 text-bg font-semibold mt-2'>
+              <h2 className='bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent  text-bg font-semibold mt-2'>
                 Language: {movie.language}
               </h2>
-              <div className=' bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent hover:text-blue-800 text-bg font-semibold mt-2'>
+              <div className=' bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent  text-bg font-semibold mt-2'>
                 Synopsis :-
                 {movie.news1 &&
                   movie.news1.split('\n\n').map((paragraph, idx) => (
@@ -1030,7 +1011,7 @@ const moviesDetail = ({ movie }) => {
               </div>
 
               <h2
-                className='px-0 bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-4xl hover:text-blue-800 font-bold mt-2'
+                className='px-0 bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-4xl  font-bold mt-2'
                 style={{ fontFamily: 'Poppins, sans-serif' }}
               >
                 Watch Online {movie.name}
@@ -1121,30 +1102,30 @@ const moviesDetail = ({ movie }) => {
                 )}
               </div>
               <p
-                className='px-0 bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-4xl hover:text-blue-800 font-bold mt-2'
+                className='px-0 bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-4xl  font-bold mt-2'
                 style={{ fontFamily: 'Poppins, sans-serif' }}
               >
                 Select Player To Watch.
               </p>
 
-              <div className='flex flex-wrap justify-center mb-4 bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text  hover:text-blue-800 text-bg font-semibold mt-2'>
+              <div className='flex flex-wrap justify-center mb-4 bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text  text-bg font-semibold mt-2'>
                 {videoSources.map((source, index) => (
-                  <button
-                    key={index}
-                    onClick={() => handlePlayerSelect(index)}
-                    className={`px-4 py-2 border rounded mx-2 my-1 ${
-                      currentPlayerIndex === index
-                        ? 'bg-red-500 text-white'
-                        : 'bg-gray-200'
-                    } hover:bg-green-500 hover:text-white`}
-                  >
-                    Player {index + 1}
-                  </button>
-                ))}
-              </div>
+          <button
+            key={index}
+            onClick={() => handlePlayerSelect(index)}
+           className={`px-4 py-2 border rounded mx-2 my-1 ${
+                 currentPlayerIndex === index
+                   ? 'bg-red-500 text-white'
+                   : 'bg-gray-200'
+               } hover:bg-green-500 hover:text-white`}
+          >
+            Player {index + 1}
+          </button>
+        ))}
+      </div>
 
               <h2
-                className='px-0 bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-3xl hover:text-blue-800 font-bold mt-2'
+                className='px-0 bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-3xl  font-bold mt-2'
                 style={{ fontFamily: 'Poppins, sans-serif' }}
               >
                 Click to Download {movie.name}
@@ -1197,7 +1178,7 @@ const moviesDetail = ({ movie }) => {
                         ></lottie-player> */}
                         {seconds > 0 ? (
                           <p
-                            className='px-0 bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-3xl hover:text-blue-800 font-bold mt-2  mb-4'
+                            className='px-0 bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-3xl  font-bold mt-2  mb-4'
                             style={{ marginTop: '50px' }}
                           >
                             Your download link will be ready in {seconds}{' '}
@@ -1205,7 +1186,7 @@ const moviesDetail = ({ movie }) => {
                           </p>
                         ) : (
                           <p
-                            className='px-0 bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-3xl hover:text-blue-800 font-bold mt-2  mb-4'
+                            className='px-0 bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-3xl  font-bold mt-2  mb-4'
                             style={{ marginTop: '50px' }}
                           >
                             Your download link is ready.
@@ -1325,7 +1306,7 @@ const moviesDetail = ({ movie }) => {
                     'contrast(1.1) saturate(1.2) brightness(1.3) hue-rotate(0deg)'
                 }}
               />
-              <div className=' text-2xl font-semibold mt-2 px-0 bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent  hover:text-blue-800 '>
+              <div className=' text-2xl font-semibold mt-2 px-0 bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent   '>
                 See Below for Other Links to Watch Full Content.
                 <div className={`${HomeStyles.imageGrid} mt-5`}>
                   {linkTargets.map((link, idx) => (

@@ -8,8 +8,6 @@ import latestData from '../../../public/latest.json'
 import GoogleTranslate from '../../../components/GoogleTranslate'
 import SocialSharing from '../../../components/SocialSharing'
 import SearchComponent from '../../../components/SearchComponent'
-import AdComponent from '../../../components/AdComponent'
-import Videoads from '../../../components/Videoads'
 import { useEffect, useState, useRef } from 'react'
 import Pagination from '../../../components/Pagination'
 import Head from 'next/head'
@@ -853,8 +851,7 @@ const moviesDetail = ({ movie }) => {
             <i className='fab fa-telegram text-blue-600 hover:text-yellow-600 ml-2 w-12 h-12 animate-pulse '></i>
           </span>
         </a>
-        <AdComponent id='ADS01' />
-        <Videoads id='ADS01' />
+      
         <Pagination
           currentPage={currentPage}
           totalPages={totalPages}

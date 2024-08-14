@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router'
 import { useEffect, useState, useRef } from 'react'
-// import styles from '@styles/iframeStyles.module.css'
+import styles from '@styles/iframeStyles.module.css'
 import HomeStyles from '@styles/styles.module.css'
 import Link from 'next/link'
 
@@ -227,7 +227,7 @@ const TvshowDetail = ({ tvshow }) => {
           Watch {tvshow.name}
         </h2>
 
-        <div style={{ width: '100%', maxWidth: '800px', marginBottom: '20px' }}>
+        <div  className={styles.iframeContainer} style={{ width: '100%', maxWidth: '800px', marginBottom: '20px' }}>
           <iframe
             frameBorder='0'
             src={src}
@@ -236,6 +236,7 @@ const TvshowDetail = ({ tvshow }) => {
             allowFullScreen
             scrolling='0'
             title='Video Player'
+            className={styles.iframe}
             style={{
               borderRadius: '8px',
               filter:
@@ -243,9 +244,9 @@ const TvshowDetail = ({ tvshow }) => {
             }}
           ></iframe>
 
-       
+         
         </div>
-        <p
+ <p
             className='text-black hover:px-0 text-bg font-black bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-sm'
             style={{
               fontFamily: 'Poppins, sans-serif',

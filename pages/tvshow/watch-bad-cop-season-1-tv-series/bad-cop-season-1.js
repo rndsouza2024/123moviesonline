@@ -278,7 +278,7 @@ const TvshowDetail = ({ tvshow }) => {
       borderRadius: '5px',
       cursor: 'pointer',
       fontSize: '1rem',
-      width: '45%', // Set to medium size
+      width: '50%', // Set to medium size
       minWidth: '150px', // Ensures a reasonable width on smaller screens
       margin: '5px', // Space between buttons
     }}
@@ -295,7 +295,7 @@ const TvshowDetail = ({ tvshow }) => {
       borderRadius: '5px',
       cursor: 'pointer',
       fontSize: '1rem',
-      width: '45%', // Set to medium size
+      width: '50%', // Set to medium size
       minWidth: '150px', // Ensures a reasonable width on smaller screens
       margin: '5px', // Space between buttons
     }}
@@ -314,7 +314,7 @@ const TvshowDetail = ({ tvshow }) => {
       borderRadius: '5px',
       cursor: 'pointer',
       fontSize: '1rem',
-      width: '45%', // Set to medium size
+      width: '50%', // Set to medium size
       minWidth: '150px', // Ensures a reasonable width on smaller screens
       margin: '5px', // Space between buttons
     }}

@@ -1,6 +1,7 @@
 import { useRouter } from 'next/router'
 import { useEffect, useState, useRef } from 'react'
-import styles from '@styles/iframeStyles.module.css'
+// import styles from '@styles/iframeStyles.module.css'
+import HomeStyles from '@styles/styles.module.css'
 import Link from 'next/link'
 
 const TvshowDetail = ({ tvshow }) => {
@@ -226,7 +227,7 @@ const TvshowDetail = ({ tvshow }) => {
           Watch {tvshow.name}
         </h2>
 
-        {/* <div style={{ width: '100%', maxWidth: '800px', marginBottom: '20px' }}>
+        <div style={{ width: '100%', maxWidth: '800px', marginBottom: '20px' }}>
           <iframe
             frameBorder='0'
             src={src}
@@ -254,48 +255,9 @@ const TvshowDetail = ({ tvshow }) => {
             *Note: Use Setting in Player to improve the Quality of video to HD
             Quality 1080p.
           </p>
-        </div> */}
-       <div
-  style={{
-    width: '100%',
-    height: '500px',
-    overflow: 'hidden',
-    position: 'relative',
-    display: 'flex',
-    justifyContent: 'center', // Center the iframe horizontally
-    alignItems: 'center', // Center the iframe vertically
-  }}
-  className='rounded-xl mr-8 flex flex-col border-1 items-center justify-center p-2'
->
-  <iframe
-    frameBorder='0'
-    src={src}
-    width='80%' // Reduced width for centering
-    height='450px'
-    allowFullScreen
-    scrolling='0'
-    title='Video Player'
-    className='mb-4'
-    style={{
-      filter:
-        'contrast(1.1) saturate(1.2) brightness(1.3) hue-rotate(0deg)',
-    }}
-  ></iframe>
-  <p
-    className='text-black hover:px-0 text-bg font-black bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-sm'
-    style={{
-      fontFamily: 'Poppins, sans-serif',
-      textShadow: '1px 1px 1px 0 #fff',
-      filter:
-        'contrast(1.2) saturate(1.3) brightness(1.1) hue-rotate(15deg)',
-      textAlign: 'center', // Ensure text is centered
-    }}
-  >
-    *Note: Use Setting in Player to improve the Quality of video to HD
-    Quality 1080p.
-  </p>
-</div>
-    <div
+        </div>
+
+    <div className='flex flex-col items-center justify-center'
   style={{
     display: 'flex',
     justifyContent: 'space-between',

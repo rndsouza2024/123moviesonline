@@ -256,84 +256,84 @@ const TvshowDetail = ({ tvshow }) => {
           </p>
         </div>
 
-        <div
-          style={{
-            display: 'flex',
-            justifyContent: 'space-between',
-            width: '100%',
-            maxWidth: '800px',
-            marginBottom: '20px',
-            flexWrap: 'wrap'
-          }}
-        >
-          <button
-            onClick={handleNextEpisode}
-            disabled={videoSources.length === 0}
-            style={{
-              padding: '10px 20px',
-              backgroundColor: '#007bff',
-              color: '#fff',
-              border: 'none',
-              fontWeight: 'bold',
-              borderRadius: '5px',
-              cursor: 'pointer',
-              fontSize: '1rem',
-              width: '30%', // Set to medium size
-              minWidth: '150px', // Ensures a reasonable width on smaller screens
-              margin: '5px' // Space between buttons
-            }}
-          >
-            Next Episode {nextEpisodeNumber}
-          </button>
-          <button
-            style={{
-              padding: '10px 20px',
-              backgroundColor: '#FF0000',
-              color: '#fff',
-              border: 'none',
-              fontWeight: 'bold',
-              borderRadius: '5px',
-              cursor: 'pointer',
-              fontSize: '1rem',
-              width: '30%', // Set to medium size
-              minWidth: '150px', // Ensures a reasonable width on smaller screens
-              margin: '5px' // Space between buttons
-            }}
-          >
-            Total Episode {tvshow.episode}
-          </button>
-          <button
-            onClick={handlePreviousEpisode}
-            disabled={videoSources.length === 0}
-            style={{
-              padding: '10px 20px',
-              backgroundColor: '#28a745',
-              color: '#fff',
-              border: 'none',
-              fontWeight: 'bold',
-              borderRadius: '5px',
-              cursor: 'pointer',
-              fontSize: '1rem',
-              width: '30%', // Set to medium size
-              minWidth: '150px', // Ensures a reasonable width on smaller screens
-              margin: '5px' // Space between buttons
-            }}
-          >
-            Previous Episode {prevEpisodeNumber}
-          </button>
-          <style jsx>{`
-            @media (max-width: 768px) {
-              div {
-                flex-direction: column;
-                align-items: center;
-              }
-              button {
-                width: 80%; // Adjust width for smaller screens
-                margin: 10px 0;
-              }
-            }
-          `}</style>
-        </div>
+    <div
+  style={{
+    display: 'flex',
+    justifyContent: 'space-between',
+    width: '100%',
+    maxWidth: '800px',
+    marginBottom: '20px',
+    flexWrap: 'wrap',
+  }}
+>
+  <button
+    onClick={handleNextEpisode}
+    disabled={videoSources.length === 0}
+    style={{
+      padding: '10px 20px',
+      backgroundColor: '#007bff',
+      color: '#fff',
+      border: 'none',
+      fontWeight: 'bold',
+      borderRadius: '5px',
+      cursor: 'pointer',
+      fontSize: '1rem',
+      width: '45%', // Set to medium size
+      minWidth: '150px', // Ensures a reasonable width on smaller screens
+      margin: '5px', // Space between buttons
+    }}
+  >
+    Next Episode {nextEpisodeNumber}
+  </button>
+  <button
+    style={{
+      padding: '10px 20px',
+      backgroundColor: '#FF0000',
+      color: '#fff',
+      border: 'none',
+      fontWeight: 'bold',
+      borderRadius: '5px',
+      cursor: 'pointer',
+      fontSize: '1rem',
+      width: '45%', // Set to medium size
+      minWidth: '150px', // Ensures a reasonable width on smaller screens
+      margin: '5px', // Space between buttons
+    }}
+  >
+    Total Episode {tvshow.episode}
+  </button>
+  <button
+    onClick={handlePreviousEpisode}
+    disabled={videoSources.length === 0}
+    style={{
+      padding: '10px 20px',
+      backgroundColor: '#28a745',
+      color: '#fff',
+      border: 'none',
+      fontWeight: 'bold',
+      borderRadius: '5px',
+      cursor: 'pointer',
+      fontSize: '1rem',
+      width: '45%', // Set to medium size
+      minWidth: '150px', // Ensures a reasonable width on smaller screens
+      margin: '5px', // Space between buttons
+    }}
+  >
+    Previous Episode {prevEpisodeNumber}
+  </button>
+  <style jsx>{`
+    @media (max-width: 768px) {
+      div {
+        flex-direction: column;
+        align-items: center;
+      }
+      button {
+        width: 80%; // Adjust width for smaller screens
+        margin: 10px 0;
+      }
+    }
+  `}</style>
+</div>
 
         <h2
           className='px-0 bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-3xl hover:text-blue-800 font-bold mt-2'

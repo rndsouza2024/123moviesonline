@@ -18,9 +18,10 @@ const TvshowDetail = ({ tvshow }) => {
 
   const parseVideoItem = item => {
     const [id, season, episode] = item.split('/')
-    return { id, season: parseInt(season, 10), episode: parseInt(episode, 20) }
+    return { id, season: parseInt(season, 10), episode: parseInt(episode, 10) }
   }
 
+  // Generate video sources from the TV show data
   const videoSources = tvshow.videotvshow.map(item => {
     const { id, season, episode } = parseVideoItem(item)
     return {
@@ -37,26 +38,30 @@ const TvshowDetail = ({ tvshow }) => {
     }
   })
 
+  // Function to handle next episode
   const handleNextEpisode = () => {
-    if (currentEpisodeIndex < videoSources.length - 1) {
-      setCurrentEpisodeIndex(currentEpisodeIndex + 1)
-    }
+    const nextIndex = (currentEpisodeIndex + 1) % videoSources.length
+    setCurrentEpisodeIndex(nextIndex)
   }
 
+  // Function to handle previous episode
   const handlePreviousEpisode = () => {
-    if (currentEpisodeIndex > 0) {
-      setCurrentEpisodeIndex(currentEpisodeIndex - 1)
-    }
+    const prevIndex =
+      (currentEpisodeIndex - 1 + videoSources.length) % videoSources.length
+    setCurrentEpisodeIndex(prevIndex)
   }
 
+  // Function to handle player selection
   const handlePlayerSelect = index => {
     setCurrentPlayerIndex(index)
   }
 
-  const currentVideoSources = videoSources[currentEpisodeIndex].urls
-  const src = currentVideoSources[currentPlayerIndex] || ''
+  // Ensure currentVideoSources is always valid
+  const currentVideoSources = videoSources[currentEpisodeIndex]?.urls || []
+  const src = currentVideoSources[currentPlayerIndex] || '' // Default to an empty string if not available
   const { episode } = parseVideoItem(tvshow.videotvshow[currentEpisodeIndex])
 
+  // Episode number logic for displaying next/previous episode numbers
   const episodeNumber = currentEpisodeIndex + 1
   const prevEpisodeNumber =
     currentEpisodeIndex === 0 ? videoSources.length : episodeNumber - 1
@@ -257,7 +262,8 @@ const TvshowDetail = ({ tvshow }) => {
             justifyContent: 'space-between',
             width: '100%',
             maxWidth: '800px',
-            marginBottom: '20px'
+            marginBottom: '20px',
+            flexWrap: 'wrap' // Enable wrapping for smaller screens
           }}
         >
           <button
@@ -271,10 +277,28 @@ const TvshowDetail = ({ tvshow }) => {
               fontWeight: 'bold',
               borderRadius: '5px',
               cursor: 'pointer',
-              fontSize: '1rem'
+              fontSize: '1rem',
+              flex: '1 1 auto', // Ensure buttons take up space evenly
+              margin: '5px' // Space between buttons
             }}
           >
             Next Episode {nextEpisodeNumber}
+          </button>
+          <button
+            style={{
+              padding: '10px 20px',
+              backgroundColor: '#FF0000',
+              color: '#fff',
+              border: 'none',
+              fontWeight: 'bold',
+              borderRadius: '5px',
+              cursor: 'pointer',
+              fontSize: '1rem',
+              flex: '1 1 auto', // Ensure buttons take up space evenly
+              margin: '5px' // Space between buttons
+            }}
+          >
+            Total Episode {tvshow.episode}
           </button>
           <button
             onClick={handlePreviousEpisode}
@@ -287,11 +311,25 @@ const TvshowDetail = ({ tvshow }) => {
               fontWeight: 'bold',
               borderRadius: '5px',
               cursor: 'pointer',
-              fontSize: '1rem'
+              fontSize: '1rem',
+              flex: '1 1 auto', // Ensure buttons take up space evenly
+              margin: '5px' // Space between buttons
             }}
           >
             Previous Episode {prevEpisodeNumber}
           </button>
+          <style jsx>{`
+            @media (max-width: 768px) {
+              div {
+                flex-direction: column;
+                align-items: center;
+              }
+              button {
+                width: 100%;
+                margin: 10px 0;
+              }
+            }
+          `}</style>
         </div>
 
         <h2
@@ -318,143 +356,162 @@ const TvshowDetail = ({ tvshow }) => {
                   : 'bg-gray-200 text-black'
               } hover:bg-green-500 hover:text-white transition duration-300 ease-in-out`}
               style={{
-                padding: '10px 20px',
-                margin: '5px',
                 border: 'none',
                 borderRadius: '5px',
                 fontWeight: 'bold',
                 cursor: 'pointer',
-                fontSize: '1rem'
+                fontSize: '1rem',
+                padding: '10px 20px',
+                margin: '5px'
               }}
             >
               Player {index + 1}
             </button>
           ))}
         </div>
-        <h2
-          className='px-0 bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-3xl hover:text-blue-800 font-bold mt-2'
-          style={{ fontFamily: 'Poppins, sans-serif' }}
-        >
-          Click to Download Episode {tvshow.name}
-        </h2>
+      </div>
 
-        <div
-          className='flex flex-col items-center justify-center'
-          style={{
-            marginTop: '50px',
-            marginBottom: '50px',
-            filter:
-              'contrast(1.1) saturate(1.1) brightness(1.0) hue-rotate(0deg)'
-          }}
-        >
-          {!showTimer ? (
-            <button
-              onClick={handleStartTimer}
-              className='animate-pulse bg-gradient-to-r from-amber-500 to-pink-500 text-black font-bold py-3 px-6 rounded-lg shadow-lg hover:from-amber-600 hover:to-pink-600 transition duration-300 text-2xl'
-            >
-              Download Now
-            </button>
-          ) : (
-            <>
-              <button
-                onClick={toggleAccordion}
-                className='animate-pulse bg-gradient-to-r from-pink-500 to-amber-500 font-bold py-3 px-6 rounded-lg shadow-lg hover:from-amber-600 hover:to-pink-600 transition duration-300 text-2xl'
-                style={{ marginBottom: '20px' }}
-              >
-                {accordionExpanded ? 'Click to Stop Download' : 'Download Now'}
-              </button>
-
-              {accordionExpanded && (
-                <>
-                  {seconds > 0 ? (
-                    <p
-                      className='bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-3xl font-bold mb-4'
-                      style={{ marginTop: '50px' }}
-                    >
-                      Your download link will be ready in {seconds} seconds...
-                    </p>
-                  ) : (
-                    <p
-                      className='bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-3xl font-bold mb-4'
-                      style={{ marginTop: '50px' }}
-                    >
-                      Your download link is ready.
-                    </p>
-                  )}
-                </>
-              )}
-            </>
-          )}
-        </div>
-
-        {accordionExpanded && (
-          <div
-            style={{
-              width: '100%',
-              height: '450px',
-              overflow: 'hidden',
-              marginTop: '20px',
-              marginBottom: '20px'
-            }}
-            className='rounded-xl flex  p-2 items-center justify-center'
-          >
-            <iframe
-              src={`https://geo.dailymotion.com/player/xkdl0.html?video=${tvshow.traileritem}&mute=true&Autoquality=1080p`}
+      <div className='flex flex-col items-center justify-center'>
+        {tvshow.linkurl && (
+          <Link href={tvshow.linkurl}>
+            <div
+              className={`px-4 py-2 border rounded mx-2 my-1 ${
+                tvshow.linkurl ? 'bg-red-500 text-white' : 'bg-gray-200'
+              }  hover:bg-green-700 hover:text-white`}
               style={{
-                width: '100%',
-                height: '100%',
-                border: 'none'
+                fontFamily: 'Poppins, sans-serif',
+                marginTop: '20px',
+                filter:
+                  'contrast(1.2) saturate(1.3) brightness(1.1) hue-rotate(15deg)'
               }}
-              allowFullScreen
-              title='Dailymotion Video Player'
-              allow='autoplay; encrypted-media'
-            ></iframe>
-          </div>
-        )}
-
-        {seconds === 0 && accordionExpanded && (
-          <div>
-            {Object.keys(tvshow)
-              .filter(key => key.startsWith('downloadlink'))
-              .map((key, index) => (
-                <Link key={index} href={tvshow[key]} target='_blank'>
-                  <div
-                    className='bg-gradient-to-r from-amber-500 to-pink-500 text-white font-bold py-3 px-6 rounded-lg shadow-lg hover:from-amber-600 hover:to-pink-600 transition duration-300'
-                    style={{
-                      margin: 'auto',
-                      marginBottom: '50px',
-                      borderRadius: '50px',
-                      fontWeight: 'bold',
-                      boxShadow: '0 0 10px 0 #fff',
-                      filter:
-                        'contrast(1.1) saturate(1.2) brightness(1.3) hue-rotate(0deg)'
-                    }}
-                  >
-                    <span
-                      className='animate-pulse'
-                      style={{
-                        color: key === 'downloadlink1' ? '#FF0000' : '#0efa06',
-                        fontSize: '24px',
-                        fontWeight: 'bold',
-                        textShadow: '3px 5px 5px #000'
-                      }}
-                    >
-                      <i
-                        className={
-                          key === 'downloadlink1'
-                            ? 'fa fa-magnet'
-                            : 'fa fa-download'
-                        }
-                        aria-hidden='true'
-                      ></i>{' '}
-                    </span>
-                    Download Episode {index + 1}
-                  </div>
-                </Link>
-              ))}
-          </div>
+            >
+              Click to Watch Season 2
+            </div>
+          </Link>
         )}
       </div>
+      <h2
+        className='px-0 bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-3xl hover:text-blue-800 font-bold mt-2'
+        style={{ fontFamily: 'Poppins, sans-serif' }}
+      >
+        Click to Download Episode {tvshow.name}
+      </h2>
+
+      <div
+        className='flex flex-col items-center justify-center'
+        style={{
+          marginTop: '50px',
+          marginBottom: '50px',
+          filter: 'contrast(1.1) saturate(1.1) brightness(1.0) hue-rotate(0deg)'
+        }}
+      >
+        {!showTimer ? (
+          <button
+            onClick={handleStartTimer}
+            className='animate-pulse bg-gradient-to-r from-amber-500 to-pink-500 text-black font-bold py-3 px-6 rounded-lg shadow-lg hover:from-amber-600 hover:to-pink-600 transition duration-300 text-2xl'
+          >
+            Download Now
+          </button>
+        ) : (
+          <>
+            <button
+              onClick={toggleAccordion}
+              className='animate-pulse bg-gradient-to-r from-pink-500 to-amber-500 font-bold py-3 px-6 rounded-lg shadow-lg hover:from-amber-600 hover:to-pink-600 transition duration-300 text-2xl'
+              style={{ marginBottom: '20px' }}
+            >
+              {accordionExpanded ? 'Click to Stop Download' : 'Download Now'}
+            </button>
+
+            {accordionExpanded && (
+              <>
+                {seconds > 0 ? (
+                  <p
+                    className='bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-3xl font-bold mb-4'
+                    style={{ marginTop: '50px' }}
+                  >
+                    Your download link will be ready in {seconds} seconds...
+                  </p>
+                ) : (
+                  <p
+                    className='bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-3xl font-bold mb-4'
+                    style={{ marginTop: '50px' }}
+                  >
+                    Your download link is ready.
+                  </p>
+                )}
+              </>
+            )}
+          </>
+        )}
+      </div>
+
+      {accordionExpanded && (
+        <div
+          style={{
+            width: '100%',
+            height: '450px',
+            overflow: 'hidden',
+            marginTop: '20px',
+            marginBottom: '20px'
+          }}
+          className='rounded-xl flex  p-2 items-center justify-center'
+        >
+          <iframe
+            src={`https://geo.dailymotion.com/player/xkdl0.html?video=${tvshow.traileritem}&mute=true&Autoquality=1080p`}
+            style={{
+              width: '100%',
+              height: '100%',
+              border: 'none'
+            }}
+            allowFullScreen
+            title='Dailymotion Video Player'
+            allow='autoplay; encrypted-media'
+          ></iframe>
+        </div>
+      )}
+
+      {seconds === 0 && accordionExpanded && (
+        <div>
+          {Object.keys(tvshow)
+            .filter(key => key.startsWith('downloadlink'))
+            .map((key, index) => (
+              <Link key={index} href={tvshow[key]} target='_blank'>
+                <div
+                  className='bg-gradient-to-r from-amber-500 to-pink-500 text-white font-bold py-3 px-6 rounded-lg shadow-lg hover:from-amber-600 hover:to-pink-600 transition duration-300'
+                  style={{
+                    margin: 'auto',
+                    marginBottom: '50px',
+                    borderRadius: '50px',
+                    fontWeight: 'bold',
+                    boxShadow: '0 0 10px 0 #fff',
+                    filter:
+                      'contrast(1.1) saturate(1.2) brightness(1.3) hue-rotate(0deg)'
+                  }}
+                >
+                  <span
+                    className='animate-pulse'
+                    style={{
+                      color: key === 'downloadlink1' ? '#FF0000' : '#0efa06',
+                      fontSize: '24px',
+                      fontWeight: 'bold',
+                      textShadow: '3px 5px 5px #000'
+                    }}
+                  >
+                    <i
+                      className={
+                        key === 'downloadlink1'
+                          ? 'fa fa-magnet'
+                          : 'fa fa-download'
+                      }
+                      aria-hidden='true'
+                    ></i>{' '}
+                  </span>
+                  Download Episode {index + 1}
+                </div>
+              </Link>
+            ))}
+        </div>
+      )}
     </div>
   )
 }

@@ -1,104 +1,56 @@
-.adOverlay {
-    position: fixed;
+/* videoad.module.css */
+
+.overlay {
+    position: fixed; /* Ensure the overlay is positioned relative to the viewport */
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.8);
-    display: flex;
+    width: 100vw; /* Full width of the viewport */
+    height: 100vh; /* Full height of the viewport */
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+    display: flex; /* Center the ad container */
     justify-content: center;
     align-items: center;
-    z-index: 1000;
-    animation: fadeIn 0.5s ease-out;
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
-
-.adContent {
-    background: #fff;
-    padding: 20px;
-    border-radius: 12px;
-    max-width: 90%;
-    width: 600px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    z-index: 1000; /* Ensure it's on top of other content */
+  }
+  
+  .adContainer {
     position: relative;
-    animation: slideIn 0.5s ease-out;
-}
-
-@keyframes slideIn {
-    from {
-        transform: translateY(-100%);
-    }
-    to {
-        transform: translateY(0);
-    }
-}
-
-.adInnerContent {
-    text-align: center;
-}
-
-.iframeAd {
-    width: 100%;
-    height: 300px; /* Adjust height as needed */
-    border-radius: 8px;
-    margin-bottom: 10px;
-}
-
-.adText {
-    font-size: 18px;
-    color: #333;
-    margin-bottom: 20px;
-}
-
-.bookmarkPrompt {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    align-items: center; /* Center align buttons */
-}
-
-.yesButton, .noButton {
-    background: #ff7e5f;
-    color: #fff;
-    padding: 10px 20px;
+    max-width: 90%; /* Ensure the ad container doesn't exceed viewport width */
+    max-height: 90%; /* Ensure the ad container doesn't exceed viewport height */
+    background-color: #fff; /* Background color for the ad container */
+    border-radius: 10px; /* Optional: rounded corners */
+    overflow: hidden; /* Ensure content doesn't overflow */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); /* Optional: shadow for better visibility */
+  }
+  
+  .iframe {
+    width: 100%; /* Full width of the ad container */
+    height: 100%; /* Full height of the ad container */
+    border: none; /* Remove border */
+  }
+  
+  .timer {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #fff; /* Text color */
+    font-size: 16px; /* Font size */
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    padding: 5px 10px; /* Padding around text */
+    border-radius: 5px; /* Rounded corners */
+  }
+  
+  .closeButton {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #f00; /* Background color */
+    color: #fff; /* Text color */
     border: none;
-    border-radius: 8px;
-    font-size: 18px;
+    border-radius: 5px; /* Rounded corners */
+    padding: 5px 10px; /* Padding */
     cursor: pointer;
-    transition: background 0.3s ease;
-    text-decoration: none;
-}
-
-.yesButton:hover, .noButton:hover {
-    background: #feb47b;
-}
-
-@media (min-width: 600px) {
-    .bookmarkPrompt {
-        flex-direction: row;
-        gap: 20px; /* Ensure space between buttons in row layout */
-    }
-}
-
-@media (max-width: 600px) {
-    .iframeAd {
-        height: 200px; /* Adjust height for smaller screens */
-    }
-
-    .adText {
-        font-size: 16px; /* Adjust text size for smaller screens */
-    }
-
-    .yesButton, .noButton {
-        font-size: 16px; /* Adjust button text size */
-        padding: 8px 16px; /* Adjust padding */
-    }
-}
+    font-size: 16px; /* Font size */
+  }
+  

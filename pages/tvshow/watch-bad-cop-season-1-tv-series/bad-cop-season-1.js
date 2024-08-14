@@ -263,7 +263,7 @@ const TvshowDetail = ({ tvshow }) => {
             width: '100%',
             maxWidth: '800px',
             marginBottom: '20px',
-            flexWrap: 'wrap' // Enable wrapping for smaller screens
+            flexWrap: 'wrap'
           }}
         >
           <button
@@ -278,7 +278,8 @@ const TvshowDetail = ({ tvshow }) => {
               borderRadius: '5px',
               cursor: 'pointer',
               fontSize: '1rem',
-              flex: '1 1 auto', // Ensure buttons take up space evenly
+              width: '30%', // Set to medium size
+              minWidth: '150px', // Ensures a reasonable width on smaller screens
               margin: '5px' // Space between buttons
             }}
           >
@@ -294,7 +295,8 @@ const TvshowDetail = ({ tvshow }) => {
               borderRadius: '5px',
               cursor: 'pointer',
               fontSize: '1rem',
-              flex: '1 1 auto', // Ensure buttons take up space evenly
+              width: '30%', // Set to medium size
+              minWidth: '150px', // Ensures a reasonable width on smaller screens
               margin: '5px' // Space between buttons
             }}
           >
@@ -312,7 +314,8 @@ const TvshowDetail = ({ tvshow }) => {
               borderRadius: '5px',
               cursor: 'pointer',
               fontSize: '1rem',
-              flex: '1 1 auto', // Ensure buttons take up space evenly
+              width: '30%', // Set to medium size
+              minWidth: '150px', // Ensures a reasonable width on smaller screens
               margin: '5px' // Space between buttons
             }}
           >
@@ -325,7 +328,7 @@ const TvshowDetail = ({ tvshow }) => {
                 align-items: center;
               }
               button {
-                width: 100%;
+                width: 80%; // Adjust width for smaller screens
                 margin: 10px 0;
               }
             }

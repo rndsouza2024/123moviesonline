@@ -243,7 +243,9 @@ const TvshowDetail = ({ tvshow }) => {
             }}
           ></iframe>
 
-          <p
+       
+        </div>
+        <p
             className='text-black hover:px-0 text-bg font-black bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-sm'
             style={{
               fontFamily: 'Poppins, sans-serif',
@@ -255,8 +257,6 @@ const TvshowDetail = ({ tvshow }) => {
             *Note: Use Setting in Player to improve the Quality of video to HD
             Quality 1080p.
           </p>
-        </div>
-
     <div className='flex flex-col items-center justify-center'
   style={{
     display: 'flex',

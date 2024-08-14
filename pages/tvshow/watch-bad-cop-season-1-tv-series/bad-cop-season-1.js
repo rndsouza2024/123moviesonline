@@ -227,7 +227,7 @@ const TvshowDetail = ({ tvshow }) => {
           Watch {tvshow.name}
         </h2>
 
-        <div  className={styles.iframeContainer} style={{ width: '100%', maxWidth: '800px', marginBottom: '20px' }}>
+        <div style={{ width: '100%', maxWidth: '800px', marginBottom: '20px' }}>
           <iframe
             frameBorder='0'
             src={src}
@@ -236,7 +236,6 @@ const TvshowDetail = ({ tvshow }) => {
             allowFullScreen
             scrolling='0'
             title='Video Player'
-            className={styles.iframe}
             style={{
               borderRadius: '8px',
               filter:

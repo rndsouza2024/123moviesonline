@@ -1,42 +1,19 @@
-/* iframeStyles.module.css */
-
-.iframeContainer {
-  width: 100%;
-  height: 450px; /* Adjust height if necessary */
-  overflow: hidden;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  position: relative;
-}
-
-.iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border: none; /* Remove iframe border */
-}
-
-@media only screen and (orientation: landscape) and (max-width: 800px) {
-  .iframe {
-    width: 100vw; /* Full viewport width */
-    height: 100vh; /* Full viewport height */
-    border-radius: 0; /* Remove border radius for fullscreen view */
-  }
-}
-
-@media only screen and (orientation: portrait) and (max-width: 800px) {
-  .iframe {
+.iframe-container {
     width: 100%;
-    height: 450px; /* Revert to original height */
-    border-radius: 8px; /* Reapply border radius */
+    height: 450px; /* Adjust height if necessary */
+    overflow: hidden;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    position: relative;
+  
   }
-}
-
-@media (max-width: 768px) {
-  .flexContainer {
-    flex-direction: column;
-    align-items: center;
+  
+  .iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none; /* Remove iframe border */
   }
-}
+  

@@ -1,11 +1,17 @@
 import { useRouter } from 'next/router'
 import { useEffect, useState, useRef } from 'react'
 import styles from '@styles/iframeStyles.module.css'
+import Pagination from '../../../components/Pagination'
 
 
 import Link from 'next/link'
 
 const AdultDetail = ({ adult }) => {
+  const router = useRouter()
+  const { id } = router.query
+  const [currentPage, setCurrentPage] = useState(1)
+  const totalPages = 0 // Assume there are 3 pages
+
   const [currentPlayerIndex, setCurrentPlayerIndex] = useState(0)
   const videoPlayerRef = useRef(null)
   const [seconds, setSeconds] = useState(30)
@@ -194,10 +200,22 @@ const AdultDetail = ({ adult }) => {
           </>
         )}
       </div>
-
+ <Pagination
+          currentPage={currentPage}
+          totalPages={totalPages}
+          route='adult'
+          style={{
+            marginTop: '50px',
+            marginBottom: '50px',
+            borderRadius: '50px',
+            boxShadow: '0 0 10px 0 #fff',
+            filter:
+              'contrast(1.1) saturate(1.2) brightness(1.3) hue-rotate(0deg)'
+          }}
+        />
       <h2
           className='px-0 bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-3xl hover:text-blue-800 font-bold mt-2'
-          style={{ fontFamily: 'Poppins, sans-serif' }}
+          style={{ fontFamily: 'Poppins, sans-serif',marginTop:'20px' }}
         >
           Click to Download {adult.name}
         </h2>

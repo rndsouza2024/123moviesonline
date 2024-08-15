@@ -71,27 +71,27 @@ const adultDetail = ({ adult }) => {
     return () => clearInterval(interval)
   }, [])
 
-  const parseVideoItem = item => {
-    if (!item) return { id: '', thumbnail: '' }
-    const [id, params] = item.split('?')
-    const thumbnail = new URLSearchParams(params).get('thumbnail')
-    return { id, thumbnail }
-  }
+    const parseVideoItem = item => {
+      if (!item) return { id: '', thumbnail: '' }
+      const [id, params] = item.split('?')
+      const thumbnail = new URLSearchParams(params).get('thumbnail')
+      return { id, thumbnail }
+    }
 
-  const movieVideoItem =
-    adult.videoadult && adult.videoadult.length > 0
-      ? parseVideoItem(adult.videoadult[0])
-      : { id: '', thumbnail: '' }
+    const movieVideoItem =
+      adult.videoadult && adult.videoadult.length > 0
+        ? parseVideoItem(adult.videoadult[0])
+        : { id: '', thumbnail: '' }
 
-  const movieVideoMoviesItem =
-    adult.videomoviesitem && adult.videomoviesitem.length > 0
-      ? parseVideoItem(adult.videomoviesitem[0])
-      : { id: '', thumbnail: '' }
+    const movieVideoMoviesItem =
+      adult.videomoviesitem && adult.videomoviesitem.length > 0
+        ? parseVideoItem(adult.videomoviesitem[0])
+        : { id: '', thumbnail: '' }
 
-  const src = `https://short.ink/${
-    movieVideoItem.id || movieVideoMoviesItem.id
-  }?thumbnail=${movieVideoItem.thumbnail || movieVideoMoviesItem.thumbnail}`
-  const thumbnail = movieVideoItem.thumbnail || movieVideoMoviesItem.thumbnail
+    const src = `https://short.ink/${
+      movieVideoItem.id || movieVideoMoviesItem.id
+    }?thumbnail=${movieVideoItem.thumbnail || movieVideoMoviesItem.thumbnail}`
+    const thumbnail = movieVideoItem.thumbnail || movieVideoMoviesItem.thumbnail
 
   useEffect(() => {
     const detectMobileDevice = () => {
@@ -285,9 +285,9 @@ const adultDetail = ({ adult }) => {
       },
       {
         '@type': 'Person',
-        '@id': 'https://123moviesonline.vercel.app/author/azmovies/',
+        '@id': 'https://123moviesonline.vercel.app/author/123moviesonline/',
         name: 'Dr Trailer',
-        url: 'https://123moviesonline.vercel.app/author/azmovies/',
+        url: 'https://123moviesonline.vercel.app/author/123moviesonline/',
         image: {
           '@type': 'ImageObject',
           '@id': 'https://gravatar.com/drtrailer2022',
@@ -305,13 +305,13 @@ const adultDetail = ({ adult }) => {
         dateModified: adult.dateModified,
         articleSection: 'Adult',
         author: {
-          '@id': 'https://123moviesonline.vercel.app/author/azmovies/'
+          '@id': 'https://123moviesonline.vercel.app/author/123moviesonline/'
         },
         publisher: {
           '@id': 'https://gravatar.com/drtrailer2022/#person'
         },
         description: adult.synopsis,
-        image: adult.image,
+        image: adult.image1,
         name: ` ${adult.name} |  123Movies Online™`,
         isPartOf: {
           '@id': `${adult.siteurl}#webpage`
@@ -337,14 +337,14 @@ const adultDetail = ({ adult }) => {
         dateModified: adult.dateModified,
         articleSection: 'Adult',
         author: {
-          '@id': 'https://123moviesonline.vercel.app/author/azmovies/'
+          '@id': 'https://123moviesonline.vercel.app/author/123moviesonline/'
         },
         publisher: {
           '@id': 'https://gravatar.com/drtrailer2022/#person'
         },
         description: adult.synopsis,
-        image: adult.image,
-        name: ` ${adult.name} |  123Movies Online™`,
+        image: adult.image1,
+        name: ` ${adult.name} | 123Movies Online™`,
         '@id': `${adult.siteurl}#richSnippet`,
         isPartOf: {
           '@id': `${adult.siteurl}#webpage`
@@ -489,22 +489,31 @@ const adultDetail = ({ adult }) => {
   const languagesSchema = JSON.stringify({
     '@context': 'https://schema.org',
     '@type': 'WebPage',
-    url: 'https://123moviesonline.vercel.app/adult/watch-pretty-boys-2024',
-    name: 'Watch Adult Kissa Part 01 (2024) | 123Movies™',
+    url: adult.siteurl, // Ensure this URL is correctly set
+    name: 'Watch Adult Anokhi Part 1 (2024) | 123Movies™',
     alternateName: [
-      'Ver Kissa Part 01 Parte (2024) para adultos | 123Movies™',
-      'Regarder Kissa Part 01 Partie (2024) pour adultes | 123Movies™',
-      'Kissa Part 01 Teil (2024) für Erwachsene ansehen | 123Movies™',
-      '观看 Kissa Part 01 (2024) 成人内容 | 123Movies™',
-      'Kissa Part 01 パート (2024) 大人向け | 123Movies™',
-      'Kissa Part 01 파트 (2024) 성인 전용 | 123Movies™',
-      'Assistir Kissa Part 01 Parte (2024) para adultos | 123Movies™',
-      'Guarda Kissa Part 01 Parte (2024) per adulti | 123Movies™',
-      'Посмотреть Kissa Part 01 Часть (2024) для взрослых | 123Movies™',
-      'مشاهدة Kissa Part 01 (2024) للكبار فقط | 123Movies™'
+      'Ver Anokhi Part 1 (2024) para adultos | 123Movies™',
+      'Regarder Anokhi Part 1 (2024) pour adultes | 123Movies™',
+      'Anokhi Part 1 (2024) für Erwachsene ansehen | 123Movies™',
+      '观看 Anokhi Part 1 (2024) 成人内容 | 123Movies™',
+      'Anokhi Part 1 (2024) 大人向け | 123Movies™',
+      'Anokhi Part 1 (2024) 성인 전용 | 123Movies™',
+      'Assistir Anokhi Part 1 (2024) para adultos | 123Movies™',
+      'Guarda Anokhi Part 1 (2024) per adulti | 123Movies™',
+      'Посмотреть Anokhi Part 1 (2024) для взрослых | 123Movies™',
+      'مشاهدة Anokhi Part 1 (2024) للكبار فقط | 123Movies™'
     ],
     inLanguage: [
-      'es', 'fr', 'de', 'zh-Hans', 'ja', 'ko', 'pt', 'it', 'ru', 'ar'
+      'es',
+      'fr',
+      'de',
+      'zh-Hans',
+      'ja',
+      'ko',
+      'pt',
+      'it',
+      'ru',
+      'ar'
     ]
   });
 
@@ -515,7 +524,7 @@ const adultDetail = ({ adult }) => {
           name='robots'
           content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1'
         />
-        <title> Watch Kissa Part 01 (2024) | 123Movies™</title>
+        <title> Watch Anokhi Part 1 (2024) | 123Movies™</title>
         <link rel='canonical' href={adult && adult.siteurl} />
         <meta name='robots' content='index, follow' />
         <meta name='googlebot' content='index,follow' />
@@ -534,7 +543,10 @@ const adultDetail = ({ adult }) => {
           property='og:description'
           content='Stream HD movies and TV series for free on 123Movies Online. Explore, stream, and download full-length movies and shows in HD quality without registration.'
         />
-
+        <meta
+          name='description'
+          content={`${adult.title} available on 123Movies™. Enjoy free streaming of full-length movies and TV series online with no registration required.`}
+        />
         <meta property='og:url' content={`${adult && adult.siteurl}`} />
         <meta name='keywords' content={`${adult && adult.keywords}`} />
         <meta property='og:site_name' content=' 123Movies Online' />
@@ -553,18 +565,15 @@ const adultDetail = ({ adult }) => {
         <meta property='og:image:height' content='720px' />
         <meta property='og:image:type' content='image/webp' />
         <meta name='twitter:card' content='summary_large_image' />
-          <meta
-            name='twitter:title'
-            content='123Movies Online™ - Explore. Discover. Online. '
-          />
-          <meta
-            name='twitter:description'
-            content='Stream HD movies and TV series for free on 123Movies Online. Explore, stream, and download full-length movies and shows in HD quality without registration.'
-          />
-          <meta
-            name='twitter:image'
-            content={`${adult && adult.image1}`}
-          />
+        <meta
+          name='twitter:title'
+          content='123Movies Online™ - Explore. Discover. Online. '
+        />
+        <meta
+          name='twitter:description'
+          content='Stream HD movies and TV series for free on 123Movies Online. Explore, stream, and download full-length movies and shows in HD quality without registration.'
+        />
+        <meta name='twitter:image' content={`${adult && adult.image1}`} />
         <meta name='twitter:label1' content='Est. reading time' />
         <meta name='twitter:data1' content='1 minute' />
         <meta
@@ -606,29 +615,13 @@ const adultDetail = ({ adult }) => {
           type='application/ld+json'
           dangerouslySetInnerHTML={{ __html: breadcrumbSchema }}
         />
-         <script
-            type='application/ld+json'
-            dangerouslySetInnerHTML={{ __html: languagesSchema }}
-          />
-        
+        <script
+          type='application/ld+json'
+          dangerouslySetInnerHTML={{ __html: languagesSchema }}
+        />
       </Head>
-      {/* <Script
-        dangerouslySetInnerHTML={{
-          __html: `
-            (function (w, d, s, id) {
-              if (typeof (w.webpushr) !== 'undefined') return;
-              w.webpushr = w.webpushr |function () { (w.webpushr.q = w.webpushr.q |[]).push(arguments) };
-              var js, fjs = d.getElementsByTagName(s)[0];
-              js = d.createElement(s); js.id = id; js.async = 1;
-              js.src = "https://cdn.webpushr.com/app.min.js";
-              fjs.parentNode.appendChild(js);
-            }(window, document, 'script', 'webpushr-jssdk'));
+   
 
-            webpushr('setup', { 'key': 'BIHpgrvLvdxGSRA7cHudMTBdr7EWGon3q4reCUGbDcm5uiM2CkypC83diBbYhTMaD8pY_5G0L817DCPB3UqY2CI' });
-          `
-        }}
-      /> */}
-      
       <SocialSharing />
       <Script src='../../propler/ads2.js' defer />
       {/* <Script src='../../propler/ads.js' defer /> */}
@@ -648,7 +641,7 @@ const adultDetail = ({ adult }) => {
           backgroundColor: '#0e0e0e'
         }}
       >
-           <GoogleTranslate />
+        <GoogleTranslate />
         <h1
           className='text-black bg-gradient-to-r from-pink-500 to-amber-500 font-bold py-3 px-6 rounded-lg shadow-lg hover:from-amber-600 hover:to-pink-600 transition duration-300 text-3xl'
           style={{
@@ -659,6 +652,39 @@ const adultDetail = ({ adult }) => {
         >
           {adult.title}
         </h1>
+        <h2 className='px-0 bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-2xl hover:text-blue-800 font-bold mt-2'>
+           {adult.title} Online - Stream Premium Adult Content
+        </h2>
+        <p className='text-lg text-yellow-500 mt-4'>
+          Indulge in the finest selection of adult entertainment with{' '}
+          <strong>{adult.title}</strong>. At <strong>123Movies Online™</strong>,
+          we offer a vast library of premium adult content, including the latest
+          and most popular titles like
+          <strong>{adult.title}</strong>. Our platform is designed for those who
+          seek high-quality, discreet streaming of adult films, ensuring a
+          seamless and private viewing experience.
+        </p>
+        <p className='text-lg text-yellow-500 mt-4'>
+          Streaming <strong>{adult.title}</strong> on{' '}
+          <strong>123Movies Online™</strong> provides you with a user-friendly
+          interface and crystal-clear video quality. Our adult content is
+          regularly updated, giving you access to new releases as soon as they
+          become available. Whether you're exploring new genres or returning to
+          your favorites, <strong>{adult.title}</strong>
+          and other top titles are available at your fingertips.
+        </p>
+        <p className='text-lg text-yellow-500 mt-4'>
+          For a premium experience in adult entertainment, look no further than{' '}
+          <strong>{adult.title}</strong> on
+          <strong>123Movies Online™</strong>. Our platform ensures your privacy
+          and security while you enjoy the content you love. Start streaming{' '}
+          <strong>{adult.title}</strong> today and discover why{' '}
+          <strong>123Movies Online™</strong> is the trusted choice for adult
+          content.
+        </p>
+        <span className='px-0 bg-clip-text text-sm text-black font-bold mt-2'>
+          <SearchComponent />
+        </span>
       </div>
       <div
         className={`w-full`}
@@ -809,7 +835,7 @@ const adultDetail = ({ adult }) => {
               <h2 className='bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-bg font-semibold mt-2'>
                 Language: {adult.language}
               </h2>
-            
+
               <div className={`${HomeStyles.imageGrid} mt-5`}>
                 <img
                   className={`${HomeStyles.image} img-fluid lazyload `}
@@ -908,63 +934,25 @@ const adultDetail = ({ adult }) => {
                 />
               </div>
 
-              <p
-                className='px-0 bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-4xl hover:text-blue-800 font-bold mt-2'
-                style={{ fontFamily: 'Poppins, sans-serif' }}
-              >
-                Watch Online {adult.name}
-              </p>
-
-              <div
-                style={{
-                  width: '100%',
-                  height: '500px',
-                  overflow: 'hidden',
-                  position: 'relative'
-                }}
-                className='rounded-xl mr-8 flex flex-col border-1 border-blue-600 bg-black p-2'
-              >
-                {isAdult && (
-                  <>
-                    <iframe
-                      frameBorder='0'
-                      src={src}
-                      width='100%'
-                      height='450px'
-                      allowFullScreen
-                      scrolling='0'
-                      title='Video Player'
-                      style={{
-                        filter:
-                          'contrast(1.2) saturate(1.3) brightness(1.1) hue-rotate(15deg)'
-                      }}
-                    ></iframe>
-                  </>
-                )}
-
-                {thumbnail && (
-                  <img
-                    src={thumbnail}
-                    alt='Video Thumbnail'
-                    style={{
-                      position: 'absolute',
-                      top: '2px',
-                      left: '10px',
-                      width: '100px',
-                      height: '56px',
-                      borderRadius: '10px'
-                    }}
-                  />
-                )}
-              </div>
-              <h2
-                className='px-0 bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-3xl hover:text-blue-800 font-bold mt-2'
-                style={{ fontFamily: 'Poppins, sans-serif' }}
-              >
-                Click to Download Episode {adult.name}
+              <h2 className='px-0 bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-4xl hover:text-blue-800 font-bold mt-2'>
+                Watch {adult.name}
               </h2>
-              {/* <div className='flex flex-col items-center justify-center'></div>
-              {adult.mp3player && <MP3Player mp3Url={adult.mp3player} />} */}
+
+              <Link href={adult.adult} passHref>
+                <button
+                  className='animate-pulse bg-gradient-to-r from-amber-500 to-pink-500 text-black font-bold py-3 px-6 rounded-lg shadow-lg hover:from-amber-600 hover:to-pink-600 transition duration-300 text-2xl'
+                  style={{
+                    fontFamily: 'Poppins, sans-serif',
+                    textShadow: '1px 1px 1px 0 #fff',
+                    marginTop: '20px',
+                    marginBottom: '20px',
+                    filter:
+                      'contrast(1.2) saturate(1.3) brightness(1.1) hue-rotate(15deg)'
+                  }}
+                >
+                  {/* Watch {tvshow.name || 'Now'} */}Watch Now
+                </button>
+              </Link>
               <div
                 className='flex flex-col items-center justify-center'
                 style={{
@@ -974,149 +962,38 @@ const adultDetail = ({ adult }) => {
                     'contrast(1.1) saturate(1.1) brightness(1.0) hue-rotate(0deg)'
                 }}
               >
-                {!showTimer ? (
-                  <button
-                    onClick={handleStartTimer}
-                    className='animate-pulse bg-gradient-to-r from-amber-500 to-pink-500 text-black font-bold py-3 px-6 rounded-lg shadow-lg hover:from-amber-600 hover:to-pink-600 transition duration-300 text-2xl'
-                  >
-                    Download Now
-                  </button>
-                ) : (
+                <button
+                  onClick={toggleAccordion}
+                  className=' bg-gradient-to-r from-pink-500 to-amber-500 font-bold py-3 px-6 rounded-lg shadow-lg hover:from-amber-600 hover:to-pink-600 transition duration-300 text-2xl'
+                  style={{ marginBottom: '20px' }}
+                >
+                  {accordionExpanded
+                    ? 'Hide Trailer'
+                    : 'Watch Official Trailer'}
+                </button>
+
+                {accordionExpanded && (
                   <>
-                    <button
-                      onClick={toggleAccordion}
-                      className='animate-pulse bg-gradient-to-r from-pink-500 to-amber-500 font-bold py-3 px-6 rounded-lg shadow-lg hover:from-amber-600 hover:to-pink-600 transition duration-300 text-2xl'
+                    <div
                       style={{
-                        // marginTop: '20px',
+                        width: '100%',
+                        height: '450px',
+                        overflow: 'hidden',
+                        marginTop: '20px',
                         marginBottom: '20px'
                       }}
+                      className='rounded-xl flex border-1 border-blue-600 bg-black p-2 items-center justify-center'
                     >
-                      {accordionExpanded
-                        ? 'Click to Stop Download'
-                        : 'Download Now'}
-                    </button>
-
-                    {accordionExpanded && (
-                      <>
-                        {/* <Script src='https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js'></Script>
-                        <lottie-player
-                          src='https://lottie.host/58d9c7ed-a39e-4cb6-b78a-e7cb1f9bf9cd/RHWR24wQSd.json'
-                          background='#D3D3D3'
-                          speed='1'
-                          style={{ width: '250px' }}
-                          loop
-                          autoplay
-                          direction='1'
-                          mode='normal'
-                        ></lottie-player> */}
-                        {seconds > 0 ? (
-                          <p
-                            className='bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-3xl font-bold mb-4'
-                            style={{ marginTop: '50px' }}
-                          >
-                            Your download link will be ready in {seconds}{' '}
-                            seconds...
-                          </p>
-                        ) : (
-                          <p
-                            className='bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-3xl font-bold mb-4'
-                            style={{ marginTop: '50px' }}
-                          >
-                            Your download link is ready.
-                          </p>
-                        )}
-
-                        <div
-                          style={{
-                            width: '100%',
-                            height: '450px',
-                            overflow: 'hidden',
-                            marginTop: '20px',
-                            marginBottom: '20px'
-                          }}
-                          className='rounded-xl flex border-1 border-blue-600 bg-black p-2 items-center justify-center'
-                        >
-                          <div
-                            itemscope
-                            itemtype='https://schema.org/VideoObject'
-                            style={{ display: 'none' }}
-                          >
-                            <meta itemprop='name' content={adult.title} />
-                            <meta itemprop='description' content={adult.text} />
-                            <meta
-                              itemprop='uploadDate'
-                              content={adult.datePublished}
-                            />
-                            <meta
-                              itemprop='thumbnailUrl'
-                              content={adult.backimage}
-                            />
-                            <meta itemprop='duration' content='P34S' />
-                            <meta
-                              itemprop='embedUrl'
-                              content={adult.videourl}
-                            />
-                          </div>
-                          <iframe
-                            frameBorder='0'
-                            src={`https://geo.dailymotion.com/player/xkdl0.html?video=${adult.traileritem}&mute=true&Autoquality=1080p`}
-                            width='100%'
-                            height='100%'
-                            allowFullScreen
-                            title='Dailymotion Video Player'
-                            allow='autoplay; encrypted-media'
-                          ></iframe>
-                        </div>
-
-                        {seconds === 0 && (
-                          <div>
-                            {Object.keys(adult)
-                              .filter(key => key.startsWith('downloadlink'))
-                              .map((key, index) => (
-                                <Link
-                                  key={index}
-                                  href={adult[key]}
-                                  target='_blank'
-                                >
-                                  <div
-                                    className='bg-gradient-to-r from-amber-500 to-pink-500 text-white font-bold py-3 px-6 rounded-lg shadow-lg hover:from-amber-600 hover:to-pink-600 transition duration-300'
-                                    style={{
-                                      margin: 'auto',
-                                      marginBottom: '50px',
-                                      borderRadius: '50px',
-                                      boxShadow: '0 0 10px 0 #fff',
-                                      filter:
-                                        'contrast(1.1) saturate(1.2) brightness(1.3) hue-rotate(0deg)'
-                                    }}
-                                  >
-                                    <span
-                                      className='animate-pulse'
-                                      style={{
-                                        color:
-                                          key === 'downloadlink1'
-                                            ? '#FF0000'
-                                            : '#0efa06',
-                                        fontSize: '24px',
-                                        textShadow: '3px 5px 5px #000'
-                                      }}
-                                    >
-                                      <i
-                                        className={
-                                          key === 'downloadlink1'
-                                            ? 'fa fa-magnet'
-                                            : 'fa fa-download'
-                                        }
-                                        aria-hidden='true'
-                                      ></i>{' '}
-                                    </span>
-                                    Download Link {index + 1}
-                                  </div>
-                                </Link>
-                              ))}
-                          </div>
-                        )}
-                      </>
-                    )}
+                      <iframe
+                        frameBorder='0'
+                        src={`https://geo.dailymotion.com/player/xkdl0.html?video=${adult.traileritem}&mute=true&Autoquality=1080p`}
+                        width='100%'
+                        height='100%'
+                        allowFullScreen
+                        title='Dailymotion Video Player'
+                        allow='autoplay; encrypted-media'
+                      ></iframe>
+                    </div>
                   </>
                 )}
               </div>
@@ -1197,14 +1074,14 @@ const adultDetail = ({ adult }) => {
                     'contrast(1.1) saturate(1.1) brightness(1.0) hue-rotate(0deg)'
                 }}
               />
-          </div>
+            </div>
           </div>
           <div className='sidebar'>
-          <h2
-            className='bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-3xl font-bold mt-2'
-            style={{
-              marginTop: '15px',
-            }}
+            <h2
+              className='bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-3xl font-bold mt-2'
+              style={{
+                marginTop: '15px'
+              }}
             >
               MOST POPULAR ADULT CONTENT
             </h2>
@@ -1231,7 +1108,7 @@ const adultDetail = ({ adult }) => {
                               'contrast(1.1) saturate(1.1) brightness(1.0) hue-rotate(0deg)'
                           }}
                         />
-                         <h2 className='bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-xl font-semibold mt-2'>
+                        <h2 className='bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-xl font-semibold mt-2'>
                           {item.name}
                         </h2>
                         <h3 className='bg-gradient-to-r from-pink-700 to-blue-700 bg-clip-text text-transparent text-bg font-semibold mt-2'>

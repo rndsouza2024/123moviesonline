@@ -570,7 +570,7 @@ const HomePage = () => {
                         className='text-black text-xl bg-gradient-to-r from-amber-500 to-pink-500 font-bold py-3 px-6 rounded-lg shadow-lg hover:from-pink-600 hover:to-amber-600 transition duration-300'
                         style={{
                           marginBottom: '20px',
-                          // boxShadow: '0 0 10px 0 #fff',
+                          // boxShadow: '5px 5px 10px rgba(0, 0, 0, 0.5), 10px 10px 20px rgba(0, 0, 0, 0.3)',
                           filter:
                             'contrast(1.1) saturate(1.3) brightness(1.2) hue-rotate(0deg)'
                         }}
@@ -590,7 +590,7 @@ const HomePage = () => {
                             style={{
                               width: '200px', // Ensures the image is displayed at this width
                               height: '300px', // Ensures the image is displayed at this height
-                              // boxShadow: '0 0 10px 0 #000',
+                              // boxShadow: '5px 5px 10px rgba(0, 0, 0, 0.5), 10px 10px 20px rgba(0, 0, 0, 0.3)',
                               filter:
                                 'contrast(1.1) saturate(1.1) brightness(1.0) hue-rotate(0deg)'
                             }}
@@ -602,7 +602,7 @@ const HomePage = () => {
                         <div
                           className='badge bg-gradient-to-r from-pink-500 to-amber-500 font-bold py-3 px-6 rounded-lg shadow-lg hover:from-amber-600 hover:to-pink-600 transition duration-300'
                           style={{
-                            boxShadow: '0 0 10px 0 #fff',
+                            boxShadow: '5px 5px 10px rgba(0, 0, 0, 0.5), 10px 10px 20px rgba(0, 0, 0, 0.3)',
                             filter:
                               'contrast(1.1) saturate(1.1) brightness(1.0) hue-rotate(0deg)'
                           }}
@@ -634,7 +634,7 @@ const HomePage = () => {
                         className='text-black text-xl bg-gradient-to-r from-amber-500 to-pink-500 font-bold py-3 px-6 rounded-lg shadow-lg hover:from-pink-600 hover:to-amber-600 transition duration-300'
                         style={{
                           marginBottom: '20px',
-                          // boxShadow: '0 0 10px 0 #fff',
+                          // boxShadow: '5px 5px 10px rgba(0, 0, 0, 0.5), 10px 10px 20px rgba(0, 0, 0, 0.3)',
                           filter:
                             'contrast(1.1) saturate(1.3) brightness(1.2) hue-rotate(0deg)'
                         }}
@@ -654,7 +654,7 @@ const HomePage = () => {
                             style={{
                               width: '200px', // Ensures the image is displayed at this width
                               height: '300px', // Ensures the image is displayed at this height
-                              // boxShadow: '0 0 10px 0 #fff',
+                              // boxShadow: '5px 5px 10px rgba(0, 0, 0, 0.5), 10px 10px 20px rgba(0, 0, 0, 0.3)',
                               filter:
                                 'contrast(1.1) saturate(1.1) brightness(1.0) hue-rotate(0deg)'
                             }}
@@ -666,7 +666,7 @@ const HomePage = () => {
                         <div
                           className='badge bg-gradient-to-r from-pink-500 to-amber-500 font-bold py-3 px-6 rounded-lg shadow-lg hover:from-amber-600 hover:to-pink-600 transition duration-300'
                           style={{
-                            boxShadow: '0 0 10px 0 #fff',
+                            boxShadow: '5px 5px 10px rgba(0, 0, 0, 0.5), 10px 10px 20px rgba(0, 0, 0, 0.3)',
                             filter:
                               'contrast(1.1) saturate(1.1) brightness(1.0) hue-rotate(0deg)'
                           }}
@@ -696,7 +696,7 @@ const HomePage = () => {
                         className='text-black text-xl bg-gradient-to-r from-amber-500 to-pink-500 font-bold py-3 px-6 rounded-lg shadow-lg hover:from-pink-600 hover:to-amber-600 transition duration-300'
                         style={{
                           marginBottom: '20px',
-                          // boxShadow: '0 0 10px 0 #fff',
+                          // boxShadow: '5px 5px 10px rgba(0, 0, 0, 0.5), 10px 10px 20px rgba(0, 0, 0, 0.3)',
                           filter:
                             'contrast(1.1) saturate(1.3) brightness(1.2) hue-rotate(0deg)'
                         }}
@@ -716,7 +716,7 @@ const HomePage = () => {
                             style={{
                               width: '200px', // Ensures the image is displayed at this width
                               height: '300px', // Ensures the image is displayed at this height
-                              // boxShadow: '0 0 10px 0 #000',
+                              // boxShadow: '5px 5px 10px rgba(0, 0, 0, 0.5), 10px 10px 20px rgba(0, 0, 0, 0.3)',
                               filter:
                                 'contrast(1.1) saturate(1.1) brightness(1.0) hue-rotate(0deg)'
                             }}
@@ -728,7 +728,7 @@ const HomePage = () => {
                         <div
                           className='badge bg-gradient-to-r from-pink-500 to-amber-500 font-bold py-3 px-6 rounded-lg shadow-lg hover:from-amber-600 hover:to-pink-600 transition duration-300'
                           style={{
-                            boxShadow: '0 0 10px 0 #fff',
+                            boxShadow: '5px 5px 10px rgba(0, 0, 0, 0.5), 10px 10px 20px rgba(0, 0, 0, 0.3)',
                             filter:
                               'contrast(1.1) saturate(1.1) brightness(1.0) hue-rotate(0deg)'
                           }}
@@ -758,7 +758,7 @@ const HomePage = () => {
                         className='text-black text-xl bg-gradient-to-r from-amber-500 to-pink-500 font-bold py-3 px-6 rounded-lg shadow-lg hover:from-pink-600 hover:to-amber-600 transition duration-300'
                         style={{
                           marginBottom: '20px',
-                          // boxShadow: '0 0 10px 0 #fff',
+                          // boxShadow: '5px 5px 10px rgba(0, 0, 0, 0.5), 10px 10px 20px rgba(0, 0, 0, 0.3)',
                           filter:
                             'contrast(1.1) saturate(1.3) brightness(1.2) hue-rotate(0deg)'
                         }}
@@ -778,7 +778,7 @@ const HomePage = () => {
                             style={{
                               width: '200px', // Ensures the image is displayed at this width
                               height: '300px', // Ensures the image is displayed at this height
-                              boxShadow: '0 0 10px 0 #000',
+                              boxShadow: '5px 5px 10px rgba(0, 0, 0, 0.5), 10px 10px 20px rgba(0, 0, 0, 0.3)',
                               filter:
                                 'contrast(1.1) saturate(1.1) brightness(1.0) hue-rotate(0deg)'
                             }}
@@ -790,7 +790,7 @@ const HomePage = () => {
                         <div
                           className='badge bg-gradient-to-r from-pink-500 to-amber-500 font-bold py-3 px-6 rounded-lg shadow-lg hover:from-amber-600 hover:to-pink-600 transition duration-300'
                           style={{
-                            boxShadow: '0 0 10px 0 #fff',
+                            boxShadow: '5px 5px 10px rgba(0, 0, 0, 0.5), 10px 10px 20px rgba(0, 0, 0, 0.3)',
                             filter:
                               'contrast(1.1) saturate(1.1) brightness(1.0) hue-rotate(0deg)'
                           }}
@@ -841,7 +841,7 @@ const HomePage = () => {
                               marginTop: '50px',
                               width: '1280px', // Ensures the image is displayed at this width
                               height: '350px', // Ensures the image is displayed at this height
-                              boxShadow: '0 0 10px 0 #000',
+                              boxShadow: '5px 5px 10px rgba(0, 0, 0, 0.5), 10px 10px 20px rgba(0, 0, 0, 0.3)',
                               filter:
                                 'contrast(1.1) saturate(1.1) brightness(1.0) hue-rotate(0deg)'
                             }}

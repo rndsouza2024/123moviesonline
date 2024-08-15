@@ -744,7 +744,7 @@ const trailersDetail = ({ trailers }) => {
             marginTop: '50px',
             marginBottom: '50px',
             borderRadius: '50px',
-            boxShadow: '0 0 10px 0 #fff',
+            boxShadow: '5px 5px 10px rgba(0, 0, 0, 0.5), 10px 10px 20px rgba(0, 0, 0, 0.3)',
             filter:
               'contrast(1.0) saturate(1.0) brightness(1.0) hue-rotate(0deg)'
           }}
@@ -765,7 +765,7 @@ const trailersDetail = ({ trailers }) => {
                 marginTop: '50px',
                 marginBottom: '20px',
                 borderRadius: '50px',
-                boxShadow: '0 0 10px 0 #000',
+                boxShadow: '5px 5px 10px rgba(0, 0, 0, 0.5), 10px 10px 20px rgba(0, 0, 0, 0.3)',
                 filter:
                   'contrast(1.1) saturate(1.1) brightness(1.0) hue-rotate(0deg)'
               }}
@@ -833,7 +833,7 @@ const trailersDetail = ({ trailers }) => {
                     width: '200px',
                     height: '200px',
                     objectFit: 'cover',
-                    boxShadow: '0 0 10px 0 #000', // Shadow effect with black color
+                    boxShadow: '5px 5px 10px rgba(0, 0, 0, 0.5), 10px 10px 20px rgba(0, 0, 0, 0.3)', // Shadow effect with black color
                     filter:
                       'contrast(1.2) saturate(1.3) brightness(1.1) hue-rotate(0deg)'
                   }}
@@ -850,7 +850,7 @@ const trailersDetail = ({ trailers }) => {
                     width: '200px',
                     height: '200px',
                     objectFit: 'cover',
-                    boxShadow: '0 0 10px 0 #000', // Shadow effect with black color
+                    boxShadow: '5px 5px 10px rgba(0, 0, 0, 0.5), 10px 10px 20px rgba(0, 0, 0, 0.3)', // Shadow effect with black color
                     filter:
                       'contrast(1.2) saturate(1.3) brightness(1.1) hue-rotate(0deg)'
                   }}
@@ -867,7 +867,7 @@ const trailersDetail = ({ trailers }) => {
                     width: '200px',
                     height: '200px',
                     objectFit: 'cover',
-                    boxShadow: '0 0 10px 0 #000', // Shadow effect with black color
+                    boxShadow: '5px 5px 10px rgba(0, 0, 0, 0.5), 10px 10px 20px rgba(0, 0, 0, 0.3)', // Shadow effect with black color
                     filter:
                       'contrast(1.2) saturate(1.3) brightness(1.1) hue-rotate(0deg)'
                   }}
@@ -884,7 +884,7 @@ const trailersDetail = ({ trailers }) => {
                     width: '200px',
                     height: '200px',
                     objectFit: 'cover',
-                    boxShadow: '0 0 10px 0 #000', // Shadow effect with black color
+                    boxShadow: '5px 5px 10px rgba(0, 0, 0, 0.5), 10px 10px 20px rgba(0, 0, 0, 0.3)', // Shadow effect with black color
                     filter:
                       'contrast(1.2) saturate(1.3) brightness(1.1) hue-rotate(0deg)'
                   }}
@@ -901,7 +901,7 @@ const trailersDetail = ({ trailers }) => {
                     width: '200px',
                     height: '200px',
                     objectFit: 'cover',
-                    boxShadow: '0 0 10px 0 #000', // Shadow effect with black color
+                    boxShadow: '5px 5px 10px rgba(0, 0, 0, 0.5), 10px 10px 20px rgba(0, 0, 0, 0.3)', // Shadow effect with black color
                     filter:
                       'contrast(1.2) saturate(1.3) brightness(1.1) hue-rotate(0deg)'
                   }}
@@ -960,7 +960,7 @@ const trailersDetail = ({ trailers }) => {
                     filter:
                       'contrast(1.2) saturate(1.5) brightness(1.3) hue-rotate(0deg)',
                     // Additional styles for responsiveness
-                    boxShadow: '0 0 10px 0 #000',
+                    boxShadow: '5px 5px 10px rgba(0, 0, 0, 0.5), 10px 10px 20px rgba(0, 0, 0, 0.3)',
                     maxWidth: '100%',
                     maxHeight: '100vh',
                     borderRadius: '20px' // Add border-radius for rounded shape
@@ -990,7 +990,7 @@ const trailersDetail = ({ trailers }) => {
                   title='Dailymotion Video Player'
                   allow='autoplay; encrypted-media'
                   style={{
-                    boxShadow: '0 0 10px 0 #000',
+                    boxShadow: '5px 5px 10px rgba(0, 0, 0, 0.5), 10px 10px 20px rgba(0, 0, 0, 0.3)',
                     filter:
                       'contrast(1.2) saturate(1.3) brightness(1.2) hue-rotate(15deg)'
                   }}
@@ -1000,7 +1000,7 @@ const trailersDetail = ({ trailers }) => {
                   className='px-0 bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-sm hover:text-blue-800 font-bold mt-2'
                   style={{
                     fontFamily: 'Poppins, sans-serif',
-                    boxShadow: '0 0 10px 0 #000',
+                    boxShadow: '5px 5px 10px rgba(0, 0, 0, 0.5), 10px 10px 20px rgba(0, 0, 0, 0.3)',
                     filter:
                       'contrast(1.2) saturate(1.3) brightness(1.1) hue-rotate(15deg)'
                     // textShadow: '2px 1px 1px #000'
@@ -1060,7 +1060,7 @@ const trailersDetail = ({ trailers }) => {
                       className='text-black text-2xl mt-2 bg-gradient-to-r from-pink-500 to-amber-500 font-bold py-3 px-6 shadow-lg hover:from-amber-600 hover:to-pink-600 transition duration-300 rounded-md btn btn-primary'
                       style={{
                         fontFamily: 'Poppins, sans-serif',
-                        boxShadow: '0 0 10px 0 #000',
+                        boxShadow: '5px 5px 10px rgba(0, 0, 0, 0.5), 10px 10px 20px rgba(0, 0, 0, 0.3)',
                         marginTop: '20px',
                         filter:
                           'contrast(1.2) saturate(1.3) brightness(1.1) hue-rotate(15deg)'
@@ -1083,7 +1083,7 @@ const trailersDetail = ({ trailers }) => {
                       className='text-black text-2xl mt-2 bg-gradient-to-r from-pink-500 to-amber-500 font-bold py-3 px-6 shadow-lg hover:from-amber-600 hover:to-pink-600 transition duration-300 rounded-md btn btn-primary'
                       style={{
                         fontFamily: 'Poppins, sans-serif',
-                        boxShadow: '0 0 10px 0 #000',
+                        boxShadow: '5px 5px 10px rgba(0, 0, 0, 0.5), 10px 10px 20px rgba(0, 0, 0, 0.3)',
                         marginTop: '20px',
                         filter:
                           'contrast(1.2) saturate(1.3) brightness(1.1) hue-rotate(15deg)'
@@ -1105,7 +1105,7 @@ const trailersDetail = ({ trailers }) => {
                   marginTop: '50px',
                   marginBottom: '50px',
                   borderRadius: '50px',
-                  boxShadow: '0 0 10px 0 #000',
+                  boxShadow: '5px 5px 10px rgba(0, 0, 0, 0.5), 10px 10px 20px rgba(0, 0, 0, 0.3)',
                   filter:
                     'contrast(1.0) saturate(1.0) brightness(1.0) hue-rotate(0deg)'
                 }}
@@ -1133,7 +1133,7 @@ const trailersDetail = ({ trailers }) => {
                             width: '200px',
                             height: '200px',
                             objectFit: 'cover',
-                            boxShadow: '0 0 10px 0 #000',
+                            boxShadow: '5px 5px 10px rgba(0, 0, 0, 0.5), 10px 10px 20px rgba(0, 0, 0, 0.3)',
                             filter:
                               'contrast(1.2) saturate(1.3) brightness(1.1) hue-rotate(0deg)'
                           }}
@@ -1169,7 +1169,7 @@ const trailersDetail = ({ trailers }) => {
                   marginTop: '50px',
                   marginBottom: '20px',
                   borderRadius: '20px',
-                  boxShadow: '0 0 10px 0 #000',
+                  boxShadow: '5px 5px 10px rgba(0, 0, 0, 0.5), 10px 10px 20px rgba(0, 0, 0, 0.3)',
                   filter:
                     'contrast(1.1) saturate(1.1) brightness(1.0) hue-rotate(0deg)'
                 }}
@@ -1203,7 +1203,7 @@ const trailersDetail = ({ trailers }) => {
                             marginTop: '50px',
                             width: '1280px', // Ensures the image is displayed at this width
                             height: '350px', // Ensures the image is displayed at this height
-                            boxShadow: '0 0 10px 0 #000',
+                            boxShadow: '5px 5px 10px rgba(0, 0, 0, 0.5), 10px 10px 20px rgba(0, 0, 0, 0.3)',
                             filter:
                               'contrast(1.1) saturate(1.1) brightness(1.0) hue-rotate(0deg)'
                           }}

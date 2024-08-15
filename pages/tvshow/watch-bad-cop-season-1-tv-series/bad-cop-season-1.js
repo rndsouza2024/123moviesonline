@@ -2,10 +2,15 @@ import { useRouter } from 'next/router'
 import { useEffect, useState, useRef } from 'react'
 import styles from '@styles/iframeStyles.module.css'
 import HomeStyles from '@styles/styles.module.css'
+import Pagination from '../../../components/Pagination'
 import Link from 'next/link'
 
 const TvshowDetail = ({ tvshow }) => {
   const router = useRouter()
+  const { id } = router.query
+  const [currentPage, setCurrentPage] = useState(1)
+  const totalPages = 0 // Assume there are 3 pages
+
   const [playerReady, setPlayerReady] = useState(false)
   const [isMobileDevice, setIsMobileDevice] = useState(false)
   const playerRef = useRef(null)
@@ -242,10 +247,7 @@ const TvshowDetail = ({ tvshow }) => {
                 'contrast(1.1) saturate(1.2) brightness(1.3) hue-rotate(0deg)'
             }}
           ></iframe>
-
-         
-        </div>
- <p
+          <p
             className='text-black hover:px-0 text-bg font-black bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-sm'
             style={{
               fontFamily: 'Poppins, sans-serif',
@@ -257,84 +259,87 @@ const TvshowDetail = ({ tvshow }) => {
             *Note: Use Setting in Player to improve the Quality of video to HD
             Quality 1080p.
           </p>
-    <div className='flex flex-col items-center justify-center'
-  style={{
-    display: 'flex',
-    justifyContent: 'space-between',
-    width: '100%',
-    maxWidth: '800px',
-    marginBottom: '20px',
-    flexWrap: 'wrap',
-  }}
->
-  <button
-    onClick={handleNextEpisode}
-    disabled={videoSources.length === 0}
-    style={{
-      padding: '10px 20px',
-      backgroundColor: '#007bff',
-      color: '#fff',
-      border: 'none',
-      fontWeight: 'bold',
-      borderRadius: '5px',
-      cursor: 'pointer',
-      fontSize: '1rem',
-      width: '50%', // Set to medium size
-      minWidth: '150px', // Ensures a reasonable width on smaller screens
-      margin: '5px', // Space between buttons
-    }}
-  >
-    Next Episode {nextEpisodeNumber}
-  </button>
-  <button
-    style={{
-      padding: '10px 20px',
-      backgroundColor: '#FF0000',
-      color: '#fff',
-      border: 'none',
-      fontWeight: 'bold',
-      borderRadius: '5px',
-      cursor: 'pointer',
-      fontSize: '1rem',
-      width: '50%', // Set to medium size
-      minWidth: '150px', // Ensures a reasonable width on smaller screens
-      margin: '5px', // Space between buttons
-    }}
-  >
-    Total Episode {tvshow.episode}
-  </button>
-  <button
-    onClick={handlePreviousEpisode}
-    disabled={videoSources.length === 0}
-    style={{
-      padding: '10px 20px',
-      backgroundColor: '#28a745',
-      color: '#fff',
-      border: 'none',
-      fontWeight: 'bold',
-      borderRadius: '5px',
-      cursor: 'pointer',
-      fontSize: '1rem',
-      width: '50%', // Set to medium size
-      minWidth: '150px', // Ensures a reasonable width on smaller screens
-      margin: '5px', // Space between buttons
-    }}
-  >
-    Previous Episode {prevEpisodeNumber}
-  </button>
-  <style jsx>{`
-    @media (max-width: 768px) {
-      div {
-        flex-direction: column;
-        align-items: center;
-      }
-      button {
-        width: 80%; // Adjust width for smaller screens
-        margin: 10px 0;
-      }
-    }
-  `}</style>
-</div>
+        </div>
+
+        <div
+          className='flex flex-col items-center justify-center'
+          style={{
+            display: 'flex',
+            justifyContent: 'space-between',
+            width: '100%',
+            maxWidth: '800px',
+            marginBottom: '20px',
+            flexWrap: 'wrap'
+          }}
+        >
+          <button
+            onClick={handleNextEpisode}
+            disabled={videoSources.length === 0}
+            style={{
+              padding: '10px 20px',
+              backgroundColor: '#007bff',
+              color: '#fff',
+              border: 'none',
+              fontWeight: 'bold',
+              borderRadius: '5px',
+              cursor: 'pointer',
+              fontSize: '1rem',
+              width: '50%', // Set to medium size
+              minWidth: '150px', // Ensures a reasonable width on smaller screens
+              margin: '5px' // Space between buttons
+            }}
+          >
+            Next Episode {nextEpisodeNumber}
+          </button>
+          <button
+            style={{
+              padding: '10px 20px',
+              backgroundColor: '#FF0000',
+              color: '#fff',
+              border: 'none',
+              fontWeight: 'bold',
+              borderRadius: '5px',
+              cursor: 'pointer',
+              fontSize: '1rem',
+              width: '50%', // Set to medium size
+              minWidth: '150px', // Ensures a reasonable width on smaller screens
+              margin: '5px' // Space between buttons
+            }}
+          >
+            Total Episode {tvshow.episode}
+          </button>
+          <button
+            onClick={handlePreviousEpisode}
+            disabled={videoSources.length === 0}
+            style={{
+              padding: '10px 20px',
+              backgroundColor: '#28a745',
+              color: '#fff',
+              border: 'none',
+              fontWeight: 'bold',
+              borderRadius: '5px',
+              cursor: 'pointer',
+              fontSize: '1rem',
+              width: '50%', // Set to medium size
+              minWidth: '150px', // Ensures a reasonable width on smaller screens
+              margin: '5px' // Space between buttons
+            }}
+          >
+            Previous Episode {prevEpisodeNumber}
+          </button>
+          <style jsx>{`
+            @media (max-width: 768px) {
+              div {
+                flex-direction: column;
+                align-items: center;
+              }
+              button {
+                width: 80%; // Adjust width for smaller screens
+                margin: 10px 0;
+              }
+            }
+          `}</style>
+        </div>
 
         <h2
           className='px-0 bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-3xl hover:text-blue-800 font-bold mt-2'
@@ -374,8 +379,23 @@ const TvshowDetail = ({ tvshow }) => {
           ))}
         </div>
       </div>
-
-      <div className='flex flex-col items-center justify-center'>
+        <Pagination
+          currentPage={currentPage}
+          totalPages={totalPages}
+          route='tvshow'
+          style={{
+            marginTop: '50px',
+            marginBottom: '50px',
+            borderRadius: '50px',
+            boxShadow: '0 0 10px 0 #fff',
+            filter:
+              'contrast(1.1) saturate(1.2) brightness(1.3) hue-rotate(0deg)'
+          }}
+        />
+      <div className='flex flex-col items-center justify-center' style={{
+                              marginTop:'20px' ,              
+              }}
+            >
         {tvshow.linkurl && (
           <Link href={tvshow.linkurl}>
             <div
@@ -384,12 +404,13 @@ const TvshowDetail = ({ tvshow }) => {
               }  hover:bg-green-700 hover:text-white`}
               style={{
                 fontFamily: 'Poppins, sans-serif',
+                 marginTop:'20px' ,
                 marginTop: '20px',
                 filter:
                   'contrast(1.2) saturate(1.3) brightness(1.1) hue-rotate(15deg)'
               }}
             >
-              Click to Watch Season 2
+              Click to Watch Season 4
             </div>
           </Link>
         )}
@@ -489,7 +510,10 @@ const TvshowDetail = ({ tvshow }) => {
                     fontWeight: 'bold',
                     boxShadow: '0 0 10px 0 #fff',
                     filter:
-                      'contrast(1.1) saturate(1.2) brightness(1.3) hue-rotate(0deg)'
+                      'contrast(1.1) saturate(1.2) brightness(1.3) hue-rotate(0deg)',
+                    width: '50%', // Set a medium width
+                    maxWidth: '300px', // Ensure it doesn't get too large
+                    textAlign: 'center' // Center the text inside the button
                   }}
                 >
                   <span

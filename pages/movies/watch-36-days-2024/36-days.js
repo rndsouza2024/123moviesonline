@@ -1,9 +1,15 @@
 import { useRouter } from 'next/router'
 import { useEffect, useState, useRef } from 'react'
 import styles from '@styles/iframeStyles.module.css'
+import Pagination from '../../../components/Pagination'
 import Link from 'next/link'
 
 const MoviesDetail = ({ movie }) => {
+  const router = useRouter()
+  const { id } = router.query
+  const [currentPage, setCurrentPage] = useState(1)
+  const totalPages = 0 // Assume there are 3 pages
+
   const [currentPlayerIndex, setCurrentPlayerIndex] = useState(0)
   const videoPlayerRef = useRef(null)
   const [seconds, setSeconds] = useState(30)
@@ -71,12 +77,94 @@ const MoviesDetail = ({ movie }) => {
         minHeight: '100vh'
       }}
     >
-         <h2
-          className='px-0 bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-4xl hover:text-blue-800 font-bold mt-2'
-          style={{ marginBottom: '20px' }}
+    <div
+          className='shadow-lg flex items-center justify-center'
+          role='navigation'
         >
-          Watch {movie.name}
-        </h2>
+          <ul
+            id='menu-header-menu'
+            className='menu flex flex-wrap justify-center'
+          >
+            <button className='border border-pink-600 p-2 m-1 hover:bg-orange-100'>
+              <li id='menu-item-35' className='menu-home active'>
+                <a
+                  href='/'
+                  className='text-black hover:px-0 text-bg font-black bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-xl'
+                >
+                  Home<span className='p'></span>
+                </a>
+              </li>
+            </button>
+
+            <button className='border border-pink-600 p-2 m-1 hover:bg-orange-100'>
+              <li id='menu-item-284913' className='menu-softwarecategories'>
+                <a href='../../trailers/'>
+                  <h3 className='text-black hover:px-0 text-bg font-black bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-xl'>
+                    Trailers<span className='p'></span>
+                  </h3>
+                </a>
+              </li>
+            </button>
+            <button className='border border-pink-600 p-2 m-1 hover:bg-orange-100'>
+              <li id='menu-item-11610' className='menu-graphicdesign'>
+                <a
+                  href='../../movies/'
+                  className='text-black hover:px-0 text-bg font-black bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-xl'
+                >
+                  Movies<span className='p'></span>
+                </a>
+              </li>
+            </button>
+            <button className='border border-pink-600 p-2 m-1 hover:bg-orange-100'>
+              <li id='menu-item-84' className='menu-antivirus'>
+                <a
+                  href='../../tvshow'
+                  className='text-black hover:px-0 text-bg font-black bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-xl'
+                >
+                  TV Series <span className='p'></span>
+                </a>
+              </li>
+            </button>
+            <button className='border border-pink-600 p-2 m-1 hover:bg-orange-100'>
+              <li id='menu-item-84' className='menu-antivirus'>
+                <a
+                  href='../../adult/'
+                  className='text-black hover:px-0 text-bg font-black bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-xl'
+                >
+                  Adult<span className='p'></span>
+                </a>
+              </li>
+            </button>
+            <button className='border border-pink-600 p-2 m-1 hover:bg-orange-100'>
+              <li id='menu-item-194' className='menu-tutorials'>
+                <a
+                  href='../../latest/'
+                  className='text-black hover:px-0 text-bg font-black bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-xl'
+                >
+                  Latest News<span className='p'></span>
+                </a>
+              </li>
+            </button>
+          </ul>
+        </div>
+        <a
+          href='https://t.me/watchmovietvshow/'
+          target='_blank'
+          rel='noopener noreferrer'
+          className='bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent font-bold text-3xl mt-2 flex items-center justify-center'
+          style={{ marginTop: '25px', marginBottom: '25px' }}
+        >
+          <span className='px-0 bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-3xl hover:text-blue-800 font-bold mt-2'>
+            For Request or Demand Movies & TV Series Join Telegram
+            <i className='fab fa-telegram text-blue-600 hover:text-gray-600 ml-2 w-12 h-12 animate-pulse '></i>
+          </span>
+        </a>
+      <h2
+        className='px-0 bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-4xl hover:text-blue-800 font-bold mt-2'
+        style={{ marginBottom: '20px' }}
+      >
+        Watch {movie.name}
+      </h2>
       <div
         style={{
           display: 'flex',
@@ -85,7 +173,6 @@ const MoviesDetail = ({ movie }) => {
           width: '100%'
         }}
       >
-      
         <div style={{ width: '100%', maxWidth: '800px', marginBottom: '20px' }}>
           <iframe
             ref={videoPlayerRef}
@@ -98,6 +185,7 @@ const MoviesDetail = ({ movie }) => {
             title='Video Player'
             style={{
               borderRadius: '8px',
+              boxShadow: '5px 5px 10px rgba(0, 0, 0, 0.5), 10px 10px 20px rgba(0, 0, 0, 0.3)',
               filter:
                 'contrast(1.1) saturate(1.2) brightness(1.3) hue-rotate(0deg)'
             }}
@@ -138,10 +226,22 @@ const MoviesDetail = ({ movie }) => {
             </button>
           ))}
         </div>
-
+        <Pagination
+          currentPage={currentPage}
+          totalPages={totalPages}
+          route='movies'
+          style={{
+            marginTop: '50px',
+            marginBottom: '50px',
+            borderRadius: '50px',
+            boxShadow: '0 0 10px 0 #fff',
+            filter:
+              'contrast(1.1) saturate(1.2) brightness(1.3) hue-rotate(0deg)'
+          }}
+        />
         <h2
           className='px-0 bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-3xl hover:text-blue-800 font-bold mt-2'
-          style={{ fontFamily: 'Poppins, sans-serif' }}
+          style={{ fontFamily: 'Poppins, sans-serif', marginTop:'20px' }}
         >
           Click to Download {movie.name}
         </h2>
@@ -265,7 +365,7 @@ const MoviesDetail = ({ movie }) => {
   )
 }
 
-export async function getServerSideProps() {
+export async function getServerSideProps () {
   const res = await fetch('https://123moviesonline.vercel.app/moviesp3.json')
   const data = await res.json()
   const selectedMovie = data.find(movie => movie.id === 'INDEX31')

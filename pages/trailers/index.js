@@ -527,7 +527,7 @@ const MoviePage = ({ trailers }) => {
                       style={{
                         width: '100%',
                         height: '200px',
-                        boxShadow: '0 0 10px 0 #000',
+                        boxShadow: '5px 5px 10px rgba(0, 0, 0, 0.5), 10px 10px 20px rgba(0, 0, 0, 0.3)',
                         filter:
                           'contrast(1.1) saturate(1.1) brightness(1.1) hue-rotate(0deg)'
                       }}

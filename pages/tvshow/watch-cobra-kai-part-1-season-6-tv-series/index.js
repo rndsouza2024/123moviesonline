@@ -6,6 +6,7 @@ import adultData from '../../../public/adult.json'
 import trailersData from '../../../public/trailers.json'
 import latestData from '../../../public/latest.json'
 import GoogleTranslate from '../../../components/GoogleTranslate'
+import MP3Player from '../../../components/MP3Player'
 import SocialSharing from '../../../components/SocialSharing'
 import SearchComponent from '../../../components/SearchComponent'
 import { useEffect, useState, useRef } from 'react'
@@ -512,24 +513,33 @@ const tvshowDetail = ({ tvshow }) => {
   const languagesSchema = JSON.stringify({
     '@context': 'https://schema.org',
     '@type': 'WebPage',
-    url: 'https://123moviesonline.vercel.app/tvshow/watch-cobra-kai-part-1-season-6-tv-series',
-    name: 'Watch Cobra Kai Part 1 Season 6 (2020) | 123Movies™',
+    url: tvshow.siteurl, // Ensure this URL is correctly set
+    name: 'Cobra Kai Part 1 Season 6 (2024) | 123Movies™',
     alternateName: [
-      'Ver Cobra Kai Part 1 Temporada 6 (2024) | 123Movies™',
-      'Regarder Cobra Kai Part 1 Saison 6 (2024) | 123Movies™',
-      'Cobra Kai Part 1 Staffel 6 (2024) ansehen | 123Movies™',
-      '观看黑暗物质 第一季 (2024) | 123Movies™',
-      'ダークマター シーズン 6 (2024) を見る | 123Movies™',
-      '다크 매터 시즌 3 (2024) 보기 | 123Movies™',
-      'Assistir Cobra Kai Part 1 Temporada 6 (2024) | 123Movies™',
-      'Guarda Cobra Kai Part 1 Stagione 6 (2024) | 123Movies™',
-      'Посмотреть Cobra Kai Part 1 Сезон 6 (2024) | 123Movies™',
-      'مشاهدة Cobra Kai Part 1 الموسم 6 (2024) | جِي دبليو إف™'
+      'Cobra Kai Part 1 Temporada 6 (2024) | 123Movies™', // Spanish
+      'Cobra Kai Part 1 Saison 6 (2024) | 123Movies™', // French
+      'Cobra Kai Part 1 Staffel 6 (2024) | 123Movies™', // German
+      '黑暗物质 第一季 (2024) | 123Movies™', // Simplified Chinese
+      'ダークマター シーズン 6 (2024) | 123Movies™', // Japanese
+      '다크 매터 시즌 6 (2024) | 123Movies™', // Korean
+      'Cobra Kai Part 1 Temporada 6 (2024) | 123Movies™', // Portuguese
+      'Cobra Kai Part 1 Stagione 6 (2024) | 123Movies™', // Italian
+      'Cobra Kai Part 1 Сезон 6 (2024) | 123Movies™', // Russian
+      'Cobra Kai Part 1 الموسم 6 (2024) | جِي دبليو إف™' // Arabic
     ],
     inLanguage: [
-      'es', 'fr', 'de', 'zh-Hans', 'ja', 'ko', 'pt', 'it', 'ru', 'ar'
+      'es', // Spanish
+      'fr', // French
+      'de', // German
+      'zh-Hans', // Simplified Chinese
+      'ja', // Japanese
+      'ko', // Korean
+      'pt', // Portuguese
+      'it', // Italian
+      'ru', // Russian
+      'ar' // Arabic
     ]
-});
+  })
 
   return (
     <div>
@@ -634,7 +644,6 @@ const tvshowDetail = ({ tvshow }) => {
           dangerouslySetInnerHTML={{ __html: languagesSchema }}
         />
       </Head>
-  
 
       <SocialSharing />
 
@@ -971,143 +980,69 @@ const tvshowDetail = ({ tvshow }) => {
                 Watch {tvshow.name}
               </h2>
 
-              <div
-                className='flex flex-col items-center mb-4'
-                style={{
-                  marginBottom: '20px'
-                }}
-              >
+              <Link href={tvshow.tvshow} passHref>
                 <button
-                  onClick={handleNextEpisode}
-                  disabled={videoSources.length === 0}
-                  className='px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 ml-4 text-xl hover:text-green-600 font-bold mt-2'
-                >
-                  Next Episode{' '}
-                  {episode + 1 > videoSources.length ? 1 : episode + 1}
-                </button>
-              </div>
-              <div
-                style={{
-                  width: '100%',
-                  height: '500px',
-                  overflow: 'hidden',
-                  position: 'relative'
-                }}
-                className='rounded-xl mr-8 flex flex-col border-1 border-blue-600 bg-black p-2'
-              >
-                <iframe
-                  frameBorder='0'
-                  src={src}
-                  width='100%'
-                  height='450px'
-                  allowFullScreen
-                  scrolling='0'
-                  title='Video Player'
-                  className='mb-4'
-                  style={{
-                    filter:
-                      'contrast(1.1) saturate(1.2) brightness(1.3) hue-rotate(0deg)'
-                  }}
-                ></iframe>
-                <p
-                  className='text-black hover:px-0 text-bg font-black bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-sm'
+                  className='animate-pulse bg-gradient-to-r from-amber-500 to-pink-500 text-black font-bold py-3 px-6 rounded-lg shadow-lg hover:from-amber-600 hover:to-pink-600 transition duration-300 text-2xl'
                   style={{
                     fontFamily: 'Poppins, sans-serif',
                     textShadow: '1px 1px 1px 0 #fff',
+                    marginTop: '20px',
+                    marginBottom: '20px',
                     filter:
                       'contrast(1.2) saturate(1.3) brightness(1.1) hue-rotate(15deg)'
                   }}
                 >
-                  *Note: Use Setting in Player to improve the Quality of video
-                  to HD Quality 1080p.
-                </p>
-              </div>
-              <div className='flex flex-col items-center mb-4'>
-                <button
-                  onClick={handlePreviousEpisode}
-                  disabled={videoSources.length === 0}
-                  className='px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600 text-xl hover:text-blue-600 font-bold mt-2'
-                  style={{
-                    marginTop: '10px',
-                    marginBottom: '10px'
-                  }}
-                >
-                  Previous Episode {prevEpisodeNumber}
+                  {/* Watch {tvshow.name || 'Now'} */}Watch Now
                 </button>
-              </div>
-              <h2
-                className='px-0 bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-4xl hover:text-blue-800 font-bold mt-2'
-                style={{ fontFamily: 'Poppins, sans-serif' }}
-              >
-                Select Player To Watch.
-              </h2>
-              <div className='flex flex-col items-center mt-4 gap-2'>
-              <div className='flex flex-wrap justify-center mb-4 bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text  hover:text-blue-800 text-bg font-semibold mt-2'>
-              {currentVideoSources.map((source, index) => (
-                  <button
-                    key={index}
-                    onClick={() => handlePlayerSelect(index)}
-                   className={`px-4 py-2 border rounded mx-2 my-1 ${
-                 currentPlayerIndex === index
-                   ? 'bg-red-500 text-white'
-                   : 'bg-gray-200'
-               } hover:bg-green-500 hover:text-white`}
-                  >
-                    Player {index + 1}
-                  </button>
-                ))}
-              </div> 
+              </Link>
+              <div className='flex flex-col items-center justify-center'>
+                {/* {tvshow.mp3player && (
+                <MP3Player mp3Url={tvshow.mp3player} />
+            )} */}
+                {tvshow.linkurl && (
+                  <Link href={tvshow.linkurl}>
+                    <div
+                      className={`px-4 py-2 border rounded mx-2 my-1 ${
+                        tvshow.linkurl ? 'bg-red-500 text-white' : 'bg-gray-200'
+                      }  hover:bg-green-700 hover:text-white`}
+                      style={{
+                        fontFamily: 'Poppins, sans-serif',
+                        marginTop: '20px',
+                        filter:
+                          'contrast(1.2) saturate(1.3) brightness(1.1) hue-rotate(15deg)'
+                      }}
+                    >
+                      Click to Watch Season 2
+                    </div>
+                  </Link>
+                )}
               </div>
               <div className='flex flex-col items-center justify-center'>
-  {/* {trailers.mp3player && (
-    <MP3Player mp3Url={trailers.mp3player} />
-  )} */}
-  {tvshow.linkurl && (
-    <Link href={tvshow.linkurl}>
-      <div
-        className={`px-4 py-2 border rounded mx-2 my-1 ${
-          tvshow.linkurl ? 'bg-red-500 text-white' : 'bg-gray-200'
-        }  hover:bg-green-700 hover:text-white`}
-        style={{
-          fontFamily: 'Poppins, sans-serif',
-          marginTop: '20px',
-          filter: 'contrast(1.2) saturate(1.3) brightness(1.1) hue-rotate(15deg)'
-        }}
-      >
-        Click to Watch Season 2
-      </div>
-    </Link>
-  )}
-</div>
-<div className='flex flex-col items-center justify-center'>
-  {/* {trailers.mp3player && (
-    <MP3Player mp3Url={trailers.mp3player} />
-  )} */}
-  {tvshow.linkurl && (
-    <Link href={tvshow.linkurl2}>
-      <div
-        className={`px-4 py-2 border rounded mx-2 my-1 ${
-          tvshow.linkurl ? 'bg-red-500 text-white' : 'bg-gray-200'
-        }  hover:bg-green-700 hover:text-white`}
-        style={{
-          fontFamily: 'Poppins, sans-serif',
-          marginTop: '20px',
-          filter: 'contrast(1.2) saturate(1.3) brightness(1.1) hue-rotate(15deg)'
-        }}
-      >
-        Click to Watch Season 6
-      </div>
-    </Link>
-  )}
-</div>
-              <h2
-                className='px-0 bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-3xl hover:text-blue-800 font-bold mt-2'
-                style={{ fontFamily: 'Poppins, sans-serif' }}
-              >
-                Click to Download Episode {tvshow.name}
-              </h2>
-              <div className='flex flex-col items-center justify-center'></div>
-              {tvshow.mp3player && <MP3Player mp3Url={tvshow.mp3player} />}
+                {tvshow.linkurl && (
+                  <Link href={tvshow.linkurl2}>
+                    <div
+                      className={`px-4 py-2 border rounded mx-2 my-1 ${
+                        tvshow.linkurl ? 'bg-red-500 text-white' : 'bg-gray-200'
+                      }  hover:bg-green-700 hover:text-white`}
+                      style={{
+                        fontFamily: 'Poppins, sans-serif',
+                        marginTop: '20px',
+                        filter:
+                          'contrast(1.2) saturate(1.3) brightness(1.1) hue-rotate(15deg)'
+                      }}
+                    >
+                      Click to Watch Season 6
+                    </div>
+                  </Link>
+                )}
+              </div>
+              {/* <h2
+  className='px-0 bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-3xl hover:text-blue-800 font-bold mt-2'
+  style={{ fontFamily: 'Poppins, sans-serif' }}
+>
+  {tvshow.name}  Watch Official Trailer
+</h2> */}
+
               <div
                 className='flex flex-col items-center justify-center'
                 style={{
@@ -1117,152 +1052,38 @@ const tvshowDetail = ({ tvshow }) => {
                     'contrast(1.1) saturate(1.1) brightness(1.0) hue-rotate(0deg)'
                 }}
               >
-                {!showTimer ? (
-                  <button
-                    onClick={handleStartTimer}
-                    className='animate-pulse bg-gradient-to-r from-amber-500 to-pink-500 text-black font-bold py-3 px-6 rounded-lg shadow-lg hover:from-amber-600 hover:to-pink-600 transition duration-300 text-2xl'
-                  >
-                    Download Now
-                  </button>
-                ) : (
+                <button
+                  onClick={toggleAccordion}
+                  className=' bg-gradient-to-r from-pink-500 to-amber-500 font-bold py-3 px-6 rounded-lg shadow-lg hover:from-amber-600 hover:to-pink-600 transition duration-300 text-2xl'
+                  style={{ marginBottom: '20px' }}
+                >
+                  {accordionExpanded
+                    ? 'Hide Trailer'
+                    : 'Watch Official Trailer'}
+                </button>
+
+                {accordionExpanded && (
                   <>
-                    <button
-                      onClick={toggleAccordion}
-                      className='animate-pulse bg-gradient-to-r from-pink-500 to-amber-500 font-bold py-3 px-6 rounded-lg shadow-lg hover:from-amber-600 hover:to-pink-600 transition duration-300 text-2xl'
+                    <div
                       style={{
-                        // marginTop: '20px',
+                        width: '100%',
+                        height: '450px',
+                        overflow: 'hidden',
+                        marginTop: '20px',
                         marginBottom: '20px'
                       }}
+                      className='rounded-xl flex border-1 border-blue-600 bg-black p-2 items-center justify-center'
                     >
-                      {accordionExpanded
-                        ? 'Click to Stop Download'
-                        : 'Download Now'}
-                    </button>
-
-                    {accordionExpanded && (
-                      <>
-                        {/* <Script src='https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js'></Script>
-                        <lottie-player
-                          src='https://lottie.host/58d9c7ed-a39e-4cb6-b78a-e7cb1f9bf9cd/RHWR24wQSd.json'
-                          background='#D3D3D3'
-                          speed='1'
-                          style={{ width: '250px' }}
-                          loop
-                          autoplay
-                          direction='1'
-                          mode='normal'
-                        ></lottie-player> */}
-                        {seconds > 0 ? (
-                          <p
-                            className='bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-3xl font-bold mb-4'
-                            style={{ marginTop: '50px' }}
-                          >
-                            Your download link will be ready in {seconds}{' '}
-                            seconds...
-                          </p>
-                        ) : (
-                          <p
-                            className='bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-3xl font-bold mb-4'
-                            style={{ marginTop: '50px' }}
-                          >
-                            Your download links is ready.
-                          </p>
-                        )}
-
-                        <div
-                          style={{
-                            width: '100%',
-                            height: '450px',
-                            overflow: 'hidden',
-                            marginTop: '20px',
-                            marginBottom: '20px'
-                          }}
-                          className='rounded-xl flex border-1 border-blue-600 bg-black p-2 items-center justify-center'
-                        >
-                          <div
-                            itemscope
-                            itemtype='https://schema.org/VideoObject'
-                            style={{ display: 'none' }}
-                          >
-                            <meta itemprop='name' content={tvshow.title} />
-                            <meta
-                              itemprop='description'
-                              content={tvshow.text}
-                            />
-                            <meta
-                              itemprop='uploadDate'
-                              content={tvshow.datePublished}
-                            />
-                            <meta
-                              itemprop='thumbnailUrl'
-                              content={tvshow.backimage}
-                            />
-                            <meta itemprop='duration' content='P34S' />
-                            <meta
-                              itemprop='embedUrl'
-                              content={tvshow.videourl}
-                            />
-                          </div>
-                          <iframe
-                            frameBorder='0'
-                            src={`https://geo.dailymotion.com/player/xkdl0.html?video=${tvshow.traileritem}&mute=true&Autoquality=1080p`}
-                            width='100%'
-                            height='100%'
-                            allowFullScreen
-                            title='Dailymotion Video Player'
-                            allow='autoplay; encrypted-media'
-                          ></iframe>
-                        </div>
-
-                        {seconds === 0 && (
-                          <div>
-                            {Object.keys(tvshow)
-                              .filter(key => key.startsWith('downloadlink'))
-                              .map((key, index) => (
-                                <Link
-                                  key={index}
-                                  href={tvshow[key]}
-                                  target='_blank'
-                                >
-                                  <div
-                                    className='bg-gradient-to-r from-amber-500 to-pink-500 text-white font-bold py-3 px-6 rounded-lg shadow-lg hover:from-amber-600 hover:to-pink-600 transition duration-300'
-                                    style={{
-                                      margin: 'auto',
-                                      marginBottom: '50px',
-                                      borderRadius: '50px',
-                                      boxShadow: '0 0 10px 0 #fff',
-                                      filter:
-                                        'contrast(1.1) saturate(1.2) brightness(1.3) hue-rotate(0deg)'
-                                    }}
-                                  >
-                                    <span
-                                      className='animate-pulse'
-                                      style={{
-                                        color:
-                                          key === 'downloadlink1'
-                                            ? '#FF0000'
-                                            : '#0efa06',
-                                        fontSize: '24px',
-                                        textShadow: '3px 5px 5px #000'
-                                      }}
-                                    >
-                                      <i
-                                        className={
-                                          key === 'downloadlink1'
-                                            ? 'fa fa-magnet'
-                                            : 'fa fa-download'
-                                        }
-                                        aria-hidden='true'
-                                      ></i>{' '}
-                                    </span>
-                                    Download Episode {index + 1}
-                                  </div>
-                                </Link>
-                              ))}
-                          </div>
-                        )}
-                      </>
-                    )}
+                      <iframe
+                        frameBorder='0'
+                        src={`https://geo.dailymotion.com/player/xkdl0.html?video=${tvshow.traileritem}&mute=true&Autoquality=1080p`}
+                        width='100%'
+                        height='100%'
+                        allowFullScreen
+                        title='Dailymotion Video Player'
+                        allow='autoplay; encrypted-media'
+                      ></iframe>
+                    </div>
                   </>
                 )}
               </div>
@@ -1349,10 +1170,10 @@ const tvshowDetail = ({ tvshow }) => {
           </div>
           <div className='sidebar'>
             <h2
-            className='bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-3xl font-bold mt-2'
-            style={{
-              marginTop: '15px',
-            }}
+              className='bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-3xl font-bold mt-2'
+              style={{
+                marginTop: '15px'
+              }}
             >
               MOST POPULAR TV Series
             </h2>
@@ -1379,7 +1200,7 @@ const tvshowDetail = ({ tvshow }) => {
                               'contrast(1.1) saturate(1.1) brightness(1.0) hue-rotate(0deg)'
                           }}
                         />
-                       <h2 className='bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-xl font-semibold mt-2'>
+                        <h2 className='bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-xl font-semibold mt-2'>
                           {tvshow.name}
                         </h2>
                         <h3 className='bg-gradient-to-r from-pink-700 to-blue-700 bg-clip-text text-transparent text-bg font-semibold mt-2'>

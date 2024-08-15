@@ -479,7 +479,7 @@ const latestDetail = ({ latest }) => {
             // marginTop: '20px',
             // marginBottom:'50px',
             borderRadius: '50px',
-            boxShadow: '0 0 10px 0 #fff',
+            boxShadow: '5px 5px 10px rgba(0, 0, 0, 0.5), 10px 10px 20px rgba(0, 0, 0, 0.3)',
             filter:
               'contrast(1.0) saturate(1.0) brightness(1.0) hue-rotate(0deg)'
           }}
@@ -497,7 +497,7 @@ const latestDetail = ({ latest }) => {
                             marginTop: '20px',
                             width: '1280px', // Ensures the image is displayed at this width
                             height: '350px', // Ensures the image is displayed at this height
-                            boxShadow: '0 0 10px 0 #000',
+                            boxShadow: '5px 5px 10px rgba(0, 0, 0, 0.5), 10px 10px 20px rgba(0, 0, 0, 0.3)',
                             filter:
                               'contrast(1.1) saturate(1.1) brightness(1.0) hue-rotate(0deg)'
                           }}
@@ -532,7 +532,7 @@ const latestDetail = ({ latest }) => {
                   margin: 'auto',
                   marginBottom: '20px',
                   borderRadius: '80px',
-                  boxShadow: '0 0 10px 0 #fff',
+                  boxShadow: '5px 5px 10px rgba(0, 0, 0, 0.5), 10px 10px 20px rgba(0, 0, 0, 0.3)',
                   filter:
                     'contrast(1.0) saturate(1.0) brightness(1.0) hue-rotate(0deg)'
                 }}
@@ -558,7 +558,7 @@ const latestDetail = ({ latest }) => {
                 width: '200px',
                 height: '200px',
                 objectFit: 'cover',
-                boxShadow: '0 0 10px 0 #000',
+                boxShadow: '5px 5px 10px rgba(0, 0, 0, 0.5), 10px 10px 20px rgba(0, 0, 0, 0.3)',
                 filter: 'contrast(1.2) saturate(1.3) brightness(1.1) hue-rotate(0deg)',
               
               }}
@@ -593,7 +593,7 @@ const latestDetail = ({ latest }) => {
                   marginBottom: '20px',
                   marginTop:'20px',
                   borderRadius: '50px',
-                  boxShadow: '0 0 10px 0 #fff',
+                  boxShadow: '5px 5px 10px rgba(0, 0, 0, 0.5), 10px 10px 20px rgba(0, 0, 0, 0.3)',
                   filter:
                 'contrast(1.0) saturate(1.0) brightness(1.0) hue-rotate(0deg)'
                 }}
@@ -633,7 +633,7 @@ const latestDetail = ({ latest }) => {
                   margin: 'auto',
                   marginBottom: '20px',
                   borderRadius: '50px',
-                  boxShadow: '0 0 10px 0 #fff',
+                  boxShadow: '5px 5px 10px rgba(0, 0, 0, 0.5), 10px 10px 20px rgba(0, 0, 0, 0.3)',
                   filter:
                     'contrast(1.0) saturate(1.0) brightness(1.0) hue-rotate(0deg)'
                 }}
@@ -673,7 +673,7 @@ const latestDetail = ({ latest }) => {
                   margin: 'auto',
                   marginBottom: '20px',
                   borderRadius: '50px',
-                  boxShadow: '0 0 10px 0 #fff',
+                  boxShadow: '5px 5px 10px rgba(0, 0, 0, 0.5), 10px 10px 20px rgba(0, 0, 0, 0.3)',
                   filter:
                     'contrast(1.0) saturate(1.0) brightness(1.0) hue-rotate(0deg)'
                 }}
@@ -713,7 +713,7 @@ const latestDetail = ({ latest }) => {
                   margin: 'auto',
                   marginBottom: '20px',
                   borderRadius: '50px',
-                  boxShadow: '0 0 10px 0 #fff',
+                  boxShadow: '5px 5px 10px rgba(0, 0, 0, 0.5), 10px 10px 20px rgba(0, 0, 0, 0.3)',
                   filter:
                     'contrast(1.0) saturate(1.0) brightness(1.0) hue-rotate(0deg)'
                 }}
@@ -741,7 +741,7 @@ const latestDetail = ({ latest }) => {
             marginTop: '50px',
        
             borderRadius: '50px',
-            boxShadow: '0 0 10px 0 #fff',
+            boxShadow: '5px 5px 10px rgba(0, 0, 0, 0.5), 10px 10px 20px rgba(0, 0, 0, 0.3)',
             filter:
               'contrast(1.0) saturate(1.0) brightness(1.0) hue-rotate(0deg)'
           }}

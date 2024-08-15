@@ -52,7 +52,6 @@ const moviesDetail = ({ movie }) => {
 
   const [linkTargets, setLinkTargets] = useState([])
 
-  
   useEffect(() => {
     // Fetch the initial random links
     setLinkTargets(
@@ -834,7 +833,7 @@ const moviesDetail = ({ movie }) => {
             <i className='fab fa-telegram text-blue-600 hover:text-yellow-600 ml-2 w-12 h-12 animate-pulse '></i>
           </span>
         </a>
-       
+
         <Pagination
           currentPage={currentPage}
           totalPages={totalPages}
@@ -864,7 +863,7 @@ const moviesDetail = ({ movie }) => {
                 marginTop: '50px',
                 marginBottom: '20px',
                 borderRadius: '50px',
-                boxShadow: '0 0 10px 0 #fff',
+                boxShadow: '0 0 10px 0 #000',
                 filter:
                   'contrast(1.1) saturate(1.1) brightness(1.0) hue-rotate(0deg)'
               }}
@@ -1010,128 +1009,25 @@ const moviesDetail = ({ movie }) => {
                 />
               </div>
 
-              <h2
-                className='px-0 bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-4xl  font-bold mt-2'
-                style={{ fontFamily: 'Poppins, sans-serif' }}
-              >
-                Watch Online {movie.name}
+              <h2 className='px-0 bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-4xl hover:text-blue-800 font-bold mt-2'>
+                Watch {movie.name}
               </h2>
-              <div
-                style={{
-                  width: '100%',
-                  height: '500px',
-                  overflow: 'hidden',
-                  position: 'relative'
-                }}
-                className='rounded-xl mr-8 flex flex-col border-1 border-blue-600 bg-black p-2 '
-              >
-                {isMovie && (
-                  <button
-                    onClick={handleNextEpisode}
-                    disabled={
-                      currentEpisodeIndex === movie.videotvitem.length - 1
-                    }
-                    style={{
-                      marginBottom: '10px',
-                      padding: '8px 16px',
-                      backgroundColor: '#51AFF7',
-                      color: 'white',
-                      border: 'none',
-                      cursor: 'pointer',
-                      borderRadius: '20px',
-                      fontWeight: 'bold',
-                      alignSelf: 'center'
-                    }}
-                  >
-                    Next - Episode{' '}
-                    {currentEpisodeIndex === movie.videotvitem.length - 1
-                      ? 1
-                      : currentEpisodeIndex + 2}
-                  </button>
-                )}
 
-                <iframe
-                  frameBorder='0'
-                  src={videoSources[currentPlayerIndex].url}
-                  width='100%'
-                  height='450px'
-                  allowFullScreen
-                  scrolling='0'
-                  title='Video Player'
-                  style={{
-                    boxShadow: '0 0 10px 0 #000',
-                    filter:
-                      'contrast(1.2) saturate(1.3) brightness(1.1) hue-rotate(15deg)'
-                  }}
-                ></iframe>
-
-                <p
-                  className='text-black hover:px-0 text-bg font-black bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-sm'
+              <Link href={movie.movie} passHref>
+                <button
+                  className='animate-pulse bg-gradient-to-r from-amber-500 to-pink-500 text-black font-bold py-3 px-6 rounded-lg shadow-lg hover:from-amber-600 hover:to-pink-600 transition duration-300 text-2xl'
                   style={{
                     fontFamily: 'Poppins, sans-serif',
                     textShadow: '1px 1px 1px 0 #fff',
+                    marginTop: '20px',
+                    marginBottom: '20px',
                     filter:
                       'contrast(1.2) saturate(1.3) brightness(1.1) hue-rotate(15deg)'
                   }}
                 >
-                  *Note: Use Setting in Player to improve the Quality of video
-                  to HD Quality 1080p.
-                </p>
-
-                {isMovie && (
-                  <button
-                    onClick={handlePreviousEpisode}
-                    disabled={currentEpisodeIndex === 0}
-                    style={{
-                      marginTop: '10px',
-                      padding: '8px 16px',
-                      backgroundColor: '#32CD32',
-                      color: 'white',
-                      border: 'none',
-                      cursor: 'pointer',
-                      borderRadius: '20px',
-                      fontWeight: 'bold',
-                      alignSelf: 'center'
-                    }}
-                  >
-                    Prev - Episode{' '}
-                    {currentEpisodeIndex === 0
-                      ? movie.videotvitem.length
-                      : currentEpisodeIndex}
-                  </button>
-                )}
-              </div>
-              <p
-                className='px-0 bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-4xl  font-bold mt-2'
-                style={{ fontFamily: 'Poppins, sans-serif' }}
-              >
-                Select Player To Watch.
-              </p>
-
-              <div className='flex flex-wrap justify-center mb-4 bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text  text-bg font-semibold mt-2'>
-                {videoSources.map((source, index) => (
-          <button
-            key={index}
-            onClick={() => handlePlayerSelect(index)}
-           className={`px-4 py-2 border rounded mx-2 my-1 ${
-                 currentPlayerIndex === index
-                   ? 'bg-red-500 text-white'
-                   : 'bg-gray-200'
-               } hover:bg-green-500 hover:text-white`}
-          >
-            Player {index + 1}
-          </button>
-        ))}
-      </div>
-
-              <h2
-                className='px-0 bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-3xl  font-bold mt-2'
-                style={{ fontFamily: 'Poppins, sans-serif' }}
-              >
-                Click to Download {movie.name}
-              </h2>
-              <div className='flex flex-col items-center justify-center'></div>
-              {movie.mp3player && <MP3Player mp3Url={movie.mp3player} />}
+                  {/* Watch {tvshow.name || 'Now'} */}Watch Now
+                </button>
+              </Link>
               <div
                 className='flex flex-col items-center justify-center'
                 style={{
@@ -1141,158 +1037,41 @@ const moviesDetail = ({ movie }) => {
                     'contrast(1.1) saturate(1.1) brightness(1.0) hue-rotate(0deg)'
                 }}
               >
-                {!showTimer ? (
-                  <button
-                    onClick={handleStartTimer}
-                    className='animate-pulse bg-gradient-to-r from-amber-500 to-pink-500 text-black font-bold py-3 px-6 rounded-lg shadow-lg hover:from-amber-600 hover:to-pink-600 transition duration-300 text-2xl'
-                  >
-                    Download Now
-                  </button>
-                ) : (
+                <button
+                  onClick={toggleAccordion}
+                  className=' bg-gradient-to-r from-pink-500 to-amber-500 font-bold py-3 px-6 rounded-lg shadow-lg hover:from-amber-600 hover:to-pink-600 transition duration-300 text-2xl'
+                  style={{ marginBottom: '20px' }}
+                >
+                  {accordionExpanded
+                    ? 'Hide Trailer'
+                    : 'Watch Official Trailer'}
+                </button>
+
+                {accordionExpanded && (
                   <>
-                    <button
-                      onClick={toggleAccordion}
-                      className='animate-pulse bg-gradient-to-r from-pink-500 to-amber-500 font-bold py-3 px-6 rounded-lg shadow-lg hover:from-amber-600 hover:to-pink-600 transition duration-300 text-2xl'
+                    <div
                       style={{
-                        // marginTop: '20px',
+                        width: '100%',
+                        height: '450px',
+                        overflow: 'hidden',
+                        marginTop: '20px',
                         marginBottom: '20px'
                       }}
+                      className='rounded-xl flex border-1 border-blue-600 bg-black p-2 items-center justify-center'
                     >
-                      {accordionExpanded
-                        ? 'Click to Stop Download'
-                        : 'Download Now'}
-                    </button>
-
-                    {accordionExpanded && (
-                      <>
-                        {/* <Script src='https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js'></Script>
-                        <lottie-player
-                          src='https://lottie.host/58d9c7ed-a39e-4cb6-b78a-e7cb1f9bf9cd/RHWR24wQSd.json'
-                          background='#D3D3D3'
-                          speed='1'
-                          style={{ width: '250px' }}
-                          loop
-                          autoplay
-                          direction='1'
-                          mode='normal'
-                        ></lottie-player> */}
-                        {seconds > 0 ? (
-                          <p
-                            className='px-0 bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-3xl  font-bold mt-2  mb-4'
-                            style={{ marginTop: '50px' }}
-                          >
-                            Your download link will be ready in {seconds}{' '}
-                            seconds...
-                          </p>
-                        ) : (
-                          <p
-                            className='px-0 bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-3xl  font-bold mt-2  mb-4'
-                            style={{ marginTop: '50px' }}
-                          >
-                            Your download link is ready.
-                          </p>
-                        )}
-
-                        <div
-                          style={{
-                            width: '100%',
-                            height: '450px',
-                            overflow: 'hidden',
-                            marginTop: '20px',
-                            marginBottom: '20px'
-                          }}
-                          className='rounded-xl flex border-1 border-blue-600 bg-black p-2 items-center justify-center'
-                        >
-                          <div
-                            itemscope
-                            itemtype='https://schema.org/VideoObject'
-                            style={{ display: 'none' }}
-                          >
-                            <meta itemprop='name' content={movie.title} />
-                            <meta itemprop='description' content={movie.text} />
-                            <meta
-                              itemprop='uploadDate'
-                              content={movie.datePublished}
-                            />
-                            <meta
-                              itemprop='thumbnailUrl'
-                              content={movie.backimage}
-                            />
-                            <meta itemprop='duration' content='P34S' />
-                            <meta
-                              itemprop='embedUrl'
-                              content={movie.videourl}
-                            />
-                          </div>
-                          <iframe
-                            frameBorder='0'
-                            src={`https://geo.dailymotion.com/player/xkdl0.html?video=${movie.traileritem}&mute=true&Autoquality=1080p`}
-                            width='100%'
-                            height='100%'
-                            allowFullScreen
-                            title='Dailymotion Video Player'
-                            allow='autoplay; encrypted-media'
-                            style={{
-                              boxShadow: '0 0 10px 0 #000',
-                              filter:
-                                'contrast(1.2) saturate(1.3) brightness(1.1) hue-rotate(15deg)'
-                            }}
-                          ></iframe>
-                        </div>
-
-                        {seconds === 0 && (
-                          <div>
-                            {Object.keys(movie)
-                              .filter(key => key.startsWith('downloadlink'))
-                              .map((key, index) => (
-                                <Link
-                                  key={index}
-                                  href={movie[key]}
-                                  target='_blank'
-                                >
-                                  <div
-                                    className='bg-gradient-to-r from-amber-500 to-pink-500 text-white font-bold py-3 px-6 rounded-lg shadow-lg hover:from-amber-600 hover:to-pink-600 transition duration-300'
-                                    style={{
-                                      margin: 'auto',
-                                      marginBottom: '50px',
-                                      borderRadius: '50px',
-                                      boxShadow: '0 0 10px 0 #fff',
-                                      filter:
-                                        'contrast(1.1) saturate(1.2) brightness(1.3) hue-rotate(0deg)'
-                                    }}
-                                  >
-                                    <span
-                                      className='animate-pulse'
-                                      style={{
-                                        color:
-                                          key === 'downloadlink1'
-                                            ? '#FF0000'
-                                            : '#0efa06',
-                                        fontSize: '24px',
-                                        textShadow: '3px 5px 5px #000'
-                                      }}
-                                    >
-                                      <i
-                                        className={
-                                          key === 'downloadlink1'
-                                            ? 'fa fa-magnet'
-                                            : 'fa fa-download'
-                                        }
-                                        aria-hidden='true'
-                                      ></i>{' '}
-                                    </span>
-                                    Download Link {index + 1}
-                                  </div>
-                                </Link>
-                              ))}
-                          </div>
-                        )}
-                      </>
-                    )}
+                      <iframe
+                        frameBorder='0'
+                        src={`https://geo.dailymotion.com/player/xkdl0.html?video=${movie.traileritem}&mute=true&Autoquality=1080p`}
+                        width='100%'
+                        height='100%'
+                        allowFullScreen
+                        title='Dailymotion Video Player'
+                        allow='autoplay; encrypted-media'
+                      ></iframe>
+                    </div>
                   </>
                 )}
               </div>
-
               <Pagination
                 currentPage={currentPage}
                 totalPages={totalPages}

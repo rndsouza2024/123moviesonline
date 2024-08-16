@@ -222,7 +222,7 @@ const HomePage = ({ movies, tvshow, adults }) => {
   })
 
   return (
-    <div className={styles.container}>
+    <div >
       <Head>
         <title>123Movies Online™ - Explore. Stream. Online.</title>
 

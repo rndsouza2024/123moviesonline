@@ -1102,44 +1102,8 @@ const tvshowDetail = ({ tvshow }) => {
                   </Link>
                 )}
               </div>
-              <div className='flex flex-col items-center justify-center'>
-                {tvshow.linkurl && (
-                  <Link href={tvshow.linkurl}>
-                    <div
-                      className={`px-4 py-2 border rounded mx-2 my-1 ${
-                        tvshow.linkurl ? 'bg-red-500 text-white' : 'bg-gray-200'
-                      }  hover:bg-green-700 hover:text-white`}
-                      style={{
-                        fontFamily: 'Poppins, sans-serif',
-                        marginTop: '20px',
-                        filter:
-                          'contrast(1.2) saturate(1.3) brightness(1.1) hue-rotate(15deg)'
-                      }}
-                    >
-                      Click to Watch Season 2
-                    </div>
-                  </Link>
-                )}
-              </div>
-              <div className='flex flex-col items-center justify-center'>
-                {tvshow.linkurl && (
-                  <Link href={tvshow.linkurl2}>
-                    <div
-                      className={`px-4 py-2 border rounded mx-2 my-1 ${
-                        tvshow.linkurl ? 'bg-red-500 text-white' : 'bg-gray-200'
-                      }  hover:bg-green-700 hover:text-white`}
-                      style={{
-                        fontFamily: 'Poppins, sans-serif',
-                        marginTop: '20px',
-                        filter:
-                          'contrast(1.2) saturate(1.3) brightness(1.1) hue-rotate(15deg)'
-                      }}
-                    >
-                      Click to Watch Season 3
-                    </div>
-                  </Link>
-                )}
-              </div>
+             
+             
               <h2
                 className='px-0 bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-3xl hover:text-blue-800 font-bold mt-2'
                 style={{ fontFamily: 'Poppins, sans-serif' }}

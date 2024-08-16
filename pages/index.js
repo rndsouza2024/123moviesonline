@@ -377,7 +377,7 @@ const HomePage = ({ movies, tvshow, adults }) => {
         <h2 className='px-0 bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-2xl  font-bold mt-2 items-center justify-center'>
           Discover the Best Movies and TV Shows to Stream on 123Movies Online™
         </h2>
-        <p className='text-lg bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent  mt-4'>
+        <h3 className='text-lg bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent  mt-4'>
           Welcome to <strong>123Movies Online™</strong>, your premier
           destination for streaming the latest and most popular movies and TV
           shows. Our platform offers an extensive collection of entertainment
@@ -385,8 +385,8 @@ const HomePage = ({ movies, tvshow, adults }) => {
           new favorites. Whether you're looking for action-packed thrillers,
           heartwarming dramas, or laugh-out-loud comedies,{' '}
           <strong>123Movies Online™</strong> has something for everyone.
-        </p>
-        <p className='text-lg bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent mt-4'>
+        </h3>
+        {/* <p className='text-lg bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent mt-4'>
           With a user-friendly interface and high-quality streaming,{' '}
           <strong>123Movies Online™</strong> makes it easy to find and enjoy
           your favorite content. Our library is regularly updated with the
@@ -394,15 +394,15 @@ const HomePage = ({ movies, tvshow, adults }) => {
           and TV shows as soon as they are available. Stream online seamlessly
           and enjoy an immersive viewing experience from the comfort of your
           home.
-        </p>
-        <p className='text-lg bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent mt-4'>
+        </p> */}
+        {/* <p className='text-lg bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent mt-4'>
           At <strong>123Movies Online™</strong>, we are committed to providing a
           top-notch streaming service that meets all your entertainment needs.
           Join us today and explore the vast world of movies and TV shows
           available at your fingertips. Whether you're a casual viewer or a
           dedicated binge-watcher, <strong>123Movies Online™</strong> is the
           perfect place to stream online and stay entertained.
-        </p>
+        </p> */}
 
         <a
           href='https://t.me/watchmovietvshow/'
@@ -526,9 +526,9 @@ const HomePage = ({ movies, tvshow, adults }) => {
                     loading='lazy'
                     layout='responsive'
                   />
-                  <h2 className={styles.movieTitle}>
+                  <p className={styles.movieTitle}>
                     {item.title || 'Default Title'}
-                  </h2>
+                  </p>
                 </div>
               </Link>
             ))
@@ -552,19 +552,19 @@ export async function getStaticProps() {
   // Read and merge all JSON files
   const movies = [
     readFile('movies.json'),
-    readFile('moviesp2.json'),
-    readFile('moviesp3.json'),
-    readFile('moviesp4.json')
+    // readFile('moviesp2.json'),
+    // readFile('moviesp3.json'),
+    // readFile('moviesp4.json')
   ].flat()
 
   const tvshow = [
     readFile('tvshow.json'),
-    readFile('tvshowp2.json')
+    // readFile('tvshowp2.json')
   ].flat()
 
   const adults = [
     readFile('adult.json'),
-    readFile('adultp2.json')
+    // readFile('adultp2.json')
   ].flat()
 
   return {

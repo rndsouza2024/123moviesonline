@@ -1097,7 +1097,7 @@ const tvshowDetail = ({ tvshow }) => {
                           'contrast(1.2) saturate(1.3) brightness(1.1) hue-rotate(15deg)'
                       }}
                     >
-                      Click to Watch Season 2
+                      Click to Watch Previous Season 1
                     </div>
                   </Link>
                 )}

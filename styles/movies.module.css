@@ -72,9 +72,9 @@
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
   width: 100%;
-  height: 100%; /* Fixed height */
   display: flex;
   flex-direction: column;
+  height: 100%;
 }
 
 .movieCard:hover {
@@ -83,7 +83,6 @@
 }
 
 .movieImage {
-  flex-grow: 1;
   object-fit: cover;
   width: 100%;
   height: auto;
@@ -116,7 +115,7 @@
   }
 
   .movieCard {
-    height: 400px; /* Adjust height for smaller screens */
+    height: auto; /* Allow height to adjust based on content */
   }
 
   .movieTitle {
@@ -134,7 +133,7 @@
   }
 
   .movieCard {
-    height: 350px; /* Adjust height for smaller screens */
+    height: auto; /* Allow height to adjust based on content */
   }
 
   .movieTitle {

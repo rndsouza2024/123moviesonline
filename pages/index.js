@@ -386,7 +386,7 @@ const HomePage = ({ movies, tvshow, adults }) => {
           heartwarming dramas, or laugh-out-loud comedies,{' '}
           <strong>123Movies Online™</strong> has something for everyone.
         </p>
-        {/* <p className='text-lg bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent mt-4'>
+        <p className='text-lg bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent mt-4'>
           With a user-friendly interface and high-quality streaming,{' '}
           <strong>123Movies Online™</strong> makes it easy to find and enjoy
           your favorite content. Our library is regularly updated with the
@@ -394,7 +394,7 @@ const HomePage = ({ movies, tvshow, adults }) => {
           and TV shows as soon as they are available. Stream online seamlessly
           and enjoy an immersive viewing experience from the comfort of your
           home.
-        </p> */}
+        </p>
         <p className='text-lg bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent mt-4'>
           At <strong>123Movies Online™</strong>, we are committed to providing a
           top-notch streaming service that meets all your entertainment needs.

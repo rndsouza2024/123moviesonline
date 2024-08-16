@@ -15,6 +15,6 @@ module.exports = {
     return config;
   },
   images: {
-    domains: ['localhost', 'res.cloudinary.com', 'yt3.googleusercontent.com','justwatchfree.vercel.app'], // Add 'uwatchfreeonline.vercel.app' to the domains array
+    domains: ['localhost', 'res.cloudinary.com', 'yt3.googleusercontent.com','123moviesonline.vercel.app'], // Add 'uwatchfreeonline.vercel.app' to the domains array
   },
 };

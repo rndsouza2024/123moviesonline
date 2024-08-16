@@ -377,7 +377,7 @@ const HomePage = ({ movies, tvshow, adults }) => {
         <h2 className='px-0 bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-2xl  font-bold mt-2 items-center justify-center'>
           Discover the Best Movies and TV Shows to Stream on 123Movies Online™
         </h2>
-        <h3 className='text-lg bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent  mt-4'>
+        <p className='text-lg bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent  mt-4'>
           Welcome to <strong>123Movies Online™</strong>, your premier
           destination for streaming the latest and most popular movies and TV
           shows. Our platform offers an extensive collection of entertainment
@@ -385,7 +385,7 @@ const HomePage = ({ movies, tvshow, adults }) => {
           new favorites. Whether you're looking for action-packed thrillers,
           heartwarming dramas, or laugh-out-loud comedies,{' '}
           <strong>123Movies Online™</strong> has something for everyone.
-        </h3>
+        </p>
         {/* <p className='text-lg bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent mt-4'>
           With a user-friendly interface and high-quality streaming,{' '}
           <strong>123Movies Online™</strong> makes it easy to find and enjoy
@@ -411,10 +411,10 @@ const HomePage = ({ movies, tvshow, adults }) => {
           className='bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent font-bold text-2xl mt-2 flex items-center justify-center'
           style={{ marginTop: '25px' }}
         >
-          <span className='px-0 bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-3xl hover:text-blue-800 font-bold mt-2'>
+          <h3 className='px-0 bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-3xl hover:text-blue-800 font-bold mt-2'>
             For Request or Demand Movies & TV Series Join Telegram
             <i className='fab fa-telegram text-blue-600 hover:text-gray-600 ml-2 w-12 h-12 animate-pulse '></i>
-          </span>
+          </h3>
         </a>
       </div>
       <div

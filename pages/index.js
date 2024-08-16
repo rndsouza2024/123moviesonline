@@ -395,14 +395,14 @@ const HomePage = ({ movies, tvshow, adults }) => {
           and enjoy an immersive viewing experience from the comfort of your
           home.
         </p> */}
-        {/* <p className='text-lg bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent mt-4'>
+        <p className='text-lg bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent mt-4'>
           At <strong>123Movies Online™</strong>, we are committed to providing a
           top-notch streaming service that meets all your entertainment needs.
           Join us today and explore the vast world of movies and TV shows
           available at your fingertips. Whether you're a casual viewer or a
           dedicated binge-watcher, <strong>123Movies Online™</strong> is the
           perfect place to stream online and stay entertained.
-        </p> */}
+        </p>
 
         <a
           href='https://t.me/watchmovietvshow/'

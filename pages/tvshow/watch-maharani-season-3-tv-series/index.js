@@ -1104,7 +1104,7 @@ const tvshowDetail = ({ tvshow }) => {
               </div>
               <div className='flex flex-col items-center justify-center'>
                 {tvshow.linkurl && (
-                  <Link href={tvshow.linkurl}>
+                  <Link href={tvshow.linkurl2}>
                     <div
                       className={`px-4 py-2 border rounded mx-2 my-1 ${
                         tvshow.linkurl ? 'bg-red-500 text-white' : 'bg-gray-200'

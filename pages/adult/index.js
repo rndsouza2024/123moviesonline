@@ -321,10 +321,7 @@ const AdultPage = ({ adults }) => {
           name='twitter:image'
           content='https://123moviesonline.vercel.app/og_image.jpg'
         />
-        <meta
-          name='google-site-verification'
-          content='o8uNsADswyHnNPA69n9gI7u6L4_cdjN4iT5lRhHHtMU'
-        />
+    
         <meta
           name='google-site-verification'
           content='o8uNsADswyHnNPA69n9gI7u6L4_cdjN4iT5lRhHHtMU'

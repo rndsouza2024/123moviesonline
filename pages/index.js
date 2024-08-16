@@ -541,16 +541,31 @@ const HomePage = ({ movies, tvshow, adults }) => {
   )
 }
 
-export async function getStaticProps () {
+export async function getStaticProps() {
+  // Function to read and parse JSON files
   const readFile = filename => {
     const filePath = path.join(process.cwd(), 'public', filename)
     const fileContent = fs.readFileSync(filePath, 'utf-8')
     return JSON.parse(fileContent)
   }
 
-  const movies = readFile('movies.json')
-  const tvshow = readFile('tvshow.json')
-  const adults = readFile('adult.json')
+  // Read and merge all JSON files
+  const movies = [
+    readFile('movies.json'),
+    readFile('moviesp2.json'),
+    readFile('moviesp3.json'),
+    readFile('moviesp4.json')
+  ].flat()
+
+  const tvshow = [
+    readFile('tvshow.json'),
+    readFile('tvshowp2.json')
+  ].flat()
+
+  const adults = [
+    readFile('adult.json'),
+    readFile('adultp2.json')
+  ].flat()
 
   return {
     props: {

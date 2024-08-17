@@ -321,7 +321,10 @@ const MoviePage = ({ movies }) => {
           name='twitter:image'
           content='https://123moviesonline.vercel.app/og_image.jpg'
         />
-      
+        <meta
+          name='google-site-verification'
+          content='o8uNsADswyHnNPA69n9gI7u6L4_cdjN4iT5lRhHHtMU'
+        />
         <meta
           name='google-site-verification'
           content='o8uNsADswyHnNPA69n9gI7u6L4_cdjN4iT5lRhHHtMU'
@@ -523,7 +526,7 @@ const MoviePage = ({ movies }) => {
       </Link>
 
       {/* Page 2, Page 3, Page 4 buttons */}
-      {[2, 3, 4, ].map((page) => (
+      {[2, 3, 4, 5].map((page) => (
         <Link key={page} href={`/movies/page${page}`} passHref>
           <button
             className={`px-4 py-2 border rounded ${
@@ -668,7 +671,7 @@ export async function getStaticProps () {
     return JSON.parse(fileContent)
   }
 
-  const movies = readFile('moviesp2.json')
+  const movies = readFile('moviesp5.json')
   // const tvshows = readFile('tvshow.json')
   // const trailers = readFile('trailers.json')
   // const adults = readFile('adult.json')

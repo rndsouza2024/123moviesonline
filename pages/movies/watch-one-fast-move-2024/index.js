@@ -126,7 +126,7 @@ const moviesDetail = ({ movie }) => {
   const enhancedParagraph = text => {
     const linkTargets = [
       {
-        text: 'The Legend of Catclaws Mountain - 2024',
+        text: '36 Days - 2024',
         url: `https://www.imdb.com/title/${movie.videomovies}/`
       }
     ]
@@ -543,18 +543,18 @@ const moviesDetail = ({ movie }) => {
     '@context': 'https://schema.org',
     '@type': 'WebPage',
     url: movie.siteurl, // Ensure this URL is correctly set
-    name: 'Watch Movie The Legend of Catclaws Mountain (2024) | 123Movies™',
+    name: 'Watch Movie 36 Days (2024) | 123Movies™',
     alternateName: [
-      'Ver película The Legend of Catclaws Mountain (2024) | 123Movies™',
-      'Regarder le film The Legend of Catclaws Mountain (2024) | 123Movies™',
-      'Film The Legend of Catclaws Mountain (2024) ansehen | 123Movies™',
-      '观看电影 The Legend of Catclaws Mountain (2024) | 123Movies™',
-      '映画 The Legend of Catclaws Mountain (2024) を見る | 123Movies™',
-      '영화 The Legend of Catclaws Mountain (2024) 보기 | 123Movies™',
-      'Assistir Filme The Legend of Catclaws Mountain (2024) | 123Movies™',
-      'Guarda il film The Legend of Catclaws Mountain (2024) | 123Movies™',
-      'Посмотреть фильм The Legend of Catclaws Mountain (2024) | 123Movies™',
-      'مشاهدة فيلم The Legend of Catclaws Mountain (2024) | جي دبليو إف™'
+      'Ver película 36 Days (2024) | 123Movies™',
+      'Regarder le film 36 Days (2024) | 123Movies™',
+      'Film 36 Days (2024) ansehen | 123Movies™',
+      '观看电影 36 Days (2024) | 123Movies™',
+      '映画 36 Days (2024) を見る | 123Movies™',
+      '영화 36 Days (2024) 보기 | 123Movies™',
+      'Assistir Filme 36 Days (2024) | 123Movies™',
+      'Guarda il film 36 Days (2024) | 123Movies™',
+      'Посмотреть фильм 36 Days (2024) | 123Movies™',
+      'مشاهدة فيلم 36 Days (2024) | جي دبليو إف™'
     ],
     inLanguage: [
       'es',
@@ -578,7 +578,7 @@ const moviesDetail = ({ movie }) => {
           content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1'
         />
 
-        <title>Watch Movie The Legend of Catclaws Mountain (2024) | 123Movies™</title>
+        <title>Watch Movie 36 Days (2024) | 123Movies™</title>
         <link rel='canonical' href={movie && movie.siteurl} />
         <meta name='robots' content='index, follow' />
         <meta name='googlebot' content='index,follow' />
@@ -1537,7 +1537,7 @@ const moviesDetail = ({ movie }) => {
 export async function getServerSideProps () {
   const res = await fetch('https://123moviesonline.vercel.app/moviesp5.json')
   const data = await res.json()
-  const selectedMovie = data.find(movie => movie.id === 'INDEX62')
+  const selectedMovie = data.find(movie => movie.id === 'INDEX64')
   return {
     props: {
       movie: selectedMovie

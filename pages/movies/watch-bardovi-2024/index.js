@@ -1535,7 +1535,7 @@ const moviesDetail = ({ movie }) => {
 }
 
 export async function getServerSideProps () {
-  const res = await fetch('https://123moviesonline.vercel.app/movies.json')
+  const res = await fetch('https://123moviesonline.vercel.app/moviesp5.json')
   const data = await res.json()
   const selectedMovie = data.find(movie => movie.id === 'INDEX69')
   return {

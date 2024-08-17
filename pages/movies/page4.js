@@ -80,8 +80,8 @@ const MoviePage = ({ movies }) => {
       },
       {
         '@type': 'WebSite',
-        '@id': 'https://123moviesonline.vercel.app/movies/page4/#website',
-        url: 'https://123moviesonline.vercel.app/movies/page4',
+        '@id': 'https://123moviesonline.vercel.app/movies/page3/#website',
+        url: 'https://123moviesonline.vercel.app/movies/page3',
         name: '123Movies Online™ - Explore. Stream. Online. ',
         publisher: {
           '@type': 'Organization',
@@ -95,8 +95,8 @@ const MoviePage = ({ movies }) => {
       },
       {
         '@type': 'WebPage',
-        '@id': 'https://123moviesonline.vercel.app/movies/page4/#webpage',
-        url: 'https://123moviesonline.vercel.app/movies/page4',
+        '@id': 'https://123moviesonline.vercel.app/movies/page3/#webpage',
+        url: 'https://123moviesonline.vercel.app/movies/page3',
         name: 'Movie',
         datePublished: '2024-01-13T13:00:00+00:00',
         dateModified: '2024-01-13T13:13:00+00:00',
@@ -120,8 +120,8 @@ const MoviePage = ({ movies }) => {
         mainEntity: [
           {
             '@type': 'Article',
-            '@id': 'https://123moviesonline.vercel.app/movies/page4',
-            url: 'https://123moviesonline.vercel.app/movies/page4',
+            '@id': 'https://123moviesonline.vercel.app/movies/page3',
+            url: 'https://123moviesonline.vercel.app/movies/page3',
             headline: '123Movies Online™ - Explore. Stream. Online. ',
             datePublished: '2024-01-13T13:00:00+00:00',
             dateModified: '2024-01-13T13:13:00+00:00',
@@ -147,8 +147,8 @@ const MoviePage = ({ movies }) => {
           },
           {
             '@type': 'Article',
-            '@id': 'https://123moviesonline.vercel.app/movies/page4',
-            url: 'https://123moviesonline.vercel.app/movies/page4',
+            '@id': 'https://123moviesonline.vercel.app/movies/page3',
+            url: 'https://123moviesonline.vercel.app/movies/page3',
             headline: '123Movies Online™ - Explore. Stream. Online. ',
             datePublished: '2024-01-13T13:00:00+00:00',
             dateModified: '2024-01-13T13:13:00+00:00',
@@ -174,8 +174,8 @@ const MoviePage = ({ movies }) => {
           },
           {
             '@type': 'Article',
-            '@id': 'https://123moviesonline.vercel.app/movies/page4',
-            url: 'https://123moviesonline.vercel.app/movies/page4',
+            '@id': 'https://123moviesonline.vercel.app/movies/page3',
+            url: 'https://123moviesonline.vercel.app/movies/page3',
             headline: '123Movies Online™ - Explore. Stream. Online. ',
             datePublished: '2024-01-13T13:00:00+00:00',
             dateModified: '2024-01-13T13:13:00+00:00',
@@ -201,7 +201,7 @@ const MoviePage = ({ movies }) => {
   const languagesSchema = JSON.stringify({
     '@context': 'https://schema.org',
     '@type': 'WebPage',
-    url: 'https://123moviesonline.vercel.app/movies/page4',
+    url: 'https://123moviesonline.vercel.app/movies/page3',
     name: '123Movies Online™ - Movies',
     alternateName: [
       '123Movies Online™ - Películas',
@@ -268,13 +268,13 @@ const MoviePage = ({ movies }) => {
         />
         <meta
           name='keywords'
-           content='123movies, 123moviesHUB, 123moviesFREE, 123movies-hd, 123moviesx, 123movies-org, 123movies-com, 123movies official, 123movies, 123movies free, free movies, movies online, watch movies online, watch movies free, 123movies, gomovies, putlocker, putlockers, soap2day'
+         content='123movies, 123moviesHUB, 123moviesFREE, 123movies-hd, 123moviesx, 123movies-org, 123movies-com, 123movies official, 123movies, 123movies free, free movies, movies online, watch movies online, watch movies free, 123movies, gomovies, putlocker, putlockers, soap2day'
         />
         <meta
           name='description'
           content='Stream HD movies and TV series for free on 123Movies Online. Explore, stream, and download full-length movies and shows in HD quality without registration.'
         />
-        <link rel='canonical' href='https://123moviesonline.vercel.app/movies/page4' />
+        <link rel='canonical' href='https://123moviesonline.vercel.app/movies/page3' />
         <meta property='og:locale' content='en_US' />
         <meta property='og:type' content='video.movie' />
         <meta property='og:type' content='website' />
@@ -282,7 +282,7 @@ const MoviePage = ({ movies }) => {
           property='og:title'
           content='123Movies Online™ - Explore. Stream. Online. '
         />
-        <meta property='og:url' content='https://123moviesonline.vercel.app/movies/page4' />
+        <meta property='og:url' content='https://123moviesonline.vercel.app/movies/page3' />
         <meta
           property='og:site_name'
           content='123Movies Online™ - Explore. Stream. Online. '
@@ -321,7 +321,10 @@ const MoviePage = ({ movies }) => {
           name='twitter:image'
           content='https://123moviesonline.vercel.app/og_image.jpg'
         />
-       
+        <meta
+          name='google-site-verification'
+          content='o8uNsADswyHnNPA69n9gI7u6L4_cdjN4iT5lRhHHtMU'
+        />
         <meta
           name='google-site-verification'
           content='o8uNsADswyHnNPA69n9gI7u6L4_cdjN4iT5lRhHHtMU'
@@ -518,12 +521,12 @@ const MoviePage = ({ movies }) => {
               : 'bg-gray-200 hover:bg-green-500 text-black font-bold'
           }`}
         >
-          Page 1
+           Page 1
         </button>
       </Link>
 
       {/* Page 2, Page 3, Page 4 buttons */}
-      {[2, 3, 4, ].map((page) => (
+      {[2, 3, 4, 5,].map((page) => (
         <Link key={page} href={`/movies/page${page}`} passHref>
           <button
             className={`px-4 py-2 border rounded ${
@@ -668,7 +671,7 @@ export async function getStaticProps () {
     return JSON.parse(fileContent)
   }
 
-  const movies = readFile('moviesp4.json')
+  const movies = readFile('moviesp3.json')
   // const tvshows = readFile('tvshow.json')
   // const trailers = readFile('trailers.json')
   // const adults = readFile('adult.json')

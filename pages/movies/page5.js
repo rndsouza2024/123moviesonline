@@ -12,24 +12,21 @@ import Head from 'next/head'
 import Image from 'next/image'
 import Script from 'next/script'
 
-const MoviePage = ({ tvshows }) => {
+const MoviePage = ({ movies }) => {
   const router = useRouter(); // Initialize the router
   const sections = [
     // { title: 'Latest Trailer', items: trailers },
-    // { title: 'Latest Movies.', items: movies }
-    { title: 'Latest TV Series.', items: tvshows }
+    { title: 'Latest Movies.', items: movies }
+    // { title: 'Latest TV Series.', items: tvshows }
     // { title: 'Adult Content.', items: adults }
   ]
 
-  const [activeTab, setActiveTab] = useState(0);
-  
   const [currentPage, setCurrentPage] = useState(1)
 
   const handlePageSelect = (page) => {
     setCurrentPage(page)
   }
 
-  
   const uwatchfreeSchema = JSON.stringify([
     {
       '@context': 'https://schema.org',
@@ -83,8 +80,8 @@ const MoviePage = ({ tvshows }) => {
       },
       {
         '@type': 'WebSite',
-        '@id': 'https://123moviesonline.vercel.app/tvshow/page2/#website',
-        url: 'https://123moviesonline.vercel.app/tvshow/page2',
+        '@id': 'https://123moviesonline.vercel.app/movies/page4/#website',
+        url: 'https://123moviesonline.vercel.app/movies/page4',
         name: '123Movies Online™ - Explore. Stream. Online. ',
         publisher: {
           '@type': 'Organization',
@@ -98,8 +95,8 @@ const MoviePage = ({ tvshows }) => {
       },
       {
         '@type': 'WebPage',
-        '@id': 'https://123moviesonline.vercel.app/tvshow/page2/#webpage',
-        url: 'https://123moviesonline.vercel.app/tvshow/page2',
+        '@id': 'https://123moviesonline.vercel.app/movies/page4/#webpage',
+        url: 'https://123moviesonline.vercel.app/movies/page4',
         name: 'Movie',
         datePublished: '2024-01-13T13:00:00+00:00',
         dateModified: '2024-01-13T13:13:00+00:00',
@@ -123,8 +120,8 @@ const MoviePage = ({ tvshows }) => {
         mainEntity: [
           {
             '@type': 'Article',
-            '@id': 'https://123moviesonline.vercel.app/tvshow/page2',
-            url: 'https://123moviesonline.vercel.app/tvshow/page2',
+            '@id': 'https://123moviesonline.vercel.app/movies/page4',
+            url: 'https://123moviesonline.vercel.app/movies/page4',
             headline: '123Movies Online™ - Explore. Stream. Online. ',
             datePublished: '2024-01-13T13:00:00+00:00',
             dateModified: '2024-01-13T13:13:00+00:00',
@@ -150,8 +147,8 @@ const MoviePage = ({ tvshows }) => {
           },
           {
             '@type': 'Article',
-            '@id': 'https://123moviesonline.vercel.app/tvshow/page2',
-            url: 'https://123moviesonline.vercel.app/tvshow/page2',
+            '@id': 'https://123moviesonline.vercel.app/movies/page4',
+            url: 'https://123moviesonline.vercel.app/movies/page4',
             headline: '123Movies Online™ - Explore. Stream. Online. ',
             datePublished: '2024-01-13T13:00:00+00:00',
             dateModified: '2024-01-13T13:13:00+00:00',
@@ -177,8 +174,8 @@ const MoviePage = ({ tvshows }) => {
           },
           {
             '@type': 'Article',
-            '@id': 'https://123moviesonline.vercel.app/tvshow/page2',
-            url: 'https://123moviesonline.vercel.app/tvshow/page2',
+            '@id': 'https://123moviesonline.vercel.app/movies/page4',
+            url: 'https://123moviesonline.vercel.app/movies/page4',
             headline: '123Movies Online™ - Explore. Stream. Online. ',
             datePublished: '2024-01-13T13:00:00+00:00',
             dateModified: '2024-01-13T13:13:00+00:00',
@@ -204,7 +201,7 @@ const MoviePage = ({ tvshows }) => {
   const languagesSchema = JSON.stringify({
     '@context': 'https://schema.org',
     '@type': 'WebPage',
-    url: 'https://123moviesonline.vercel.app/tvshow/page2',
+    url: 'https://123moviesonline.vercel.app/movies/page4',
     name: '123Movies Online™ - Movies',
     alternateName: [
       '123Movies Online™ - Películas',
@@ -271,13 +268,13 @@ const MoviePage = ({ tvshows }) => {
         />
         <meta
           name='keywords'
-         content='123movies, 123moviesHUB, 123moviesFREE, 123movies-hd, 123moviesx, 123movies-org, 123movies-com, 123movies official, 123movies, 123movies free, free movies, movies online, watch movies online, watch movies free, 123movies, gomovies, putlocker, putlockers, soap2day'
+           content='123movies, 123moviesHUB, 123moviesFREE, 123movies-hd, 123moviesx, 123movies-org, 123movies-com, 123movies official, 123movies, 123movies free, free movies, movies online, watch movies online, watch movies free, 123movies, gomovies, putlocker, putlockers, soap2day'
         />
         <meta
           name='description'
           content='Stream HD movies and TV series for free on 123Movies Online. Explore, stream, and download full-length movies and shows in HD quality without registration.'
         />
-        <link rel='canonical' href='https://123moviesonline.vercel.app/tvshow/page2' />
+        <link rel='canonical' href='https://123moviesonline.vercel.app/movies/page4' />
         <meta property='og:locale' content='en_US' />
         <meta property='og:type' content='video.movie' />
         <meta property='og:type' content='website' />
@@ -285,7 +282,7 @@ const MoviePage = ({ tvshows }) => {
           property='og:title'
           content='123Movies Online™ - Explore. Stream. Online. '
         />
-        <meta property='og:url' content='https://123moviesonline.vercel.app/tvshow/page2' />
+        <meta property='og:url' content='https://123moviesonline.vercel.app/movies/page4' />
         <meta
           property='og:site_name'
           content='123Movies Online™ - Explore. Stream. Online. '
@@ -421,7 +418,7 @@ const MoviePage = ({ tvshows }) => {
             textAlign: 'center'
           }}
         >
-          123Movies Online™ - Tv Show Section.
+          123Movies Online™ - Movies Section.
         </h1>
       {/* </div> */}
       <SearchComponent />
@@ -514,29 +511,12 @@ const MoviePage = ({ tvshows }) => {
           <i className='fab fa-telegram text-blue-600 hover:text-gray-600 ml-2 w-12 h-12 animate-pulse '></i>
         </span>
       </a>
-      {/* <div className="flex justify-center my-4">
-      {[ 2, 3].map((page, index) => (
-        <Link key={index} href={`/tvshow/page${page}`} passHref>
-          <button
-            className={`px-4 py-2 border rounded mx-2 my-1 ${
-              index === 0
-                ? 'bg-red-500 text-white hover:bg-green-500'
-                : router.pathname === `/tvshow/page${page}`
-                ? 'bg-red-500 text-white'
-                : 'bg-gray-200 hover:bg-green-500 hover:text-white'
-            }`}
-          >
-            PAGE {page}
-          </button>
-        </Link>
-      ))}
-    </div> */}
-     <div className="flex flex-wrap justify-center my-4 gap-2">
+      <div className="flex flex-wrap justify-center my-4 gap-2">
       {/* TV Show Home button */}
-      <Link href="/tvshow" passHref>
+      <Link href="/movies" passHref>
         <button
           className={`px-4 py-2 border rounded ${
-            router.pathname === '/tvshow'
+            router.pathname === '/movies'
               ? 'bg-red-500 text-white font-bold'
               : 'bg-gray-200 hover:bg-green-500 text-black font-bold'
           }`}
@@ -546,11 +526,11 @@ const MoviePage = ({ tvshows }) => {
       </Link>
 
       {/* Page 2, Page 3, Page 4 buttons */}
-      {[2, ].map((page) => (
-        <Link key={page} href={`/tvshow/page${page}`} passHref>
+      {[2, 3, 4, 5, ].map((page) => (
+        <Link key={page} href={`/movies/page${page}`} passHref>
           <button
             className={`px-4 py-2 border rounded ${
-              router.pathname === `/tvshow/page${page}`
+              router.pathname === `/movies/page${page}`
                 ? 'bg-red-500 text-white font-bold'
                 : 'bg-gray-200 hover:bg-green-500 text-black font-bold'
             }`}
@@ -560,6 +540,7 @@ const MoviePage = ({ tvshows }) => {
         </Link>
       ))}
     </div>
+
       {sections.map((section, index) => (
         <div
           key={index}
@@ -663,29 +644,7 @@ const MoviePage = ({ tvshows }) => {
                           fontSize: '16px'
                         }}
                       >
-                             {' '}
-                        Total Episodes: {' '}
-                      </strong>{' '}
-                      <span className={styles.movieDescription}>
-                      <h2
-                        style={{
-                          fontFamily: 'Poppins, sans-serif',
-                          textShadow: '1px 1px 1px #000',
-                          fontWeight: 'bold',
-                          fontSize: '16px'
-                        }}
-                      >     {item.episode || 'Default Description'}
-                         </h2>
-                      </span>
-                      <strong
-                        style={{
-                          fontFamily: 'Poppins, sans-serif',
-                          textShadow: '1px 1px 1px #000',
-                          fontWeight: 'bold',
-                          fontSize: '16px'
-                        }}
-                      > 
-                       
+                        {' '}
                         Synopsis:{' '}
                       </strong>{' '}
                       <span className={styles.movieDescription}>
@@ -712,15 +671,15 @@ export async function getStaticProps () {
     return JSON.parse(fileContent)
   }
 
-  // const movies = readFile('movies.json')
-  const tvshows = readFile('tvshowp2.json')
+  const movies = readFile('moviesp4.json')
+  // const tvshows = readFile('tvshow.json')
   // const trailers = readFile('trailers.json')
   // const adults = readFile('adult.json')
 
   return {
     props: {
-      // movies
-      tvshows
+      movies
+      // tvshows
       // trailers,
       // adults
     }

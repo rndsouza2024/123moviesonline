@@ -126,7 +126,7 @@ const moviesDetail = ({ movie }) => {
   const enhancedParagraph = text => {
     const linkTargets = [
       {
-        text: 'The Legend of Catclaws Mountain - 2024',
+        text: 'Fly Me to the Moon ',
         url: `https://www.imdb.com/title/${movie.videomovies}/`
       }
     ]
@@ -280,7 +280,7 @@ const moviesDetail = ({ movie }) => {
     {
       '@context': 'https://schema.org',
       '@type': 'Organization',
-      name: '123Movies Online™',
+      name: 'JustWatchFree™',
       url: 'https://123moviesonline.vercel.app/',
       image: ['https://123moviesonline.vercel.app/favicon.ico'],
       logo: {
@@ -312,7 +312,7 @@ const moviesDetail = ({ movie }) => {
       {
         '@type': 'ListItem',
         position: 1,
-        name: '123Movies Online™',
+        name: 'JustWatchFree™',
         item: 'https://123moviesonline.vercel.app/'
       },
       {
@@ -342,7 +342,7 @@ const moviesDetail = ({ movie }) => {
         '@type': 'WebSite',
         '@id': 'https://123moviesonline.vercel.app#website',
         url: 'https://123moviesonline.vercel.app',
-        name: '123Movies Online™',
+        name: 'JustWatchFree™',
         publisher: {
           '@id': 'https://gravatar.com/drtrailer2022/#person'
         },
@@ -362,9 +362,9 @@ const moviesDetail = ({ movie }) => {
       },
       {
         '@type': 'Person',
-        '@id': 'https://123moviesonline.vercel.app/author/123moviesonline/',
+        '@id': 'https://123moviesonline.vercel.app/author/justwatchfree/',
         name: 'Dr Trailer',
-        url: 'https://123moviesonline.vercel.app/author/123moviesonline/',
+        url: 'https://123moviesonline.vercel.app/author/justwatchfree/',
         image: {
           '@type': 'ImageObject',
           '@id': 'https://gravatar.com/drtrailer2022',
@@ -382,7 +382,7 @@ const moviesDetail = ({ movie }) => {
         dateModified: movie.dateModified,
         articleSection: 'Movies',
         author: {
-          '@id': 'https://123moviesonline.vercel.app/author/123moviesonline/'
+          '@id': 'https://123moviesonline.vercel.app/author/justwatchfree/'
         },
         publisher: {
           '@id': 'https://gravatar.com/drtrailer2022/#person'
@@ -406,7 +406,7 @@ const moviesDetail = ({ movie }) => {
         dateModified: movie.dateModified,
         articleSection: 'Movies',
         author: {
-          '@id': 'https://123moviesonline.vercel.app/author/123moviesonline/'
+          '@id': 'https://123moviesonline.vercel.app/author/justwatchfree/'
         },
         publisher: {
           '@id': 'https://gravatar.com/drtrailer2022/#person'
@@ -454,7 +454,7 @@ const moviesDetail = ({ movie }) => {
     },
     publisher: {
       '@type': 'Organization',
-      name: '123Movies Online™',
+      name: 'JustWatchFree™',
       logo: {
         '@type': 'ImageObject',
         url: 'https://123moviesonline.vercel.app/og_image.jpg'
@@ -515,7 +515,7 @@ const moviesDetail = ({ movie }) => {
     },
     publisher: {
       '@type': 'Organization',
-      name: '123Movies Online™',
+      name: 'JustWatchFree™',
       logo: {
         '@type': 'ImageObject',
         url: 'https://123moviesonline.vercel.app/og_image.jpg'
@@ -543,18 +543,18 @@ const moviesDetail = ({ movie }) => {
     '@context': 'https://schema.org',
     '@type': 'WebPage',
     url: movie.siteurl, // Ensure this URL is correctly set
-    name: 'Watch Movie The Legend of Catclaws Mountain (2024) | 123Movies™',
+    name: 'Watch Movie Fly Me to the Moon (2024) | 123Movies™',
     alternateName: [
-      'Ver película The Legend of Catclaws Mountain (2024) | 123Movies™',
-      'Regarder le film The Legend of Catclaws Mountain (2024) | 123Movies™',
-      'Film The Legend of Catclaws Mountain (2024) ansehen | 123Movies™',
-      '观看电影 The Legend of Catclaws Mountain (2024) | 123Movies™',
-      '映画 The Legend of Catclaws Mountain (2024) を見る | 123Movies™',
-      '영화 The Legend of Catclaws Mountain (2024) 보기 | 123Movies™',
-      'Assistir Filme The Legend of Catclaws Mountain (2024) | 123Movies™',
-      'Guarda il film The Legend of Catclaws Mountain (2024) | 123Movies™',
-      'Посмотреть фильм The Legend of Catclaws Mountain (2024) | 123Movies™',
-      'مشاهدة فيلم The Legend of Catclaws Mountain (2024) | جي دبليو إف™'
+      'Ver película Fly Me to the Moon (2024) | 123Movies™',
+      'Regarder le film Fly Me to the Moon (2024) | 123Movies™',
+      'Film Fly Me to the Moon (2024) ansehen | 123Movies™',
+      '观看电影 Fly Me to the Moon (2024) | 123Movies™',
+      '映画 Fly Me to the Moon (2024) を見る | 123Movies™',
+      '영화 Fly Me to the Moon (2024) 보기 | 123Movies™',
+      'Assistir Filme Fly Me to the Moon (2024) | 123Movies™',
+      'Guarda il film Fly Me to the Moon (2024) | 123Movies™',
+      'Посмотреть фильм Fly Me to the Moon (2024) | 123Movies™',
+      'مشاهدة فيلم Fly Me to the Moon (2024) | جي دبليو إف™'
     ],
     inLanguage: [
       'es',
@@ -578,7 +578,7 @@ const moviesDetail = ({ movie }) => {
           content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1'
         />
 
-        <title>Watch Movie The Legend of Catclaws Mountain (2024) | 123Movies™</title>
+        <title>Watch Movie Fly Me to the Moon (2024) | 123Movies™</title>
         <link rel='canonical' href={movie && movie.siteurl} />
         <meta name='robots' content='index, follow' />
         <meta name='googlebot' content='index,follow' />
@@ -595,7 +595,7 @@ const moviesDetail = ({ movie }) => {
         />
         <meta
           property='og:description'
-          content='Stream HD movies and TV series for free on 123Movies Online. Explore, stream, and download full-length movies and shows in HD quality without registration.'
+          content='Stream HD movies and TV series for free on JustWatchFree. Explore, stream, and download full-length movies and shows in HD quality without registration.'
         />
         <meta
           name='description'
@@ -603,7 +603,7 @@ const moviesDetail = ({ movie }) => {
         />
         <meta property='og:url' content={`${movie && movie.siteurl}`} />
         <meta name='keywords' content={`${movie && movie.keywords}`} />
-        <meta property='og:site_name' content='123Movies Online' />
+        <meta property='og:site_name' content='JustWatchFree' />
         {/* <meta property='og:type' content='article' /> */}
         <meta property=' og:image:alt' content={`${movie && movie.group}`} />
         <meta name='mobile-web-app-capable' content='yes' />
@@ -620,18 +620,18 @@ const moviesDetail = ({ movie }) => {
         <meta name='twitter:card' content='summary_large_image' />
         <meta
           name='twitter:title'
-          content='123Movies Online™ - Explore. Discover. Online. '
+          content='JustWatchFree™ - Explore. Discover. Online. '
         />
         <meta
           name='twitter:description'
-          content='Stream HD movies and TV series for free on 123Movies Online. Explore, stream, and download full-length movies and shows in HD quality without registration.'
+          content='Stream HD movies and TV series for free on JustWatchFree. Explore, stream, and download full-length movies and shows in HD quality without registration.'
         />
         <meta name='twitter:image' content={`${movie && movie.image1}`} />
         <meta name='twitter:label1' content='Est. reading time' />
         <meta name='twitter:data1' content='1 minute' />
         <meta
           name='google-site-verification'
-          content='o8uNsADswyHnNPA69n9gI7u6L4_cdjN4iT5lRhHHtMU'
+          content='4dFu4PUk1pc1IYqU6Brt84akCwNxaoUpKSO3gDW0kJ0'
         />
         <meta
           name='facebook-domain-verification'
@@ -707,7 +707,7 @@ const moviesDetail = ({ movie }) => {
         </h2>
         <p className='text-lg text-yellow-500 mt-4'>
           Dive into the world of cinema with <strong>{movie.title}</strong>,
-          available to stream right here. At <strong>123Movies Online™</strong>,
+          available to stream right here. At <strong>JustWatchFree™</strong>,
           we bring you the best in entertainment, offering an extensive library
           of movies and TV shows, including the latest blockbusters like{' '}
           <strong>{movie.title}</strong>. Whether you're a fan of action, drama,
@@ -716,7 +716,7 @@ const moviesDetail = ({ movie }) => {
         </p>
         <p className='text-lg text-yellow-500 mt-4'>
           Streaming <strong>{movie.title}</strong> on{' '}
-          <strong>123Movies Online™</strong> guarantees a seamless viewing
+          <strong>JustWatchFree™</strong> guarantees a seamless viewing
           experience with high-definition quality and uninterrupted playback.
           Our platform is designed to make it easy for you to discover and enjoy
           your favorite films. With regularly updated content, you’ll always
@@ -726,11 +726,11 @@ const moviesDetail = ({ movie }) => {
         </p>
         <p className='text-lg text-yellow-500 mt-4'>
           Whether you're revisiting a classic or catching a new release,{' '}
-          <strong>{movie.title}</strong> on <strong>123Movies Online™</strong>{' '}
+          <strong>{movie.title}</strong> on <strong>JustWatchFree™</strong>{' '}
           is the perfect way to enjoy your movie night. Join the countless users
           who trust us for their streaming needs and start watching{' '}
           <strong>{movie.title}</strong> online today. At{' '}
-          <strong>123Movies Online™</strong>, your entertainment is just a click
+          <strong>JustWatchFree™</strong>, your entertainment is just a click
           away.
         </p>
         <span className='px-0 bg-clip-text text-sm text-black font-bold mt-2'>
@@ -1537,7 +1537,7 @@ const moviesDetail = ({ movie }) => {
 export async function getServerSideProps () {
   const res = await fetch('https://123moviesonline.vercel.app/moviesp5.json')
   const data = await res.json()
-  const selectedMovie = data.find(movie => movie.id === 'INDEX62')
+  const selectedMovie = data.find(movie => movie.id === 'INDEX71')
   return {
     props: {
       movie: selectedMovie

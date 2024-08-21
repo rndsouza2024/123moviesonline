@@ -361,7 +361,10 @@ const page6 = ({ items }) => {
                         </span>
                       </h2>
                       <p className='text-gray-700 mb-2'>{item.text}</p>
-                      <p className='font-bold text-black mb-2'> Genre:{item.genre}</p>
+                      <p className='font-bold text-black mb-2 flex flex-col items-center justify-center'> Genre: </p>
+                      <p className="font-bold text-black mb-2 flex flex-col items-center justify-center">
+                      {item.genre}
+                      </p>
                     </div>
                   </div>
                 </div>

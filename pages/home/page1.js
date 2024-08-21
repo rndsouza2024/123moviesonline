@@ -93,7 +93,7 @@ const breadcrumbSchema = JSON.stringify({
   ]
 })
 
-const moviespage1 = ({ items }) => {
+const page1 = ({ items }) => {
   const [latest, setLatest] = useState(latestData)
 
   const router = useRouter() // Initialize the router
@@ -394,4 +394,4 @@ export async function getStaticProps () {
   }
 }
 
-export default moviespage1
+export default page1

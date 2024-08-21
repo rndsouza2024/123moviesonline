@@ -103,8 +103,8 @@ const page7 = ({ items }) => {
   return (
     <div className='w-full' style={{ backgroundColor: '#000' }}>
       <Head>
-        <title> Main Section 6 | 123Moviesonline™</title>
-        <link rel='canonical' href='https://123moviesonline.vercel.app/page6' />
+        <title> Main Section 7 | 123Moviesonline™</title>
+        <link rel='canonical' href='https://123moviesonline.vercel.app/page7' />
         <meta
           name='robots'
           content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1'
@@ -114,13 +114,13 @@ const page7 = ({ items }) => {
         <meta name='revisit-after' content='1 days' />
         <meta property='og:locale' content='en_US' />
         <meta property='og:type' content='website' />
-        <meta property='og:title' content=' Main Section 6 | 123Moviesonline™' />
+        <meta property='og:title' content=' Main Section 7 | 123Moviesonline™' />
         <meta
           property='og:description'
           content='123Moviesonline™ - Stream HD movies and TV series for free on 123Movies Online. Explore, stream, and download full-length movies and shows in HD quality without registration.'
         />
 
-        <meta property='og:url' content='https://123moviesonline.vercel.app/page6' />
+        <meta property='og:url' content='https://123moviesonline.vercel.app/page7' />
 
         <meta property='og:site_name' content='123Moviesonline™' />
         <meta property='og:type' content='article' />

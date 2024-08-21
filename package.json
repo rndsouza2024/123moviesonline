@@ -6,8 +6,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "export": "next export",
-    "postbuild": "next-sitemap --config next-sitemap.config.js"
+    "export": "next export"
   },
   "dependencies": {
     "@bradgarropy/next-google-analytics": "^1.0.2",

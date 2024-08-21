@@ -302,31 +302,14 @@ const moviesPage = ({ items }) => {
   )
 }
 
-export async function getStaticProps () {
-  try {
-    const res = await fetch('https://123moviesonline.vercel.app/movies.json')
-    const data = await res.json()
-
-    return {
-      props: {
-        items: data
-      }
-    }
-  } catch (error) {
-    console.error('Error fetching data:', error)
-    return {
-      props: {
-        items: []
-      }
-    }
-  }
-}
 // export async function getStaticProps () {
 //   try {
-//     // Return the JSON data directly
+//     const res = await fetch('https://123moviesonline.vercel.app/movies.json')
+//     const data = await res.json()
+
 //     return {
 //       props: {
-//         items: moviesData
+//         items: data
 //       }
 //     }
 //   } catch (error) {
@@ -338,5 +321,22 @@ export async function getStaticProps () {
 //     }
 //   }
 // }
+export async function getStaticProps () {
+  try {
+    // Return the JSON data directly
+    return {
+      props: {
+        items: moviesData
+      }
+    }
+  } catch (error) {
+    console.error('Error fetching data:', error)
+    return {
+      props: {
+        items: []
+      }
+    }
+  }
+}
 
 export default moviesPage

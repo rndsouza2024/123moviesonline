@@ -54,6 +54,26 @@ const moviesDetail = ({ moviesItem }) => {
   const [randommovies, setRandommovies] = useState([])
   const [linkTargets, setLinkTargets] = useState([])
 
+  const [imageSize, setImageSize] = useState({
+    width: '200px',
+    height: '200px'
+  })
+
+  useEffect(() => {
+    const updateSize = () => {
+      if (window.innerWidth <= 768) {
+        setImageSize({ width: '100px', height: '100px' })
+      } else {
+        setImageSize({ width: '200px', height: '200px' })
+      }
+    }
+
+    updateSize() // Set size on initial render
+    window.addEventListener('resize', updateSize)
+
+    return () => window.removeEventListener('resize', updateSize)
+  }, [])
+
   useEffect(() => {
     // Fetch the initial random links
     setLinkTargets(getRandomLinks(moviesData))
@@ -920,13 +940,12 @@ const moviesDetail = ({ moviesItem }) => {
                     alt={moviesItem.directorname}
                     title={moviesItem.directorname}
                     style={{
-                      width: window.innerWidth <= 768 ? '100px' : '200px',
-                      height: window.innerWidth <= 768 ? '100px' : '200px',
+                      ...imageSize,
                       objectFit: 'cover',
                       boxShadow: '0 0 10px 0 #000',
                       filter:
                         'contrast(1.2) saturate(1.3) brightness(1.1) hue-rotate(0deg)',
-                      borderRadius: '50%' // Makes the image circular
+                      borderRadius: '50%'
                     }}
                     loading='lazy'
                     layout='responsive'
@@ -937,13 +956,12 @@ const moviesDetail = ({ moviesItem }) => {
                     alt={moviesItem.actor1}
                     title={moviesItem.actor1}
                     style={{
-                      width: window.innerWidth <= 768 ? '100px' : '200px',
-                      height: window.innerWidth <= 768 ? '100px' : '200px',
+                      ...imageSize,
                       objectFit: 'cover',
                       boxShadow: '0 0 10px 0 #000',
                       filter:
                         'contrast(1.2) saturate(1.3) brightness(1.1) hue-rotate(0deg)',
-                      borderRadius: '50%' // Makes the image circular
+                      borderRadius: '50%'
                     }}
                     loading='lazy'
                     layout='responsive'
@@ -954,13 +972,12 @@ const moviesDetail = ({ moviesItem }) => {
                     alt={moviesItem.actor2}
                     title={moviesItem.actor2}
                     style={{
-                      width: window.innerWidth <= 768 ? '100px' : '200px',
-                      height: window.innerWidth <= 768 ? '100px' : '200px',
+                      ...imageSize,
                       objectFit: 'cover',
                       boxShadow: '0 0 10px 0 #000',
                       filter:
                         'contrast(1.2) saturate(1.3) brightness(1.1) hue-rotate(0deg)',
-                      borderRadius: '50%' // Makes the image circular
+                      borderRadius: '50%'
                     }}
                     loading='lazy'
                     layout='responsive'
@@ -971,13 +988,12 @@ const moviesDetail = ({ moviesItem }) => {
                     alt={moviesItem.actor3}
                     title={moviesItem.actor3}
                     style={{
-                      width: window.innerWidth <= 768 ? '100px' : '200px',
-                      height: window.innerWidth <= 768 ? '100px' : '200px',
+                      ...imageSize,
                       objectFit: 'cover',
                       boxShadow: '0 0 10px 0 #000',
                       filter:
                         'contrast(1.2) saturate(1.3) brightness(1.1) hue-rotate(0deg)',
-                      borderRadius: '50%' // Makes the image circular
+                      borderRadius: '50%'
                     }}
                     loading='lazy'
                     layout='responsive'
@@ -988,13 +1004,12 @@ const moviesDetail = ({ moviesItem }) => {
                     alt={moviesItem.actor4}
                     title={moviesItem.actor4}
                     style={{
-                      width: window.innerWidth <= 768 ? '100px' : '200px',
-                      height: window.innerWidth <= 768 ? '100px' : '200px',
+                      ...imageSize,
                       objectFit: 'cover',
                       boxShadow: '0 0 10px 0 #000',
                       filter:
                         'contrast(1.2) saturate(1.3) brightness(1.1) hue-rotate(0deg)',
-                      borderRadius: '50%' // Makes the image circular
+                      borderRadius: '50%'
                     }}
                     loading='lazy'
                     layout='responsive'
@@ -1005,13 +1020,12 @@ const moviesDetail = ({ moviesItem }) => {
                     alt={moviesItem.actor5}
                     title={moviesItem.actor5}
                     style={{
-                      width: window.innerWidth <= 768 ? '100px' : '200px',
-                      height: window.innerWidth <= 768 ? '100px' : '200px',
+                      ...imageSize,
                       objectFit: 'cover',
                       boxShadow: '0 0 10px 0 #000',
                       filter:
                         'contrast(1.2) saturate(1.3) brightness(1.1) hue-rotate(0deg)',
-                      borderRadius: '50%' // Makes the image circular
+                      borderRadius: '50%'
                     }}
                     loading='lazy'
                     layout='responsive'

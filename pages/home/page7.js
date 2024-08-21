@@ -1,11 +1,14 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
+import latestData from '../../public/latest.json'
+import moviesData from '../../public/movies.json'
 import { useRouter } from 'next/router'
 import GoogleTranslate from '../../components/GoogleTranslate'
 import SocialSharing from '../../components/SocialSharing'
 import SearchComponent from '../../components/SearchComponent'
 import Head from 'next/head'
+import Script from 'next/script'
 
 const MoviesPage7 = ({ items }) => {
   const router = useRouter()

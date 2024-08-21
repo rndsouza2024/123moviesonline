@@ -10,7 +10,7 @@ class MyDocument extends Document {
             rel='sitemap'
             type='application/xml'
             title='Sitemap'
-            href='https://123moviesonline.vercel.app/sitemap.xml'
+            href='http://localhost:3000/sitemap.xml'
           />
           <link
             rel='icon'

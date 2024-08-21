@@ -1,5 +1,5 @@
 import { useRouter } from 'next/router'
-import moviesData from '../../../public/moviesp4.json'
+import moviesData from '../../../public/moviesp8.json'
 import latestData from '../../../public/latest.json'
 import { useEffect, useState, useRef } from 'react'
 import Pagination from '../../../components/Pagination'
@@ -14,9 +14,9 @@ import Script from 'next/script'
 import moviesStyles from '@styles/styles.module.css'
 import HomeStyles from '@styles/styles.module.css'
 
-// Fetch data from moviesp4.json
+// Fetch data from moviesp7.json
 const fetchmoviesData = async () => {
-  const response = await fetch('http://localhost:3000/moviesp4.json')
+  const response = await fetch('http://localhost:3000/moviesp8.json')
   return await response.json()
 }
 
@@ -36,7 +36,7 @@ const getRandomLinks = (movies, count = 3) => {
   ]
 }
 
-const moviesDetail4 = ({ moviesItem }) => {
+const moviesDetail7 = ({ moviesItem }) => {
   const router = useRouter()
   const { id } = router.query
   const [currentPage, setCurrentPage] = useState(1)
@@ -342,6 +342,11 @@ const moviesDetail4 = ({ moviesItem }) => {
         datePublished: moviesItem.datePublished,
         dateModified: moviesItem.dateModified,
         articleSection: 'Movies',
+        author: {
+          '@type': 'Person',
+          name: 'DrTrailer',
+          url: 'https://gravatar.com/drtrailer2022'
+        },
         publisher: {
           '@id': 'https://gravatar.com/drtrailer2022/#person'
         },
@@ -363,6 +368,11 @@ const moviesDetail4 = ({ moviesItem }) => {
         datePublished: moviesItem.datePublished,
         dateModified: moviesItem.dateModified,
         articleSection: 'Movies',
+        author: {
+          '@type': 'Person',
+          name: 'DrTrailer',
+          url: 'https://gravatar.com/drtrailer2022'
+        },
         publisher: {
           '@id': 'https://gravatar.com/drtrailer2022/#person'
         },
@@ -1347,6 +1357,7 @@ const moviesDetail4 = ({ moviesItem }) => {
                 {randommovies.map(movies => (
                   <div key={movies.id} className='cardlatest'>
                     <a href={movies.siteurl} id={movies.id}>
+                      {/* <Link key={item.id} href={item.siteurl || '/'}> */}
                       <div className='relative'>
                         <img
                           src={movies.image}
@@ -1543,4 +1554,4 @@ export async function getStaticProps ({ params }) {
   }
 }
 
-export default moviesDetail4
+export default moviesDetail7

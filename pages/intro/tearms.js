@@ -37,9 +37,9 @@ const Tearms = () => {
     '@graph': [
       {
         '@type': 'Person',
-        '@id': 'https://123moviesonline.vercel.app/author/ytmag/',
+        '@id': 'http://localhost:3000/author/ytmag/',
         name: 'Dr Trailer',
-        url: 'https://123moviesonline.vercel.app/author/ytmag/',
+        url: 'http://localhost:3000/author/ytmag/',
         image: {
           '@type': 'ImageObject',
           '@id': 'https://gravatar.com/drtrailer2022',
@@ -50,37 +50,37 @@ const Tearms = () => {
       },
       {
         '@type': 'Organization',
-        '@id': 'https://123moviesonline.vercel.app/#organization',
+        '@id': 'http://localhost:3000/#organization',
         name: '123Moviesonline? - Explore. Discover. Download.',
-        url: 'https://123moviesonline.vercel.app'
+        url: 'http://localhost:3000'
       },
       {
         '@type': 'WebSite',
-        '@id': 'https://123moviesonline.vercel.app/#website',
-        url: 'https://123moviesonline.vercel.app',
+        '@id': 'http://localhost:3000/#website',
+        url: 'http://localhost:3000',
         name: '123Moviesonline? - Explore. Discover. Download.',
         publisher: {
           '@type': 'Organization',
-          '@id': 'https://123moviesonline.vercel.app/#organization'
+          '@id': 'http://localhost:3000/#organization'
         },
         potentialAction: {
           '@type': 'SearchAction',
-          target: 'https://123moviesonline.vercel.app/?s={search_term_string}',
+          target: 'http://localhost:3000/?s={search_term_string}',
           'query-input': 'required name=search_term_string'
         }
       },
       {
         '@type': 'WebPage',
-        '@id': 'https://123moviesonline.vercel.app/#webpage',
-        url: 'https://123moviesonline.vercel.app/',
+        '@id': 'http://localhost:3000/#webpage',
+        url: 'http://localhost:3000/',
         name: 'Movie',
         datePublished: '2024-01-13T13:00:00+00:00',
         dateModified: '2024-01-13T13:13:00+00:00',
         about: {
           '@type': 'Person',
-          '@id': 'https://123moviesonline.vercel.app/author/ytmag/',
+          '@id': 'http://localhost:3000/author/ytmag/',
           name: 'Dr Trailer',
-          url: 'https://123moviesonline.vercel.app/author/ytmag/',
+          url: 'http://localhost:3000/author/ytmag/',
           image: {
             '@type': 'ImageObject',
             '@id': 'https://gravatar.com/drtrailer2022',
@@ -90,22 +90,22 @@ const Tearms = () => {
           }
         },
         isPartOf: {
-          '@id': 'https://123moviesonline.vercel.app/#website'
+          '@id': 'http://localhost:3000/#website'
         },
         inLanguage: 'en-US',
         mainEntity: [
           {
             '@type': 'Article',
-            '@id': 'https://123moviesonline.vercel.app/',
-            url: 'https://123moviesonline.vercel.app/',
+            '@id': 'http://localhost:3000/',
+            url: 'http://localhost:3000/',
             headline: 'Movie',
             datePublished: '2024-01-13T13:00:00+00:00',
             dateModified: '2024-01-13T13:13:00+00:00',
             author: {
               '@type': 'Person',
-              '@id': 'https://123moviesonline.vercel.app/author/ytmag/',
+              '@id': 'http://localhost:3000/author/ytmag/',
               name: 'Dr Trailer',
-              url: 'https://123moviesonline.vercel.app/author/ytmag/',
+              url: 'http://localhost:3000/author/ytmag/',
               image: {
                 '@type': 'ImageObject',
                 '@id': 'https://gravatar.com/drtrailer2022',
@@ -116,23 +116,23 @@ const Tearms = () => {
             },
             publisher: {
               '@type': 'Organization',
-              '@id': 'https://123moviesonline.vercel.app/#organization',
+              '@id': 'http://localhost:3000/#organization',
               name: '123Moviesonline? - Explore. Discover. Download.',
-              url: 'https://123moviesonline.vercel.app'
+              url: 'http://localhost:3000'
             }
           },
           {
             '@type': 'Article',
-            '@id': 'https://123moviesonline.vercel.app/',
-            url: 'https://123moviesonline.vercel.app/',
+            '@id': 'http://localhost:3000/',
+            url: 'http://localhost:3000/',
             headline: 'Tvshow',
             datePublished: '2024-01-13T13:00:00+00:00',
             dateModified: '2024-01-13T13:13:00+00:00',
             author: {
               '@type': 'Person',
-              '@id': 'https://123moviesonline.vercel.app/author/ytmag/',
+              '@id': 'http://localhost:3000/author/ytmag/',
               name: 'Dr Trailer',
-              url: 'https://123moviesonline.vercel.app/author/ytmag/',
+              url: 'http://localhost:3000/author/ytmag/',
               image: {
                 '@type': 'ImageObject',
                 '@id': 'https://gravatar.com/drtrailer2022',
@@ -143,23 +143,23 @@ const Tearms = () => {
             },
             publisher: {
               '@type': 'Organization',
-              '@id': 'https://123moviesonline.vercel.app/#organization',
+              '@id': 'http://localhost:3000/#organization',
               name: '123Moviesonline? - Explore. Discover. Download.',
-              url: 'https://123moviesonline.vercel.app'
+              url: 'http://localhost:3000'
             }
           },
           {
             '@type': 'Article',
-            '@id': 'https://123moviesonline.vercel.app/',
-            url: 'https://123moviesonline.vercel.app/',
+            '@id': 'http://localhost:3000/',
+            url: 'http://localhost:3000/',
             headline: 'Adult',
             datePublished: '2024-01-13T13:00:00+00:00',
             dateModified: '2024-01-13T13:13:00+00:00',
             author: {
               '@type': 'Person',
-              '@id': 'https://123moviesonline.vercel.app/author/ytmag/',
+              '@id': 'http://localhost:3000/author/ytmag/',
               name: 'Dr Trailer',
-              url: 'https://123moviesonline.vercel.app/author/ytmag/',
+              url: 'http://localhost:3000/author/ytmag/',
               image: {
                 '@type': 'ImageObject',
                 '@id': 'https://gravatar.com/drtrailer2022',
@@ -170,9 +170,9 @@ const Tearms = () => {
             },
             publisher: {
               '@type': 'Organization',
-              '@id': 'https://123moviesonline.vercel.app/#organization',
+              '@id': 'http://localhost:3000/#organization',
               name: '123Moviesonline? - Explore. Discover. Download.',
-              url: 'https://123moviesonline.vercel.app'
+              url: 'http://localhost:3000'
             }
           }
         ]
@@ -190,7 +190,7 @@ const Tearms = () => {
             rel='sitemap'
             type='application/xml'
             title='Sitemap'
-            href='https://123moviesonline.vercel.app/sitemap.xml'
+            href='http://localhost:3000/sitemap.xml'
           />
           <meta
             name='viewport'
@@ -233,7 +233,7 @@ const Tearms = () => {
             name='description'
             content='Explore. Discover. Download - Free Your Desired Software.'
           />
-          <link rel='canonical' href='https://123moviesonline.vercel.app/intro/tearms' />
+          <link rel='canonical' href='http://localhost:3000/intro/tearms' />
           <meta property='og:locale' content='en_US' />
           <meta property='og:type' content='website' />
           <meta
@@ -244,14 +244,14 @@ const Tearms = () => {
             property='og:description'
             content='123Moviesonline? - Stream HD movies and TV series for free on 123Movies Online. Explore, stream, and download full-length movies and shows in HD quality without registration.'
           />
-          <meta property='og:url' content='https://123moviesonline.vercel.app/intro/tearms/' />
+          <meta property='og:url' content='http://localhost:3000/intro/tearms/' />
           <meta
             property='og:site_name'
             content='123Moviesonline? '
           />
           <meta
             property='og:image'
-            content='https://123moviesonline.vercel.app/og_image.jpg'
+            content='http://localhost:3000/og_image.jpg'
           />
           <meta property='og:image:width' content='1280' />
           <meta property='og:image:height' content='720' />
@@ -268,7 +268,7 @@ const Tearms = () => {
             rel='sitemap'
             type='application/xml'
             title='Sitemap'
-            href='https://123moviesonline.vercel.app/sitemap.xml'
+            href='http://localhost:3000/sitemap.xml'
           />
           <meta name='twitter:card' content='summary_large_image' />
           <meta

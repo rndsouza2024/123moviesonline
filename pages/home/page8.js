@@ -209,7 +209,7 @@ const page7 = ({ items }) => {
           </button>
         </Link>
 
-        {[2, 3, 4, 5, 6, 7, 8, ].map((page) => (
+        {[2, 3, 4, 5, 6, 7, 8].map((page) => (
           <Link key={page} href={`/home/page${page}`} passHref>
             <button
               className={`px-4 py-2 border rounded ${
@@ -272,6 +272,7 @@ const page7 = ({ items }) => {
                       <p className="font-bold text-black mb-2 flex flex-col items-center justify-center">
                       {item.genre}
                       </p>
+                       
                       </div>
                     </div>
                   </div>
@@ -287,7 +288,7 @@ const page7 = ({ items }) => {
 
 export async function getStaticProps() {
   try {
-    const res = await fetch('http://localhost:3000/moviesp6.json');
+    const res = await fetch('http://localhost:3000/moviesp7.json');
     const data = await res.json();
 
     return {

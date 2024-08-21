@@ -12,10 +12,11 @@ import Image from 'next/image'
 import Link from 'next/link'
 import Script from 'next/script'
 import moviesStyles from '@styles/styles.module.css'
+import HomeStyles from '@styles/styles.module.css'
 
 // Fetch data from movies.json
 const fetchmoviesData = async () => {
-  const response = await fetch('https://123moviesonline.vercel.app/moviesp2.json')
+  const response = await fetch('http://localhost:3000/moviesp2.json')
   return await response.json()
 }
 
@@ -69,7 +70,7 @@ const moviesDetail2 = ({ moviesItem }) => {
   // Function to fetch data and set state
   const fetchData = async () => {
     try {
-      const response = await fetch('https://123moviesonline.vercel.app/moviesfull.json')
+      const response = await fetch('http://localhost:3000/moviesfull.json')
       const data = await response.json()
 
       // Get 6 random TV Series s
@@ -254,11 +255,11 @@ const moviesDetail2 = ({ moviesItem }) => {
       '@context': 'https://schema.org',
       '@type': 'Organization',
       name: '123Moviesonline™ Online™',
-      url: 'https://123moviesonline.vercel.app/',
-      image: ['https://123moviesonline.vercel.app/favicon.ico'],
+      url: 'http://localhost:3000/',
+      image: ['http://localhost:3000/favicon.ico'],
       logo: {
         '@type': 'ImageObject',
-        url: 'https://123moviesonline.vercel.app/logo.png',
+        url: 'http://localhost:3000/logo.png',
         width: 280,
         height: 100
       }
@@ -266,12 +267,12 @@ const moviesDetail2 = ({ moviesItem }) => {
     {
       '@context': 'https://schema.org',
       '@type': 'WebSite',
-      url: 'https://123moviesonline.vercel.app/',
+      url: 'http://localhost:3000/',
       potentialAction: {
         '@type': 'SearchAction',
         target: {
           '@type': 'EntryPoint',
-          urlTemplate: 'https://123moviesonline.vercel.app/search?q={search_term_string}'
+          urlTemplate: 'http://localhost:3000/search?q={search_term_string}'
         },
         'query-input': 'required name=search_term_string'
       }
@@ -286,7 +287,7 @@ const moviesDetail2 = ({ moviesItem }) => {
         '@type': 'ListItem',
         position: 1,
         name: '123Moviesonline™ Online™',
-        item: 'https://123moviesonline.vercel.app/'
+        item: 'http://localhost:3000/'
       },
       {
         '@type': 'ListItem',
@@ -313,8 +314,8 @@ const moviesDetail2 = ({ moviesItem }) => {
       },
       {
         '@type': 'WebSite',
-        '@id': 'https://123moviesonline.vercel.app#website',
-        url: 'https://123moviesonline.vercel.app',
+        '@id': 'http://localhost:3000#website',
+        url: 'http://localhost:3000',
         name: '123Moviesonline™',
         publisher: {
           '@id': 'https://gravatar.com/drtrailer2022/#person'
@@ -329,15 +330,15 @@ const moviesDetail2 = ({ moviesItem }) => {
         datePublished: moviesItem.datePublished,
         dateModified: moviesItem.dateModified,
         isPartOf: {
-          '@id': 'https://123moviesonline.vercel.app#website'
+          '@id': 'http://localhost:3000#website'
         },
         inLanguage: 'en-US'
       },
       {
         '@type': 'Person',
-        '@id': 'https://123moviesonline.vercel.app/author/123moviesonline/',
+        '@id': 'http://localhost:3000/author/123moviesonline/',
         name: 'Dr Trailer',
-        url: 'https://123moviesonline.vercel.app/author/123moviesonline/',
+        url: 'http://localhost:3000/author/123moviesonline/',
         image: {
           '@type': 'ImageObject',
           '@id': 'https://gravatar.com/drtrailer2022',
@@ -345,7 +346,7 @@ const moviesDetail2 = ({ moviesItem }) => {
           caption: 'Dr Trailer',
           inLanguage: 'en-US'
         },
-        sameAs: ['https://123moviesonline.vercel.app']
+        sameAs: ['http://localhost:3000']
       },
       {
         '@type': 'Article',
@@ -381,7 +382,7 @@ const moviesDetail2 = ({ moviesItem }) => {
         dateModified: moviesItem.dateModified,
         articleSection: 'Movies',
         author: {
-          '@id': 'https://123moviesonline.vercel.app/author/123moviesonline/'
+          '@id': 'http://localhost:3000/author/123moviesonline/'
         },
         publisher: {
           '@id': 'https://gravatar.com/drtrailer2022/#person'
@@ -432,7 +433,7 @@ const moviesDetail2 = ({ moviesItem }) => {
       name: '123Moviesonline™ Online™',
       logo: {
         '@type': 'ImageObject',
-        url: 'https://123moviesonline.vercel.app/og_image.jpg'
+        url: 'http://localhost:3000/og_image.jpg'
       }
     },
     additionalProperty: {
@@ -493,7 +494,7 @@ const moviesDetail2 = ({ moviesItem }) => {
       name: '123Moviesonline™ Online™',
       logo: {
         '@type': 'ImageObject',
-        url: 'https://123moviesonline.vercel.app/og_image.jpg'
+        url: 'http://localhost:3000/og_image.jpg'
       }
     },
     additionalProperty: {

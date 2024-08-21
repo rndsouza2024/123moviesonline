@@ -12,6 +12,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import Script from 'next/script'
 import moviesStyles from '@styles/styles.module.css'
+import HomeStyles from '@styles/styles.module.css'
 
 // Fetch data from moviesp4.json
 const fetchmoviesData = async () => {

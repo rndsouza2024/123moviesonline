@@ -151,3 +151,21 @@
   background-color: #e50914; /* Netflix red for active tab */
   color: #fff;
 }
+/* In your CSS file (e.g., moviesStyles.css) */
+
+.image-grid img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  box-shadow: 0 0 10px 0 #000;
+  filter: contrast(1.2) saturate(1.3) brightness(1.1) hue-rotate(0deg);
+  border-radius: 50%; /* Makes the image circular */
+}
+
+/* Media query for mobile devices */
+@media (max-width: 768px) {
+  .image-grid img {
+    width: 100px;
+    height: 100px;
+  }
+}

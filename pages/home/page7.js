@@ -10,8 +10,105 @@ import SearchComponent from '../../components/SearchComponent'
 import Head from 'next/head'
 import Script from 'next/script'
 
+const uwatchfreeSchema = JSON.stringify([
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    name: '123Moviesonline - Explore. Discover. Download.',
+    url: 'https://123moviesonline.vercel.app/',
+    image: ['https://123moviesonline.vercel.app/favicon.ico'],
+    logo: {
+      '@type': 'ImageObject',
+      url: 'https://123moviesonline.vercel.app/logo.png',
+      width: 280,
+      height: 80
+    }
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    url: 'https://123moviesonline.vercel.app/',
+    potentialAction: {
+      '@type': 'SearchAction',
+      target: {
+        '@type': 'EntryPoint',
+        urlTemplate: 'https://123moviesonline.vercel.app/search?q={search_term_string}'
+      },
+      'query-input': 'required name=search_term_string'
+    }
+  }
+])
+
+const softwareSchema = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  '@id': 'https://123moviesonline.vercel.app/page7',
+  headline: 'movies Section | 123Moviesonline™',
+  url: 'https://123moviesonline.vercel.app/page7',
+  description:
+    '123Moviesonline - Stream HD movies and TV series for free on 123Movies Online. Explore, stream, and download full-length movies and shows in HD quality without registration.',
+  image: 'https://123moviesonline.vercel.app/og_image.jpg',
+  author: {
+    '@type': 'Person',
+    name: 'DrTrailer',
+    url: 'https://gravatar.com/drtrailer2022'
+  },
+  publisher: {
+    '@type': 'Organization',
+    name: '123Moviesonline - Explore. Discover. Download.',
+    logo: {
+      '@type': 'ImageObject',
+      url: 'https://123moviesonline.vercel.app/og_image.jpg'
+    }
+  },
+  datePublished: '2024-06-02',
+  dateModified: '2024-06-02',
+  mainEntityOfPage: {
+    '@type': 'WebPage',
+    '@id': 'https://123moviesonline.vercel.app/page7'
+  },
+  additionalProperty: {
+    '@type': 'PropertyValue',
+    name: 'Action Platform',
+    value: ['movies Web Platform', 'iOS Platform', 'Android Platform']
+  }
+})
+
+const breadcrumbSchema = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    {
+      '@type': 'ListItem',
+      position: 1,
+      name: 'Windows',
+      item: 'https://123moviesonline.vercel.app/'
+    },
+    {
+      '@type': 'ListItem',
+      position: 2,
+      name: 'movies',
+      item: 'https://123moviesonline.vercel.app/page7'
+    }
+  ]
+})
+
 const page7 = ({ items }) => {
-  const router = useRouter()
+  const [latest, setLatest] = useState(latestData)
+
+  const router = useRouter() // Initialize the router
+  const sections = [
+    // { title: 'Latest Trailer', items: trailers },
+    { title: 'Main Section.', items: items }
+    // { title: 'Latest TV Series.', items: tvshows }
+    // { title: 'Adult Content.', items: adults }
+  ]
+
+  const [currentPage, setCurrentPage] = useState(1)
+
+  const handlePageSelect = page => {
+    setCurrentPage(page)
+  }
 
   const uwatchfreeSchema = JSON.stringify([
     {
@@ -45,9 +142,9 @@ const page7 = ({ items }) => {
   const softwareSchema = JSON.stringify({
     '@context': 'https://schema.org',
     '@type': 'Article',
-    '@id': 'https://123moviesonline.vercel.app/page3p3',
+    '@id': 'https://123moviesonline.vercel.app/page7',
     headline: 'movies Section | 123Moviesonline™',
-    url: 'https://123moviesonline.vercel.app/page3p3',
+    url: 'https://123moviesonline.vercel.app/page7',
     description:
       '123Moviesonline - Stream HD movies and TV series for free on 123Movies Online. Explore, stream, and download full-length movies and shows in HD quality without registration.',
     image: 'https://123moviesonline.vercel.app/og_image.jpg',
@@ -68,7 +165,7 @@ const page7 = ({ items }) => {
     dateModified: '2024-06-02',
     mainEntityOfPage: {
       '@type': 'WebPage',
-      '@id': 'https://123moviesonline.vercel.app/page3p3'
+      '@id': 'https://123moviesonline.vercel.app/page7'
     },
     additionalProperty: {
       '@type': 'PropertyValue',
@@ -97,10 +194,11 @@ const page7 = ({ items }) => {
   })
   
   return (
+    // <div className='w-full' style={{ backgroundColor: '#D3D3D3' }}>
     <div className='w-full' style={{ backgroundColor: '#000' }}>
       <Head>
         <title> Main Section 7 | 123Moviesonline™</title>
-        <link rel='canonical' href='https://123moviesonline.vercel.app/page7/' />
+        <link rel='canonical' href='https://123moviesonline.vercel.app/page7' />
         <meta
           name='robots'
           content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1'
@@ -110,10 +208,7 @@ const page7 = ({ items }) => {
         <meta name='revisit-after' content='1 days' />
         <meta property='og:locale' content='en_US' />
         <meta property='og:type' content='website' />
-        <meta
-          property='og:title'
-          content=' Main Section 7 | 123Moviesonline™'
-        />
+        <meta property='og:title' content=' Main Section 7 | 123Moviesonline™' />
         <meta
           property='og:description'
           content='123Moviesonline™ - Stream HD movies and TV series for free on 123Movies Online. Explore, stream, and download full-length movies and shows in HD quality without registration.'
@@ -160,6 +255,7 @@ const page7 = ({ items }) => {
           name='dailymotion-domain-verification'
           content='dmv6sg06w9r5eji88'
         />
+
         <script
           type='application/ld+json'
           dangerouslySetInnerHTML={{ __html: uwatchfreeSchema }}
@@ -175,6 +271,9 @@ const page7 = ({ items }) => {
         />
       </Head>
       <SocialSharing />
+      {/* <Script src='../../propler/ads.js' defer />
+      <Script src='../../propler/ads2.js' defer /> */}
+   
       <h1
         className='text-2xl sm:text-3xl md:text-4xl lg:text-5xl badge bg-gradient-to-r from-pink-500 to-amber-500 font-bold py-3 px-6  shadow-lg hover:from-amber-600 hover:to-pink-600 transition duration-300'
         style={{
@@ -194,35 +293,35 @@ const page7 = ({ items }) => {
       <span className='px-0 bg-clip-text text-sm text-black font-bold mt-2'>
         <SearchComponent />
       </span>
-      <div className='flex flex-wrap justify-center my-4 gap-2'>
-        {/* TV Show movies button */}
-        <Link href='/home' passHref>
+      <div className="flex flex-wrap justify-center my-4 gap-2">
+      {/* TV Show movies button */}
+      <Link href="/home" passHref>
+        <button
+          className={`px-4 py-2 border rounded ${
+            router.pathname === '/home'
+              ? 'bg-red-500 text-white font-bold'
+              : 'bg-gray-200 hover:bg-green-500 text-black font-bold'
+          }`}
+        >
+          Page 1
+        </button>
+      </Link>
+
+      {/* Page 2, Page 3, Page 4 buttons */}
+      {[2, 3, 4, 5, 6, 7,  ].map((page) => (
+        <Link key={page} href={`/home/page${page}`} passHref>
           <button
             className={`px-4 py-2 border rounded ${
-              router.pathname === '/movies'
+              router.pathname === `/home/page${page}`
                 ? 'bg-red-500 text-white font-bold'
                 : 'bg-gray-200 hover:bg-green-500 text-black font-bold'
             }`}
           >
-            Page 1
+            PAGE {page}
           </button>
         </Link>
-
-        {/* Page 2, Page 3, Page 4 buttons */}
-        {[2, 3, 4, 5, 6, 7].map(page => (
-          <Link key={page} href={`/home/page${page}`} passHref>
-            <button
-              className={`px-4 py-2 border rounded ${
-                router.pathname === `/home/page${page}`
-                  ? 'bg-red-500 text-white font-bold'
-                  : 'bg-gray-200 hover:bg-green-500 text-black font-bold'
-              }`}
-            >
-              PAGE {page}
-            </button>
-          </Link>
-        ))}
-      </div>
+      ))}
+    </div>
 
       <div className='container mx-auto px-4 py-6'>
         <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6'>
@@ -231,10 +330,10 @@ const page7 = ({ items }) => {
               key={item.id}
               className='card bg-white rounded-lg shadow-lg overflow-hidden transform transition-transform hover:scale-105 duration-300'
             >
-               {/* <Link key={item.id} href={item.siteurl || '/'}> */}
                <Link href={item.siteurl}>
                 <div>
                   <div className='relative'>
+                    {/* Badge in front of the image */}
                     <div className='absolute top-2 left-2 z-10 badge bg-gradient-to-r from-pink-500 to-amber-500 text-white py-2 px-4 rounded-lg text-center font-bold'>
                       {item.badge}
                     </div>
@@ -262,9 +361,7 @@ const page7 = ({ items }) => {
                         </span>
                       </h2>
                       <p className='text-gray-700 mb-2'>{item.text}</p>
-                      <p className='font-bold text-black mb-2'>
-                        Genre: {item.genre}
-                      </p>
+                      <p className='font-bold text-black mb-2'> Genre:{item.genre}</p>
                     </div>
                   </div>
                 </div>

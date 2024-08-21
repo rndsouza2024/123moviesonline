@@ -211,7 +211,7 @@ const moviesPage = ({ items }) => {
         <SearchComponent />
       </span>
       <div className="flex flex-wrap justify-center my-4 gap-2">
-      {/* TV Show movies button */}
+      {/* movies button */}
       <Link href="/home" passHref>
         <button
           className={`px-4 py-2 border rounded ${
@@ -321,5 +321,22 @@ export async function getStaticProps () {
     }
   }
 }
+// export async function getStaticProps () {
+//   try {
+//     // Return the JSON data directly
+//     return {
+//       props: {
+//         items: moviesData
+//       }
+//     }
+//   } catch (error) {
+//     console.error('Error fetching data:', error)
+//     return {
+//       props: {
+//         items: []
+//       }
+//     }
+//   }
+// }
 
 export default moviesPage

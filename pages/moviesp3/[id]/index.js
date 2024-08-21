@@ -12,7 +12,6 @@ import Image from 'next/image'
 import Link from 'next/link'
 import Script from 'next/script'
 import moviesStyles from '@styles/styles.module.css'
-import HomeStyles from '@styles/styles.module.css'
 
 // Fetch data from moviesp3.json
 const fetchmoviesData = async () => {
@@ -901,12 +900,13 @@ const moviesDetail3 = ({ moviesItem }) => {
                     alt={moviesItem.directorname}
                     title={moviesItem.directorname}
                     style={{
-                      width: '200px',
-                      height: '200px',
+                      width: window.innerWidth <= 768 ? '100px' : '200px',
+                      height: window.innerWidth <= 768 ? '100px' : '200px',
                       objectFit: 'cover',
                       boxShadow: '0 0 10px 0 #000',
                       filter:
-                        'contrast(1.2) saturate(1.3) brightness(1.1) hue-rotate(0deg)'
+                        'contrast(1.2) saturate(1.3) brightness(1.1) hue-rotate(0deg)',
+                      borderRadius: '50%' // Makes the image circular
                     }}
                     loading='lazy'
                     layout='responsive'
@@ -917,12 +917,13 @@ const moviesDetail3 = ({ moviesItem }) => {
                     alt={moviesItem.actor1}
                     title={moviesItem.actor1}
                     style={{
-                      width: '200px',
-                      height: '200px',
+                      width: window.innerWidth <= 768 ? '100px' : '200px',
+                      height: window.innerWidth <= 768 ? '100px' : '200px',
                       objectFit: 'cover',
                       boxShadow: '0 0 10px 0 #000',
                       filter:
-                        'contrast(1.2) saturate(1.3) brightness(1.1) hue-rotate(0deg)'
+                        'contrast(1.2) saturate(1.3) brightness(1.1) hue-rotate(0deg)',
+                      borderRadius: '50%' // Makes the image circular
                     }}
                     loading='lazy'
                     layout='responsive'
@@ -933,12 +934,13 @@ const moviesDetail3 = ({ moviesItem }) => {
                     alt={moviesItem.actor2}
                     title={moviesItem.actor2}
                     style={{
-                      width: '200px',
-                      height: '200px',
+                      width: window.innerWidth <= 768 ? '100px' : '200px',
+                      height: window.innerWidth <= 768 ? '100px' : '200px',
                       objectFit: 'cover',
                       boxShadow: '0 0 10px 0 #000',
                       filter:
-                        'contrast(1.2) saturate(1.3) brightness(1.1) hue-rotate(0deg)'
+                        'contrast(1.2) saturate(1.3) brightness(1.1) hue-rotate(0deg)',
+                      borderRadius: '50%' // Makes the image circular
                     }}
                     loading='lazy'
                     layout='responsive'
@@ -949,12 +951,13 @@ const moviesDetail3 = ({ moviesItem }) => {
                     alt={moviesItem.actor3}
                     title={moviesItem.actor3}
                     style={{
-                      width: '200px',
-                      height: '200px',
+                      width: window.innerWidth <= 768 ? '100px' : '200px',
+                      height: window.innerWidth <= 768 ? '100px' : '200px',
                       objectFit: 'cover',
                       boxShadow: '0 0 10px 0 #000',
                       filter:
-                        'contrast(1.2) saturate(1.3) brightness(1.1) hue-rotate(0deg)'
+                        'contrast(1.2) saturate(1.3) brightness(1.1) hue-rotate(0deg)',
+                      borderRadius: '50%' // Makes the image circular
                     }}
                     loading='lazy'
                     layout='responsive'
@@ -965,12 +968,13 @@ const moviesDetail3 = ({ moviesItem }) => {
                     alt={moviesItem.actor4}
                     title={moviesItem.actor4}
                     style={{
-                      width: '200px',
-                      height: '200px',
+                      width: window.innerWidth <= 768 ? '100px' : '200px',
+                      height: window.innerWidth <= 768 ? '100px' : '200px',
                       objectFit: 'cover',
                       boxShadow: '0 0 10px 0 #000',
                       filter:
-                        'contrast(1.2) saturate(1.3) brightness(1.1) hue-rotate(0deg)'
+                        'contrast(1.2) saturate(1.3) brightness(1.1) hue-rotate(0deg)',
+                      borderRadius: '50%' // Makes the image circular
                     }}
                     loading='lazy'
                     layout='responsive'
@@ -981,12 +985,13 @@ const moviesDetail3 = ({ moviesItem }) => {
                     alt={moviesItem.actor5}
                     title={moviesItem.actor5}
                     style={{
-                      width: '200px',
-                      height: '200px',
+                      width: window.innerWidth <= 768 ? '100px' : '200px',
+                      height: window.innerWidth <= 768 ? '100px' : '200px',
                       objectFit: 'cover',
                       boxShadow: '0 0 10px 0 #000',
                       filter:
-                        'contrast(1.2) saturate(1.3) brightness(1.1) hue-rotate(0deg)'
+                        'contrast(1.2) saturate(1.3) brightness(1.1) hue-rotate(0deg)',
+                      borderRadius: '50%' // Makes the image circular
                     }}
                     loading='lazy'
                     layout='responsive'

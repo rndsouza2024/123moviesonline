@@ -308,7 +308,7 @@ const page6 = ({ items }) => {
       </Link>
 
       {/* Page 2, Page 3, Page 4 buttons */}
-      {[2, 3, 4, 5, 6, 7,  ].map((page) => (
+      {[2, 3, 4, 5, 6, 7, 8, ].map((page) => (
         <Link key={page} href={`/home/page${page}`} passHref>
           <button
             className={`px-4 py-2 border rounded ${

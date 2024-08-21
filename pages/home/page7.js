@@ -10,7 +10,7 @@ import SearchComponent from '../../components/SearchComponent'
 import Head from 'next/head'
 import Script from 'next/script'
 
-const MoviesPage7 = ({ items }) => {
+const page7 = ({ items }) => {
   const router = useRouter()
 
   const uwatchfreeSchema = JSON.stringify([
@@ -297,4 +297,4 @@ export async function getStaticProps () {
   }
 }
 
-export default moviesPage7
+export default page7

@@ -62,7 +62,7 @@ const moviesDetail5 = ({ moviesItem }) => {
   useEffect(() => {
     const updateSize = () => {
       if (window.innerWidth <= 768) {
-        setImageSize({ width: '100px', height: '100px' })
+        setImageSize({ width: '150px', height: '150px' })
       } else {
         setImageSize({ width: '200px', height: '200px' })
       }

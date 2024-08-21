@@ -330,7 +330,7 @@ const page7 = ({ items }) => {
               key={item.id}
               className='card bg-white rounded-lg shadow-lg overflow-hidden transform transition-transform hover:scale-105 duration-300'
             >
-               <Link href={item.siteurl}>
+                 <Link href={item.siteurl} passHref>
                 <div>
                   <div className='relative'>
                     {/* Badge in front of the image */}

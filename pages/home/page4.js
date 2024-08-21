@@ -15,11 +15,11 @@ const uwatchfreeSchema = JSON.stringify([
     '@context': 'https://schema.org',
     '@type': 'Organization',
     name: '123Moviesonline - Explore. Discover. Download.',
-    url: 'http://localhost:3000/',
-    image: ['http://localhost:3000/favicon.ico'],
+    url: 'https://123moviesonline.vercel.app/',
+    image: ['https://123moviesonline.vercel.app/favicon.ico'],
     logo: {
       '@type': 'ImageObject',
-      url: 'http://localhost:3000/logo.png',
+      url: 'https://123moviesonline.vercel.app/logo.png',
       width: 280,
       height: 80
     }
@@ -27,12 +27,12 @@ const uwatchfreeSchema = JSON.stringify([
   {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
-    url: 'http://localhost:3000/',
+    url: 'https://123moviesonline.vercel.app/',
     potentialAction: {
       '@type': 'SearchAction',
       target: {
         '@type': 'EntryPoint',
-        urlTemplate: 'http://localhost:3000/search?q={search_term_string}'
+        urlTemplate: 'https://123moviesonline.vercel.app/search?q={search_term_string}'
       },
       'query-input': 'required name=search_term_string'
     }
@@ -42,12 +42,12 @@ const uwatchfreeSchema = JSON.stringify([
 const softwareSchema = JSON.stringify({
   '@context': 'https://schema.org',
   '@type': 'Article',
-  '@id': 'http://localhost:3000/page4',
+  '@id': 'https://123moviesonline.vercel.app/page4',
   headline: 'movies Section | 123Moviesonline™',
-  url: 'http://localhost:3000/page4',
+  url: 'https://123moviesonline.vercel.app/page4',
   description:
     '123Moviesonline - Stream HD movies and TV series for free on 123Movies Online. Explore, stream, and download full-length movies and shows in HD quality without registration.',
-  image: 'http://localhost:3000/og_image.jpg',
+  image: 'https://123moviesonline.vercel.app/og_image.jpg',
   author: {
     '@type': 'Person',
     name: 'DrTrailer',
@@ -58,14 +58,14 @@ const softwareSchema = JSON.stringify({
     name: '123Moviesonline - Explore. Discover. Download.',
     logo: {
       '@type': 'ImageObject',
-      url: 'http://localhost:3000/og_image.jpg'
+      url: 'https://123moviesonline.vercel.app/og_image.jpg'
     }
   },
   datePublished: '2024-06-02',
   dateModified: '2024-06-02',
   mainEntityOfPage: {
     '@type': 'WebPage',
-    '@id': 'http://localhost:3000/page4'
+    '@id': 'https://123moviesonline.vercel.app/page4'
   },
   additionalProperty: {
     '@type': 'PropertyValue',
@@ -82,13 +82,13 @@ const breadcrumbSchema = JSON.stringify({
       '@type': 'ListItem',
       position: 1,
       name: 'Windows',
-      item: 'http://localhost:3000/'
+      item: 'https://123moviesonline.vercel.app/'
     },
     {
       '@type': 'ListItem',
       position: 2,
       name: 'movies',
-      item: 'http://localhost:3000/page4'
+      item: 'https://123moviesonline.vercel.app/page4'
     }
   ]
 })
@@ -115,11 +115,11 @@ const page4 = ({ items }) => {
       '@context': 'https://schema.org',
       '@type': 'Organization',
       name: '123Moviesonline - Explore. Discover. Download.',
-      url: 'http://localhost:3000/',
-      image: ['http://localhost:3000/favicon.ico'],
+      url: 'https://123moviesonline.vercel.app/',
+      image: ['https://123moviesonline.vercel.app/favicon.ico'],
       logo: {
         '@type': 'ImageObject',
-        url: 'http://localhost:3000/logo.png',
+        url: 'https://123moviesonline.vercel.app/logo.png',
         width: 280,
         height: 80
       }
@@ -127,12 +127,12 @@ const page4 = ({ items }) => {
     {
       '@context': 'https://schema.org',
       '@type': 'WebSite',
-      url: 'http://localhost:3000/',
+      url: 'https://123moviesonline.vercel.app/',
       potentialAction: {
         '@type': 'SearchAction',
         target: {
           '@type': 'EntryPoint',
-          urlTemplate: 'http://localhost:3000/search?q={search_term_string}'
+          urlTemplate: 'https://123moviesonline.vercel.app/search?q={search_term_string}'
         },
         'query-input': 'required name=search_term_string'
       }
@@ -142,12 +142,12 @@ const page4 = ({ items }) => {
   const softwareSchema = JSON.stringify({
     '@context': 'https://schema.org',
     '@type': 'Article',
-    '@id': 'http://localhost:3000/page4',
+    '@id': 'https://123moviesonline.vercel.app/page4',
     headline: 'movies Section | 123Moviesonline™',
-    url: 'http://localhost:3000/page4',
+    url: 'https://123moviesonline.vercel.app/page4',
     description:
       '123Moviesonline - Stream HD movies and TV series for free on 123Movies Online. Explore, stream, and download full-length movies and shows in HD quality without registration.',
-    image: 'http://localhost:3000/og_image.jpg',
+    image: 'https://123moviesonline.vercel.app/og_image.jpg',
     author: {
       '@type': 'Person',
       name: 'DrTrailer',
@@ -158,14 +158,14 @@ const page4 = ({ items }) => {
       name: '123Moviesonline - Explore. Discover. Download.',
       logo: {
         '@type': 'ImageObject',
-        url: 'http://localhost:3000/og_image.jpg'
+        url: 'https://123moviesonline.vercel.app/og_image.jpg'
       }
     },
     datePublished: '2024-06-02',
     dateModified: '2024-06-02',
     mainEntityOfPage: {
       '@type': 'WebPage',
-      '@id': 'http://localhost:3000/page4'
+      '@id': 'https://123moviesonline.vercel.app/page4'
     },
     additionalProperty: {
       '@type': 'PropertyValue',
@@ -182,13 +182,13 @@ const page4 = ({ items }) => {
         '@type': 'ListItem',
         position: 1,
         name: 'Home',
-        item: 'http://localhost:3000/'
+        item: 'https://123moviesonline.vercel.app/'
       },
       {
         '@type': 'ListItem',
         position: 2,
         name: 'movies',
-        item: 'http://localhost:3000/page4'
+        item: 'https://123moviesonline.vercel.app/page4'
       }
     ]
   })
@@ -198,7 +198,7 @@ const page4 = ({ items }) => {
     <div className='w-full' style={{ backgroundColor: '#000' }}>
       <Head>
         <title> Main Section 4 | 123Moviesonline™</title>
-        <link rel='canonical' href='http://localhost:3000/page4' />
+        <link rel='canonical' href='https://123moviesonline.vercel.app/page4' />
         <meta
           name='robots'
           content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1'
@@ -214,13 +214,13 @@ const page4 = ({ items }) => {
           content='123Moviesonline™ - Stream HD movies and TV series for free on 123Movies Online. Explore, stream, and download full-length movies and shows in HD quality without registration.'
         />
 
-        <meta property='og:url' content='http://localhost:3000/page4' />
+        <meta property='og:url' content='https://123moviesonline.vercel.app/page4' />
 
         <meta property='og:site_name' content='123Moviesonline™' />
         <meta property='og:type' content='article' />
         <meta
           property=' og:image:alt'
-          content='http://localhost:3000/og_image.jpg'
+          content='https://123moviesonline.vercel.app/og_image.jpg'
         />
         <meta name='mobile-web-app-capable' content='yes' />
         <meta property='article:section' content='123Moviesonline™' />
@@ -235,7 +235,7 @@ const page4 = ({ items }) => {
         />
         <meta
           property='og:image'
-          content='http://localhost:3000/og_image.jpg'
+          content='https://123moviesonline.vercel.app/og_image.jpg'
         />
         <meta property='og:image:width' content='1280px' />
         <meta property='og:image:height' content='720px' />
@@ -308,7 +308,7 @@ const page4 = ({ items }) => {
       </Link>
 
       {/* Page 2, Page 3, Page 4 buttons */}
-      {[2, 3, 4, 5, 6, 7, 8, ].map((page) => (
+      {[2, 3, 4, 5, 6, 7,  ].map((page) => (
         <Link key={page} href={`/home/page${page}`} passHref>
           <button
             className={`px-4 py-2 border rounded ${
@@ -361,10 +361,7 @@ const page4 = ({ items }) => {
                         </span>
                       </h2>
                       <p className='text-gray-700 mb-2'>{item.text}</p>
-                      <p className='font-bold text-black mb-2 flex flex-col items-center justify-center'> Genre: </p>
-                      <p className="font-bold text-black mb-2 flex flex-col items-center justify-center">
-                      {item.genre}
-                      </p>
+                      <p className='font-bold text-black mb-2'> Genre:{item.genre}</p>
                     </div>
                   </div>
                 </div>
@@ -379,7 +376,7 @@ const page4 = ({ items }) => {
 
 export async function getStaticProps () {
   try {
-    const res = await fetch('http://localhost:3000/moviesp3.json')
+    const res = await fetch('https://123moviesonline.vercel.app/moviesp3.json')
     const data = await res.json()
 
     return {

@@ -194,21 +194,21 @@ const moviesDetail = ({ moviesItem }) => {
 
   if (!moviesItem) return <div>Loading...</div>
 
-  const { videomovieitem, videohome, image1 } = moviesItem
+  const { videomovieitem, videomovies, image1 } = moviesItem
 
-  // Check if videohome contains episode data
-  const ismovies = videohome[0] && videohome[0].includes('/')
+  // Check if videomovies contains episode data
+  const ismovies = videomovies[0] && videomovies[0].includes('/')
 
   // Extract current video data
   const currentVideoId = videomovieitem[currentEpisodeIndex]
-  const currentVideoData = videohome[currentEpisodeIndex] || {} // Ensure currentEpisodeIndex is within bounds
+  const currentVideoData = videomovies[currentEpisodeIndex] || {} // Ensure currentEpisodeIndex is within bounds
 
   // Default to episode 1 and season 1 if not defined
   const episode = ismovies ? currentVideoData.episode || 1 : null
   const season = ismovies ? currentVideoData.season || 1 : null
 
   // Construct video sources based on whether it's a TV show or a movie
-  const videoSources = videohome.map(item => {
+  const videoSources = videomovies.map(item => {
     // Check if item contains episode data
     const isItemmovies = item.includes('/')
     const [id, itemSeason, itemEpisode] = isItemmovies

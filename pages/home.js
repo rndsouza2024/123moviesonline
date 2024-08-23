@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import moviesData from '../public/movies.json'
+import latestData from '../../public/latest.json'
+import moviesData from '../../public/movies.json'
 import { useRouter } from 'next/router'
-import GoogleTranslate from '../components/GoogleTranslate'
-import SocialSharing from '../components/SocialSharing'
-import SearchComponent from '../components/SearchComponent'
+import GoogleTranslate from '../../components/GoogleTranslate'
+import SocialSharing from '../../components/SocialSharing'
+import SearchComponent from '../../components/SearchComponent'
 import Head from 'next/head'
 import Script from 'next/script'
 
@@ -41,9 +42,9 @@ const uwatchfreeSchema = JSON.stringify([
 const softwareSchema = JSON.stringify({
   '@context': 'https://schema.org',
   '@type': 'Article',
-  '@id': 'https://123moviesonline.vercel.app/movies/',
+  '@id': 'https://123moviesonline.vercel.app/homepage',
   headline: 'movies Section | 123Moviesonline™',
-  url: 'https://123moviesonline.vercel.app/movies/',
+  url: 'https://123moviesonline.vercel.app/homepage',
   description:
     '123Moviesonline - Stream HD movies and TV series for free on 123Movies Online. Explore, stream, and download full-length movies and shows in HD quality without registration.',
   image: 'https://123moviesonline.vercel.app/og_image.jpg',
@@ -64,7 +65,7 @@ const softwareSchema = JSON.stringify({
   dateModified: '2024-06-02',
   mainEntityOfPage: {
     '@type': 'WebPage',
-    '@id': 'https://123moviesonline.vercel.app/movies/'
+    '@id': 'https://123moviesonline.vercel.app/homepage'
   },
   additionalProperty: {
     '@type': 'PropertyValue',
@@ -87,12 +88,14 @@ const breadcrumbSchema = JSON.stringify({
       '@type': 'ListItem',
       position: 2,
       name: 'movies',
-      item: 'https://123moviesonline.vercel.app/movies/'
+      item: 'https://123moviesonline.vercel.app/homepage'
     }
   ]
 })
 
-const moviesPage = ({ items }) => {
+const homepage = ({ items }) => {
+  const [latest, setLatest] = useState(latestData)
+
   const router = useRouter() // Initialize the router
   const sections = [
     // { title: 'Latest Trailer', items: trailers },
@@ -107,12 +110,95 @@ const moviesPage = ({ items }) => {
     setCurrentPage(page)
   }
 
+  const uwatchfreeSchema = JSON.stringify([
+    {
+      '@context': 'https://schema.org',
+      '@type': 'Organization',
+      name: '123Moviesonline - Explore. Discover. Download.',
+      url: 'https://123moviesonline.vercel.app/',
+      image: ['https://123moviesonline.vercel.app/favicon.ico'],
+      logo: {
+        '@type': 'ImageObject',
+        url: 'https://123moviesonline.vercel.app/logo.png',
+        width: 280,
+        height: 80
+      }
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'WebSite',
+      url: 'https://123moviesonline.vercel.app/',
+      potentialAction: {
+        '@type': 'SearchAction',
+        target: {
+          '@type': 'EntryPoint',
+          urlTemplate: 'https://123moviesonline.vercel.app/search?q={search_term_string}'
+        },
+        'query-input': 'required name=search_term_string'
+      }
+    }
+  ])
+  
+  const softwareSchema = JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    '@id': 'https://123moviesonline.vercel.app/homepage',
+    headline: 'movies Section | 123Moviesonline™',
+    url: 'https://123moviesonline.vercel.app/homepage',
+    description:
+      '123Moviesonline - Stream HD movies and TV series for free on 123Movies Online. Explore, stream, and download full-length movies and shows in HD quality without registration.',
+    image: 'https://123moviesonline.vercel.app/og_image.jpg',
+    author: {
+      '@type': 'Person',
+      name: 'DrTrailer',
+      url: 'https://gravatar.com/drtrailer2022'
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: '123Moviesonline - Explore. Discover. Download.',
+      logo: {
+        '@type': 'ImageObject',
+        url: 'https://123moviesonline.vercel.app/og_image.jpg'
+      }
+    },
+    datePublished: '2024-06-02',
+    dateModified: '2024-06-02',
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': 'https://123moviesonline.vercel.app/homepage'
+    },
+    additionalProperty: {
+      '@type': 'PropertyValue',
+      name: 'Action Platform',
+      value: ['movies Web Platform', 'iOS Platform', 'Android Platform']
+    }
+  })
+  
+  const breadcrumbSchema = JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Home',
+        item: 'https://123moviesonline.vercel.app/'
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: 'movies',
+        item: 'https://123moviesonline.vercel.app/homepage'
+      }
+    ]
+  })
+  
   return (
     // <div className='w-full' style={{ backgroundColor: '#D3D3D3' }}>
     <div className='w-full' style={{ backgroundColor: '#000' }}>
       <Head>
-        <title> Main Section | 123Moviesonline™</title>
-        <link rel='canonical' href='https://123moviesonline.vercel.app/movies/' />
+        <title> Main Section 2 | 123Moviesonline™</title>
+        <link rel='canonical' href='https://123moviesonline.vercel.app/homepage' />
         <meta
           name='robots'
           content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1'
@@ -122,13 +208,13 @@ const moviesPage = ({ items }) => {
         <meta name='revisit-after' content='1 days' />
         <meta property='og:locale' content='en_US' />
         <meta property='og:type' content='website' />
-        <meta property='og:title' content=' Main Section | 123Moviesonline™' />
+        <meta property='og:title' content=' Main Section 2 | 123Moviesonline™' />
         <meta
           property='og:description'
           content='123Moviesonline™ - Stream HD movies and TV series for free on 123Movies Online. Explore, stream, and download full-length movies and shows in HD quality without registration.'
         />
 
-        <meta property='og:url' content='https://123moviesonline.vercel.app/movies' />
+        <meta property='og:url' content='https://123moviesonline.vercel.app/homepage' />
 
         <meta property='og:site_name' content='123Moviesonline™' />
         <meta property='og:type' content='article' />
@@ -187,7 +273,7 @@ const moviesPage = ({ items }) => {
       <SocialSharing />
       {/* <Script src='../../propler/ads.js' defer />
       <Script src='../../propler/ads2.js' defer /> */}
-
+   
       <h1
         className='text-2xl sm:text-3xl md:text-4xl lg:text-5xl badge bg-gradient-to-r from-pink-500 to-amber-500 font-bold py-3 px-6  shadow-lg hover:from-amber-600 hover:to-pink-600 transition duration-300'
         style={{
@@ -207,35 +293,35 @@ const moviesPage = ({ items }) => {
       <span className='px-0 bg-clip-text text-sm text-black font-bold mt-2'>
         <SearchComponent />
       </span>
-      <div className='flex flex-wrap justify-center my-4 gap-2'>
-        {/* movies button */}
-        <Link href='/home' passHref>
+      <div className="flex flex-wrap justify-center my-4 gap-2">
+      {/* TV Show movies button */}
+      <Link href="/home" passHref>
+        <button
+          className={`px-4 py-2 border rounded ${
+            router.pathname === '/home'
+              ? 'bg-red-500 text-white font-bold'
+              : 'bg-gray-200 hover:bg-green-500 text-black font-bold'
+          }`}
+        >
+          Page 1
+        </button>
+      </Link>
+
+      {/* Page 2, Page 3, Page 4 buttons */}
+      {[2, 3, 4, 5, 6, 7, 8, ].map((page) => (
+        <Link key={page} href={`/home/page${page}`} passHref>
           <button
             className={`px-4 py-2 border rounded ${
-              router.pathname === '/home'
+              router.pathname === `/home/page${page}`
                 ? 'bg-red-500 text-white font-bold'
                 : 'bg-gray-200 hover:bg-green-500 text-black font-bold'
             }`}
           >
-            Page 1
+            PAGE {page}
           </button>
         </Link>
-
-        {/* Page 2, Page 3, Page 4 buttons */}
-        {[2, 3, 4, 5, 6, 7, 8].map(page => (
-          <Link key={page} href={`/home/page${page}`} passHref>
-            <button
-              className={`px-4 py-2 border rounded ${
-                router.pathname === `/home/page${page}`
-                  ? 'bg-red-500 text-white font-bold'
-                  : 'bg-gray-200 hover:bg-green-500 text-black font-bold'
-              }`}
-            >
-              PAGE {page}
-            </button>
-          </Link>
-        ))}
-      </div>
+      ))}
+    </div>
 
       <div className='container mx-auto px-4 py-6'>
         <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6'>
@@ -244,7 +330,7 @@ const moviesPage = ({ items }) => {
               key={item.id}
               className='card bg-white rounded-lg shadow-lg overflow-hidden transform transition-transform hover:scale-105 duration-300'
             >
-              <Link key={item.id} href={item.siteurl || '/'}>
+               <Link href={item.siteurl}>
                 <div>
                   <div className='relative'>
                     {/* Badge in front of the image */}
@@ -268,10 +354,9 @@ const moviesPage = ({ items }) => {
                         }}
                       />
                     </div>
-                   
-                      <div className='p-4 '>
-                      <h2 className='text-gray-500 mb-4 '>
-                        <span className='font-bold text-blue-500 '>
+                    <div className='p-4'>
+                      <h2 className='text-gray-500 mb-4'>
+                        <span className='font-bold text-blue-500'>
                           {item.title}
                         </span>
                       </h2>
@@ -292,31 +377,14 @@ const moviesPage = ({ items }) => {
   )
 }
 
-// export async function getStaticProps () {
-//   try {
-//     const res = await fetch('https://123moviesonline.vercel.app/movies.json')
-//     const data = await res.json()
-
-//     return {
-//       props: {
-//         items: data
-//       }
-//     }
-//   } catch (error) {
-//     console.error('Error fetching data:', error)
-//     return {
-//       props: {
-//         items: []
-//       }
-//     }
-//   }
-// }
 export async function getStaticProps () {
   try {
-    // Return the JSON data directly
+    const res = await fetch('https://123moviesonline.vercel.app/moviesp8.json')
+    const data = await res.json()
+
     return {
       props: {
-        items: moviesData
+        items: data
       }
     }
   } catch (error) {
@@ -329,4 +397,4 @@ export async function getStaticProps () {
   }
 }
 
-export default moviesPage
+export default homepage

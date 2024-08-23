@@ -379,7 +379,7 @@ const homepage = ({ items }) => {
 
 export async function getStaticProps () {
   try {
-    const res = await fetch('https://123moviesonline.vercel.app/moviesp8.json')
+    const res = await fetch('https://123moviesonline.vercel.app/movies.json')
     const data = await res.json()
 
     return {

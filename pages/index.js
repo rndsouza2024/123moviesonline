@@ -357,7 +357,7 @@ export default function HomePage() {
           <p className='subtitle'>
             The premier platform for the latest releases and secure downloads.
           </p>
-          <Link href='/home'>
+          <Link href='/home/page1'>
             <div className='cta-button'>Enter 123Moviesonline™</div>
           </Link>
         </div>

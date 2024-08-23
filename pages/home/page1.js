@@ -379,7 +379,7 @@ const page1 = ({ items }) => {
 
 export async function getStaticProps () {
   try {
-    const res = await fetch('http://localhost:3000/movies.json')
+    const res = await fetch('http://localhost:3000/moviesp2.json')
     const data = await res.json()
 
     return {

@@ -1714,38 +1714,6 @@ const moviesDetail = ({ moviesItem }) => {
   )
 }
 
-// export async function getStaticPaths () {
-//   try {
-//     const moviesData = await fetchmoviesData()
-//     const paths = moviesData.map(item => ({
-//       params: { id: item.id }
-//     }))
-
-//     return { paths, fallback: false }
-//   } catch (error) {
-//     console.error('Error fetching paths:', error)
-//     return { paths: [], fallback: false }
-//   }
-// }
-
-// export async function getStaticProps ({ params }) {
-//   try {
-//     const moviesData = await fetchmoviesData()
-//     const moviesItem = moviesData.find(item => item.id === params.id)
-
-//     if (!moviesItem) {
-//       return { notFound: true }
-//     }
-
-//     return { props: { moviesItem } }
-//   } catch (error) {
-//     console.error('Error fetching props:', error)
-//     return { notFound: true }
-//   }
-// }
-
-// export default moviesDetail
-
 export async function getStaticPaths () {
   try {
     const moviesData = await fetchmoviesData()
@@ -1777,3 +1745,35 @@ export async function getStaticProps ({ params }) {
 }
 
 export default moviesDetail
+
+// export async function getStaticPaths () {
+//   try {
+//     const moviesData = await fetchmoviesData()
+//     const paths = moviesData.map(item => ({
+//       params: { id: item.id }
+//     }))
+
+//     return { paths, fallback: false }
+//   } catch (error) {
+//     console.error('Error fetching paths:', error)
+//     return { paths: [], fallback: false }
+//   }
+// }
+
+// export async function getStaticProps ({ params }) {
+//   try {
+//     const moviesData = await fetchmoviesData()
+//     const moviesItem = moviesData.find(item => item.id === params.id)
+
+//     if (!moviesItem) {
+//       return { notFound: true }
+//     }
+
+//     return { props: { moviesItem } }
+//   } catch (error) {
+//     console.error('Error fetching props:', error)
+//     return { notFound: true }
+//   }
+// }
+
+// export default moviesDetail

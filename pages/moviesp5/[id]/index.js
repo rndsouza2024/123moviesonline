@@ -54,6 +54,58 @@ const moviesDetail5 = ({ moviesItem }) => {
   const [randommovies, setRandommovies] = useState([])
   const [linkTargets, setLinkTargets] = useState([])
 
+  const enhancedParagraph = (text, moviesItem) => {
+    // Ensure moviesItem and words are valid
+    const words = Array.isArray(moviesItem?.words) ? moviesItem.words : []
+    const videomovies = moviesItem?.videomovies || ''
+    const imdb = moviesItem?.imdb || ''
+
+    // Define link targets
+    const linkTargets = [
+      {
+        text: words[0] || '', // Fallback to empty string if words[0] is undefined
+        url: `https://www.imdb.com/title/${videomovies || imdb}/`
+      },
+      {
+        text: words[1] || '',
+        url: 'https://123moviesonline.vercel.app/trailers/watch-Ang-Kapitbahay-official-trailer-2024'
+      },
+      {
+        text: words[2] || '',
+        url: 'https://123moviesonline.vercel.app/trailers/watch-Raat-Baaki-Hai-Part-01-trailer-2024'
+      },
+      {
+        text: words[3] || '',
+        url: 'https://123moviesonline.vercel.app/trailers/watch-Sona-Part-official-trailer-2024'
+      },
+      {
+        text: words[4] || '',
+        url: 'https://123moviesonline.vercel.app/trailers/watch-plaget-official-trailer-2024'
+      }
+    ]
+
+    // If imdb is defined, update the first link target for TV shows
+    if (imdb) {
+      linkTargets[0] = {
+        text: words[0] || '',
+        url: `https://www.imdb.com/title/${imdb}/`
+      }
+    }
+
+    // Replace text with links
+    linkTargets.forEach(linkTarget => {
+      if (linkTarget.text) {
+        const regex = new RegExp(`(${linkTarget.text})`, 'g')
+        text = text.replace(
+          regex,
+          `<a href="${linkTarget.url}" class="text-blue-500 underline" target="_blank" rel="noopener noreferrer">${linkTarget.text}</a>`
+        )
+      }
+    })
+
+    return text
+  }
+  
   const [imageSize, setImageSize] = useState({
     width: '200px',
     height: '200px'
@@ -273,7 +325,7 @@ const moviesDetail5 = ({ moviesItem }) => {
     {
       '@context': 'https://schema.org',
       '@type': 'Organization',
-      name: '123Moviesonline™ Online™',
+      name: '123Moviesonline???',
       url: 'https://123moviesonline.vercel.app/',
       image: ['https://123moviesonline.vercel.app/favicon.ico'],
       logo: {
@@ -305,20 +357,14 @@ const moviesDetail5 = ({ moviesItem }) => {
       {
         '@type': 'ListItem',
         position: 1,
-        name: '123Moviesonline™ Online™',
+        name: '123Moviesonline???',
         item: 'https://123moviesonline.vercel.app/'
       },
       {
         '@type': 'ListItem',
         position: 2,
         name: 'Movies',
-        item: moviesItem.baseurl
-      },
-      {
-        '@type': 'ListItem',
-        position: 3,
-        name: moviesItem.name,
-        item: moviesItem.siteurl
+      item: moviesItem.siteurl
       }
     ]
   })
@@ -335,7 +381,7 @@ const moviesDetail5 = ({ moviesItem }) => {
         '@type': 'WebSite',
         '@id': 'https://123moviesonline.vercel.app#website',
         url: 'https://123moviesonline.vercel.app',
-        name: '123Moviesonline™ Online™',
+        name: '123Moviesonline???',
         publisher: {
           '@id': 'https://gravatar.com/drtrailer2022/#person'
         },
@@ -345,7 +391,7 @@ const moviesDetail5 = ({ moviesItem }) => {
         '@type': 'WebPage',
         '@id': `${moviesItem.siteurl}#webpage`,
         url: moviesItem.siteurl,
-        name: `${moviesItem.name} | 123Moviesonline™™`,
+        name: `${moviesItem.name} | 123Moviesonline??????`,
         datePublished: moviesItem.datePublished,
         dateModified: moviesItem.dateModified,
         isPartOf: {
@@ -357,19 +403,19 @@ const moviesDetail5 = ({ moviesItem }) => {
       {
         '@type': 'Article',
         '@id': `${moviesItem.siteurl}#article`,
-        headline: ` ${moviesItem.name} | 123Moviesonline™™`,
+        headline: ` ${moviesItem.name} | 123Moviesonline??????`,
         datePublished: moviesItem.datePublished,
         dateModified: moviesItem.dateModified,
         articleSection: 'Movies',
         author: {
-          '@id': 'https://123moviesonline.vercel.app/author/123Moviesonline™online/'
+          '@id': 'https://123moviesonline.vercel.app/author/123Moviesonline???online/'
         },
         publisher: {
           '@id': 'https://gravatar.com/drtrailer2022/#person'
         },
         description: moviesItem.synopsis,
         image: moviesItem.image,
-        name: ` ${moviesItem.name} | 123Moviesonline™™`,
+        name: ` ${moviesItem.name} | 123Moviesonline??????`,
         isPartOf: {
           '@id': `${moviesItem.siteurl}#webpage`
         },
@@ -381,19 +427,19 @@ const moviesDetail5 = ({ moviesItem }) => {
       {
         '@type': 'BlogPosting',
         '@id': `${moviesItem.siteurl}#blogPost`,
-        headline: ` ${moviesItem.name} | 123Moviesonline™™`,
+        headline: ` ${moviesItem.name} | 123Moviesonline??????`,
         datePublished: moviesItem.datePublished,
         dateModified: moviesItem.dateModified,
         articleSection: 'Movies',
         author: {
-          '@id': 'https://123moviesonline.vercel.app/author/123Moviesonline™online/'
+          '@id': 'https://123moviesonline.vercel.app/author/123Moviesonline???online/'
         },
         publisher: {
           '@id': 'https://gravatar.com/drtrailer2022/#person'
         },
         description: moviesItem.synopsis,
         image: moviesItem.image,
-        name: ` ${moviesItem.name} | 123Moviesonline™™`,
+        name: ` ${moviesItem.name} | 123Moviesonline??????`,
         '@id': `${moviesItem.siteurl}#richSnippet`,
         isPartOf: {
           '@id': `${moviesItem.siteurl}#webpage`
@@ -434,7 +480,7 @@ const moviesDetail5 = ({ moviesItem }) => {
     },
     publisher: {
       '@type': 'Organization',
-      name: '123Moviesonline™ Online™',
+      name: '123Moviesonline???',
       logo: {
         '@type': 'ImageObject',
         url: 'https://123moviesonline.vercel.app/og_image.jpg'
@@ -495,7 +541,7 @@ const moviesDetail5 = ({ moviesItem }) => {
     },
     publisher: {
       '@type': 'Organization',
-      name: '123Moviesonline™ Online™',
+      name: '123Moviesonline???',
       logo: {
         '@type': 'ImageObject',
         url: 'https://123moviesonline.vercel.app/og_image.jpg'
@@ -524,18 +570,18 @@ const moviesDetail5 = ({ moviesItem }) => {
     '@context': 'https://schema.org',
     '@type': 'WebPage',
     url: moviesItem.siteurl, // Ensure this URL is correctly set
-    name: ` ${moviesItem.title} | 123Movies™`,
+    name: ` ${moviesItem.title} | 123Movies???`,
     alternateName: [
-      `Ver película ${moviesItem.title} | 123Movies™`,
-      `Regarder le film ${moviesItem.title} | 123Movies™`,
-      `Film ${moviesItem.title} ansehen | 123Movies™`,
-      `观看电影 ${moviesItem.title} | 123Movies™`,
-      `映画 ${moviesItem.title} を見る | 123Movies™`,
-      `영화 ${moviesItem.title} 보기 | 123Movies™`,
-      `Assistir Filme ${moviesItem.title} | 123Movies™`,
-      `Guarda il film ${moviesItem.title} | 123Movies™`,
-      `Посмотреть фильм ${moviesItem.title} | 123Movies™`,
-      `مشاهدة فيلم ${moviesItem.title} | 123Movies™`
+      `Ver pel??cula ${moviesItem.title} | 123Movies???`,
+      `Regarder le film ${moviesItem.title} | 123Movies???`,
+      `Film ${moviesItem.title} ansehen | 123Movies???`,
+      `???????????? ${moviesItem.title} | 123Movies???`,
+      `?????? ${moviesItem.title} ????????? | 123Movies???`,
+      `?????? ${moviesItem.title} ?????? | 123Movies???`,
+      `Assistir Filme ${moviesItem.title} | 123Movies???`,
+      `Guarda il film ${moviesItem.title} | 123Movies???`,
+      `???????????????????? ?????????? ${moviesItem.title} | 123Movies???`,
+      `???????????? ???????? ${moviesItem.title} | 123Movies???`
     ],
     inLanguage: [
       'es',
@@ -561,8 +607,8 @@ const moviesDetail5 = ({ moviesItem }) => {
 
         <title>
           {moviesItem?.title
-            ? `${moviesItem.title} | 123Movies™`
-            : '123Movies™'}
+            ? `${moviesItem.title} | 123Movies???`
+            : '123Movies???'}
         </title>
         <link rel='canonical' href={moviesItem && moviesItem.siteurl} />
         <meta name='robots' content='index, follow' />
@@ -579,15 +625,15 @@ const moviesDetail5 = ({ moviesItem }) => {
         <meta property='og:video:type' content='video/mp4' />
         <meta
           property='og:title'
-          content={`${moviesItem && moviesItem.name} - 123Moviesonline™™`}
+          content={`${moviesItem && moviesItem.name} - 123Moviesonline??????`}
         />
         <meta
           property='og:description'
-          content='Stream HD movies and TV series for free on 123Moviesonline™ Online. Explore, stream, and download full-length movies and shows in HD quality without registration.'
+          content='Stream HD movies and TV series for free on 123Moviesonline??? Online. Explore, stream, and download full-length movies and shows in HD quality without registration.'
         />
         <meta
           name='description'
-          content={`${moviesItem.title} available on 123Moviesonline™™. Enjoy free streaming of full-length movies and TV series online with no registration required.`}
+          content={`${moviesItem.title} available on 123Moviesonline??????. Enjoy free streaming of full-length movies and TV series online with no registration required.`}
         />
         <meta
           property='og:url'
@@ -597,7 +643,7 @@ const moviesDetail5 = ({ moviesItem }) => {
           name='keywords'
           content={`${moviesItem && moviesItem.keywords}`}
         />
-        <meta property='og:site_name' content='123Moviesonline™ Online' />
+        <meta property='og:site_name' content='123Moviesonline??? Online' />
         {/* <meta property='og:type' content='article' /> */}
         <meta
           property=' og:image:alt'
@@ -620,11 +666,11 @@ const moviesDetail5 = ({ moviesItem }) => {
         <meta name='twitter:card' content='summary_large_image' />
         <meta
           name='twitter:title'
-          content='123Moviesonline™ Online™ - Explore. Discover. Online. '
+          content='123Moviesonline??? - Explore. Discover. Online. '
         />
         <meta
           name='twitter:description'
-          content='Stream HD movies and TV series for free on 123Moviesonline™ Online. Explore, stream, and download full-length movies and shows in HD quality without registration.'
+          content='Stream HD movies and TV series for free on 123Moviesonline??? Online. Explore, stream, and download full-length movies and shows in HD quality without registration.'
         />
         <meta
           name='twitter:image'
@@ -732,7 +778,7 @@ const moviesDetail5 = ({ moviesItem }) => {
               Explore the captivating world of{' '}
               <strong>{moviesItem.title}</strong>, the TV series that has
               everyone talking. At
-              <strong> 123Movies Online™</strong>, you can stream{' '}
+              <strong> 123Movies Online???</strong>, you can stream{' '}
               <strong>{moviesItem.title}</strong> and immerse yourself in its
               exciting episodes, whether you're catching up on past seasons or
               tuning in to the latest releases. Our platform offers a seamless
@@ -741,10 +787,10 @@ const moviesDetail5 = ({ moviesItem }) => {
             </p>
             <p className='text-lg text-yellow-500 mt-4'>
               Streaming <strong>{moviesItem.title}</strong> on{' '}
-              <strong>123Movies Online™</strong> ensures that you won't miss a
+              <strong>123Movies Online???</strong> ensures that you won't miss a
               single moment of the action, drama, or comedy that makes this TV
               series a must-watch. With high-quality streaming and user-friendly
-              navigation, <strong>123Movies Online™</strong> provides everything
+              navigation, <strong>123Movies Online???</strong> provides everything
               you need to enjoy <strong>{moviesItem.title}</strong>
               and other top TV series. Our library is frequently updated, so you
               can always find the latest episodes as soon as they air.
@@ -752,10 +798,10 @@ const moviesDetail5 = ({ moviesItem }) => {
             <p className='text-lg text-yellow-500 mt-4'>
               Whether you're binge-watching or following along weekly,{' '}
               <strong>{moviesItem.title}</strong> on{' '}
-              <strong>123Movies Online™</strong> is your go-to destination for
+              <strong>123Movies Online???</strong> is your go-to destination for
               streaming TV series online. Join our community of viewers and
               start watching <strong>{moviesItem.title}</strong> today. With{' '}
-              <strong>123Movies Online™</strong>, your favorite TV series is
+              <strong>123Movies Online???</strong>, your favorite TV series is
               just a click away.
             </p>
           </>
@@ -770,7 +816,7 @@ const moviesDetail5 = ({ moviesItem }) => {
             <p className='text-lg text-yellow-500 mt-4'>
               Indulge in the finest selection of adult entertainment with{' '}
               <strong>{moviesItem.title}</strong>. At{' '}
-              <strong>123Movies Online™</strong>, we offer a vast library of
+              <strong>123Movies Online???</strong>, we offer a vast library of
               premium adult content, including the latest and most popular
               titles like <strong>{moviesItem.title}</strong>. Our platform is
               designed for those who seek high-quality, discreet streaming of
@@ -778,7 +824,7 @@ const moviesDetail5 = ({ moviesItem }) => {
             </p>
             <p className='text-lg text-yellow-500 mt-4'>
               Streaming <strong>{moviesItem.title}</strong> on{' '}
-              <strong>123Movies Online™</strong> provides you with a
+              <strong>123Movies Online???</strong> provides you with a
               user-friendly interface and crystal-clear video quality. Our adult
               content is regularly updated, giving you access to new releases as
               soon as they become available. Whether you're exploring new genres
@@ -789,10 +835,10 @@ const moviesDetail5 = ({ moviesItem }) => {
             <p className='text-lg text-yellow-500 mt-4'>
               For a premium experience in adult entertainment, look no further
               than <strong>{moviesItem.title}</strong> on{' '}
-              <strong>123Movies Online™</strong>. Our platform ensures your
+              <strong>123Movies Online???</strong>. Our platform ensures your
               privacy and security while you enjoy the content you love. Start
               streaming <strong>{moviesItem.title}</strong> today and discover
-              why <strong>123Movies Online™</strong> is the trusted choice for
+              why <strong>123Movies Online???</strong> is the trusted choice for
               adult content.
             </p>
           </>
@@ -807,7 +853,7 @@ const moviesDetail5 = ({ moviesItem }) => {
             <p className='text-lg text-yellow-500 mt-4'>
               Dive into the world of cinema with{' '}
               <strong>{moviesItem.title}</strong>, available to stream right
-              here. At <strong>123Movies Online™</strong>, we bring you the best
+              here. At <strong>123Movies Online???</strong>, we bring you the best
               in entertainment, offering an extensive library of movies and TV
               shows, including the latest blockbusters like{' '}
               <strong>{moviesItem.title}</strong>. Whether you're a fan of
@@ -816,22 +862,22 @@ const moviesDetail5 = ({ moviesItem }) => {
             </p>
             <p className='text-lg text-yellow-500 mt-4'>
               Streaming <strong>{moviesItem.title}</strong> on{' '}
-              <strong>123Movies Online™</strong> guarantees a seamless viewing
+              <strong>123Movies Online???</strong> guarantees a seamless viewing
               experience with high-definition quality and uninterrupted
               playback. Our platform is designed to make it easy for you to
               discover and enjoy your favorite films. With regularly updated
-              content, you’ll always have access to the newest releases,
+              content, you???ll always have access to the newest releases,
               ensuring you can watch <strong>{moviesItem.title}</strong> and
-              other top titles as soon as they’re available.
+              other top titles as soon as they???re available.
             </p>
             <p className='text-lg text-yellow-500 mt-4'>
               Whether you're revisiting a classic or catching a new release,{' '}
               <strong>{moviesItem.title}</strong> on{' '}
-              <strong>123Movies Online™</strong> is the perfect way to enjoy
+              <strong>123Movies Online???</strong> is the perfect way to enjoy
               your movie night. Join the countless users who trust us for their
               streaming needs and start watching{' '}
               <strong>{moviesItem.title}</strong> online today. At{' '}
-              <strong>123Movies Online™</strong>, your entertainment is just a
+              <strong>123Movies Online???</strong>, your entertainment is just a
               click away.
             </p>
           </>
@@ -861,11 +907,11 @@ const moviesDetail5 = ({ moviesItem }) => {
               width={300}
               height={300}
               quality={90}
-              objectFit='cover'
               loading='lazy'
               style={{
                 width: '400px', // Ensures the image is displayed at this width
                 height: '500px', // Ensures the image is displayed at this height
+                objectFit: 'cover',
                 margin: 'auto',
                 marginTop: '50px',
                 marginBottom: '20px',
@@ -917,7 +963,22 @@ const moviesDetail5 = ({ moviesItem }) => {
                 <h2 className='bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-bg font-semibold mt-2'>
                   Total Episodes: {moviesItem.episode}
                 </h2>
-
+                <div className='bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-bg font-semibold mt-2'>
+                  Synopsis :-
+                  {moviesItem.text &&
+                    moviesItem.text.split('\n\n').map((paragraph, idx) => (
+                      <p
+                        key={idx}
+                        style={{
+                          marginBottom: '10px',
+                          fontFamily: 'Poppins, sans-serif'
+                        }}
+                        dangerouslySetInnerHTML={{
+                          __html: enhancedParagraph(paragraph, moviesItem) // Pass moviesItem here
+                        }}
+                      />
+                    ))}
+                </div>
                 <div className={`${moviesStyles.imageGrid} mt-5`}>
                   <img
                     className={`${moviesStyles.image} img-fluid lazyload `}

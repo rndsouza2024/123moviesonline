@@ -25,9 +25,9 @@ function Application({ Component, pageProps }) {
 
   return (
     <div className="center">
-      <GoogleAnalytics measurementId="G-MHJ16WWPSB" />
-     {/* <Script src='../../propler/ads.js' defer />
-     <Script src='../../propler/ads2.js' defer /> */}
+      <GoogleAnalytics measurementId="G-T1G3L5SNX8" />
+     {/* <Script src='../../propler/ads.js' defer /> */}
+     <Script src='../../propler/ads2.js' defer />
       
       <PageTransition>
         <Hamburger />

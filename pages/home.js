@@ -257,13 +257,13 @@ const moviesPage = ({ items }) => {
                         alt={item.title}
                         width={1280}
                         height={720}
-                        objectFit='cover'
                         className='w-full h-full rounded-t-lg'
                         quality={90}
                         loading='lazy'
                         style={{
                           borderRadius: '0.5rem',
-                          filter:
+                          objectFit: 'cover' ,
+                           filter:
                             'contrast(1.1) saturate(1.1) brightness(1.0) hue-rotate(0deg)'
                         }}
                       />
@@ -275,7 +275,7 @@ const moviesPage = ({ items }) => {
                           {item.title}
                         </span>
                       </h2>
-                      <p className='text-gray-700 mb-2'>{item.text}</p>
+                      <p className='text-gray-700 mb-2'>{item.news1}</p>
                       <p className='font-bold text-black mb-2 flex flex-col items-center justify-center'> Genre: </p>
                       <p className="font-bold text-black mb-2 flex flex-col items-center justify-center">
                       {item.genre}

@@ -103,7 +103,7 @@ const page7 = ({ items }) => {
   return (
     <div className='w-full' style={{ backgroundColor: '#000' }}>
       <Head>
-        <title> Main Section 7 | 123Moviesonline™</title>
+        <title> Main Section 8 | 123Moviesonline™</title>
         <link rel='canonical' href='https://123moviesonline.vercel.app/page7' />
         <meta
           name='robots'
@@ -114,7 +114,7 @@ const page7 = ({ items }) => {
         <meta name='revisit-after' content='1 days' />
         <meta property='og:locale' content='en_US' />
         <meta property='og:type' content='website' />
-        <meta property='og:title' content=' Main Section 7 | 123Moviesonline™' />
+        <meta property='og:title' content=' Main Section 8 | 123Moviesonline™' />
         <meta
           property='og:description'
           content='123Moviesonline™ - Stream HD movies and TV series for free on 123Movies Online. Explore, stream, and download full-length movies and shows in HD quality without registration.'
@@ -196,12 +196,11 @@ const page7 = ({ items }) => {
       <span className="px-0 bg-clip-text text-sm text-black font-bold mt-2 "  >
         <SearchComponent />
       </span>
-      <div className='flex flex-wrap justify-center my-4 gap-2'>
-        {/* movies button */}
-        <Link href='/movie/home' passHref>
+      <div className="flex flex-wrap justify-center my-4 gap-2">
+        <Link href="/home" passHref>
           <button
             className={`px-4 py-2 border rounded ${
-              router.pathname === '/movie/home'
+              router.pathname === '/home'
                 ? 'bg-red-500 text-white font-bold'
                 : 'bg-gray-200 hover:bg-green-500 text-black font-bold'
             }`}
@@ -210,12 +209,11 @@ const page7 = ({ items }) => {
           </button>
         </Link>
 
-        {/* Page 2, Page 3, Page 4 buttons */}
-        {[2, 3, 4, 5, 6, 7, 8].map(page => (
-          <Link key={page} href={`/movie/page${page}`} passHref>
+        {[2, 3, 4, 5, 6, 7, 8,].map((page) => (
+          <Link key={page} href={`/home/page${page}`} passHref>
             <button
               className={`px-4 py-2 border rounded ${
-                router.pathname === `/movie/page${page}`
+                router.pathname === `/home/page${page}`
                   ? 'bg-red-500 text-white font-bold'
                   : 'bg-gray-200 hover:bg-green-500 text-black font-bold'
               }`}
@@ -289,7 +287,7 @@ const page7 = ({ items }) => {
 
 export async function getStaticProps() {
   try {
-    const res = await fetch('https://123moviesonline.vercel.app/moviesp6.json');
+    const res = await fetch('https://123moviesonline.vercel.app/moviesp7.json');
     const data = await res.json();
 
     return {

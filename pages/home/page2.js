@@ -293,35 +293,35 @@ const page2 = ({ items }) => {
       <span className='px-0 bg-clip-text text-sm text-black font-bold mt-2'>
         <SearchComponent />
       </span>
-      <div className='flex flex-wrap justify-center my-4 gap-2'>
-        {/* movies button */}
-        <Link href='/movie/home' passHref>
+      <div className="flex flex-wrap justify-center my-4 gap-2">
+      {/* TV Show movies button */}
+      <Link href="/home" passHref>
+        <button
+          className={`px-4 py-2 border rounded ${
+            router.pathname === '/home'
+              ? 'bg-red-500 text-white font-bold'
+              : 'bg-gray-200 hover:bg-green-500 text-black font-bold'
+          }`}
+        >
+          Page 1
+        </button>
+      </Link>
+
+      {/* Page 2, Page 3, Page 4 buttons */}
+      {[2, 3, 4, 5, 6, 7, 8, ].map((page) => (
+        <Link key={page} href={`/home/page${page}`} passHref>
           <button
             className={`px-4 py-2 border rounded ${
-              router.pathname === '/movie/home'
+              router.pathname === `/home/page${page}`
                 ? 'bg-red-500 text-white font-bold'
                 : 'bg-gray-200 hover:bg-green-500 text-black font-bold'
             }`}
           >
-            Page 1
+            PAGE {page}
           </button>
         </Link>
-
-        {/* Page 2, Page 3, Page 4 buttons */}
-        {[2, 3, 4, 5, 6, 7, 8].map(page => (
-          <Link key={page} href={`/movie/page${page}`} passHref>
-            <button
-              className={`px-4 py-2 border rounded ${
-                router.pathname === `/movie/page${page}`
-                  ? 'bg-red-500 text-white font-bold'
-                  : 'bg-gray-200 hover:bg-green-500 text-black font-bold'
-              }`}
-            >
-              PAGE {page}
-            </button>
-          </Link>
-        ))}
-      </div>
+      ))}
+    </div>
 
       <div className='container mx-auto px-4 py-6'>
         <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6'>

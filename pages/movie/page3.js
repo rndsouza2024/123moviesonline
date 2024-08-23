@@ -42,9 +42,9 @@ const uwatchfreeSchema = JSON.stringify([
 const softwareSchema = JSON.stringify({
   '@context': 'https://schema.org',
   '@type': 'Article',
-  '@id': 'https://123moviesonline.vercel.app/page1',
+  '@id': 'https://123moviesonline.vercel.app/page3',
   headline: 'movies Section | 123Moviesonline™',
-  url: 'https://123moviesonline.vercel.app/page1',
+  url: 'https://123moviesonline.vercel.app/page3',
   description:
     '123Moviesonline - Stream HD movies and TV series for free on 123Movies Online. Explore, stream, and download full-length movies and shows in HD quality without registration.',
   image: 'https://123moviesonline.vercel.app/og_image.jpg',
@@ -65,7 +65,7 @@ const softwareSchema = JSON.stringify({
   dateModified: '2024-06-02',
   mainEntityOfPage: {
     '@type': 'WebPage',
-    '@id': 'https://123moviesonline.vercel.app/page1'
+    '@id': 'https://123moviesonline.vercel.app/page3'
   },
   additionalProperty: {
     '@type': 'PropertyValue',
@@ -88,12 +88,12 @@ const breadcrumbSchema = JSON.stringify({
       '@type': 'ListItem',
       position: 2,
       name: 'movies',
-      item: 'https://123moviesonline.vercel.app/page1'
+      item: 'https://123moviesonline.vercel.app/page3'
     }
   ]
 })
 
-const page1 = ({ items }) => {
+const page3 = ({ items }) => {
   const [latest, setLatest] = useState(latestData)
 
   const router = useRouter() // Initialize the router
@@ -142,9 +142,9 @@ const page1 = ({ items }) => {
   const softwareSchema = JSON.stringify({
     '@context': 'https://schema.org',
     '@type': 'Article',
-    '@id': 'https://123moviesonline.vercel.app/page1',
+    '@id': 'https://123moviesonline.vercel.app/page3',
     headline: 'movies Section | 123Moviesonline™',
-    url: 'https://123moviesonline.vercel.app/page1',
+    url: 'https://123moviesonline.vercel.app/page3',
     description:
       '123Moviesonline - Stream HD movies and TV series for free on 123Movies Online. Explore, stream, and download full-length movies and shows in HD quality without registration.',
     image: 'https://123moviesonline.vercel.app/og_image.jpg',
@@ -165,7 +165,7 @@ const page1 = ({ items }) => {
     dateModified: '2024-06-02',
     mainEntityOfPage: {
       '@type': 'WebPage',
-      '@id': 'https://123moviesonline.vercel.app/page1'
+      '@id': 'https://123moviesonline.vercel.app/page3'
     },
     additionalProperty: {
       '@type': 'PropertyValue',
@@ -188,7 +188,7 @@ const page1 = ({ items }) => {
         '@type': 'ListItem',
         position: 2,
         name: 'movies',
-        item: 'https://123moviesonline.vercel.app/page1'
+        item: 'https://123moviesonline.vercel.app/page3'
       }
     ]
   })
@@ -197,8 +197,8 @@ const page1 = ({ items }) => {
     // <div className='w-full' style={{ backgroundColor: '#D3D3D3' }}>
     <div className='w-full' style={{ backgroundColor: '#000' }}>
       <Head>
-        <title> Main Section 1 | 123Moviesonline™</title>
-        <link rel='canonical' href='https://123moviesonline.vercel.app/page1' />
+        <title> Main Section 3 | 123Moviesonline™</title>
+        <link rel='canonical' href='https://123moviesonline.vercel.app/page3' />
         <meta
           name='robots'
           content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1'
@@ -208,13 +208,13 @@ const page1 = ({ items }) => {
         <meta name='revisit-after' content='1 days' />
         <meta property='og:locale' content='en_US' />
         <meta property='og:type' content='website' />
-        <meta property='og:title' content=' Main Section 1 | 123Moviesonline™' />
+        <meta property='og:title' content=' Main Section 3 | 123Moviesonline™' />
         <meta
           property='og:description'
           content='123Moviesonline™ - Stream HD movies and TV series for free on 123Movies Online. Explore, stream, and download full-length movies and shows in HD quality without registration.'
         />
 
-        <meta property='og:url' content='https://123moviesonline.vercel.app/page1' />
+        <meta property='og:url' content='https://123moviesonline.vercel.app/page3' />
 
         <meta property='og:site_name' content='123Moviesonline™' />
         <meta property='og:type' content='article' />
@@ -293,35 +293,35 @@ const page1 = ({ items }) => {
       <span className='px-0 bg-clip-text text-sm text-black font-bold mt-2'>
         <SearchComponent />
       </span>
-      <div className="flex flex-wrap justify-center my-4 gap-2">
-      {/* TV Show movies button */}
-      <Link href="/home" passHref>
-        <button
-          className={`px-4 py-2 border rounded ${
-            router.pathname === '/home'
-              ? 'bg-red-500 text-white font-bold'
-              : 'bg-gray-200 hover:bg-green-500 text-black font-bold'
-          }`}
-        >
-          Page 1
-        </button>
-      </Link>
-
-      {/* Page 2, Page 3, Page 4 buttons */}
-      {[2, 3, 4, 5, 6, 7, 8, ].map((page) => (
-        <Link key={page} href={`/home/page${page}`} passHref>
+      <div className='flex flex-wrap justify-center my-4 gap-2'>
+        {/* movies button */}
+        <Link href='/movie/home' passHref>
           <button
             className={`px-4 py-2 border rounded ${
-              router.pathname === `/home/page${page}`
+              router.pathname === '/movie/home'
                 ? 'bg-red-500 text-white font-bold'
                 : 'bg-gray-200 hover:bg-green-500 text-black font-bold'
             }`}
           >
-            PAGE {page}
+            Page 1
           </button>
         </Link>
-      ))}
-    </div>
+
+        {/* Page 2, Page 3, Page 4 buttons */}
+        {[2, 3, 4, 5, 6, 7, 8].map(page => (
+          <Link key={page} href={`/movie/page${page}`} passHref>
+            <button
+              className={`px-4 py-2 border rounded ${
+                router.pathname === `/movie/page${page}`
+                  ? 'bg-red-500 text-white font-bold'
+                  : 'bg-gray-200 hover:bg-green-500 text-black font-bold'
+              }`}
+            >
+              PAGE {page}
+            </button>
+          </Link>
+        ))}
+      </div>
 
       <div className='container mx-auto px-4 py-6'>
         <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6'>
@@ -347,9 +347,8 @@ const page1 = ({ items }) => {
                         quality={90}
                         loading='lazy'
                         style={{
-                          objectFit: 'cover' ,
+                          objectFit: 'cover',
                           borderRadius: '0.5rem',
-                          boxShadow: '0 0 10px 0 #000',
                           filter:
                             'contrast(1.1) saturate(1.1) brightness(1.0) hue-rotate(0deg)'
                         }}
@@ -380,7 +379,7 @@ const page1 = ({ items }) => {
 
 export async function getStaticProps () {
   try {
-    const res = await fetch('https://123moviesonline.vercel.app/movies.json')
+    const res = await fetch('https://123moviesonline.vercel.app/moviesp2.json')
     const data = await res.json()
 
     return {
@@ -398,4 +397,4 @@ export async function getStaticProps () {
   }
 }
 
-export default page1
+export default page3

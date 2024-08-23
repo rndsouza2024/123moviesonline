@@ -391,7 +391,7 @@ const moviesDetail7 = ({ moviesItem }) => {
         '@type': 'WebPage',
         '@id': `${moviesItem.siteurl}#webpage`,
         url: moviesItem.siteurl,
-        name: `${moviesItem.name} | 123Moviesonline??????`,
+        name: `${moviesItem.name} | 123Moviesonline???`,
         datePublished: moviesItem.datePublished,
         dateModified: moviesItem.dateModified,
         isPartOf: {
@@ -403,7 +403,7 @@ const moviesDetail7 = ({ moviesItem }) => {
       {
         '@type': 'Article',
         '@id': `${moviesItem.siteurl}#article`,
-        headline: ` ${moviesItem.name} | 123Moviesonline??????`,
+        headline: ` ${moviesItem.name} | 123Moviesonline???`,
         datePublished: moviesItem.datePublished,
         dateModified: moviesItem.dateModified,
         articleSection: 'Movies',
@@ -417,7 +417,7 @@ const moviesDetail7 = ({ moviesItem }) => {
         },
         description: moviesItem.synopsis,
         image: moviesItem.image,
-        name: ` ${moviesItem.name} | 123Moviesonline??????`,
+        name: ` ${moviesItem.name} | 123Moviesonline???`,
         isPartOf: {
           '@id': `${moviesItem.siteurl}#webpage`
         },
@@ -429,7 +429,7 @@ const moviesDetail7 = ({ moviesItem }) => {
       {
         '@type': 'BlogPosting',
         '@id': `${moviesItem.siteurl}#blogPost`,
-        headline: ` ${moviesItem.name} | 123Moviesonline??????`,
+        headline: ` ${moviesItem.name} | 123Moviesonline???`,
         datePublished: moviesItem.datePublished,
         dateModified: moviesItem.dateModified,
         articleSection: 'Movies',
@@ -443,7 +443,7 @@ const moviesDetail7 = ({ moviesItem }) => {
         },
         description: moviesItem.synopsis,
         image: moviesItem.image,
-        name: ` ${moviesItem.name} | 123Moviesonline??????`,
+        name: ` ${moviesItem.name} | 123Moviesonline???`,
         '@id': `${moviesItem.siteurl}#richSnippet`,
         isPartOf: {
           '@id': `${moviesItem.siteurl}#webpage`
@@ -629,7 +629,7 @@ const moviesDetail7 = ({ moviesItem }) => {
         <meta property='og:video:type' content='video/mp4' />
         <meta
           property='og:title'
-          content={`${moviesItem && moviesItem.name} - 123Moviesonline??????`}
+          content={`${moviesItem && moviesItem.name} - 123Moviesonline???`}
         />
         <meta
           property='og:description'
@@ -637,7 +637,7 @@ const moviesDetail7 = ({ moviesItem }) => {
         />
         <meta
           name='description'
-          content={`${moviesItem.title} available on 123Moviesonline??????. Enjoy free streaming of full-length movies and TV series online with no registration required.`}
+          content={`${moviesItem.title} available on 123Moviesonline???. Enjoy free streaming of full-length movies and TV series online with no registration required.`}
         />
         <meta
           property='og:url'

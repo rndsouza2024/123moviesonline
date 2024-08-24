@@ -15,7 +15,7 @@ import moviesStyles from '@styles/styles.module.css'
 
 // Fetch data from moviesp5.json
 const fetchmoviesData = async () => {
-  const response = await fetch('http://localhost:3000/moviesp5.json')
+  const response = await fetch('https://123movies-online.vercel.app/moviesp5.json')
   return await response.json()
 }
 
@@ -68,19 +68,19 @@ const moviesDetail5 = ({ moviesItem }) => {
       },
       {
         text: words[1] || '',
-        url: 'http://localhost:3000/trailers/watch-Ang-Kapitbahay-official-trailer-2024'
+        url: 'https://123movies-online.vercel.app/trailers/watch-Ang-Kapitbahay-official-trailer-2024'
       },
       {
         text: words[2] || '',
-        url: 'http://localhost:3000/trailers/watch-Raat-Baaki-Hai-Part-01-trailer-2024'
+        url: 'https://123movies-online.vercel.app/trailers/watch-Raat-Baaki-Hai-Part-01-trailer-2024'
       },
       {
         text: words[3] || '',
-        url: 'http://localhost:3000/trailers/watch-Sona-Part-official-trailer-2024'
+        url: 'https://123movies-online.vercel.app/trailers/watch-Sona-Part-official-trailer-2024'
       },
       {
         text: words[4] || '',
-        url: 'http://localhost:3000/trailers/watch-plaget-official-trailer-2024'
+        url: 'https://123movies-online.vercel.app/trailers/watch-plaget-official-trailer-2024'
       }
     ]
 
@@ -141,7 +141,7 @@ const moviesDetail5 = ({ moviesItem }) => {
   // Function to fetch data and set state
   const fetchData = async () => {
     try {
-      const response = await fetch('http://localhost:3000/moviesfull.json')
+      const response = await fetch('https://123movies-online.vercel.app/moviesfull.json')
       const data = await response.json()
 
       // Get 6 random TV Series s
@@ -326,11 +326,11 @@ const moviesDetail5 = ({ moviesItem }) => {
       '@context': 'https://schema.org',
       '@type': 'Organization',
       name: '123Movies???',
-      url: 'http://localhost:3000/',
-      image: ['http://localhost:3000/favicon.ico'],
+      url: 'https://123movies-online.vercel.app/',
+      image: ['https://123movies-online.vercel.app/favicon.ico'],
       logo: {
         '@type': 'ImageObject',
-        url: 'http://localhost:3000/logo.png',
+        url: 'https://123movies-online.vercel.app/logo.png',
         width: 280,
         height: 100
       }
@@ -338,12 +338,12 @@ const moviesDetail5 = ({ moviesItem }) => {
     {
       '@context': 'https://schema.org',
       '@type': 'WebSite',
-      url: 'http://localhost:3000/',
+      url: 'https://123movies-online.vercel.app/',
       potentialAction: {
         '@type': 'SearchAction',
         target: {
           '@type': 'EntryPoint',
-          urlTemplate: 'http://localhost:3000/search?q={search_term_string}'
+          urlTemplate: 'https://123movies-online.vercel.app/search?q={search_term_string}'
         },
         'query-input': 'required name=search_term_string'
       }
@@ -358,7 +358,7 @@ const moviesDetail5 = ({ moviesItem }) => {
         '@type': 'ListItem',
         position: 1,
         name: '123Movies???',
-        item: 'http://localhost:3000/'
+        item: 'https://123movies-online.vercel.app/'
       },
       {
         '@type': 'ListItem',
@@ -379,8 +379,8 @@ const moviesDetail5 = ({ moviesItem }) => {
       },
       {
         '@type': 'WebSite',
-        '@id': 'http://localhost:3000#website',
-        url: 'http://localhost:3000',
+        '@id': 'https://123movies-online.vercel.app#website',
+        url: 'https://123movies-online.vercel.app',
         name: '123Movies???',
         publisher: {
           '@id': 'https://gravatar.com/drtrailer2022/#person'
@@ -395,7 +395,7 @@ const moviesDetail5 = ({ moviesItem }) => {
         datePublished: moviesItem.datePublished,
         dateModified: moviesItem.dateModified,
         isPartOf: {
-          '@id': 'http://localhost:3000#website'
+          '@id': 'https://123movies-online.vercel.app#website'
         },
         inLanguage: 'en-US'
       },
@@ -408,7 +408,7 @@ const moviesDetail5 = ({ moviesItem }) => {
         dateModified: moviesItem.dateModified,
         articleSection: 'Movies',
         author: {
-          '@id': 'http://localhost:3000/author/123Movies???online/'
+          '@id': 'https://123movies-online.vercel.app/author/123Movies???online/'
         },
         publisher: {
           '@id': 'https://gravatar.com/drtrailer2022/#person'
@@ -432,7 +432,7 @@ const moviesDetail5 = ({ moviesItem }) => {
         dateModified: moviesItem.dateModified,
         articleSection: 'Movies',
         author: {
-          '@id': 'http://localhost:3000/author/123Movies???online/'
+          '@id': 'https://123movies-online.vercel.app/author/123Movies???online/'
         },
         publisher: {
           '@id': 'https://gravatar.com/drtrailer2022/#person'
@@ -483,7 +483,7 @@ const moviesDetail5 = ({ moviesItem }) => {
       name: '123Movies???',
       logo: {
         '@type': 'ImageObject',
-        url: 'http://localhost:3000/og_image.jpg'
+        url: 'https://123movies-online.vercel.app/og_image.jpg'
       }
     },
     additionalProperty: {
@@ -544,7 +544,7 @@ const moviesDetail5 = ({ moviesItem }) => {
       name: '123Movies???',
       logo: {
         '@type': 'ImageObject',
-        url: 'http://localhost:3000/og_image.jpg'
+        url: 'https://123movies-online.vercel.app/og_image.jpg'
       }
     },
     additionalProperty: {
@@ -565,37 +565,37 @@ const moviesDetail5 = ({ moviesItem }) => {
     embedUrl: moviesItem.videourl
   })
 
-  // JSON-LD schemas
-  const languagesSchema = JSON.stringify({
-    '@context': 'https://schema.org',
-    '@type': 'WebPage',
-    url: moviesItem.siteurl, // Ensure this URL is correctly set
-    name: ` ${moviesItem.title} | 123Movies???`,
-    alternateName: [
-      `Ver pel??cula ${moviesItem.title} | 123Movies???`,
-      `Regarder le film ${moviesItem.title} | 123Movies???`,
-      `Film ${moviesItem.title} ansehen | 123Movies???`,
-      `???????????? ${moviesItem.title} | 123Movies???`,
-      `?????? ${moviesItem.title} ????????? | 123Movies???`,
-      `?????? ${moviesItem.title} ?????? | 123Movies???`,
-      `Assistir Filme ${moviesItem.title} | 123Movies???`,
-      `Guarda il film ${moviesItem.title} | 123Movies???`,
-      `???????????????????? ?????????? ${moviesItem.title} | 123Movies???`,
-      `???????????? ???????? ${moviesItem.title} | 123Movies???`
-    ],
-    inLanguage: [
-      'es',
-      'fr',
-      'de',
-      'zh-Hans',
-      'ja',
-      'ko',
-      'pt',
-      'it',
-      'ru',
-      'ar'
-    ]
-  })
+ // JSON-LD schemas
+ const languagesSchema = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  url: moviesItem.siteurl, // Ensure this URL is correctly set
+  name: ` ${moviesItem.title} | 123Movies???`,
+  alternateName: [
+    `Ver pel??cula ${moviesItem.title} | 123Movies???`,
+    `Regarder le film ${moviesItem.title} | 123Movies???`,
+    `Film ${moviesItem.title} ansehen | 123Movies???`,
+    `???????????? ${moviesItem.title} | 123Movies???`,
+    `?????? ${moviesItem.title} ????????? | 123Movies???`,
+    `?????? ${moviesItem.title} ?????? | 123Movies???`,
+    `Assistir Filme ${moviesItem.title} | 123Movies???`,
+    `Guarda il film ${moviesItem.title} | 123Movies???`,
+    `???????????????????? ?????????? ${moviesItem.title} | 123Movies???`,
+    `???????????? ???????? ${moviesItem.title} | 123Movies???`
+  ],
+  inLanguage: [
+    'es',
+    'fr',
+    'de',
+    'zh-Hans',
+    'ja',
+    'ko',
+    'pt',
+    'it',
+    'ru',
+    'ar'
+  ]
+})
   
   return (
     <div>

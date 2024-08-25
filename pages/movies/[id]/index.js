@@ -15,7 +15,7 @@ import moviesStyles from '@styles/styles.module.css'
 
 // Fetch data from movies.json
 const fetchmoviesData = async () => {
-  const response = await fetch('http://localhost:3000/movies.json')
+  const response = await fetch('https://123movies-free.vercel.app/movies.json')
   return await response.json()
 }
 
@@ -68,19 +68,19 @@ const moviesDetail = ({ moviesItem }) => {
       },
       {
         text: words[1] || '',
-        url: 'http://localhost:3000/trailers/watch-Ang-Kapitbahay-official-trailer-2024'
+        url: 'https://123movies-free.vercel.app/trailers/watch-Ang-Kapitbahay-official-trailer-2024'
       },
       {
         text: words[2] || '',
-        url: 'http://localhost:3000/trailers/watch-Raat-Baaki-Hai-Part-01-trailer-2024'
+        url: 'https://123movies-free.vercel.app/trailers/watch-Raat-Baaki-Hai-Part-01-trailer-2024'
       },
       {
         text: words[3] || '',
-        url: 'http://localhost:3000/trailers/watch-Sona-Part-official-trailer-2024'
+        url: 'https://123movies-free.vercel.app/trailers/watch-Sona-Part-official-trailer-2024'
       },
       {
         text: words[4] || '',
-        url: 'http://localhost:3000/trailers/watch-plaget-official-trailer-2024'
+        url: 'https://123movies-free.vercel.app/trailers/watch-plaget-official-trailer-2024'
       }
     ];
   
@@ -141,7 +141,7 @@ const moviesDetail = ({ moviesItem }) => {
   // Function to fetch data and set state
   const fetchData = async () => {
     try {
-      const response = await fetch('http://localhost:3000/moviesfull.json')
+      const response = await fetch('https://123movies-free.vercel.app/moviesfull.json')
       const data = await response.json()
 
       // Get 6 random TV Series s
@@ -326,11 +326,11 @@ const moviesDetail = ({ moviesItem }) => {
       '@context': 'https://schema.org',
       '@type': 'Organization',
       name: '123Movies™',
-      url: 'http://localhost:3000/',
-      image: ['http://localhost:3000/favicon.ico'],
+      url: 'https://123movies-free.vercel.app/',
+      image: ['https://123movies-free.vercel.app/favicon.ico'],
       logo: {
         '@type': 'ImageObject',
-        url: 'http://localhost:3000/logo.png',
+        url: 'https://123movies-free.vercel.app/logo.png',
         width: 280,
         height: 100
       }
@@ -338,12 +338,12 @@ const moviesDetail = ({ moviesItem }) => {
     {
       '@context': 'https://schema.org',
       '@type': 'WebSite',
-      url: 'http://localhost:3000/',
+      url: 'https://123movies-free.vercel.app/',
       potentialAction: {
         '@type': 'SearchAction',
         target: {
           '@type': 'EntryPoint',
-          urlTemplate: 'http://localhost:3000/search?q={search_term_string}'
+          urlTemplate: 'https://123movies-free.vercel.app/search?q={search_term_string}'
         },
         'query-input': 'required name=search_term_string'
       }
@@ -358,7 +358,7 @@ const moviesDetail = ({ moviesItem }) => {
         '@type': 'ListItem',
         position: 1,
         name: '123Movies™',
-        item: 'http://localhost:3000/'
+        item: 'https://123movies-free.vercel.app/'
       },
       {
         '@type': 'ListItem',
@@ -385,8 +385,8 @@ const moviesDetail = ({ moviesItem }) => {
       },
       {
         '@type': 'WebSite',
-        '@id': 'http://localhost:3000#website',
-        url: 'http://localhost:3000',
+        '@id': 'https://123movies-free.vercel.app#website',
+        url: 'https://123movies-free.vercel.app',
         name: '123Movies™',
         publisher: {
           '@id': 'https://gravatar.com/drtrailer2022/#person'
@@ -401,7 +401,7 @@ const moviesDetail = ({ moviesItem }) => {
         datePublished: moviesItem.datePublished,
         dateModified: moviesItem.dateModified,
         isPartOf: {
-          '@id': 'http://localhost:3000#website'
+          '@id': 'https://123movies-free.vercel.app#website'
         },
         inLanguage: 'en-US'
       },
@@ -417,7 +417,7 @@ const moviesDetail = ({ moviesItem }) => {
           caption: 'Dr Trailer',
           inLanguage: 'en-US'
         },
-        sameAs: ['http://localhost:3000']
+        sameAs: ['https://123movies-free.vercel.app']
       },
       {
         '@type': 'Article',
@@ -504,7 +504,7 @@ const moviesDetail = ({ moviesItem }) => {
       name: '123Movies™',
       logo: {
         '@type': 'ImageObject',
-        url: 'http://localhost:3000/og_image.jpg'
+        url: 'https://123movies-free.vercel.app/og_image.jpg'
       }
     },
     additionalProperty: {
@@ -565,7 +565,7 @@ const moviesDetail = ({ moviesItem }) => {
       name: '123Movies™',
       logo: {
         '@type': 'ImageObject',
-        url: 'http://localhost:3000/og_image.jpg'
+        url: 'https://123movies-free.vercel.app/og_image.jpg'
       }
     },
     additionalProperty: {
@@ -573,6 +573,17 @@ const moviesDetail = ({ moviesItem }) => {
       name: 'Action Platform',
       value: ['Desktop Web Platform', 'iOS Platform', 'Android Platform']
     }
+  })
+
+  const moviesSchema = JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'VideoObject',
+    name: moviesItem.title,
+    description: moviesItem.text,
+    uploadDate: moviesItem.datePublished,
+    thumbnailUrl: moviesItem.image1,
+    duration: 'P34S', // Replace with the actual duration if it's different
+    embedUrl: moviesItem.videourl
   })
 
   const moviesSchema = JSON.stringify({
@@ -869,7 +880,7 @@ const moviesDetail = ({ moviesItem }) => {
             className='text-lg text-yellow-500 mt-4'
             dangerouslySetInnerHTML={{
               __html: enhancedParagraph(`
-                Streaming <strong>${moviesItem.title}</strong> on <strong>123Movies™</strong> guarantees a seamless viewing experience with high-definition quality and uninterrupted playback. Our platform is designed to make it easy for you to discover and enjoy your favorite films. With regularly updated content, you???ll always have access to the newest releases, ensuring you can watch <strong>${moviesItem.title}</strong> and other top titles as soon as they???re available.
+                Streaming <strong>${moviesItem.title}</strong> on <strong>123Movies™</strong> guarantees a seamless viewing experience with high-definition quality and uninterrupted playback. Our platform is designed to make it easy for you to discover and enjoy your favorite films. With regularly updated content, you'll always have access to the newest releases, ensuring you can watch <strong>${moviesItem.title}</strong> and other top titles as soon as they're available.
               `)
             }}
           />
@@ -982,9 +993,9 @@ const moviesDetail = ({ moviesItem }) => {
               experience with high-definition quality and uninterrupted
               playback. Our platform is designed to make it easy for you to
               discover and enjoy your favorite films. With regularly updated
-              content, you???ll always have access to the newest releases,
+              content, you'll always have access to the newest releases,
               ensuring you can watch <strong>{moviesItem.title}</strong> and
-              other top titles as soon as they???re available.
+              other top titles as soon as they're available.
             </p>
             <p className='text-lg text-yellow-500 mt-4'>
               Whether you're revisiting a classic or catching a new release,{' '}

@@ -586,17 +586,6 @@ const moviesDetail = ({ moviesItem }) => {
     embedUrl: moviesItem.videourl
   })
 
-  const moviesSchema = JSON.stringify({
-    '@context': 'https://schema.org',
-    '@type': 'VideoObject',
-    name: moviesItem.title,
-    description: moviesItem.text,
-    uploadDate: moviesItem.datePublished,
-    thumbnailUrl: moviesItem.image1,
-    duration: 'P34S', // Replace with the actual duration if it's different
-    embedUrl: moviesItem.videourl
-  })
-
    // JSON-LD schemas
    const languagesSchema = JSON.stringify({
     '@context': 'https://schema.org',

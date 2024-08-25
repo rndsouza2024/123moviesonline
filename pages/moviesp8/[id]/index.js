@@ -325,7 +325,7 @@ const moviesDetail7 = ({ moviesItem }) => {
     {
       '@context': 'https://schema.org',
       '@type': 'Organization',
-      name: '123Movies',
+      name: '123Movies™',
       url: 'https://123movies-free.vercel.app/',
       image: ['https://123movies-free.vercel.app/favicon.ico'],
       logo: {
@@ -357,7 +357,7 @@ const moviesDetail7 = ({ moviesItem }) => {
       {
         '@type': 'ListItem',
         position: 1,
-        name: '123Movies',
+        name: '123Movies™',
         item: 'https://123movies-free.vercel.app/'
       },
       {
@@ -381,7 +381,7 @@ const moviesDetail7 = ({ moviesItem }) => {
         '@type': 'WebSite',
         '@id': 'https://123movies-free.vercel.app#website',
         url: 'https://123movies-free.vercel.app',
-        name: '123Movies',
+        name: '123Movies™',
         publisher: {
           '@id': 'https://gravatar.com/drtrailer2022/#person'
         },
@@ -391,7 +391,7 @@ const moviesDetail7 = ({ moviesItem }) => {
         '@type': 'WebPage',
         '@id': `${moviesItem.siteurl}#webpage`,
         url: moviesItem.siteurl,
-        name: `${moviesItem.name} | 123Movies`,
+        name: `${moviesItem.name} | 123Movies™`,
         datePublished: moviesItem.datePublished,
         dateModified: moviesItem.dateModified,
         isPartOf: {
@@ -403,7 +403,7 @@ const moviesDetail7 = ({ moviesItem }) => {
       {
         '@type': 'Article',
         '@id': `${moviesItem.siteurl}#article`,
-        headline: ` ${moviesItem.name} | 123Movies`,
+        headline: ` ${moviesItem.name} | 123Movies™`,
         datePublished: moviesItem.datePublished,
         dateModified: moviesItem.dateModified,
         articleSection: 'Movies',
@@ -417,7 +417,7 @@ const moviesDetail7 = ({ moviesItem }) => {
         },
         description: moviesItem.synopsis,
         image: moviesItem.image,
-        name: ` ${moviesItem.name} | 123Movies`,
+        name: ` ${moviesItem.name} | 123Movies™`,
         isPartOf: {
           '@id': `${moviesItem.siteurl}#webpage`
         },
@@ -429,7 +429,7 @@ const moviesDetail7 = ({ moviesItem }) => {
       {
         '@type': 'BlogPosting',
         '@id': `${moviesItem.siteurl}#blogPost`,
-        headline: ` ${moviesItem.name} | 123Movies`,
+        headline: ` ${moviesItem.name} | 123Movies™`,
         datePublished: moviesItem.datePublished,
         dateModified: moviesItem.dateModified,
         articleSection: 'Movies',
@@ -443,7 +443,7 @@ const moviesDetail7 = ({ moviesItem }) => {
         },
         description: moviesItem.synopsis,
         image: moviesItem.image,
-        name: ` ${moviesItem.name} | 123Movies`,
+        name: ` ${moviesItem.name} | 123Movies™`,
         '@id': `${moviesItem.siteurl}#richSnippet`,
         isPartOf: {
           '@id': `${moviesItem.siteurl}#webpage`
@@ -484,7 +484,7 @@ const moviesDetail7 = ({ moviesItem }) => {
     },
     publisher: {
       '@type': 'Organization',
-      name: '123Movies',
+      name: '123Movies™',
       logo: {
         '@type': 'ImageObject',
         url: 'https://123movies-free.vercel.app/og_image.jpg'
@@ -545,7 +545,7 @@ const moviesDetail7 = ({ moviesItem }) => {
     },
     publisher: {
       '@type': 'Organization',
-      name: '123Movies',
+      name: '123Movies™',
       logo: {
         '@type': 'ImageObject',
         url: 'https://123movies-free.vercel.app/og_image.jpg'
@@ -569,8 +569,8 @@ const moviesDetail7 = ({ moviesItem }) => {
     embedUrl: moviesItem.videourl
   })
 
-// JSON-LD schemas
-const languagesSchema = JSON.stringify({
+ // JSON-LD schemas
+ const languagesSchema = JSON.stringify({
   '@context': 'https://schema.org',
   '@type': 'WebPage',
   url: moviesItem.siteurl, // Ensure this URL is correctly set
@@ -611,8 +611,8 @@ const languagesSchema = JSON.stringify({
 
         <title>
           {moviesItem?.title
-            ? `${moviesItem.title} | 123Movies`
-            : '123Movies'}
+            ? `${moviesItem.title} | 123Movies™`
+            : '123Movies™'}
         </title>
         <link rel='canonical' href={moviesItem && moviesItem.siteurl} />
         <meta name='robots' content='index, follow' />
@@ -629,15 +629,15 @@ const languagesSchema = JSON.stringify({
         <meta property='og:video:type' content='video/mp4' />
         <meta
           property='og:title'
-          content={`${moviesItem && moviesItem.name} - 123Movies`}
+          content={`${moviesItem && moviesItem.name} - 123Movies™`}
         />
         <meta
           property='og:description'
-          content='Stream HD movies and TV series for free on 123Movies. Explore, stream, and download full-length movies and shows in HD quality without registration.'
+          content='Stream HD movies and TV series for free on 123Movies™. Explore, stream, and download full-length movies and shows in HD quality without registration.'
         />
         <meta
           name='description'
-          content={`${moviesItem.title} available on 123Movies. Enjoy free streaming of full-length movies and TV series online with no registration required.`}
+          content={`${moviesItem.title} available on 123Movies™. Enjoy free streaming of full-length movies and TV series online with no registration required.`}
         />
         <meta
           property='og:url'
@@ -647,7 +647,7 @@ const languagesSchema = JSON.stringify({
           name='keywords'
           content={`${moviesItem && moviesItem.keywords}`}
         />
-        <meta property='og:site_name' content='123Movies' />
+        <meta property='og:site_name' content='123Movies™' />
         {/* <meta property='og:type' content='article' /> */}
         <meta
           property=' og:image:alt'
@@ -670,11 +670,11 @@ const languagesSchema = JSON.stringify({
         <meta name='twitter:card' content='summary_large_image' />
         <meta
           name='twitter:title'
-          content='123Movies - Explore. Discover. Online. '
+          content='123Movies™ - Explore. Discover. Online. '
         />
         <meta
           name='twitter:description'
-          content='Stream HD movies and TV series for free on 123Movies. Explore, stream, and download full-length movies and shows in HD quality without registration.'
+          content='Stream HD movies and TV series for free on 123Movies™. Explore, stream, and download full-length movies and shows in HD quality without registration.'
         />
         <meta
           name='twitter:image'
@@ -782,7 +782,7 @@ const languagesSchema = JSON.stringify({
               Explore the captivating world of{' '}
               <strong>{moviesItem.title}</strong>, the TV series that has
               everyone talking. At
-              <strong> 123Movies</strong>, you can stream{' '}
+              <strong> 123Movies™</strong>, you can stream{' '}
               <strong>{moviesItem.title}</strong> and immerse yourself in its
               exciting episodes, whether you're catching up on past seasons or
               tuning in to the latest releases. Our platform offers a seamless
@@ -791,10 +791,10 @@ const languagesSchema = JSON.stringify({
             </p>
             <p className='text-lg text-yellow-500 mt-4'>
               Streaming <strong>{moviesItem.title}</strong> on{' '}
-              <strong>123Movies</strong> ensures that you won't miss a
+              <strong>123Movies™</strong> ensures that you won't miss a
               single moment of the action, drama, or comedy that makes this TV
               series a must-watch. With high-quality streaming and user-friendly
-              navigation, <strong>123Movies</strong> provides everything
+              navigation, <strong>123Movies™</strong> provides everything
               you need to enjoy <strong>{moviesItem.title}</strong>
               and other top TV series. Our library is frequently updated, so you
               can always find the latest episodes as soon as they air.
@@ -802,10 +802,10 @@ const languagesSchema = JSON.stringify({
             <p className='text-lg text-yellow-500 mt-4'>
               Whether you're binge-watching or following along weekly,{' '}
               <strong>{moviesItem.title}</strong> on{' '}
-              <strong>123Movies</strong> is your go-to destination for
+              <strong>123Movies™</strong> is your go-to destination for
               streaming TV series online. Join our community of viewers and
               start watching <strong>{moviesItem.title}</strong> today. With{' '}
-              <strong>123Movies</strong>, your favorite TV series is
+              <strong>123Movies™</strong>, your favorite TV series is
               just a click away.
             </p>
           </>
@@ -820,7 +820,7 @@ const languagesSchema = JSON.stringify({
             <p className='text-lg text-yellow-500 mt-4'>
               Indulge in the finest selection of adult entertainment with{' '}
               <strong>{moviesItem.title}</strong>. At{' '}
-              <strong>123Movies</strong>, we offer a vast library of
+              <strong>123Movies™</strong>, we offer a vast library of
               premium adult content, including the latest and most popular
               titles like <strong>{moviesItem.title}</strong>. Our platform is
               designed for those who seek high-quality, discreet streaming of
@@ -828,7 +828,7 @@ const languagesSchema = JSON.stringify({
             </p>
             <p className='text-lg text-yellow-500 mt-4'>
               Streaming <strong>{moviesItem.title}</strong> on{' '}
-              <strong>123Movies</strong> provides you with a
+              <strong>123Movies™</strong> provides you with a
               user-friendly interface and crystal-clear video quality. Our adult
               content is regularly updated, giving you access to new releases as
               soon as they become available. Whether you're exploring new genres
@@ -839,10 +839,10 @@ const languagesSchema = JSON.stringify({
             <p className='text-lg text-yellow-500 mt-4'>
               For a premium experience in adult entertainment, look no further
               than <strong>{moviesItem.title}</strong> on{' '}
-              <strong>123Movies</strong>. Our platform ensures your
+              <strong>123Movies™</strong>. Our platform ensures your
               privacy and security while you enjoy the content you love. Start
               streaming <strong>{moviesItem.title}</strong> today and discover
-              why <strong>123Movies</strong> is the trusted choice for
+              why <strong>123Movies™</strong> is the trusted choice for
               adult content.
             </p>
           </>
@@ -857,7 +857,7 @@ const languagesSchema = JSON.stringify({
             <p className='text-lg text-yellow-500 mt-4'>
               Dive into the world of cinema with{' '}
               <strong>{moviesItem.title}</strong>, available to stream right
-              here. At <strong>123Movies</strong>, we bring you the best
+              here. At <strong>123Movies™</strong>, we bring you the best
               in entertainment, offering an extensive library of movies and TV
               shows, including the latest blockbusters like{' '}
               <strong>{moviesItem.title}</strong>. Whether you're a fan of
@@ -866,7 +866,7 @@ const languagesSchema = JSON.stringify({
             </p>
             <p className='text-lg text-yellow-500 mt-4'>
               Streaming <strong>{moviesItem.title}</strong> on{' '}
-              <strong>123Movies</strong> guarantees a seamless viewing
+              <strong>123Movies™</strong> guarantees a seamless viewing
               experience with high-definition quality and uninterrupted
               playback. Our platform is designed to make it easy for you to
               discover and enjoy your favorite films. With regularly updated
@@ -877,11 +877,11 @@ const languagesSchema = JSON.stringify({
             <p className='text-lg text-yellow-500 mt-4'>
               Whether you're revisiting a classic or catching a new release,{' '}
               <strong>{moviesItem.title}</strong> on{' '}
-              <strong>123Movies</strong> is the perfect way to enjoy
+              <strong>123Movies™</strong> is the perfect way to enjoy
               your movie night. Join the countless users who trust us for their
               streaming needs and start watching{' '}
               <strong>{moviesItem.title}</strong> online today. At{' '}
-              <strong>123Movies</strong>, your entertainment is just a
+              <strong>123Movies™</strong>, your entertainment is just a
               click away.
             </p>
           </>

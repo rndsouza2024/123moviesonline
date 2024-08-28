@@ -49,29 +49,29 @@ const dmca = () => {
       },
       {
         '@type': 'Organization',
-        '@id': 'http://localhost:3000/#organization',
+        '@id': 'https://123movies-free.vercel.app/#organization',
         name: '123Moviesonline™ - Explore. Discover. Download.',
-        url: 'http://localhost:3000'
+        url: 'https://123movies-free.vercel.app'
       },
       {
         '@type': 'WebSite',
-        '@id': 'http://localhost:3000/#website',
-        url: 'http://localhost:3000',
+        '@id': 'https://123movies-free.vercel.app/#website',
+        url: 'https://123movies-free.vercel.app',
         name: '123Moviesonline™ - Explore. Discover. Download.',
         publisher: {
           '@type': 'Organization',
-          '@id': 'http://localhost:3000/#organization'
+          '@id': 'https://123movies-free.vercel.app/#organization'
         },
         potentialAction: {
           '@type': 'SearchAction',
-          target: 'http://localhost:3000/?s={search_term_string}',
+          target: 'https://123movies-free.vercel.app/?s={search_term_string}',
           'query-input': 'required name=search_term_string'
         }
       },
       {
         '@type': 'WebPage',
-        '@id': 'http://localhost:3000/#webpage',
-        url: 'http://localhost:3000/',
+        '@id': 'https://123movies-free.vercel.app/#webpage',
+        url: 'https://123movies-free.vercel.app/',
         name: 'Movie',
         datePublished: '2024-01-13T13:00:00+00:00',
         dateModified: '2024-01-13T13:13:00+00:00',
@@ -89,14 +89,14 @@ const dmca = () => {
           }
         },
         isPartOf: {
-          '@id': 'http://localhost:3000/#website'
+          '@id': 'https://123movies-free.vercel.app/#website'
         },
         inLanguage: 'en-US',
         mainEntity: [
           {
             '@type': 'Article',
-            '@id': 'http://localhost:3000/',
-            url: 'http://localhost:3000/',
+            '@id': 'https://123movies-free.vercel.app/',
+            url: 'https://123movies-free.vercel.app/',
             headline: 'Movie',
             datePublished: '2024-01-13T13:00:00+00:00',
             dateModified: '2024-01-13T13:13:00+00:00',
@@ -115,15 +115,15 @@ const dmca = () => {
             },
             publisher: {
               '@type': 'Organization',
-              '@id': 'http://localhost:3000/#organization',
+              '@id': 'https://123movies-free.vercel.app/#organization',
               name: '123Moviesonline™ - Explore. Discover. Download.',
-              url: 'http://localhost:3000'
+              url: 'https://123movies-free.vercel.app'
             }
           },
           {
             '@type': 'Article',
-            '@id': 'http://localhost:3000/',
-            url: 'http://localhost:3000/',
+            '@id': 'https://123movies-free.vercel.app/',
+            url: 'https://123movies-free.vercel.app/',
             headline: 'Tvshow',
             datePublished: '2024-01-13T13:00:00+00:00',
             dateModified: '2024-01-13T13:13:00+00:00',
@@ -142,15 +142,15 @@ const dmca = () => {
             },
             publisher: {
               '@type': 'Organization',
-              '@id': 'http://localhost:3000/#organization',
+              '@id': 'https://123movies-free.vercel.app/#organization',
               name: '123Moviesonline™ - Explore. Discover. Download.',
-              url: 'http://localhost:3000'
+              url: 'https://123movies-free.vercel.app'
             }
           },
           {
             '@type': 'Article',
-            '@id': 'http://localhost:3000/',
-            url: 'http://localhost:3000/',
+            '@id': 'https://123movies-free.vercel.app/',
+            url: 'https://123movies-free.vercel.app/',
             headline: 'Adult',
             datePublished: '2024-01-13T13:00:00+00:00',
             dateModified: '2024-01-13T13:13:00+00:00',
@@ -169,9 +169,9 @@ const dmca = () => {
             },
             publisher: {
               '@type': 'Organization',
-              '@id': 'http://localhost:3000/#organization',
+              '@id': 'https://123movies-free.vercel.app/#organization',
               name: '123Moviesonline™ - Explore. Discover. Download.',
-              url: 'http://localhost:3000'
+              url: 'https://123movies-free.vercel.app'
             }
           }
         ]
@@ -189,7 +189,7 @@ const dmca = () => {
           rel='sitemap'
           type='application/xml'
           title='Sitemap'
-          href='http://localhost:3000/sitemap.xml'
+          href='https://123movies-free.vercel.app/sitemap.xml'
         />
         <meta name='viewport' content='width=device-width, initial-scale=1.0' />
         <link
@@ -232,7 +232,7 @@ const dmca = () => {
 
         <link
           rel='canonical'
-          href='http://localhost:3000/intro/tearms'
+          href='https://123movies-free.vercel.app/intro/tearms'
         />
         <meta property='og:locale' content='en_US' />
         <meta property='og:type' content='website' />
@@ -243,12 +243,12 @@ const dmca = () => {
         />
         <meta
           property='og:url'
-          content='http://localhost:3000/intro/tearms/'
+          content='https://123movies-free.vercel.app/intro/tearms/'
         />
         <meta property='og:site_name' content='123Moviesonline™ ' />
         <meta
           property='og:image'
-          content='http://localhost:3000/og_image.jpg'
+          content='https://123movies-free.vercel.app/og_image.jpg'
         />
         <meta property='og:image:width' content='1280' />
         <meta property='og:image:height' content='720' />
@@ -262,7 +262,7 @@ const dmca = () => {
           rel='sitemap'
           type='application/xml'
           title='Sitemap'
-          href='http://localhost:3000/sitemap.xml'
+          href='https://123movies-free.vercel.app/sitemap.xml'
         />
         <meta name='twitter:card' content='summary_large_image' />
         <meta

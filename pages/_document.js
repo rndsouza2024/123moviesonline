@@ -34,6 +34,10 @@ class MyDocument extends Document {
             sizes='16x16'
             href='/favicon-16x16.png'
           />
+            <meta
+          name='description'
+          content='Stream HD movies and TV series for free on 123Movies. Explore, stream, and download full-length movies and shows in HD quality without registration.'
+        />
           <link rel='manifest' href='/site.webmanifest' />
           <meta name='googlebot' content='index,follow' />
           <meta name='revisit-after' content='1 days' />
@@ -41,10 +45,7 @@ class MyDocument extends Document {
             name='robots'
             content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1'
           />
-            <meta
-          name='description'
-          content='Stream HD movies and TV series for free on 123Movies. Explore, stream, and download full-length movies and shows in HD quality without registration.'
-        />
+          
           <link
             rel='stylesheet'
             href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css'

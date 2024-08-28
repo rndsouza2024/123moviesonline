@@ -258,7 +258,7 @@ export default function HomePage() {
           property='og:title'
           content='123Movies™ - Explore. Stream. Online. '
         />
-        <meta property='og:url' content='https://123movies-free.vercel.app/' />
+        <meta property='og:url' content='https://123movies-free.vercel.app' />
         <meta
           property='og:site_name'
           content='123Movies™ - Explore. Stream. Online. '

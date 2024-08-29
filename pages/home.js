@@ -203,6 +203,20 @@ const moviesPage = ({ items }) => {
       >
         123Movies Main Section.
       </h1>
+      <a
+        href='https://t.me/watchmovietvshow/'
+        target='_blank'
+        rel='noopener noreferrer'
+        className='telegram-link'
+        style={{ display: 'block', textAlign: 'center', margin: '0 auto' }}
+      >
+        <p style={{ display: 'inline-block' }}>
+          For Request or Demand <br />
+          Movies & TV Series Join Telegram
+          <i className='fab fa-telegram telegram-icon'></i>
+        </p>
+      </a>
+
       <GoogleTranslate />
       <span className='px-0 bg-clip-text text-sm text-black font-bold mt-2'>
         <SearchComponent />
@@ -222,7 +236,7 @@ const moviesPage = ({ items }) => {
         </Link>
 
         {/* Page 2, Page 3, Page 4 buttons */}
-        {[2, 3, 4, 5, 6, 7, 8, 9,].map(page => (
+        {[2, 3, 4, 5, 6, 7, 8, 9].map(page => (
           <Link key={page} href={`/home/page${page}`} passHref>
             <button
               className={`px-4 py-2 border rounded ${
@@ -237,7 +251,7 @@ const moviesPage = ({ items }) => {
         ))}
       </div>
 
-      <div className='container mx-auto px-4 py-6'>
+      <div className='container mx-auto px-4 py-6 mt-10'>
         <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6'>
           {items.map(item => (
             <div
@@ -251,7 +265,7 @@ const moviesPage = ({ items }) => {
                     <div className='absolute top-2 left-2 z-10 badge bg-gradient-to-r from-pink-500 to-amber-500 text-white py-2 px-4 rounded-lg text-center font-bold'>
                       {item.badge}
                     </div>
-                    <div className="aspect-w-16 aspect-h-9 w-full">
+                    <div className='aspect-w-16 aspect-h-9 w-full'>
                       <Image
                         src={item.image}
                         alt={item.title}
@@ -262,21 +276,24 @@ const moviesPage = ({ items }) => {
                         loading='lazy'
                         style={{
                           borderRadius: '0.5rem',
-                          objectFit: 'cover' ,
-                           filter:
+                          objectFit: 'cover',
+                          filter:
                             'contrast(1.1) saturate(1.1) brightness(1.0) hue-rotate(0deg)'
                         }}
                       />
                     </div>
-                   
-                      <div className='p-4 '>
+
+                    <div className='p-4 '>
                       <h2 className='font-bold text-xl text-blue-500 flex flex-col items-center justify-center'>
                         {item.title}
-                       </h2>
+                      </h2>
                       <h3 className='text-gray-700 mb-2'>{item.news1}</h3>
-                      <p className='font-bold text-black mb-2 flex flex-col items-center justify-center'> Genre: </p>
-                      <p className="font-bold text-black mb-2 flex flex-col items-center justify-center">
-                      {item.genre}
+                      <p className='font-bold text-black mb-2 flex flex-col items-center justify-center'>
+                        {' '}
+                        Genre:{' '}
+                      </p>
+                      <p className='font-bold text-black mb-2 flex flex-col items-center justify-center'>
+                        {item.genre}
                       </p>
                     </div>
                   </div>
@@ -286,6 +303,66 @@ const moviesPage = ({ items }) => {
           ))}
         </div>
       </div>
+      <style jsx>{`
+        .telegram-link {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 1.5rem;
+          font-weight: bold;
+          background: linear-gradient(to right, #ff7e5f, #feb47b);
+          background-clip: text;
+          color: transparent;
+          margin-top: 25px;
+        }
+
+        .telegram-icon {
+          color: #0088cc;
+          margin-left: 10px;
+          font-size: 2rem;
+          animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+          0% {
+            transform: scale(1);
+          }
+          50% {
+            transform: scale(1.1);
+          }
+          100% {
+            transform: scale(1);
+          }
+        }
+
+        @media (min-width: 768px) {
+          .title {
+            font-size: 2rem;
+          }
+
+          .highlight {
+            font-size: 2rem;
+          }
+
+          .telegram-link {
+            font-size: 2rem;
+          }
+        }
+
+        @media (min-width: 1024px) {
+          .title {
+            font-size: 2.5rem;
+          }
+
+          .highlight {
+            font-size: 2.5rem;
+          }
+
+          .telegram-link {
+            font-size: 2.5rem;
+          }
+        }
+      `}</style>
     </div>
   )
 }

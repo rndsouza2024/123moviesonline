@@ -110,6 +110,8 @@ const page5 = ({ items }) => {
     setCurrentPage(page)
   }
 
+
+
   const uwatchfreeSchema = JSON.stringify([
     {
       '@context': 'https://schema.org',
@@ -289,6 +291,19 @@ const page5 = ({ items }) => {
       >
         123Movies Main Section.
       </h1>
+      <a
+        href='https://t.me/watchmovietvshow/'
+        target='_blank'
+        rel='noopener noreferrer'
+        className='telegram-link'
+        style={{ display: 'block', textAlign: 'center', margin: '0 auto' }}
+      >
+        <p style={{ display: 'inline-block' }}>
+          For Request or Demand <br /> 
+          Movies & TV Series Join Telegram
+          <i className='fab fa-telegram telegram-icon'></i>
+        </p>
+      </a>
       <GoogleTranslate />
       <span className='px-0 bg-clip-text text-sm text-black font-bold mt-2'>
         <SearchComponent />
@@ -372,6 +387,66 @@ const page5 = ({ items }) => {
           ))}
         </div>
       </div>
+      <style jsx>{`
+        .telegram-link {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 1.5rem;
+          font-weight: bold;
+          background: linear-gradient(to right, #ff7e5f, #feb47b);
+          background-clip: text;
+          color: transparent;
+          margin-top: 25px;
+        }
+
+        .telegram-icon {
+          color: #0088cc;
+          margin-left: 10px;
+          font-size: 2rem;
+          animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+          0% {
+            transform: scale(1);
+          }
+          50% {
+            transform: scale(1.1);
+          }
+          100% {
+            transform: scale(1);
+          }
+        }
+
+        @media (min-width: 768px) {
+          .title {
+            font-size: 2rem;
+          }
+
+          .highlight {
+            font-size: 2rem;
+          }
+
+          .telegram-link {
+            font-size: 2rem;
+          }
+        }
+
+        @media (min-width: 1024px) {
+          .title {
+            font-size: 2.5rem;
+          }
+
+          .highlight {
+            font-size: 2.5rem;
+          }
+
+          .telegram-link {
+            font-size: 2.5rem;
+          }
+        }
+      `}</style>
     </div>
   )
 }

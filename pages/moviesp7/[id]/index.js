@@ -280,6 +280,7 @@ const moviesDetail7 = ({ moviesItem }) => {
           : `https://vidsrc.pro/embed/movie/${id}`,
         isItemmovies
           ? `https://vidsrc.cc/v2/embed/tv/${id}/${itemSeason}/${itemEpisode}`
+          : `https://vidsrc.cc/v2/embed/movie/${id}`,
         
         isItemmovies
           ? `https://autoembed.co/tv/imdb/${id}-${itemSeason}-${itemEpisode}`

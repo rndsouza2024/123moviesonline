@@ -355,7 +355,7 @@ export default function HomePage () {
             Join us today and explore the vast world of movies and TV shows
             available at your fingertips. Whether you're a casual viewer or a
             dedicated binge-watcher, <strong>123Movies™</strong> is the perfect
-            place to stream online and stay entertained.
+            place to stream online and stay entertained. Enjoy the world of Entertainment.
           </p>
 
           <a

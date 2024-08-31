@@ -227,7 +227,7 @@ const page3 = ({ items }) => {
           </button>
         </Link>
 
-        {[2, 3, 4, 5, 6, 7, 8, 9,].map((page) => (
+        {[2, 3, 4, 5, 6, 7, 8, 9, 10,].map((page) => (
           <Link key={page} href={`/home/page${page}`} passHref>
             <button
               className={`px-4 py-2 border rounded ${
@@ -364,7 +364,7 @@ const page3 = ({ items }) => {
 
 export async function getStaticProps() {
   try {
-    const res = await fetch('https://123movies-free.vercel.app/moviesp8.json');
+    const res = await fetch('https://123movies-free.vercel.app/moviesp9.json');
     const data = await res.json();
 
     return {

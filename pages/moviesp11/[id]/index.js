@@ -1,5 +1,5 @@
 import { useRouter } from 'next/router'
-import moviesData from '../../../public/moviesp5.json'
+import moviesData from '../../../public/moviesp7.json'
 import latestData from '../../../public/latest.json'
 import { useEffect, useState, useRef } from 'react'
 import Pagination from '../../../components/Pagination'
@@ -14,9 +14,9 @@ import Script from 'next/script'
 import moviesStyles from '@styles/styles.module.css'
 import styles from '@styles/iframeStyles.module.css'
 
-// Fetch data from moviesp5.json
+// Fetch data from moviesp7.json
 const fetchmoviesData = async () => {
-  const response = await fetch('https://123movies-free.vercel.app/moviesp5.json')
+  const response = await fetch('https://123movies-free.vercel.app/moviesp11.json')
   return await response.json()
 }
 
@@ -36,7 +36,7 @@ const getRandomLinks = (movies, count = 3) => {
   ]
 }
 
-const moviesDetail5 = ({ moviesItem }) => {
+const moviesDetail10 = ({ moviesItem }) => {
   const router = useRouter()
   const { id } = router.query
   const [currentPage, setCurrentPage] = useState(1)
@@ -407,7 +407,9 @@ const moviesDetail5 = ({ moviesItem }) => {
         dateModified: moviesItem.dateModified,
         articleSection: 'Movies',
         author: {
-          '@id': 'https://123movies-free.vercel.app/author/123Movies™online/'
+          '@type': 'Person',
+          name: 'DrTrailer',
+          url: 'https://gravatar.com/drtrailer2022'
         },
         publisher: {
           '@id': 'https://gravatar.com/drtrailer2022/#person'
@@ -431,7 +433,9 @@ const moviesDetail5 = ({ moviesItem }) => {
         dateModified: moviesItem.dateModified,
         articleSection: 'Movies',
         author: {
-          '@id': 'https://123movies-free.vercel.app/author/123Movies™online/'
+          '@type': 'Person',
+          name: 'DrTrailer',
+          url: 'https://gravatar.com/drtrailer2022'
         },
         publisher: {
           '@id': 'https://gravatar.com/drtrailer2022/#person'
@@ -1377,6 +1381,7 @@ const moviesDetail5 = ({ moviesItem }) => {
                 {randommovies.map(movies => (
                   <div key={movies.id} className='cardlatest'>
                     <a href={movies.siteurl} id={movies.id}>
+                      {/* <Link key={item.id} href={item.siteurl || '/'}> */}
                       <div className='relative'>
                         <img
                           src={movies.image}
@@ -1631,4 +1636,4 @@ export async function getStaticProps ({ params }) {
   }
 }
 
-export default moviesDetail5
+export default moviesDetail10

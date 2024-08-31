@@ -34,10 +34,9 @@ class MyDocument extends Document {
             sizes='16x16'
             href='/favicon-16x16.png'
           />
-         
-          <link rel='manifest' href='/site.webmanifest' />
+         <link rel='manifest' href='/site.webmanifest' />
           <meta name='googlebot' content='index,follow' />
-          <meta name='revisit-after' content='1 days' />
+          <meta name='revis it-after' content='1 days' />
           <meta
             name='robots'
             content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1'

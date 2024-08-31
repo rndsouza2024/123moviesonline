@@ -282,9 +282,7 @@ const moviesDetail = ({ moviesItem }) => {
         isItemmovies
           ? `https://vidsrc.cc/v2/embed/tv/${id}/${itemSeason}/${itemEpisode}`
           : `https://vidsrc.cc/v2/embed/movie/${id}`,
-        isItemmovies
-          ? `https://www.2embed.cc/embedtv/${id}&s=${itemSeason}&e=${itemEpisode}`
-          : `https://www.2embed.cc/embedmovie/${id}`,
+        
         isItemmovies
           ? `https://autoembed.co/tv/imdb/${id}-${itemSeason}-${itemEpisode}`
           : `https://autoembed.co/movie/imdb/${id}`,

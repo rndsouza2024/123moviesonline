@@ -324,7 +324,7 @@ const moviesDetail3 = ({ moviesItem }) => {
     {
       '@context': 'https://schema.org',
       '@type': 'Organization',
-      name: '123Movies™',
+      name: '123 Movies™',
       url: 'https://123movies-free.vercel.app/',
       image: ['https://123movies-free.vercel.app/favicon.ico'],
       logo: {
@@ -356,7 +356,7 @@ const moviesDetail3 = ({ moviesItem }) => {
       {
         '@type': 'ListItem',
         position: 1,
-        name: '123Movies™',
+        name: '123 Movies™',
         item: 'https://123movies-free.vercel.app/'
       },
       {
@@ -380,7 +380,7 @@ const moviesDetail3 = ({ moviesItem }) => {
         '@type': 'WebSite',
         '@id': 'https://123movies-free.vercel.app#website',
         url: 'https://123movies-free.vercel.app',
-        name: '123Movies™',
+        name: '123 Movies™',
         publisher: {
           '@id': 'https://gravatar.com/drtrailer2022/#person'
         },
@@ -390,7 +390,7 @@ const moviesDetail3 = ({ moviesItem }) => {
         '@type': 'WebPage',
         '@id': `${moviesItem.siteurl}#webpage`,
         url: moviesItem.siteurl,
-        name: `${moviesItem.name} | 123Movies™`,
+        name: `${moviesItem.name} | 123 Movies™`,
         datePublished: moviesItem.datePublished,
         dateModified: moviesItem.dateModified,
         isPartOf: {
@@ -402,16 +402,21 @@ const moviesDetail3 = ({ moviesItem }) => {
       {
         '@type': 'Article',
         '@id': `${moviesItem.siteurl}#article`,
-        headline: ` ${moviesItem.name} | 123Movies™`,
+        headline: ` ${moviesItem.name} | 123 Movies™`,
         datePublished: moviesItem.datePublished,
         dateModified: moviesItem.dateModified,
         articleSection: 'Movies',
+        author: {
+          '@type': 'Person',
+          name: 'DrTrailer',
+          url: 'https://gravatar.com/drtrailer2022'
+        },
         publisher: {
           '@id': 'https://gravatar.com/drtrailer2022/#person'
         },
         description: moviesItem.synopsis,
         image: moviesItem.image,
-        name: ` ${moviesItem.name} | 123Movies™`,
+        name: ` ${moviesItem.name} | 123 Movies™`,
         isPartOf: {
           '@id': `${moviesItem.siteurl}#webpage`
         },
@@ -423,17 +428,21 @@ const moviesDetail3 = ({ moviesItem }) => {
       {
         '@type': 'BlogPosting',
         '@id': `${moviesItem.siteurl}#blogPost`,
-        headline: ` ${moviesItem.name} | 123Movies™`,
+        headline: ` ${moviesItem.name} | 123 Movies™`,
         datePublished: moviesItem.datePublished,
         dateModified: moviesItem.dateModified,
         articleSection: 'Movies',
-
+        author: {
+          '@type': 'Person',
+          name: 'DrTrailer',
+          url: 'https://gravatar.com/drtrailer2022'
+        },
         publisher: {
           '@id': 'https://gravatar.com/drtrailer2022/#person'
         },
         description: moviesItem.synopsis,
         image: moviesItem.image,
-        name: ` ${moviesItem.name} | 123Movies™`,
+        name: ` ${moviesItem.name} | 123 Movies™`,
         '@id': `${moviesItem.siteurl}#richSnippet`,
         isPartOf: {
           '@id': `${moviesItem.siteurl}#webpage`
@@ -474,7 +483,7 @@ const moviesDetail3 = ({ moviesItem }) => {
     },
     publisher: {
       '@type': 'Organization',
-      name: '123Movies™',
+      name: '123 Movies™',
       logo: {
         '@type': 'ImageObject',
         url: 'https://123movies-free.vercel.app/og_image.jpg'
@@ -535,7 +544,7 @@ const moviesDetail3 = ({ moviesItem }) => {
     },
     publisher: {
       '@type': 'Organization',
-      name: '123Movies™',
+      name: '123 Movies™',
       logo: {
         '@type': 'ImageObject',
         url: 'https://123movies-free.vercel.app/og_image.jpg'
@@ -564,18 +573,18 @@ const moviesDetail3 = ({ moviesItem }) => {
     '@context': 'https://schema.org',
     '@type': 'WebPage',
     url: moviesItem.siteurl, // Ensure this URL is correctly set
-    name: ` ${moviesItem.title} | 123Movies™`,
+    name: ` ${moviesItem.title} | 123 Movies™`,
     alternateName: [
-      `Ver película ${moviesItem.title} | 123Movies™`,
-      `Regarder le film ${moviesItem.title} | 123Movies™`,
-      `Film ${moviesItem.title} ansehen | 123Movies™`,
-      `观看电影 ${moviesItem.title} | 123Movies™`,
-      `映画 ${moviesItem.title} を見る | 123Movies™`,
-      `영화 ${moviesItem.title} 보기 | 123Movies™`,
-      `Assistir Filme ${moviesItem.title} | 123Movies™`,
-      `Guarda il film ${moviesItem.title} | 123Movies™`,
-      `Посмотреть фильм ${moviesItem.title} | 123Movies™`,
-      `مشاهدة فيلم ${moviesItem.title} | 123Movies™`
+      `Ver película ${moviesItem.title} | 123 Movies™`,
+      `Regarder le film ${moviesItem.title} | 123 Movies™`,
+      `Film ${moviesItem.title} ansehen | 123 Movies™`,
+      `观看电影 ${moviesItem.title} | 123 Movies™`,
+      `映画 ${moviesItem.title} を見る | 123 Movies™`,
+      `영화 ${moviesItem.title} 보기 | 123 Movies™`,
+      `Assistir Filme ${moviesItem.title} | 123 Movies™`,
+      `Guarda il film ${moviesItem.title} | 123 Movies™`,
+      `Посмотреть фильм ${moviesItem.title} | 123 Movies™`,
+      `مشاهدة فيلم ${moviesItem.title} | 123 Movies™`
     ],
     inLanguage: [
       'es',
@@ -590,90 +599,62 @@ const moviesDetail3 = ({ moviesItem }) => {
       'ar'
     ]
   })
+
   return (
     <div>
-      <Head>
+       <Head>
         <meta
           name='robots'
           content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1'
         />
 
-        <title>
-          {moviesItem?.title
-            ? `${moviesItem.title} | 123Movies™`
-            : '123Movies™'}
-        </title>
-        <link rel='canonical' href={moviesItem && moviesItem.siteurl} />
-        <meta name='robots' content='index, follow' />
-        <meta name='googlebot' content='index,follow' />
-        <meta name='revisit-after' content='1 days' />
-        <meta property='og:locale' content='en_US' />
-        <meta property='og:type' content='video.movie' />
-        <meta
-          property='og:video'
-          content={`${moviesItem && moviesItem.videourl}`}
-        />
-        <meta property='og:video:width' content='1280px' />
-        <meta property='og:video:height' content='720px' />
-        <meta property='og:video:type' content='video/mp4' />
+        <title>{`${moviesItem.title} | 123 Movies™`}</title>
+
+        <meta name='description' content={moviesItem.news1} />
+
         <meta
           property='og:title'
-          content={`${moviesItem && moviesItem.name} - 123Movies™`}
+          content={`${moviesItem.title} | 123 Movies™`}
         />
         <meta
           property='og:description'
-          content='Stream HD movies and TV series for free on 123Movies™. Explore, stream, and download full-length movies and shows in HD quality without registration.'
+          content={`Stream ${moviesItem.title} in HD for free on 123 Movies™. No registration required to enjoy full-length movies and TV shows.`}
         />
-        <meta
-          name='description'
-          content={`${moviesItem.title} available on 123Movies™. Enjoy free streaming of full-length movies and TV series online with no registration required.`}
-        />
+        <meta property='og:type' content='video.movie' />
         <meta
           property='og:url'
-          content={`${moviesItem && moviesItem.siteurl}`}
-        />
-        <meta
-          name='keywords'
-          content={`${moviesItem && moviesItem.keywords}`}
-        />
-        <meta property='og:site_name' content='123Movies™' />
-        {/* <meta property='og:type' content='article' /> */}
-        <meta
-          property=' og:image:alt'
-          content={`${moviesItem && moviesItem.group}`}
-        />
-        <meta name='mobile-web-app-capable' content='yes' />
-        <meta property='article:section' content='Movies' />
-        <meta name='author' content='admin' />
-        <meta
-          property='article:modified_time'
-          content='2024-01-01T13:13:13+00:00'
+          content={moviesItem.siteurl}
         />
         <meta
           property='og:image'
-          content={`${moviesItem && moviesItem.image1}`}
+          content={moviesItem.thumbnail || moviesItem.image1}
         />
         <meta property='og:image:width' content='1200' />
         <meta property='og:image:height' content='630' />
         <meta property='og:image:type' content='image/webp' />
+
+        <meta property='og:site_name' content='123 Movies™' />
+        <meta property='og:locale' content='en_US' />
+
         <meta name='twitter:card' content='summary_large_image' />
         <meta
           name='twitter:title'
-          content='123Movies™ - Explore. Discover. Online. '
+          content={`${moviesItem.title} | 123 Movies™`}
         />
         <meta
           name='twitter:description'
-          content='Stream HD movies and TV series for free on 123Movies™. Explore, stream, and download full-length movies and shows in HD quality without registration.'
+          content={`Stream ${moviesItem.title} for free on 123 Movies™. Explore full-length movies and TV series in HD.`}
         />
-        <meta
-          name='twitter:image'
-          content={`${moviesItem && moviesItem.image1}`}
-        />
-        <meta name='twitter:label1' content='Est. reading time' />
-        <meta name='twitter:data1' content='1 minute' />
+        <meta name='twitter:image' content={moviesItem.image1} />
+
+        <link rel='canonical' href={moviesItem.siteurl} />
+
+        <meta name='author' content='123 Movies™' />
+        <meta name='mobile-web-app-capable' content='yes' />
+
         <meta
           name='google-site-verification'
-          content='o8uNsADswyHnNPA69n9gI7u6L4_cdjN4iT5lRhHHtMU'
+          content='BZNZaUyoS1nXyRfa99f4VJ3ABKZUZhkKB0pZ3DU3L8s'
         />
         <meta
           name='facebook-domain-verification'
@@ -688,12 +669,10 @@ const moviesDetail3 = ({ moviesItem }) => {
           type='application/ld+json'
           dangerouslySetInnerHTML={{ __html: ldJsonData }}
         />
-
         <script
           type='application/ld+json'
           dangerouslySetInnerHTML={{ __html: uwatchfreeSchema }}
         />
-
         <script
           type='application/ld+json'
           dangerouslySetInnerHTML={{ __html: rankMathSchema }}

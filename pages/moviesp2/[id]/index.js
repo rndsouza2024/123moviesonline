@@ -281,7 +281,9 @@ const moviesDetail2 = ({ moviesItem }) => {
         isItemmovies
           ? `https://vidsrc.cc/v2/embed/tv/${id}/${itemSeason}/${itemEpisode}`
           : `https://vidsrc.cc/v2/embed/movie/${id}`,
-        
+          isItemmovies
+          ? `https://ffmovies.lol/series/?imdb=${id}`
+           : `https://ffmovies.lol/movies/?imdb=${id}`,
         isItemmovies
           ? `https://autoembed.co/tv/imdb/${id}-${itemSeason}-${itemEpisode}`
           : `https://autoembed.co/movie/imdb/${id}`,

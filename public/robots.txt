@@ -1,3 +1,0 @@
-User-agent: *
-Allow: /
-Sitemap: https://123movies-free.vercel.app/sitemap.xml

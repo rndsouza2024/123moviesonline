@@ -13,9 +13,8 @@ import Link from 'next/link'
 import Script from 'next/script'
 import moviesStyles from '@styles/styles.module.css'
 import styles from '@styles/iframeStyles.module.css'
-// import mstyles from '@styles/iframe.module.css'
+import { useMediaQuery } from 'react-responsive'
 
-// Fetch data from movies.json
 const fetchmoviesData = async () => {
   const response = await fetch('https://123movies-free.vercel.app/moviesp10.json')
   return await response.json()
@@ -23,70 +22,80 @@ const fetchmoviesData = async () => {
 
 const getRandomLinks = (movies, count = 3) => {
   const shuffleArray = array => array.sort(() => 0.5 - Math.random())
-
-  const getRandomItems = (data, count) => {
-    const shuffled = shuffleArray(data)
-    return shuffled.slice(0, count)
-  }
-
-  return [
-    ...getRandomItems(movies, count)
-    // ...getRandomItems(latest, count),
-    // ...getRandomItems(adults, count),
-    // ...getRandomItems(trailers, count)
-  ]
+  return shuffleArray(movies).slice(0, count)
 }
 
 const moviesDetail = ({ moviesItem }) => {
   const router = useRouter()
   const { id } = router.query
   const [currentPage, setCurrentPage] = useState(1)
-  const totalPages = 0 // Assume there are 3 pages
   const [latest, setLatest] = useState(latestData)
   const [playerReady, setPlayerReady] = useState(false)
   const [showTimer, setShowTimer] = useState(false)
-  const [seconds, setSeconds] = useState(30) // Example timer duration
+  const [seconds, setSeconds] = useState(30)
   const [isMobileDevice, setIsMobileDevice] = useState(false)
   const [accordionExpanded, setAccordionExpanded] = useState(false)
   const playerRef = useRef(null)
   const currentIndexRef = useRef(0)
-  // Determine the type of content (movie, tvshow, or adult)
-  const isTVShow = moviesItem.type === 'tvshow'
-  const isAdult = moviesItem.badgegroup === 'Adult'
   const [randommovies, setRandommovies] = useState([])
   const [linkTargets, setLinkTargets] = useState([])
 
+  const isTVShow = moviesItem.type === 'tvshow'
+  const isAdult = moviesItem.badgegroup === 'Adult'
+  const isMobile = useMediaQuery({ query: '(max-width: 768px)' })
+  const isTablet = useMediaQuery({ query: '(min-width: 769px) and (max-width: 1024px)' })
+
+  const imageSize = {
+    width: isMobile ? '100px' : isTablet ? '150px' : '200px',
+    height: isMobile ? '100px' : isTablet ? '150px' : '200px',
+  }
+
+  const containerStyle = {
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+    minHeight: '100vh',
+    padding: isMobile ? '10px' : '20px',
+    fontFamily: 'Poppins, sans-serif',
+    fontWeight: 500,
+    textAlign: 'center',
+    backgroundColor: '#000',
+  }
+
+  const headingStyle = {
+    fontSize: isMobile ? '1.5rem' : isTablet ? '2rem' : '2.5rem',
+  }
+
+  const paragraphStyle = {
+    fontSize: isMobile ? '1rem' : isTablet ? '1.2rem' : '1.4rem',
+  }
+
+  const imageStyle = {
+    width: isMobile ? '200px' : isTablet ? '300px' : '400px',
+    height: isMobile ? '300px' : isTablet ? '400px' : '500px',
+    objectFit: 'cover',
+    margin: 'auto',
+    marginTop: '50px',
+    marginBottom: '20px',
+    borderRadius: '50px',
+    boxShadow: '0 0 10px 0 #000',
+    filter: 'contrast(1.1) saturate(1.1) brightness(1.0) hue-rotate(0deg)',
+  }
+
   const enhancedParagraph = (text, moviesItem) => {
-    // Ensure moviesItem and words are valid
     const words = Array.isArray(moviesItem?.words) ? moviesItem.words : []
     const videomovies = moviesItem?.videomovies || ''
     const imdb = moviesItem?.imdb || ''
 
-    // Define link targets
     const linkTargets = [
       {
-        text: words[0] || '', // Fallback to empty string if words[0] is undefined
+        text: words[0] || '',
         url: `https://www.imdb.com/title/${videomovies || imdb}/`
-      },
-      {
-        text: words[1] || '',
-        url: 'https://123movies-free.vercel.app/trailers/watch-Ang-Kapitbahay-official-trailer-2024'
-      },
-      {
-        text: words[2] || '',
-        url: 'https://123movies-free.vercel.app/trailers/watch-Raat-Baaki-Hai-Part-01-trailer-2024'
-      },
-      {
-        text: words[3] || '',
-        url: 'https://123movies-free.vercel.app/trailers/watch-Sona-Part-official-trailer-2024'
-      },
-      {
-        text: words[4] || '',
-        url: 'https://123movies-free.vercel.app/trailers/watch-plaget-official-trailer-2024'
       }
+      
     ]
 
-    // If imdb is defined, update the first link target for TV shows
     if (imdb) {
       linkTargets[0] = {
         text: words[0] || '',
@@ -94,7 +103,6 @@ const moviesDetail = ({ moviesItem }) => {
       }
     }
 
-    // Replace text with links
     linkTargets.forEach(linkTarget => {
       if (linkTarget.text) {
         const regex = new RegExp(`(${linkTarget.text})`, 'g')
@@ -108,45 +116,19 @@ const moviesDetail = ({ moviesItem }) => {
     return text
   }
 
-  const [imageSize, setImageSize] = useState({
-    width: '200px',
-    height: '200px'
-  })
-
   useEffect(() => {
-    const updateSize = () => {
-      if (window.innerWidth <= 768) {
-        setImageSize({ width: '150px', height: '150px' })
-      } else {
-        setImageSize({ width: '200px', height: '200px' })
-      }
-    }
-
-    updateSize() // Set size on initial render
-    window.addEventListener('resize', updateSize)
-
-    return () => window.removeEventListener('resize', updateSize)
-  }, [])
-
-  useEffect(() => {
-    // Fetch the initial random links
     setLinkTargets(getRandomLinks(moviesData))
-
-    // Update the links every 30 seconds
     const interval = setInterval(() => {
       setLinkTargets(getRandomLinks(moviesData))
-    }, 30000) // 30 seconds in milliseconds
+    }, 30000)
 
     return () => clearInterval(interval)
   }, [])
 
-  // Function to fetch data and set state
   const fetchData = async () => {
     try {
       const response = await fetch('https://123movies-free.vercel.app/moviesfull.json')
       const data = await response.json()
-
-      // Get 6 random TV Series s
       const randommoviesData = getRandomItems(data, 5)
       setRandommovies(randommoviesData)
     } catch (error) {
@@ -154,38 +136,27 @@ const moviesDetail = ({ moviesItem }) => {
     }
   }
 
-  // useEffect to fetch data on component mount
   useEffect(() => {
-    fetchData() // Initial fetch
-
-    // Set interval to update trailers every 5 seconds
+    fetchData()
     const interval = setInterval(() => {
       fetchData()
     }, 10000)
 
-    // Clean up interval on component unmount
     return () => clearInterval(interval)
   }, [])
 
-  // Utility function to get random items from data
   const getRandomItems = (data, count) => {
-    const shuffled = shuffleArray([...data]) // Create a copy and shuffle the array
-    return shuffled.slice(0, count)
+    return shuffleArray([...data]).slice(0, count)
   }
 
-  // Function to shuffle array items randomly
   const shuffleArray = array => {
-    let currentIndex = array.length,
-      temporaryValue,
-      randomIndex
+    let currentIndex = array.length
+    let temporaryValue
+    let randomIndex
 
-    // While there remain elements to shuffle...
     while (currentIndex !== 0) {
-      // Pick a remaining element...
       randomIndex = Math.floor(Math.random() * currentIndex)
       currentIndex -= 1
-
-      // And swap it with the current element.
       temporaryValue = array[currentIndex]
       array[currentIndex] = array[randomIndex]
       array[randomIndex] = temporaryValue
@@ -196,7 +167,7 @@ const moviesDetail = ({ moviesItem }) => {
 
   const handleDownloadClick = () => {
     setShowTimer(true)
-    setSeconds(30) // Example timer duration
+    setSeconds(30)
   }
 
   useEffect(() => {
@@ -235,7 +206,7 @@ const moviesDetail = ({ moviesItem }) => {
   const toggleAccordion = () => {
     setAccordionExpanded(prevState => !prevState)
     if (!accordionExpanded) {
-      setSeconds(30) // Reset the timer when accordion is expanded
+      setSeconds(30)
     }
   }
 
@@ -243,83 +214,27 @@ const moviesDetail = ({ moviesItem }) => {
     setShowTimer(true)
     setAccordionExpanded(true)
   }
+
   const [currentEpisodeIndex, setCurrentEpisodeIndex] = useState(0)
   const [currentPlayerIndex, setCurrentPlayerIndex] = useState(0)
 
   if (!moviesItem) return <div>Loading...</div>
 
   const { videomovieitem, videomovies, image1 } = moviesItem
-
-  // Check if videomovies contains episode data
-  const ismovies = videomovies[0] && videomovies[0].includes('/')
-
-  // Extract current video data
+  const isMovies = videomovies[0] && videomovies[0].includes('/')
   const currentVideoId = videomovieitem[currentEpisodeIndex]
-  const currentVideoData = videomovies[currentEpisodeIndex] || {} // Ensure currentEpisodeIndex is within bounds
+  const currentVideoData = videomovies[currentEpisodeIndex] || {}
+  const episode = isMovies ? currentVideoData.episode || 1 : null
+  const season = isMovies ? currentVideoData.season || 1 : null
 
-  // Default to episode 1 and season 1 if not defined
-  const episode = ismovies ? currentVideoData.episode || 1 : null
-  const season = ismovies ? currentVideoData.season || 1 : null
-
-  // Construct video sources based on whether it's a TV show or a movie
-  const videoSources = videomovies.map(item => {
-    // Check if item contains episode data
-    const isItemmovies = item.includes('/')
-    const [id, itemSeason, itemEpisode] = isItemmovies
-      ? item.split('/')
-      : [item, null, null]
-
-    return {
-      name: isItemmovies ? `Episode ${itemEpisode}` : 'Movie',
-      urls: [
-        `https://short.ink/${currentVideoId}?thumbnail=${image1}`,
-        isItemmovies
-          ? `https://vidsrc.me/embed/tv?imdb=${id}&season=${itemSeason}&episode=${itemEpisode}`
-          : `https://vidsrc.me/embed/movie?imdb=${id}`,
-        isItemmovies
-          ? `https://vidsrc.pro/embed/tv/${id}/${itemSeason}/${itemEpisode}`
-          : `https://vidsrc.pro/embed/movie/${id}`,
-        isItemmovies
-          ? `https://vidsrc.cc/v2/embed/tv/${id}/${itemSeason}/${itemEpisode}`
-          : `https://vidsrc.cc/v2/embed/movie/${id}`,
-        
-        isItemmovies
-          ? `https://autoembed.co/tv/imdb/${id}-${itemSeason}-${itemEpisode}`
-          : `https://autoembed.co/movie/imdb/${id}`,
-        isItemmovies
-          ? `https://multiembed.mov/directstream.php?video_id=${id}&s=${itemSeason}&e=${itemEpisode}`
-          : `https://multiembed.mov/directstream.php?video_id=${id}`
-      ]
-    }
-  })
-
-  const handleNextEpisode = () => {
-    setCurrentEpisodeIndex(prevIndex => {
-      const nextIndex = (prevIndex + 1) % videoSources.length
-      console.log('Next Episode Index:', nextIndex)
-      return nextIndex
-    })
-  }
-
-  const handlePreviousEpisode = () => {
-    setCurrentEpisodeIndex(prevIndex => {
-      const newIndex =
-        (prevIndex - 1 + videoSources.length) % videoSources.length
-      console.log('Previous Episode Index:', newIndex)
-      return newIndex
-    })
-  }
-
-  const handlePlayerSelect = index => {
-    setCurrentPlayerIndex(index)
-  }
-
-  // Ensure currentVideoSources is always valid
-  const currentVideoSources = videoSources[currentEpisodeIndex]?.urls || []
-  const src = currentVideoSources[currentPlayerIndex] || '' // Default to an empty string if not available
-
-  const prevEpisodeNumber = episode - 1 < 1 ? videoSources.length : episode - 1
-  const nextEpisodeNumber = (episode % videoSources.length) + 1
+  const videoSources = [
+    `https://vidsrc.me/embed/tv?imdb=${currentVideoId}&season=${season}&episode=${episode}`,
+    `https://vidsrc.pro/embed/tv/${currentVideoId}/${season}/${episode}`,
+    `https://vidsrc.cc/v2/embed/tv/${currentVideoId}/${season}/${episode}`,
+    `https://www.2embed.cc/embedtv/${currentVideoId}&s=${season}&e=${episode}`,
+    `https://autoembed.co/tv/imdb/${currentVideoId}-${season}-${episode}`,
+    `https://multiembed.mov/directstream.php?video_id=${currentVideoId}&s=${season}&e=${episode}`
+  ]
 
   const uwatchfreeSchema = JSON.stringify([
     {
@@ -728,260 +643,88 @@ const moviesDetail = ({ moviesItem }) => {
           {moviesItem.title}
         </h1>
       </div>
-      <div
-        className={`w-full`}
-        style={{
-          display: 'flex',
-          flexDirection: 'column',
-          justifyContent: 'center',
-          alignItems: 'center',
-          minHeight: '100vh',
-          padding: '20px',
-          fontFamily: 'Poppins, sans-serif',
-          fontWeight: 500,
-          textAlign: 'center',
-          // backgroundColor: '#D3D3D3'
-          backgroundColor: '#000'
-        }}
-      >
-        {/* {isTVShow && (
+      <div className="w-full" style={containerStyle}>
+      {/* TV Show Description */}
+      {isTVShow && (
         <>
-          <h2 className='px-0 bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-2xl hover:text-blue-800 font-bold mt-2'>
+          <h2 className='px-0 bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent font-bold mt-2' style={headingStyle}>
             {moviesItem.title} Online - Stream Your Favorite TV Series
           </h2>
-          <p
-            className='text-lg text-yellow-500 mt-4'
-            dangerouslySetInnerHTML={{
-              __html: enhancedParagraph(`
-                Explore the captivating world of <strong>${moviesItem.title}</strong>, the TV series that has everyone talking. At <strong>123Movies™</strong>, you can stream <strong>${moviesItem.title}</strong> and immerse yourself in its exciting episodes, whether you're catching up on past seasons or tuning in to the latest releases. Our platform offers a seamless streaming experience, making it easy to watch your favorite TV series online.
-              `)
-            }}
-          />
-          <p
-            className='text-lg text-yellow-500 mt-4'
-            dangerouslySetInnerHTML={{
-              __html: enhancedParagraph(`
-                Streaming <strong>${moviesItem.title}</strong> on <strong>123Movies™</strong> ensures that you won't miss a single moment of the action, drama, or comedy that makes this TV series a must-watch. With high-quality streaming and user-friendly navigation, <strong>123Movies™</strong> provides everything you need to enjoy <strong>${moviesItem.title}</strong> and other top TV series. Our library is frequently updated, so you can always find the latest episodes as soon as they air.
-              `)
-            }}
-          />
-          <p
-            className='text-lg text-yellow-500 mt-4'
-            dangerouslySetInnerHTML={{
-              __html: enhancedParagraph(`
-                Whether you're binge-watching or following along weekly, <strong>${moviesItem.title}</strong> on <strong>123Movies™</strong> is your go-to destination for streaming TV series online. Join our community of viewers and start watching <strong>${moviesItem.title}</strong> today. With <strong>123Movies™</strong>, your favorite TV series is just a click away.
-              `)
-            }}
-          />
+          <p className='text-yellow-500 mt-4' style={paragraphStyle}>
+            Explore the captivating world of <strong>{moviesItem.title}</strong>, the TV series that has everyone talking. At <strong>123Movies™</strong>, you can stream <strong>{moviesItem.title}</strong> and immerse yourself in its exciting episodes, whether you're catching up on past seasons or tuning in to the latest releases. Our platform offers a seamless streaming experience, making it easy to watch your favorite TV series online.
+          </p>
+          <p className='text-yellow-500 mt-4' style={paragraphStyle}>
+            Streaming <strong>{moviesItem.title}</strong> on <strong>123Movies™</strong> ensures that you won't miss a single moment of the action, drama, or comedy that makes this TV series a must-watch. With high-quality streaming and user-friendly navigation, <strong>123Movies™</strong> provides everything you need to enjoy <strong>{moviesItem.title}</strong> and other top TV series. Our library is frequently updated, so you can always find the latest episodes as soon as they air.
+          </p>
+          <p className='text-yellow-500 mt-4' style={paragraphStyle}>
+            Whether you're binge-watching or following along weekly, <strong>{moviesItem.title}</strong> on <strong>123Movies™</strong> is your go-to destination for streaming TV series online. Join our community of viewers and start watching <strong>{moviesItem.title}</strong> today. With <strong>123Movies™</strong>, your favorite TV series is just a click away.
+          </p>
         </>
       )}
 
+      {/* Adult Content Description */}
       {isAdult && (
         <>
-          <h2 className='px-0 bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-2xl hover:text-blue-800 font-bold mt-2'>
+          <h2 className='px-0 bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent font-bold mt-2' style={headingStyle}>
             {moviesItem.title} Online - Stream Premium Adult Content
           </h2>
-          <p
-            className='text-lg text-yellow-500 mt-4'
-            dangerouslySetInnerHTML={{
-              __html: enhancedParagraph(`
-                Indulge in the finest selection of adult entertainment with <strong>${moviesItem.title}</strong>. At <strong>123Movies™</strong>, we offer a vast library of premium adult content, including the latest and most popular titles like <strong>${moviesItem.title}</strong>. Our platform is designed for those who seek high-quality, discreet streaming of adult films, ensuring a seamless and private viewing experience.
-              `)
-            }}
-          />
-          <p
-            className='text-lg text-yellow-500 mt-4'
-            dangerouslySetInnerHTML={{
-              __html: enhancedParagraph(`
-                Streaming <strong>${moviesItem.title}</strong> on <strong>123Movies™</strong> provides you with a user-friendly interface and crystal-clear video quality. Our adult content is regularly updated, giving you access to new releases as soon as they become available. Whether you're exploring new genres or returning to your favorites, <strong>${moviesItem.title}</strong> and other top titles are available at your fingertips.
-              `)
-            }}
-          />
-          <p
-            className='text-lg text-yellow-500 mt-4'
-            dangerouslySetInnerHTML={{
-              __html: enhancedParagraph(`
-                For a premium experience in adult entertainment, look no further than <strong>${moviesItem.title}</strong> on <strong>123Movies™</strong>. Our platform ensures your privacy and security while you enjoy the content you love. Start streaming <strong>${moviesItem.title}</strong> today and discover why <strong>123Movies™</strong> is the trusted choice for adult content.
-              `)
-            }}
-          />
+          <p className='text-yellow-500 mt-4' style={paragraphStyle}>
+            Indulge in the finest selection of adult entertainment with <strong>{moviesItem.title}</strong>. At <strong>123Movies™</strong>, we offer a vast library of premium adult content, including the latest and most popular titles like <strong>{moviesItem.title}</strong>. Our platform is designed for those who seek high-quality, discreet streaming of adult films, ensuring a seamless and private viewing experience.
+          </p>
+          <p className='text-yellow-500 mt-4' style={paragraphStyle}>
+            Streaming <strong>{moviesItem.title}</strong> on <strong>123Movies™</strong> provides you with a user-friendly interface and crystal-clear video quality. Our adult content is regularly updated, giving you access to new releases as soon as they become available. Whether you're exploring new genres or returning to your favorites, <strong>{moviesItem.title}</strong> and other top titles are available at your fingertips.
+          </p>
+          <p className='text-yellow-500 mt-4' style={paragraphStyle}>
+            For a premium experience in adult entertainment, look no further than <strong>{moviesItem.title}</strong> on <strong>123Movies™</strong>. Our platform ensures your privacy and security while you enjoy the content you love. Start streaming <strong>{moviesItem.title}</strong> today and discover why <strong>123Movies™</strong> is the trusted choice for adult content.
+          </p>
         </>
       )}
 
+      {/* Movie Description (Default) */}
       {!isTVShow && !isAdult && (
         <>
-          <h2 className='px-0 bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-2xl font-bold mt-2'>
+          <h2 className='px-0 bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent font-bold mt-2' style={headingStyle}>
             {moviesItem.title} Online and Experience Top-Tier Streaming
           </h2>
-          <p
-            className='text-lg text-yellow-500 mt-4'
-            dangerouslySetInnerHTML={{
-              __html: enhancedParagraph(`
-                Dive into the world of cinema with <strong>${moviesItem.title}</strong>, available to stream right here. At <strong>123Movies™</strong>, we bring you the best in entertainment, offering an extensive library of movies and TV shows, including the latest blockbusters like <strong>${moviesItem.title}</strong>. Whether you're a fan of action, drama, comedy, or any other genre, you'll find exactly what you're looking for.
-              `)
-            }}
-          />
-          <p
-            className='text-lg text-yellow-500 mt-4'
-            dangerouslySetInnerHTML={{
-              __html: enhancedParagraph(`
-                Streaming <strong>${moviesItem.title}</strong> on <strong>123Movies™</strong> guarantees a seamless viewing experience with high-definition quality and uninterrupted playback. Our platform is designed to make it easy for you to discover and enjoy your favorite films. With regularly updated content, you???ll always have access to the newest releases, ensuring you can watch <strong>${moviesItem.title}</strong> and other top titles as soon as they're available.
-              `)
-            }}
-          />
-          <p
-            className='text-lg text-yellow-500 mt-4'
-            dangerouslySetInnerHTML={{
-              __html: enhancedParagraph(`
-                Whether you're revisiting a classic or catching a new release, <strong>${moviesItem.title}</strong> on <strong>123Movies™</strong> is the perfect way to enjoy your movie night. Join the countless users who trust us for their streaming needs and start watching <strong>${moviesItem.title}</strong> online today. At <strong>123Movies™</strong>, your entertainment is just a click away.
-              `)
-            }}
-          />
-        </>
-      )} */}
-
-        {/* TV Show Description */}
-        {isTVShow && (
-          <>
-            <h2 className='px-0 bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-2xl hover:text-blue-800 font-bold mt-2'>
-              {moviesItem.title} Online - Stream Your Favorite TV Series
-            </h2>
-            <p className='text-lg text-yellow-500 mt-4'>
-              Explore the captivating world of{' '}
-              <strong>{moviesItem.title}</strong>, the TV series that has
-              everyone talking. At
-              <strong> 123Movies™</strong>, you can stream{' '}
-              <strong>{moviesItem.title}</strong> and immerse yourself in its
-              exciting episodes, whether you're catching up on past seasons or
-              tuning in to the latest releases. Our platform offers a seamless
-              streaming experience, making it easy to watch your favorite TV
-              series online.
-            </p>
-            <p className='text-lg text-yellow-500 mt-4'>
-              Streaming <strong>{moviesItem.title}</strong> on{' '}
-              <strong>123Movies™</strong> ensures that you won't miss a single
-              moment of the action, drama, or comedy that makes this TV series a
-              must-watch. With high-quality streaming and user-friendly
-              navigation, <strong>123Movies™</strong> provides everything you
-              need to enjoy <strong>{moviesItem.title}</strong>
-              and other top TV series. Our library is frequently updated, so you
-              can always find the latest episodes as soon as they air.
-            </p>
-            <p className='text-lg text-yellow-500 mt-4'>
-              Whether you're binge-watching or following along weekly,{' '}
-              <strong>{moviesItem.title}</strong> on <strong>123Movies™</strong>{' '}
-              is your go-to destination for streaming TV series online. Join our
-              community of viewers and start watching{' '}
-              <strong>{moviesItem.title}</strong> today. With{' '}
-              <strong>123Movies™</strong>, your favorite TV series is just a
-              click away.
-            </p>
-          </>
-        )}
-
-        {/* Adult Content Description */}
-        {isAdult && (
-          <>
-            <h2 className='px-0 bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-2xl hover:text-blue-800 font-bold mt-2'>
-              {moviesItem.title} Online - Stream Premium Adult Content
-            </h2>
-            <p className='text-lg text-yellow-500 mt-4'>
-              Indulge in the finest selection of adult entertainment with{' '}
-              <strong>{moviesItem.title}</strong>. At{' '}
-              <strong>123Movies™</strong>, we offer a vast library of premium
-              adult content, including the latest and most popular titles like{' '}
-              <strong>{moviesItem.title}</strong>. Our platform is designed for
-              those who seek high-quality, discreet streaming of adult films,
-              ensuring a seamless and private viewing experience.
-            </p>
-            <p className='text-lg text-yellow-500 mt-4'>
-              Streaming <strong>{moviesItem.title}</strong> on{' '}
-              <strong>123Movies™</strong> provides you with a user-friendly
-              interface and crystal-clear video quality. Our adult content is
-              regularly updated, giving you access to new releases as soon as
-              they become available. Whether you're exploring new genres or
-              returning to your favorites, <strong>{moviesItem.title}</strong>
-              and other top titles are available at your fingertips.
-            </p>
-            <p className='text-lg text-yellow-500 mt-4'>
-              For a premium experience in adult entertainment, look no further
-              than <strong>{moviesItem.title}</strong> on{' '}
-              <strong>123Movies™</strong>. Our platform ensures your privacy and
-              security while you enjoy the content you love. Start streaming{' '}
-              <strong>{moviesItem.title}</strong> today and discover why{' '}
-              <strong>123Movies™</strong> is the trusted choice for adult
-              content.
-            </p>
-          </>
-        )}
-
-        {/* Movie Description (Default) */}
-        {!isTVShow && !isAdult && (
-          <>
-            <h2 className='px-0 bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-2xl  font-bold mt-2'>
-              {moviesItem.title} Online and Experience Top-Tier Streaming
-            </h2>
-            <p className='text-lg text-yellow-500 mt-4'>
-              Dive into the world of cinema with{' '}
-              <strong>{moviesItem.title}</strong>, available to stream right
-              here. At <strong>123Movies™</strong>, we bring you the best in
-              entertainment, offering an extensive library of movies and TV
-              shows, including the latest blockbusters like{' '}
-              <strong>{moviesItem.title}</strong>. Whether you're a fan of
-              action, drama, comedy, or any other genre, you'll find exactly
-              what you're looking for.
-            </p>
-            <p className='text-lg text-yellow-500 mt-4'>
-              Streaming <strong>{moviesItem.title}</strong> on{' '}
-              <strong>123Movies™</strong> guarantees a seamless viewing
-              experience with high-definition quality and uninterrupted
-              playback. Our platform is designed to make it easy for you to
-              discover and enjoy your favorite films. With regularly updated
-              content, you???ll always have access to the newest releases,
-              ensuring you can watch <strong>{moviesItem.title}</strong> and
-              other top titles as soon as they're available.
-            </p>
-            <p className='text-lg text-yellow-500 mt-4'>
-              Whether you're revisiting a classic or catching a new release,{' '}
-              <strong>{moviesItem.title}</strong> on <strong>123Movies™</strong>{' '}
-              is the perfect way to enjoy your movie night. Join the countless
-              users who trust us for their streaming needs and start watching{' '}
-              <strong>{moviesItem.title}</strong> online today. At{' '}
-              <strong>123Movies™</strong>, your entertainment is just a click
-              away.
-            </p>
-          </>
-        )}
-        {/* </div> */}
-        <a
-          href='https://t.me/watchmovietvshow/'
-          target='_blank'
-          rel='noopener noreferrer'
-          className='telegram-link'
-          style={{ display: 'block', textAlign: 'center', margin: '0 auto' }}
-        >
-          <p style={{ display: 'inline-block' }}>
-            For Request or Demand <br />
-            Movies & TV Series Join Telegram
-            <i className='fab fa-telegram telegram-icon'></i>
+          <p className='text-yellow-500 mt-4' style={paragraphStyle}>
+            Dive into the world of cinema with <strong>{moviesItem.title}</strong>, available to stream right here. At <strong>123Movies™</strong>, we bring you the best in entertainment, offering an extensive library of movies and TV shows, including the latest blockbusters like <strong>{moviesItem.title}</strong>. Whether you're a fan of action, drama, comedy, or any other genre, you'll find exactly what you're looking for.
           </p>
-        </a>
-        <span className='px-0 bg-clip-text text-sm text-black font-bold mt-2'>
-          <SearchComponent />
-        </span>
-        <Pagination
-          currentPage={currentPage}
-          totalPages={totalPages}
-          route='home'
-          style={{
-            marginTop: '50px',
-            marginBottom: '50px',
-            borderRadius: '50px',
-            boxShadow: '0 0 10px 0 #fff',
-            filter:
-              'contrast(1.0) saturate(1.0) brightness(1.0) hue-rotate(0deg)'
-          }}
-        />
+          <p className='text-yellow-500 mt-4' style={paragraphStyle}>
+            Streaming <strong>{moviesItem.title}</strong> on <strong>123Movies™</strong> guarantees a seamless viewing experience with high-definition quality and uninterrupted playback. Our platform is designed to make it easy for you to discover and enjoy your favorite films. With regularly updated content, you Will always have access to the newest releases, ensuring you can watch <strong>{moviesItem.title}</strong> and other top titles as soon as they're available.
+          </p>
+          <p className='text-yellow-500 mt-4' style={paragraphStyle}>
+            Whether you're revisiting a classic or catching a new release, <strong>{moviesItem.title}</strong> on <strong>123Movies™</strong> is the perfect way to enjoy your movie night. Join the countless users who trust us for their streaming needs and start watching <strong>{moviesItem.title}</strong> online today. At <strong>123Movies™</strong>, your entertainment is just a click away.
+          </p>
+        </>
+      )}
+
+      <a
+        href='https://t.me/watchmovietvshow/'
+        target='_blank'
+        rel='noopener noreferrer'
+        className='telegram-link'
+        style={{ display: 'block', textAlign: 'center', margin: '0 auto' }}
+      >
+        <p style={{ display: 'inline-block' }}>
+          For Request or Demand <br />
+          Movies & TV Series Join Telegram
+          <i className='fab fa-telegram telegram-icon'></i>
+        </p>
+      </a>
+      <span className='px-0 bg-clip-text text-sm text-black font-bold mt-2'>
+        <SearchComponent />
+      </span>
+      <Pagination
+        currentPage={currentPage}
+        totalPages={totalPages}
+        route='home'
+        style={{
+          marginTop: '50px',
+          marginBottom: '50px',
+          borderRadius: '50px',
+          boxShadow: '0 0 10px 0 #000',
+        }}
+      />
         <div className='flex-container'>
           <div className='category-container'>
             <Image
@@ -1167,19 +910,15 @@ const moviesDetail = ({ moviesItem }) => {
 
                 {/* Conditional rendering of Next Episode button */}
                 {ismovies && !isAdult && (
-                  <div
-                    className='flex flex-col items-center mb-4'
-                    style={{ marginBottom: '20px' }}
-                  >
-                    <button
-                      onClick={handleNextEpisode}
-                      disabled={videoSources.length === 0}
-                      className='px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 ml-4 text-xl hover:text-green-600 font-bold mt-2'
-                    >
-                      Next Episode
-                      {/* Next Episode {episode + 1 > videoSources.length ? 1 : episode + 1} */}
-                    </button>
-                  </div>
+                 
+                        <button
+          onClick={handleNextEpisode}
+          disabled={videoSources.length === 0}
+          style={buttonStyle}
+        >
+          Next Episode
+        </button>
+                 
                 )}
 
                 <div className={styles.container}>
@@ -1194,7 +933,7 @@ const moviesDetail = ({ moviesItem }) => {
                   </div>
                 </div>
                 <p
-                  className='text-black hover:px-0 text-bg font-black bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-sm'
+         className={`text-black hover:px-0 text-bg font-black bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent ${isMobile ? 'text-xs' : 'text-sm'}`}
                   style={{
                     fontFamily: 'Poppins, sans-serif',
                     textShadow: '1px 1px 1px 0 #fff',
@@ -1208,17 +947,15 @@ const moviesDetail = ({ moviesItem }) => {
 
                 {/* Conditional rendering of Previous Episode button */}
                 {ismovies && !isAdult && (
-                  <div className='flex flex-col items-center mb-4'>
-                    <button
-                      onClick={handlePreviousEpisode}
-                      disabled={videoSources.length === 0}
-                      className='px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600 text-xl hover:text-blue-600 font-bold mt-2'
-                      style={{ marginTop: '10px', marginBottom: '10px' }}
-                    >
-                      Previous Episode
-                      {/* Previous Episode {prevEpisodeNumber} */}
-                    </button>
-                  </div>
+                
+                   <button
+          onClick={handlePreviousEpisode}
+          disabled={videoSources.length === 0}
+          style={buttonStyle}
+        >
+          Previous Episode
+        </button>
+                 
                 )}
               </div>
 

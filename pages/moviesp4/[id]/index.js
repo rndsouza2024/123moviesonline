@@ -1,5 +1,5 @@
 import { useRouter } from 'next/router'
-import moviesData from '../../../public/moviesp4.json'
+import moviesData from '../../../public/moviesp7.json'
 import latestData from '../../../public/latest.json'
 import { useEffect, useState, useRef } from 'react'
 import Pagination from '../../../components/Pagination'
@@ -13,8 +13,9 @@ import Link from 'next/link'
 import Script from 'next/script'
 import moviesStyles from '@styles/styles.module.css'
 import styles from '@styles/iframeStyles.module.css'
+import { useMediaQuery } from 'react-responsive';
 
-// Fetch data from moviesp4.json
+// Fetch data from moviesp7.json
 const fetchmoviesData = async () => {
   const response = await fetch('https://123movies-free.vercel.app/moviesp4.json')
   return await response.json()
@@ -66,22 +67,6 @@ const moviesDetail4 = ({ moviesItem }) => {
       {
         text: words[0] || '', // Fallback to empty string if words[0] is undefined
         url: `https://www.imdb.com/title/${videomovies || imdb}/`
-      },
-      {
-        text: words[1] || '',
-        url: 'https://123movies-free.vercel.app/trailers/watch-Ang-Kapitbahay-official-trailer-2024'
-      },
-      {
-        text: words[2] || '',
-        url: 'https://123movies-free.vercel.app/trailers/watch-Raat-Baaki-Hai-Part-01-trailer-2024'
-      },
-      {
-        text: words[3] || '',
-        url: 'https://123movies-free.vercel.app/trailers/watch-Sona-Part-official-trailer-2024'
-      },
-      {
-        text: words[4] || '',
-        url: 'https://123movies-free.vercel.app/trailers/watch-plaget-official-trailer-2024'
       }
     ]
 
@@ -107,26 +92,50 @@ const moviesDetail4 = ({ moviesItem }) => {
     return text
   }
 
-  const [imageSize, setImageSize] = useState({
-    width: '200px',
-    height: '200px'
-  })
+   // Use media queries for responsive design
+   const isMobile = useMediaQuery({ query: '(max-width: 768px)' })
+   const isTablet = useMediaQuery({ query: '(min-width: 769px) and (max-width: 1024px)' })
+   const isDesktop = useMediaQuery({ query: '(min-width: 1025px)' })
+ 
+     // Dynamic image size based on screen size
+     const imageSize = {
+       width: isMobile ? '100px' : isTablet ? '150px' : '200px',
+       height: isMobile ? '100px' : isTablet ? '150px' : '200px',
+     }
 
-  useEffect(() => {
-    const updateSize = () => {
-      if (window.innerWidth <= 768) {
-        setImageSize({ width: '150px', height: '150px' })
-      } else {
-        setImageSize({ width: '200px', height: '200px' })
-      }
-    }
+         // Dynamic styles
+  const containerStyle = {
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+    minHeight: '100vh',
+    padding: isMobile ? '10px' : '20px',
+    fontFamily: 'Poppins, sans-serif',
+    fontWeight: 500,
+    textAlign: 'center',
+    backgroundColor: '#000',
+  };
 
-    updateSize() // Set size on initial render
-    window.addEventListener('resize', updateSize)
+  const headingStyle = {
+    fontSize: isMobile ? '1.5rem' : isTablet ? '2rem' : '2.5rem',
+  };
 
-    return () => window.removeEventListener('resize', updateSize)
-  }, [])
+  const paragraphStyle = {
+    fontSize: isMobile ? '1rem' : isTablet ? '1.2rem' : '1.4rem',
+  };
 
+  const imageStyle = {
+    width: isMobile ? '200px' : isTablet ? '300px' : '400px',
+    height: isMobile ? '300px' : isTablet ? '400px' : '500px',
+    objectFit: 'cover',
+    margin: 'auto',
+    marginTop: '50px',
+    marginBottom: '20px',
+    borderRadius: '50px',
+    boxShadow: '0 0 10px 0 #000',
+    filter: 'contrast(1.1) saturate(1.1) brightness(1.0) hue-rotate(0deg)',
+  };
   useEffect(() => {
     // Fetch the initial random links
     setLinkTargets(getRandomLinks(moviesData))
@@ -281,7 +290,9 @@ const moviesDetail4 = ({ moviesItem }) => {
         isItemmovies
           ? `https://vidsrc.cc/v2/embed/tv/${id}/${itemSeason}/${itemEpisode}`
           : `https://vidsrc.cc/v2/embed/movie/${id}`,
-        
+          isItemmovies
+         ? `https://ffmovies.lol/series/?imdb=${id}`
+          : `https://ffmovies.lol/movies/?imdb=${id}`,
         isItemmovies
           ? `https://autoembed.co/tv/imdb/${id}-${itemSeason}-${itemEpisode}`
           : `https://autoembed.co/movie/imdb/${id}`,
@@ -713,8 +724,7 @@ const moviesDetail4 = ({ moviesItem }) => {
           backgroundColor: '#000'
         }}
       >
-        <GoogleTranslate />
-
+    
         <h1
           className='text-black bg-gradient-to-r from-pink-500 to-amber-500 font-bold py-3 px-6 rounded-lg shadow-lg hover:from-amber-600 hover:to-pink-600 transition duration-300 text-3xl'
           style={{
@@ -725,6 +735,25 @@ const moviesDetail4 = ({ moviesItem }) => {
         >
           {moviesItem.title}
         </h1>
+      </div>
+      <div
+        className={`w-full`}
+        style={{
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'center',
+          alignItems: 'center',
+          padding: '20px',
+          fontFamily: 'Poppins, sans-serif',
+          fontWeight: 500,
+          textAlign: 'center',
+          // backgroundColor: '#D3D3D3'
+          backgroundColor: '#000'
+        }}
+      >
+        <GoogleTranslate />
+
+      
       </div>
       <div
         className={`w-full`}
@@ -1068,14 +1097,11 @@ const moviesDetail4 = ({ moviesItem }) => {
 
                 {/* Conditional rendering of Next Episode button */}
                 {ismovies && !isAdult && (
-                  <div
-                    className='flex flex-col items-center mb-4'
-                    style={{ marginBottom: '20px' }}
-                  >
+                    <div className={`flex flex-col items-center mb-4 ${isMobile ? 'mb-2' : 'mb-4'}`}>
                     <button
                       onClick={handleNextEpisode}
                       disabled={videoSources.length === 0}
-                      className='px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 ml-4 text-xl hover:text-green-600 font-bold mt-2'
+                      className={`px-4 py-2 ${isMobile ? 'text-sm' : 'text-xl'} ${isMobile ? 'bg-blue-400' : 'bg-blue-500'} text-white rounded hover:bg-blue-600 ml-4 hover:text-green-600 font-bold mt-2`}
                     >
                       Next Episode
                       {/* Next Episode {episode + 1 > videoSources.length ? 1 : episode + 1} */}
@@ -1095,7 +1121,7 @@ const moviesDetail4 = ({ moviesItem }) => {
                   </div>
                 </div>
                 <p
-                  className='text-black hover:px-0 text-bg font-black bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-sm'
+         className={`text-black hover:px-0 text-bg font-black bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent ${isMobile ? 'text-xs' : 'text-sm'}`}
                   style={{
                     fontFamily: 'Poppins, sans-serif',
                     textShadow: '1px 1px 1px 0 #fff',
@@ -1109,11 +1135,11 @@ const moviesDetail4 = ({ moviesItem }) => {
 
                 {/* Conditional rendering of Previous Episode button */}
                 {ismovies && !isAdult && (
-                  <div className='flex flex-col items-center mb-4'>
+                  <div className={`flex flex-col items-center mb-4 ${isMobile ? 'mb-2' : 'mb-4'}`}>
                     <button
                       onClick={handlePreviousEpisode}
                       disabled={videoSources.length === 0}
-                      className='px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600 text-xl hover:text-blue-600 font-bold mt-2'
+                      className={`px-4 py-2 ${isMobile ? 'text-sm' : 'text-xl'} ${isMobile ? 'bg-green-400' : 'bg-green-500'} text-white rounded hover:bg-green-600 text-xl hover:text-blue-600 font-bold mt-2`}
                       style={{ marginTop: '10px', marginBottom: '10px' }}
                     >
                       Previous Episode

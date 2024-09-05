@@ -7,19 +7,37 @@ import Script from 'next/script'
 import GoogleTranslate from '../../components/GoogleTranslate';
 import SocialSharing from '../../components/SocialSharing';
 import SearchComponent from '../../components/SearchComponent';
+import { useMediaQuery } from 'react-responsive';
 
 const page9 = ({ items }) => {
   const [latest, setLatest] = useState(items || []); // Ensure items is defined, fallback to an empty array if undefined
-  const router = useRouter(); // Initialize the router
+  const router = useRouter();
+  const currentPage = parseInt(router.pathname.replace('/home/page', '')) || 1;
+  const totalPages = 20; // Adjust this based on the total number of pages
 
-  const [currentPage, setCurrentPage] = useState(1);
+  const previousPage = currentPage > 1 ? currentPage - 1 : 1;
+  const nextPage = currentPage < totalPages ? currentPage + 1 : totalPages;
+
+  // State to track when the component has mounted
+  const [mounted, setMounted] = useState(false);
+
+  // Media query definitions
+  const isMobile = useMediaQuery({ maxWidth: 767 });
+  const isDesktop = useMediaQuery({ minWidth: 768 });
+
+  // Ensure this runs after the component has mounted on the client
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  // Prevent rendering until component has mounted
+  if (!mounted) {
+    return null;
+  }
 
   const handlePageSelect = (page) => {
     setCurrentPage(page);
   };
-
-
-
   const uwatchfreeSchema = JSON.stringify([
     {
       '@context': 'https://schema.org',
@@ -214,34 +232,94 @@ const page9 = ({ items }) => {
       <span className="px-0 bg-clip-text text-sm text-black font-bold mt-2 "  >
         <SearchComponent />
       </span>
-      <div className="flex flex-wrap justify-center my-4 gap-2">
-      <Link href="/home/page1" passHref>
-          <button
-            className={`px-4 py-2 border rounded ${
-              router.pathname === '/home/page1'
-                ? 'bg-red-500 text-white font-bold'
-                : 'bg-gray-200 hover:bg-green-500 text-black font-bold'
-            }`}
-          >
-            Page 1
-          </button>
-        </Link>
+      <div className="flex justify-center items-center my-4 gap-4">
+      {isDesktop && (
+        <div className="flex flex-col justify-center items-center gap-2">
+          {/* First row of pages for desktop and laptop devices */}
+          <div className="flex flex-wrap justify-center gap-2">
+            <Link href="/home/page1" passHref>
+              <button
+                className={`px-4 py-2 border rounded ${
+                  currentPage === 1
+                    ? 'bg-red-500 text-white font-bold'
+                    : 'bg-gray-200 hover:bg-green-500 text-black font-bold'
+                }`}
+              >
+                Page 1
+              </button>
+            </Link>
 
-        {[2, 3, 4, 5, 6, 7, 8, 9, 10,].map((page) => (
-          <Link key={page} href={`/home/page${page}`} passHref>
+            {[2, 3, 4, 5, 6, 7, 8, 9, 10].map((page) => (
+              <Link key={page} href={`/home/page${page}`} passHref>
+                <button
+                  className={`px-4 py-2 border rounded ${
+                    currentPage === page
+                      ? 'bg-red-500 text-white font-bold'
+                      : 'bg-gray-200 hover:bg-green-500 text-black font-bold'
+                  }`}
+                >
+                  PAGE {page}
+                </button>
+              </Link>
+            ))}
+          </div>
+
+          {/* Second row for pages 11 and 12 */}
+          {/* <div className="flex justify-center gap-2">
+            {[11, 12].map((page) => (
+              <Link key={page} href={`/home/page${page}`} passHref>
+                <button
+                  className={`px-4 py-2 border rounded ${
+                    currentPage === page
+                      ? 'bg-red-500 text-white font-bold'
+                      : 'bg-gray-200 hover:bg-green-500 text-black font-bold'
+                  }`}
+                >
+                  PAGE {page}
+                </button>
+              </Link>
+            ))}
+          </div> */}
+        </div>
+      )}
+
+      {isMobile && (
+        <div className="flex justify-center items-center my-4 gap-4">
+          {/* Previous button for mobile */}
+          <Link href={`/home/page${previousPage}`} passHref>
             <button
               className={`px-4 py-2 border rounded ${
-                router.pathname === `/home/page${page}`
-                  ? 'bg-red-500 text-white font-bold'
+                currentPage === 1
+                  ? 'bg-gray-400 text-gray-800 cursor-not-allowed'
                   : 'bg-gray-200 hover:bg-green-500 text-black font-bold'
               }`}
+              disabled={currentPage === 1}
             >
-              PAGE {page}
+              « Previous
             </button>
           </Link>
-        ))}
-      </div>
 
+          {/* Current page display for mobile */}
+          <span className="px-4 py-2 border rounded bg-blue-500 text-white font-bold">
+            Page {currentPage}
+          </span>
+
+          {/* Next button for mobile */}
+          <Link href={`/home/page${nextPage}`} passHref>
+            <button
+              className={`px-4 py-2 border rounded ${
+                currentPage === totalPages
+                  ? 'bg-gray-400 text-gray-800 cursor-not-allowed'
+                  : 'bg-gray-200 hover:bg-green-500 text-black font-bold'
+              }`}
+              disabled={currentPage === totalPages}
+            >
+              Next »
+            </button>
+          </Link>
+        </div>
+      )}
+    </div>
       <div className="container mx-auto px-4 py-6">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
           {latest.map((item) => {

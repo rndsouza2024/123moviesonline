@@ -603,7 +603,7 @@ const moviesDetail3 = ({ moviesItem }) => {
   })
 
   return (
-    <div>
+    <div className={styles.mainContainer}>
        <Head>
         <meta
           name='robots'

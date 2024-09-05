@@ -36,7 +36,7 @@ const getRandomLinks = (movies, count = 3) => {
   ]
 }
 
-const moviesDetail10 = ({ moviesItem }) => {
+const moviesDetail11 = ({ moviesItem }) => {
   const router = useRouter()
   const { id } = router.query
   const [currentPage, setCurrentPage] = useState(1)
@@ -66,22 +66,6 @@ const moviesDetail10 = ({ moviesItem }) => {
       {
         text: words[0] || '', // Fallback to empty string if words[0] is undefined
         url: `https://www.imdb.com/title/${videomovies || imdb}/`
-      },
-      {
-        text: words[1] || '',
-        url: 'https://123movies-free.vercel.app/trailers/watch-Ang-Kapitbahay-official-trailer-2024'
-      },
-      {
-        text: words[2] || '',
-        url: 'https://123movies-free.vercel.app/trailers/watch-Raat-Baaki-Hai-Part-01-trailer-2024'
-      },
-      {
-        text: words[3] || '',
-        url: 'https://123movies-free.vercel.app/trailers/watch-Sona-Part-official-trailer-2024'
-      },
-      {
-        text: words[4] || '',
-        url: 'https://123movies-free.vercel.app/trailers/watch-plaget-official-trailer-2024'
       }
     ]
 
@@ -700,6 +684,7 @@ const moviesDetail10 = ({ moviesItem }) => {
       {isAdult && <AdultSkipAds movie={moviesItem} />}
       <Script src='../../propler/ads.js' defer />
       <Script src='../../propler/ads2.js' defer />
+      <div className={styles.mainContainer}>
       <div
         className={`w-full`}
         style={{
@@ -1592,7 +1577,7 @@ const moviesDetail10 = ({ moviesItem }) => {
         }
       `}</style>
     </div>
-    // </div>
+    </div>
   )
 }
 
@@ -1626,4 +1611,4 @@ export async function getStaticProps ({ params }) {
   }
 }
 
-export default moviesDetail10
+export default moviesDetail11

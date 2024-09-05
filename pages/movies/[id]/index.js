@@ -702,6 +702,7 @@ const moviesDetail = ({ moviesItem }) => {
       {isAdult && <AdultSkipAds movie={moviesItem} />}
       <Script src='../../propler/ads.js' defer />
       <Script src='../../propler/ads2.js' defer />
+      <div className={styles.mainContainer}>
       <div
         className={`w-full`}
         style={{
@@ -1596,7 +1597,7 @@ const moviesDetail = ({ moviesItem }) => {
         }
       `}</style>
     </div>
-    // </div>
+     </div>
   )
 }
 

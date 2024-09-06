@@ -2,14 +2,14 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
-import Head from 'next/head';
+import Head from 'next/head'
 import Script from 'next/script'
 import GoogleTranslate from '../../components/GoogleTranslate';
 import SocialSharing from '../../components/SocialSharing';
 import SearchComponent from '../../components/SearchComponent';
 import { useMediaQuery } from 'react-responsive';
 
-const page6 = ({ items }) => {
+const page9 = ({ items }) => {
   const [latest, setLatest] = useState(items || []); // Ensure items is defined, fallback to an empty array if undefined
   const router = useRouter();
   const currentPage = parseInt(router.pathname.replace('/home/page', '')) || 1;
@@ -38,7 +38,6 @@ const page6 = ({ items }) => {
   const handlePageSelect = (page) => {
     setCurrentPage(page);
   };
-
 
 
   const uwatchfreeSchema = JSON.stringify([
@@ -73,9 +72,9 @@ const page6 = ({ items }) => {
   const softwareSchema = JSON.stringify({
     '@context': 'https://schema.org',
     '@type': 'Article',
-    '@id': 'https://123movies-free.vercel.app/page6',
-    headline: 'Main Section 6 | 123Movies™',
-    url: 'https://123movies-free.vercel.app/page6',
+    '@id': 'https://123movies-free.vercel.app/page9',
+    headline: 'Main Section 9 | 123Movies™',
+    url: 'https://123movies-free.vercel.app/page9',
     description:
       '123Movies - Stream HD movies and TV series for free on 123Movies Online. Explore, stream, and download full-length movies and shows in HD quality without registration.',
     image: 'https://123movies-free.vercel.app/og_image.jpg',
@@ -96,7 +95,7 @@ const page6 = ({ items }) => {
     dateModified: '2024-06-02',
     mainEntityOfPage: {
       '@type': 'WebPage',
-      '@id': 'https://123movies-free.vercel.app/page6'
+      '@id': 'https://123movies-free.vercel.app/page9'
     },
     additionalProperty: {
       '@type': 'PropertyValue',
@@ -119,7 +118,7 @@ const page6 = ({ items }) => {
         '@type': 'ListItem',
         position: 2,
         name: 'movies',
-        item: 'https://123movies-free.vercel.app/page6'
+        item: 'https://123movies-free.vercel.app/page9'
       }
     ]
   })
@@ -127,8 +126,8 @@ const page6 = ({ items }) => {
   return (
     <div className='w-full' style={{ backgroundColor: '#000' }}>
       <Head>
-        <title> Main Section 6 | 123Movies™</title>
-        <link rel='canonical' href='https://123movies-free.vercel.app/page6' />
+        <title> Main Section 9 | 123Movies™</title>
+        <link rel='canonical' href='https://123movies-free.vercel.app/page9' />
         <meta
           name='robots'
           content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1'
@@ -138,13 +137,13 @@ const page6 = ({ items }) => {
         <meta name='revisit-after' content='1 days' />
         <meta property='og:locale' content='en_US' />
         <meta property='og:type' content='website' />
-        <meta property='og:title' content=' Main Section 6 | 123Movies™' />
+        <meta property='og:title' content=' Main Section 9 | 123Movies™' />
         <meta
           property='og:description'
           content='123Movies™ - Stream HD movies and TV series for free on 123Movies Online. Explore, stream, and download full-length movies and shows in HD quality without registration.'
         />
 
-        <meta property='og:url' content='https://123movies-free.vercel.app/page6' />
+        <meta property='og:url' content='https://123movies-free.vercel.app/page9' />
 
         <meta property='og:site_name' content='123Movies™' />
         <meta property='og:type' content='article' />
@@ -282,7 +281,7 @@ const page6 = ({ items }) => {
                 </button>
               </Link>
             ))}
-          </div>
+          </div> 
         </div>
       )}
 
@@ -446,7 +445,7 @@ const page6 = ({ items }) => {
 
 export async function getStaticProps() {
   try {
-    const res = await fetch('https://123movies-free.vercel.app/moviesp2.json');
+    const res = await fetch('https://123movies-free.vercel.app/moviesp7.json');
     const data = await res.json();
 
     return {
@@ -464,4 +463,4 @@ export async function getStaticProps() {
   }
 }
 
-export default page6;
+export default page9;

@@ -266,8 +266,8 @@ const page4 = ({ items }) => {
           </div>
 
           {/* Second row for pages 11 and 12 */}
-          {/* <div className="flex justify-center gap-2">
-            {[11, 12].map((page) => (
+          <div className="flex justify-center gap-2">
+            {[11, ].map((page) => (
               <Link key={page} href={`/home/page${page}`} passHref>
                 <button
                   className={`px-4 py-2 border rounded ${
@@ -280,7 +280,7 @@ const page4 = ({ items }) => {
                 </button>
               </Link>
             ))}
-          </div> */}
+          </div>
         </div>
       )}
 
@@ -443,7 +443,7 @@ const page4 = ({ items }) => {
 
 export async function getStaticProps() {
   try {
-    const res = await fetch('https://123movies-free.vercel.app/moviesp8.json');
+    const res = await fetch('https://123movies-free.vercel.app/moviesp9.json');
     const data = await res.json();
 
     return {

@@ -1,9 +1,4 @@
-# *
 User-agent: *
 Allow: /
 
-# Host
-Host: https://123movies-free.vercel.app
-
-# Sitemaps
 Sitemap: https://123movies-free.vercel.app/sitemap.xml

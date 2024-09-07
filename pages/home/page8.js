@@ -200,8 +200,8 @@ const page8 = ({ items }) => {
         />
       </Head>
       <SocialSharing />
-      {/* <Script src='../../propler/ads.js' defer /> */}
-      {/* <Script src='../../propler/ads2.js' defer /> */}
+       <Script src='../../propler/ads.js' defer /> 
+       <Script src='../../propler/ads2.js' defer /> 
       <h1
         className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl badge bg-gradient-to-r from-pink-500 to-amber-500 font-bold py-3 px-6 shadow-lg hover:from-amber-600 hover:to-pink-600 transition duration-300"
         style={{

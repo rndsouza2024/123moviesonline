@@ -328,7 +328,7 @@ export default function HomePage () {
 
       <div className='container'>
         <div className='content'>
-          <h1 className='title'>Welcome to 123Movies™</h1>
+          <h1 className='title'>123Movies™ - Explore. Stream. Online.</h1>
           <h2 className='highlight'>
             Discover the Best Movies and TV Shows to Stream on 123Movies™
           </h2>

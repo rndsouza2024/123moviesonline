@@ -25,7 +25,8 @@ export default function HomePage () {
         '@type': 'SearchAction',
         target: {
           '@type': 'EntryPoint',
-          urlTemplate: 'https://123movies-free.vercel.app/search?q={search_term_string}'
+          urlTemplate:
+            'https://123movies-free.vercel.app/search?q={search_term_string}'
         },
         'query-input': 'required name=search_term_string'
       }
@@ -244,7 +245,7 @@ export default function HomePage () {
         />
         <meta
           name='keywords'
-          content=''
+          content='123movies,123 movies,123 movies free,movies, watch movie online, free movies, free movies online, free movie streaming, free streaming, download free'
         />
         <meta
           name='description'
@@ -332,8 +333,8 @@ export default function HomePage () {
             Discover the Best Movies and TV Shows to Stream on 123 Movies™
           </h2>
           <p className='description'>
-            Welcome to <strong>123 Movies™</strong>, your premier destination for
-            streaming the latest and most popular movies and TV shows. Our
+            Welcome to <strong>123 Movies™</strong>, your premier destination
+            for streaming the latest and most popular movies and TV shows. Our
             platform offers an extensive collection of entertainment options,
             allowing you to explore a wide variety of genres and discover new
             favorites. Whether you're looking for action-packed thrillers,
@@ -354,7 +355,8 @@ export default function HomePage () {
             Join us today and explore the vast world of movies and TV shows
             available at your fingertips. Whether you're a casual viewer or a
             dedicated binge-watcher, <strong>123 Movies™</strong> is the perfect
-            place to stream online and stay entertained. Enjoy the world of Entertainment.
+            place to stream online and stay entertained. Enjoy the world of
+            Entertainment.
           </p>
 
           <a

@@ -2,7 +2,6 @@ import React from 'react'
 import Head from 'next/head'
 import Script from 'next/script'
 
-
 const contact = () => {
   const rankMathSchema = JSON.stringify({
     '@context': 'https://schema.org',
@@ -152,8 +151,6 @@ const contact = () => {
     ]
   })
 
- 
-
   return (
     <div>
       <Head>
@@ -166,11 +163,7 @@ const contact = () => {
           href='https://123movies-free.vercel.app/sitemap.xml'
         />
         <meta name='viewport' content='width=device-width, initial-scale=1.0' />
-        <link
-          rel='icon'
-          type='image/x-icon'
-          href='/favicon.ico'
-        />
+        <link rel='icon' type='image/x-icon' href='/favicon.ico' />
         <link
           rel='apple-touch-icon'
           sizes='180x180'
@@ -195,9 +188,9 @@ const contact = () => {
           name='robots'
           content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1'
         />
-       <meta
+        <meta
           name='keywords'
-          content=''
+         content='123movies,123 movies,123 movies free,movies, watch movie online, free movies, free movies online, free movie streaming, free streaming, download free'
         />
         <meta
           property='description'
@@ -256,33 +249,30 @@ const contact = () => {
           type='application/ld+json'
           dangerouslySetInnerHTML={{ __html: rankMathSchema }}
         />
-       
       </Head>
-    
+
       <div className='container my-24 px-6 mx-auto'>
-        
         <section className='mb-32 text-gray-800'>
           <div className='flex flex-wrap'>
-            
             <div className='grow-0 shrink-0 basis-auto mb-6 md:mb-0 w-full md:w-6/12 px-3 lg:px-6'>
-            <a
-            href='https://t.me/watchmovietvshow/'
-            target='_blank'
-            rel='noopener noreferrer'
-            className='telegram-link'
-          >
-            <h3>
-              For Request or Demand Movies & TV Series Join Telegram
-              <i className='fab fa-telegram telegram-icon'></i>
-            </h3>
-          </a>
+              <a
+                href='https://t.me/watchmovietvshow/'
+                target='_blank'
+                rel='noopener noreferrer'
+                className='telegram-link'
+              >
+                <h3>
+                  For Request or Demand Movies & TV Series Join Telegram
+                  <i className='fab fa-telegram telegram-icon'></i>
+                </h3>
+              </a>
 
               <h1 className='text-3xl font-bold mb-6'>Contact Us</h1>
               <p className='text-gray-500 mb-6'>
                 Feel free to use the form below to provide us with your
                 feedback, suggestions, or collaboration or request inquiries
-                related to 123 Movies™. We welcome your input to help us
-                echance our services and offerings.
+                related to 123 Movies™. We welcome your input to help us echance
+                our services and offerings.
               </p>
 
               <p className='text-gray-500 mb-6'>
@@ -338,8 +328,6 @@ const contact = () => {
             </div>
           </div>
         </section>
-
-   
       </div>
     </div>
   )

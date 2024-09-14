@@ -1,7 +1,7 @@
 {
-  "name": "movies",
+  "name": "123movies",
   "version": "0.0.1",
-  "description": "Best Movie package",
+  "description": "Best Entertainment package",
   "license": "MIT",
   "scripts": {
     "dev": "next dev",

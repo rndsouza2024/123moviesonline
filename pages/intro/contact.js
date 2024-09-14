@@ -2,7 +2,6 @@ import React from 'react'
 import Head from 'next/head'
 import Script from 'next/script'
 
-
 const contact = () => {
   const rankMathSchema = JSON.stringify({
     '@context': 'https://schema.org',
@@ -22,29 +21,29 @@ const contact = () => {
       },
       {
         '@type': 'Organization',
-        '@id': 'https://popcornfliks.vercel.app/#organization',
-        name: 'Popcornflix™ - Online. Stream. Download.',
-        url: 'https://popcornfliks.vercel.app'
+        '@id': 'https://123moviesonline.vercel.app/#organization',
+        name: '123 Movies™ - Explore. Discover. Download.',
+        url: 'https://123moviesonline.vercel.app'
       },
       {
         '@type': 'WebSite',
-        '@id': 'https://popcornfliks.vercel.app/#website',
-        url: 'https://popcornfliks.vercel.app',
-        name: 'Popcornflix™ - Online. Stream. Download.',
+        '@id': 'https://123moviesonline.vercel.app/#website',
+        url: 'https://123moviesonline.vercel.app',
+        name: '123 Movies™ - Explore. Discover. Download.',
         publisher: {
           '@type': 'Organization',
-          '@id': 'https://popcornfliks.vercel.app/#organization'
+          '@id': 'https://123moviesonline.vercel.app/#organization'
         },
         potentialAction: {
           '@type': 'SearchAction',
-          target: 'https://popcornfliks.vercel.app/?s={search_term_string}',
+          target: 'https://123moviesonline.vercel.app/?s={search_term_string}',
           'query-input': 'required name=search_term_string'
         }
       },
       {
         '@type': 'WebPage',
-        '@id': 'https://popcornfliks.vercel.app/#webpage',
-        url: 'https://popcornfliks.vercel.app/',
+        '@id': 'https://123moviesonline.vercel.app/#webpage',
+        url: 'https://123moviesonline.vercel.app/',
         name: 'Movie',
         datePublished: '2024-01-13T13:00:00+00:00',
         dateModified: '2024-01-13T13:13:00+00:00',
@@ -62,14 +61,14 @@ const contact = () => {
           }
         },
         isPartOf: {
-          '@id': 'https://popcornfliks.vercel.app/#website'
+          '@id': 'https://123moviesonline.vercel.app/#website'
         },
         inLanguage: 'en-US',
         mainEntity: [
           {
             '@type': 'Article',
-            '@id': 'https://popcornfliks.vercel.app/',
-            url: 'https://popcornfliks.vercel.app/',
+            '@id': 'https://123moviesonline.vercel.app/',
+            url: 'https://123moviesonline.vercel.app/',
             headline: 'Movie',
             datePublished: '2024-01-13T13:00:00+00:00',
             dateModified: '2024-01-13T13:13:00+00:00',
@@ -88,15 +87,15 @@ const contact = () => {
             },
             publisher: {
               '@type': 'Organization',
-              '@id': 'https://popcornfliks.vercel.app/#organization',
-              name: 'Popcornflix™ - Online. Stream. Download.',
-              url: 'https://popcornfliks.vercel.app'
+              '@id': 'https://123moviesonline.vercel.app/#organization',
+              name: '123 Movies™ - Explore. Discover. Download.',
+              url: 'https://123moviesonline.vercel.app'
             }
           },
           {
             '@type': 'Article',
-            '@id': 'https://popcornfliks.vercel.app/',
-            url: 'https://popcornfliks.vercel.app/',
+            '@id': 'https://123moviesonline.vercel.app/',
+            url: 'https://123moviesonline.vercel.app/',
             headline: 'Tvshow',
             datePublished: '2024-01-13T13:00:00+00:00',
             dateModified: '2024-01-13T13:13:00+00:00',
@@ -115,15 +114,15 @@ const contact = () => {
             },
             publisher: {
               '@type': 'Organization',
-              '@id': 'https://popcornfliks.vercel.app/#organization',
-              name: 'Popcornflix™ - Online. Stream. Download.',
-              url: 'https://popcornfliks.vercel.app'
+              '@id': 'https://123moviesonline.vercel.app/#organization',
+              name: '123 Movies™ - Explore. Discover. Download.',
+              url: 'https://123moviesonline.vercel.app'
             }
           },
           {
             '@type': 'Article',
-            '@id': 'https://popcornfliks.vercel.app/',
-            url: 'https://popcornfliks.vercel.app/',
+            '@id': 'https://123moviesonline.vercel.app/',
+            url: 'https://123moviesonline.vercel.app/',
             headline: 'Adult',
             datePublished: '2024-01-13T13:00:00+00:00',
             dateModified: '2024-01-13T13:13:00+00:00',
@@ -142,9 +141,9 @@ const contact = () => {
             },
             publisher: {
               '@type': 'Organization',
-              '@id': 'https://popcornfliks.vercel.app/#organization',
-              name: 'Popcornflix™ - Online. Stream. Download.',
-              url: 'https://popcornfliks.vercel.app'
+              '@id': 'https://123moviesonline.vercel.app/#organization',
+              name: '123 Movies™ - Explore. Discover. Download.',
+              url: 'https://123moviesonline.vercel.app'
             }
           }
         ]
@@ -152,25 +151,19 @@ const contact = () => {
     ]
   })
 
- 
-
   return (
     <div>
       <Head>
-        <title>Popcornflix™ | Contact Us</title>
+        <title>123 Movies™ | Contact Us</title>
 
         <link
           rel='sitemap'
           type='application/xml'
           title='Sitemap'
-          href='https://popcornfliks.vercel.app/sitemap.xml'
+          href='https://123moviesonline.vercel.app/sitemap.xml'
         />
         <meta name='viewport' content='width=device-width, initial-scale=1.0' />
-        <link
-          rel='icon'
-          type='image/x-icon'
-          href='/favicon.ico'
-        />
+        <link rel='icon' type='image/x-icon' href='/favicon.ico' />
         <link
           rel='apple-touch-icon'
           sizes='180x180'
@@ -195,39 +188,39 @@ const contact = () => {
           name='robots'
           content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1'
         />
-       <meta
+        <meta
           name='keywords'
-         content='popcornflix,popcornflix movies,movies free,movies, watch movie online, free movies, free movies online, free movie streaming, free streaming, download free'
+         content='123movies,123 movies,123 movies free,movies, watch movie online, free movies, free movies online, free movie streaming, free streaming, download free'
         />
         <meta
           property='description'
-          content='Popcornflix™ - Stream HD movies and TV series for free on Popcornflix Online. Online. Stream. Download. full-length movies and shows in HD quality without registration.'
+          content='123 Movies™ - Stream HD movies and TV series for free on 123 Movies Online. Explore, stream, and download full-length movies and shows in HD quality without registration.'
         />
 
         <link
           rel='canonical'
-          href='https://popcornfliks.vercel.app/intro/contact'
+          href='https://123moviesonline.vercel.app/intro/contact'
         />
         <meta property='og:locale' content='en_US' />
         <meta property='og:type' content='website' />
-        <meta property='og:title' content='Popcornflix™ ' />
+        <meta property='og:title' content='123 Movies™ ' />
         <meta
           property='og:description'
-          content='Popcornflix™ - Stream HD movies and TV series for free on Popcornflix Online. Online. Stream. Download. full-length movies and shows in HD quality without registration.'
+          content='123 Movies™ - Stream HD movies and TV series for free on 123 Movies Online. Explore, stream, and download full-length movies and shows in HD quality without registration.'
         />
         <meta
           property='og:url'
-          content='https://popcornfliks.vercel.app/intro/contact/'
+          content='https://123moviesonline.vercel.app/intro/contact/'
         />
-        <meta property='og:site_name' content='Popcornflix™ ' />
+        <meta property='og:site_name' content='123 Movies™ ' />
         <meta
           property='og:image'
-          content='https://popcornfliks.vercel.app/og_image.jpg'
+          content='https://123moviesonline.vercel.app/og_image.jpg'
         />
         <meta property='og:image:width' content='1280' />
         <meta property='og:image:height' content='720' />
         <meta property='og:image:type' content='image/jpg' />
-        <meta name='application-name' content='Popcornflix™ ' />
+        <meta name='application-name' content='123 Movies™ ' />
         <meta
           property='article:modified_time'
           content='2024-01-01T13:13:13+00:00'
@@ -236,12 +229,12 @@ const contact = () => {
           rel='sitemap'
           type='application/xml'
           title='Sitemap'
-          href='https://popcornfliks.vercel.app/sitemap.xml'
+          href='https://123moviesonline.vercel.app/sitemap.xml'
         />
         <meta name='twitter:card' content='summary_large_image' />
         <meta
           name='google-site-verification'
-          content='RNN2teFhD-lV1TQ9qcLQiSO5BLBB4DmztyYJS6QLqDg'
+          content='o8uNsADswyHnNPA69n9gI7u6L4_cdjN4iT5lRhHHtMU'
         />
         <meta
           name='facebook-domain-verification'
@@ -256,33 +249,30 @@ const contact = () => {
           type='application/ld+json'
           dangerouslySetInnerHTML={{ __html: rankMathSchema }}
         />
-       
       </Head>
-    
+
       <div className='container my-24 px-6 mx-auto'>
-        
         <section className='mb-32 text-gray-800'>
           <div className='flex flex-wrap'>
-            
             <div className='grow-0 shrink-0 basis-auto mb-6 md:mb-0 w-full md:w-6/12 px-3 lg:px-6'>
-            <a
-            href='https://t.me/watchmovietvshow/'
-            target='_blank'
-            rel='noopener noreferrer'
-            className='telegram-link'
-          >
-            <h3>
-              For Request or Demand Movies & TV Series Join Telegram
-              <i className='fab fa-telegram telegram-icon'></i>
-            </h3>
-          </a>
+              <a
+                href='https://t.me/watchmovietvshow/'
+                target='_blank'
+                rel='noopener noreferrer'
+                className='telegram-link'
+              >
+                <h3>
+                  For Request or Demand Movies & TV Series Join Telegram
+                  <i className='fab fa-telegram telegram-icon'></i>
+                </h3>
+              </a>
 
               <h1 className='text-3xl font-bold mb-6'>Contact Us</h1>
               <p className='text-gray-500 mb-6'>
                 Feel free to use the form below to provide us with your
                 feedback, suggestions, or collaboration or request inquiries
-                related to Popcornflix™. We welcome your input to help us
-                echance our services and offerings.
+                related to 123 Movies™. We welcome your input to help us echance
+                our services and offerings.
               </p>
 
               <p className='text-gray-500 mb-6'>
@@ -338,8 +328,6 @@ const contact = () => {
             </div>
           </div>
         </section>
-
-   
       </div>
     </div>
   )

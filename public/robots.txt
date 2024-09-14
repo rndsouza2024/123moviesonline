@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://popcornfliks.vercel.app/sitemap.xml
+Sitemap: https://123moviesonline.vercel.app/sitemap.xml

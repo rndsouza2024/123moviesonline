@@ -2,7 +2,6 @@ import React from 'react'
 import Head from 'next/head'
 import Script from 'next/script'
 
-
 const cookiepolicy = () => {
   const containerStyle = {
     margin: '24px auto',
@@ -49,29 +48,29 @@ const cookiepolicy = () => {
       },
       {
         '@type': 'Organization',
-        '@id': 'https://popcornfliks.vercel.app/#organization',
-        name: 'Popcornflix™ - Online. Stream. Download.',
-        url: 'https://popcornfliks.vercel.app'
+        '@id': 'https://123moviesonline.vercel.app/#organization',
+        name: '123 Movies™ - Explore. Discover. Download.',
+        url: 'https://123moviesonline.vercel.app'
       },
       {
         '@type': 'WebSite',
-        '@id': 'https://popcornfliks.vercel.app/#website',
-        url: 'https://popcornfliks.vercel.app',
-        name: 'Popcornflix™ - Online. Stream. Download.',
+        '@id': 'https://123moviesonline.vercel.app/#website',
+        url: 'https://123moviesonline.vercel.app',
+        name: '123 Movies™ - Explore. Discover. Download.',
         publisher: {
           '@type': 'Organization',
-          '@id': 'https://popcornfliks.vercel.app/#organization'
+          '@id': 'https://123moviesonline.vercel.app/#organization'
         },
         potentialAction: {
           '@type': 'SearchAction',
-          target: 'https://popcornfliks.vercel.app/?s={search_term_string}',
+          target: 'https://123moviesonline.vercel.app/?s={search_term_string}',
           'query-input': 'required name=search_term_string'
         }
       },
       {
         '@type': 'WebPage',
-        '@id': 'https://popcornfliks.vercel.app/#webpage',
-        url: 'https://popcornfliks.vercel.app/',
+        '@id': 'https://123moviesonline.vercel.app/#webpage',
+        url: 'https://123moviesonline.vercel.app/',
         name: 'Movie',
         datePublished: '2024-01-13T13:00:00+00:00',
         dateModified: '2024-01-13T13:13:00+00:00',
@@ -89,14 +88,14 @@ const cookiepolicy = () => {
           }
         },
         isPartOf: {
-          '@id': 'https://popcornfliks.vercel.app/#website'
+          '@id': 'https://123moviesonline.vercel.app/#website'
         },
         inLanguage: 'en-US',
         mainEntity: [
           {
             '@type': 'Article',
-            '@id': 'https://popcornfliks.vercel.app/',
-            url: 'https://popcornfliks.vercel.app/',
+            '@id': 'https://123moviesonline.vercel.app/',
+            url: 'https://123moviesonline.vercel.app/',
             headline: 'Movie',
             datePublished: '2024-01-13T13:00:00+00:00',
             dateModified: '2024-01-13T13:13:00+00:00',
@@ -115,15 +114,15 @@ const cookiepolicy = () => {
             },
             publisher: {
               '@type': 'Organization',
-              '@id': 'https://popcornfliks.vercel.app/#organization',
-              name: 'Popcornflix™ - Online. Stream. Download.',
-              url: 'https://popcornfliks.vercel.app'
+              '@id': 'https://123moviesonline.vercel.app/#organization',
+              name: '123 Movies™ - Explore. Discover. Download.',
+              url: 'https://123moviesonline.vercel.app'
             }
           },
           {
             '@type': 'Article',
-            '@id': 'https://popcornfliks.vercel.app/',
-            url: 'https://popcornfliks.vercel.app/',
+            '@id': 'https://123moviesonline.vercel.app/',
+            url: 'https://123moviesonline.vercel.app/',
             headline: 'Tvshow',
             datePublished: '2024-01-13T13:00:00+00:00',
             dateModified: '2024-01-13T13:13:00+00:00',
@@ -142,15 +141,15 @@ const cookiepolicy = () => {
             },
             publisher: {
               '@type': 'Organization',
-              '@id': 'https://popcornfliks.vercel.app/#organization',
-              name: 'Popcornflix™ - Online. Stream. Download.',
-              url: 'https://popcornfliks.vercel.app'
+              '@id': 'https://123moviesonline.vercel.app/#organization',
+              name: '123 Movies™ - Explore. Discover. Download.',
+              url: 'https://123moviesonline.vercel.app'
             }
           },
           {
             '@type': 'Article',
-            '@id': 'https://popcornfliks.vercel.app/',
-            url: 'https://popcornfliks.vercel.app/',
+            '@id': 'https://123moviesonline.vercel.app/',
+            url: 'https://123moviesonline.vercel.app/',
             headline: 'Adult',
             datePublished: '2024-01-13T13:00:00+00:00',
             dateModified: '2024-01-13T13:13:00+00:00',
@@ -169,9 +168,9 @@ const cookiepolicy = () => {
             },
             publisher: {
               '@type': 'Organization',
-              '@id': 'https://popcornfliks.vercel.app/#organization',
-              name: 'Popcornflix™ - Online. Stream. Download.',
-              url: 'https://popcornfliks.vercel.app'
+              '@id': 'https://123moviesonline.vercel.app/#organization',
+              name: '123 Movies™ - Explore. Discover. Download.',
+              url: 'https://123moviesonline.vercel.app'
             }
           }
         ]
@@ -179,23 +178,18 @@ const cookiepolicy = () => {
     ]
   })
 
-
   return (
     <div>
       <Head>
-        <title>Popcornflix™ | Cookie Policy</title>
+        <title>123 Movies™ | Cookie Policy</title>
         <link
           rel='sitemap'
           type='application/xml'
           title='Sitemap'
-          href='https://popcornfliks.vercel.app/sitemap.xml'
+          href='https://123moviesonline.vercel.app/sitemap.xml'
         />
         <meta name='viewport' content='width=device-width, initial-scale=1.0' />
-        <link
-          rel='icon'
-          type='image/x-icon'
-          href='/favicon.ico'
-        />
+        <link rel='icon' type='image/x-icon' href='/favicon.ico' />
         <link
           rel='apple-touch-icon'
           sizes='180x180'
@@ -220,39 +214,39 @@ const cookiepolicy = () => {
           name='robots'
           content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1'
         />
-       <meta
+        <meta
           name='keywords'
-          content='popcornflix,popcornflix movies,movies free,movies, watch movie online, free movies, free movies online, free movie streaming, free streaming, download free'
+          content='123movies,123 movies,123 movies free,movies, watch movie online, free movies, free movies online, free movie streaming, free streaming, download free'
         />
-       <meta
+        <meta
           property='description'
-          content='Popcornflix™ - Stream HD movies and TV series for free on Popcornflix Online. Online. Stream. Download. full-length movies and shows in HD quality without registration.'
+          content='123 Movies™ - Stream HD movies and TV series for free on 123 Movies Online. Explore, stream, and download full-length movies and shows in HD quality without registration.'
         />
 
         <link
           rel='canonical'
-          href='https://popcornfliks.vercel.app/intro/tearms'
+          href='https://123moviesonline.vercel.app/intro/tearms'
         />
         <meta property='og:locale' content='en_US' />
         <meta property='og:type' content='website' />
-        <meta property='og:title' content='Popcornflix™ ' />
+        <meta property='og:title' content='123 Movies™ ' />
         <meta
           property='og:description'
-          content='Popcornflix™ - Stream HD movies and TV series for free on Popcornflix Online. Online. Stream. Download. full-length movies and shows in HD quality without registration.'
+          content='123 Movies™ - Stream HD movies and TV series for free on 123 Movies Online. Explore, stream, and download full-length movies and shows in HD quality without registration.'
         />
         <meta
           property='og:url'
-          content='https://popcornfliks.vercel.app/intro/tearms/'
+          content='https://123moviesonline.vercel.app/intro/tearms/'
         />
-        <meta property='og:site_name' content='Popcornflix™ ' />
+        <meta property='og:site_name' content='123 Movies™ ' />
         <meta
           property='og:image'
-          content='https://popcornfliks.vercel.app/og_image.jpg'
+          content='https://123moviesonline.vercel.app/og_image.jpg'
         />
         <meta property='og:image:width' content='1280' />
         <meta property='og:image:height' content='720' />
         <meta property='og:image:type' content='image/jpg' />
-        <meta name='application-name' content='Popcornflix™ ' />
+        <meta name='application-name' content='123 Movies™ ' />
         <meta
           property='article:modified_time'
           content='2024-01-01T13:13:13+00:00'
@@ -261,12 +255,12 @@ const cookiepolicy = () => {
           rel='sitemap'
           type='application/xml'
           title='Sitemap'
-          href='https://popcornfliks.vercel.app/sitemap.xml'
+          href='https://123moviesonline.vercel.app/sitemap.xml'
         />
         <meta name='twitter:card' content='summary_large_image' />
         <meta
           name='google-site-verification'
-          content='RNN2teFhD-lV1TQ9qcLQiSO5BLBB4DmztyYJS6QLqDg'
+          content='o8uNsADswyHnNPA69n9gI7u6L4_cdjN4iT5lRhHHtMU'
         />
         <meta
           name='facebook-domain-verification'
@@ -281,12 +275,11 @@ const cookiepolicy = () => {
           type='application/ld+json'
           dangerouslySetInnerHTML={{ __html: rankMathSchema }}
         />
-      
       </Head>
-      
+
       <div style={containerStyle}>
         <section style={sectionStyle}>
-        <a
+          <a
             href='https://t.me/watchmovietvshow/'
             target='_blank'
             rel='noopener noreferrer'
@@ -311,8 +304,8 @@ const cookiepolicy = () => {
             >
               <h1 style={headingStyle}>Cookie Policy</h1>
               <p style={{ color: '#666', marginBottom: '24px' }}>
-                This is the Cookie Policy for Popcornflix™, accessible from
-                and its subdomains.
+                This is the Cookie Policy for 123 Movies™, accessible from and
+                its subdomains.
               </p>
 
               <h2 style={headingStyle}>What Are Cookies</h2>
@@ -415,8 +408,6 @@ const cookiepolicy = () => {
             </div>
           </div>
         </section>
-
-   
       </div>
     </div>
   )

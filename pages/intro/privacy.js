@@ -1,12 +1,8 @@
 import React from 'react'
 import Head from 'next/head'
-import Script from 'next/script';
-
-
+import Script from 'next/script'
 
 const Privacy = () => {
-
-
   const rankMathSchema = JSON.stringify({
     '@context': 'https://schema.org',
     '@graph': [
@@ -25,29 +21,29 @@ const Privacy = () => {
       },
       {
         '@type': 'Organization',
-        '@id': 'https://popcornfliks.vercel.app/#organization',
-        name: 'Popcornflix™ - Online. Stream. Download.',
-        url: 'https://popcornfliks.vercel.app'
+        '@id': 'https://123moviesonline.vercel.app/#organization',
+        name: '123 Movies™ - Explore. Discover. Download.',
+        url: 'https://123moviesonline.vercel.app'
       },
       {
         '@type': 'WebSite',
-        '@id': 'https://popcornfliks.vercel.app/#website',
-        url: 'https://popcornfliks.vercel.app',
-        name: 'Popcornflix™ - Online. Stream. Download.',
+        '@id': 'https://123moviesonline.vercel.app/#website',
+        url: 'https://123moviesonline.vercel.app',
+        name: '123 Movies™ - Explore. Discover. Download.',
         publisher: {
           '@type': 'Organization',
-          '@id': 'https://popcornfliks.vercel.app/#organization'
+          '@id': 'https://123moviesonline.vercel.app/#organization'
         },
         potentialAction: {
           '@type': 'SearchAction',
-          target: 'https://popcornfliks.vercel.app/?s={search_term_string}',
+          target: 'https://123moviesonline.vercel.app/?s={search_term_string}',
           'query-input': 'required name=search_term_string'
         }
       },
       {
         '@type': 'WebPage',
-        '@id': 'https://popcornfliks.vercel.app/#webpage',
-        url: 'https://popcornfliks.vercel.app/',
+        '@id': 'https://123moviesonline.vercel.app/#webpage',
+        url: 'https://123moviesonline.vercel.app/',
         name: 'Movie',
         datePublished: '2024-01-13T13:00:00+00:00',
         dateModified: '2024-01-13T13:13:00+00:00',
@@ -65,14 +61,14 @@ const Privacy = () => {
           }
         },
         isPartOf: {
-          '@id': 'https://popcornfliks.vercel.app/#website'
+          '@id': 'https://123moviesonline.vercel.app/#website'
         },
         inLanguage: 'en-US',
         mainEntity: [
           {
             '@type': 'Article',
-            '@id': 'https://popcornfliks.vercel.app/',
-            url: 'https://popcornfliks.vercel.app/',
+            '@id': 'https://123moviesonline.vercel.app/',
+            url: 'https://123moviesonline.vercel.app/',
             headline: 'Movie',
             datePublished: '2024-01-13T13:00:00+00:00',
             dateModified: '2024-01-13T13:13:00+00:00',
@@ -91,15 +87,15 @@ const Privacy = () => {
             },
             publisher: {
               '@type': 'Organization',
-              '@id': 'https://popcornfliks.vercel.app/#organization',
-              name: 'Popcornflix™ - Online. Stream. Download.',
-              url: 'https://popcornfliks.vercel.app'
+              '@id': 'https://123moviesonline.vercel.app/#organization',
+              name: '123 Movies™ - Explore. Discover. Download.',
+              url: 'https://123moviesonline.vercel.app'
             }
           },
           {
             '@type': 'Article',
-            '@id': 'https://popcornfliks.vercel.app/',
-            url: 'https://popcornfliks.vercel.app/',
+            '@id': 'https://123moviesonline.vercel.app/',
+            url: 'https://123moviesonline.vercel.app/',
             headline: 'Tvshow',
             datePublished: '2024-01-13T13:00:00+00:00',
             dateModified: '2024-01-13T13:13:00+00:00',
@@ -118,15 +114,15 @@ const Privacy = () => {
             },
             publisher: {
               '@type': 'Organization',
-              '@id': 'https://popcornfliks.vercel.app/#organization',
-              name: 'Popcornflix™ - Online. Stream. Download.',
-              url: 'https://popcornfliks.vercel.app'
+              '@id': 'https://123moviesonline.vercel.app/#organization',
+              name: '123 Movies™ - Explore. Discover. Download.',
+              url: 'https://123moviesonline.vercel.app'
             }
           },
           {
             '@type': 'Article',
-            '@id': 'https://popcornfliks.vercel.app/',
-            url: 'https://popcornfliks.vercel.app/',
+            '@id': 'https://123moviesonline.vercel.app/',
+            url: 'https://123moviesonline.vercel.app/',
             headline: 'Adult',
             datePublished: '2024-01-13T13:00:00+00:00',
             dateModified: '2024-01-13T13:13:00+00:00',
@@ -145,180 +141,189 @@ const Privacy = () => {
             },
             publisher: {
               '@type': 'Organization',
-              '@id': 'https://popcornfliks.vercel.app/#organization',
-              name: 'Popcornflix™ - Online. Stream. Download.',
-              url: 'https://popcornfliks.vercel.app'
+              '@id': 'https://123moviesonline.vercel.app/#organization',
+              name: '123 Movies™ - Explore. Discover. Download.',
+              url: 'https://123moviesonline.vercel.app'
             }
           }
         ]
       }
     ]
   })
-  
-
 
   return (
     <div>
-       <Head>
-        <title>Popcornflix™ | Privacy Policy</title>
-      
+      <Head>
+        <title>123 Movies™ | Privacy Policy</title>
+
         <link
-            rel='sitemap'
-            type='application/xml'
-            title='Sitemap'
-            href='https://popcornfliks.vercel.app/sitemap.xml'
-          />
-          <meta
-            name='viewport'
-            content='width=device-width, initial-scale=1.0'
-          />
-          <link
-            rel='icon'
-            type='image/x-icon'
-            href='/favicon.ico'
-          />
-          <link
-            rel='apple-touch-icon'
-            sizes='180x180'
-            href='/apple-touch-icon.png'
-          />
-          <link
-            rel='icon'
-            type='image/png'
-            sizes='32x32'
-            href='/favicon-32x32.png'
-          />
-          <link
-            rel='icon'
-            type='image/png'
-            sizes='16x16'
-            href='/favicon-16x16.png'
-          />
-          <link rel='manifest' href='/site.webmanifest' />
-          <meta name='googlebot' content='index,follow' />
-          <meta name='revisit-after' content='1 days' />
-          <meta
-            name='robots'
-            content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1'
-          />
-         <meta
+          rel='sitemap'
+          type='application/xml'
+          title='Sitemap'
+          href='https://123moviesonline.vercel.app/sitemap.xml'
+        />
+        <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+        <link rel='icon' type='image/x-icon' href='/favicon.ico' />
+        <link
+          rel='apple-touch-icon'
+          sizes='180x180'
+          href='/apple-touch-icon.png'
+        />
+        <link
+          rel='icon'
+          type='image/png'
+          sizes='32x32'
+          href='/favicon-32x32.png'
+        />
+        <link
+          rel='icon'
+          type='image/png'
+          sizes='16x16'
+          href='/favicon-16x16.png'
+        />
+        <link rel='manifest' href='/site.webmanifest' />
+        <meta name='googlebot' content='index,follow' />
+        <meta name='revisit-after' content='1 days' />
+        <meta
+          name='robots'
+          content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1'
+        />
+        <meta
           name='keywords'
-          content='popcornflix,popcornflix movies,movies free,movies, watch movie online, free movies, free movies online, free movie streaming, free streaming, download free'
+          content='123movies,123 movies,123 movies free,movies, watch movie online, free movies, free movies online, free movie streaming, free streaming, download free'
         />
-          <meta
+        <meta
           property='description'
-          content='Popcornflix™ - Stream HD movies and TV series for free on Popcornflix Online. Online. Stream. Download. full-length movies and shows in HD quality without registration.'
+          content='123 Movies™ - Stream HD movies and TV series for free on 123 Movies Online. Explore, stream, and download full-length movies and shows in HD quality without registration.'
         />
 
-          <link rel='canonical' href='https://popcornfliks.vercel.app/intro/privacy' />
-          <meta property='og:locale' content='en_US' />
-          <meta property='og:type' content='website' />
-          <meta
-            property='og:title'
-            content='Popcornflix™ '
-          />
-          <meta
-            property='og:description'
-            content='Popcornflix™ - Stream HD movies and TV series for free on Popcornflix Online. Online. Stream. Download. full-length movies and shows in HD quality without registration.'
-          />
-          <meta property='og:url' content='https://popcornfliks.vercel.app/intro/privacy/' />
-          <meta
-            property='og:site_name'
-            content='Popcornflix™ '
-          />
-          <meta
-            property='og:image'
-            content='https://popcornfliks.vercel.app/og_image.jpg'
-          />
-          <meta property='og:image:width' content='1280' />
-          <meta property='og:image:height' content='720' />
-          <meta property='og:image:type' content='image/jpg' />
-          <meta
-            name='application-name'
-            content='Popcornflix™ '
-          />
-          <meta
-            property='article:modified_time'
-            content='2024-01-01T13:13:13+00:00'
-          />
-          <link
-            rel='sitemap'
-            type='application/xml'
-            title='Sitemap'
-            href='https://popcornfliks.vercel.app/sitemap.xml'
-          />
-          <meta name='twitter:card' content='summary_large_image' />
-          <meta
-            name='google-site-verification'
-            content='RNN2teFhD-lV1TQ9qcLQiSO5BLBB4DmztyYJS6QLqDg'
-          />
-          <meta
-            name='facebook-domain-verification'
-            content='du918bycikmo1jw78wcl9ih6ziphd7'
-          />
-          <meta
-            name='dailymotion-domain-verification'
-            content='dmdzuqt3p027t2adn'
-          />
-          <meta name='monetag' content='35a75bbdeae678c82776e64fb78cdac5' />
-          <script
-            type='application/ld+json'
-            dangerouslySetInnerHTML={{ __html: rankMathSchema }}
-          />
-       
-        </Head>
-       
-   
-   
-         <div className="container my-24 px-6 mx-auto">
-         <a
-            href='https://t.me/watchmovietvshow/'
-            target='_blank'
-            rel='noopener noreferrer'
-            className='telegram-link'
-          >
-            <h3>
-              For Request or Demand Movies & TV Series Join Telegram
-              <i className='fab fa-telegram telegram-icon'></i>
-            </h3>
-          </a>
+        <link
+          rel='canonical'
+          href='https://123moviesonline.vercel.app/intro/privacy'
+        />
+        <meta property='og:locale' content='en_US' />
+        <meta property='og:type' content='website' />
+        <meta property='og:title' content='123 Movies™ ' />
+        <meta
+          property='og:description'
+          content='123 Movies™ - Stream HD movies and TV series for free on 123 Movies Online. Explore, stream, and download full-length movies and shows in HD quality without registration.'
+        />
+        <meta
+          property='og:url'
+          content='https://123moviesonline.vercel.app/intro/privacy/'
+        />
+        <meta property='og:site_name' content='123 Movies™ ' />
+        <meta
+          property='og:image'
+          content='https://123moviesonline.vercel.app/og_image.jpg'
+        />
+        <meta property='og:image:width' content='1280' />
+        <meta property='og:image:height' content='720' />
+        <meta property='og:image:type' content='image/jpg' />
+        <meta name='application-name' content='123 Movies™ ' />
+        <meta
+          property='article:modified_time'
+          content='2024-01-01T13:13:13+00:00'
+        />
+        <link
+          rel='sitemap'
+          type='application/xml'
+          title='Sitemap'
+          href='https://123moviesonline.vercel.app/sitemap.xml'
+        />
+        <meta name='twitter:card' content='summary_large_image' />
+        <meta
+          name='google-site-verification'
+          content='o8uNsADswyHnNPA69n9gI7u6L4_cdjN4iT5lRhHHtMU'
+        />
+        <meta
+          name='facebook-domain-verification'
+          content='du918bycikmo1jw78wcl9ih6ziphd7'
+        />
+        <meta
+          name='dailymotion-domain-verification'
+          content='dmdzuqt3p027t2adn'
+        />
+        <meta name='monetag' content='35a75bbdeae678c82776e64fb78cdac5' />
+        <script
+          type='application/ld+json'
+          dangerouslySetInnerHTML={{ __html: rankMathSchema }}
+        />
+      </Head>
 
-<section className="mb-32 text-gray-800">
-  <div className="flex flex-wrap">
-    <div className="grow-0 shrink-0 basis-auto mb-12 md:mb-0 w-full  px-3 lg:px-6">
-      <h1 className="text-3xl font-bold mb-6">Privacy Policy</h1>
-      <p className="font-bold mb-2">Popcornflix™ </p>
-      <p className="text-gray-500 mb-6">
-      Popcornflix™ International(Popcornflix™) is committed to protecting your privacy. This Privacy Policy applies only to the Web Sites and applications published by Popcornflix™ International.
-      </p>
-      <p className="font-bold mb-2">Note: Use of Information</p>
-      <p className="text-gray-500 mb-6">
-      Information that we collect  </p>
-      <p className="text-gray-500 mb-6">
-      Popcornflix™ may collect information from its users in three different ways: directly from the user, from traffic references of hostingservers and from cookies.
-      </p>
-      <p className="font-bold mb-2">We use the information we collect to:</p>
-      <p className="text-gray-500 mb-6">
-     1. Provide the services you request. </p>
-      <p className="text-gray-500 mb-6">
-     2. As otherwise described to you at the point of collection or with your consent.  
-      </p>
-      <p className="font-bold mb-2">
-      Changes to This Privacy Policy
-      </p>
-      <p className="text-gray-500 mb-6">
-      We may update this Privacy Policy to reflect changes in our practices and service offerings. If we modify our Privacy Policy, we will update the "Effective Date" and such changes will be effective upon posting.
-      </p>
+      <div className='container my-24 px-6 mx-auto'>
+        <a
+          href='https://t.me/watchmovietvshow/'
+          target='_blank'
+          rel='noopener noreferrer'
+          className='telegram-link'
+        >
+          <h3>
+            For Request or Demand Movies & TV Series Join Telegram
+            <i className='fab fa-telegram telegram-icon'></i>
+          </h3>
+        </a>
 
-     
-      <p className="text-gray-500">
-      We do not make warranties that this site will operate error free. If you see an error, please contact the <a className="font-bold text-blue-500 mb-6" href="mailto:drtrailer2022@gmail.com ">webmaster</a>. By entering this site you agree to hold the owners, employees, advertisers of Popcornflix™  free from any and all liability.This site (Popcornflix™ ) do not offer any membership.If you have any questions please feel free to <a className="font-bold text-blue-500 mb-6" href="mailto:drtrailer2022@gmail.com.com">contact us</a>.
-      </p>
-    </div>
+        <section className='mb-32 text-gray-800'>
+          <div className='flex flex-wrap'>
+            <div className='grow-0 shrink-0 basis-auto mb-12 md:mb-0 w-full  px-3 lg:px-6'>
+              <h1 className='text-3xl font-bold mb-6'>Privacy Policy</h1>
+              <p className='font-bold mb-2'>123 Movies™ </p>
+              <p className='text-gray-500 mb-6'>
+                123 Movies™ International(123 Movies™) is committed to
+                protecting your privacy. This Privacy Policy applies only to the
+                Web Sites and applications published by 123 Movies™
+                International.
+              </p>
+              <p className='font-bold mb-2'>Note: Use of Information</p>
+              <p className='text-gray-500 mb-6'>Information that we collect </p>
+              <p className='text-gray-500 mb-6'>
+                123 Movies™ may collect information from its users in three
+                different ways: directly from the user, from traffic references
+                of hostingservers and from cookies.
+              </p>
+              <p className='font-bold mb-2'>
+                We use the information we collect to:
+              </p>
+              <p className='text-gray-500 mb-6'>
+                1. Provide the services you request.{' '}
+              </p>
+              <p className='text-gray-500 mb-6'>
+                2. As otherwise described to you at the point of collection or
+                with your consent.
+              </p>
+              <p className='font-bold mb-2'>Changes to This Privacy Policy</p>
+              <p className='text-gray-500 mb-6'>
+                We may update this Privacy Policy to reflect changes in our
+                practices and service offerings. If we modify our Privacy
+                Policy, we will update the "Effective Date" and such changes
+                will be effective upon posting.
+              </p>
 
-  </div>
-</section>
-
+              <p className='text-gray-500'>
+                We do not make warranties that this site will operate error
+                free. If you see an error, please contact the{' '}
+                <a
+                  className='font-bold text-blue-500 mb-6'
+                  href='mailto:drtrailer2022@gmail.com '
+                >
+                  webmaster
+                </a>
+                . By entering this site you agree to hold the owners, employees,
+                advertisers of 123 Movies™ free from any and all liability.This
+                site (123 Movies™ ) do not offer any membership.If you have any
+                questions please feel free to{' '}
+                <a
+                  className='font-bold text-blue-500 mb-6'
+                  href='mailto:drtrailer2022@gmail.com.com'
+                >
+                  contact us
+                </a>
+                .
+              </p>
+            </div>
+          </div>
+        </section>
       </div>
     </div>
   )

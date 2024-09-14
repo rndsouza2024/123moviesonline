@@ -7,12 +7,12 @@ export default function HomePage () {
     {
       '@context': 'https://schema.org',
       '@type': 'Organization',
-      name: 'Popcornflix™ - Online. Stream. Download. ',
-      url: 'https://popcornfliks.vercel.app/',
-      image: ['https://popcornfliks.vercel.app/favicon.ico'],
+      name: '123 Movies™ - Online. Stream. Download. ',
+      url: 'https://123moviesonline.vercel.app/',
+      image: ['https://123moviesonline.vercel.app/favicon.ico'],
       logo: {
         '@type': 'ImageObject',
-        url: 'https://popcornfliks.vercel.app/logo.png',
+        url: 'https://123moviesonline.vercel.app/logo.png',
         width: 280,
         height: 80
       }
@@ -20,12 +20,13 @@ export default function HomePage () {
     {
       '@context': 'https://schema.org',
       '@type': 'WebSite',
-      url: 'https://popcornfliks.vercel.app/',
+      url: 'https://123moviesonline.vercel.app/',
       potentialAction: {
         '@type': 'SearchAction',
         target: {
           '@type': 'EntryPoint',
-          urlTemplate: 'https://popcornfliks.vercel.app/search?q={search_term_string}'
+          urlTemplate:
+            'https://123moviesonline.vercel.app/search?q={search_term_string}'
         },
         'query-input': 'required name=search_term_string'
       }
@@ -50,29 +51,29 @@ export default function HomePage () {
       },
       {
         '@type': 'Organization',
-        '@id': 'https://popcornfliks.vercel.app/#organization',
-        name: 'Popcornflix™ - Online. Stream. Download. ',
-        url: 'https://popcornfliks.vercel.app'
+        '@id': 'https://123moviesonline.vercel.app/#organization',
+        name: '123 Movies™ - Online. Stream. Download. ',
+        url: 'https://123moviesonline.vercel.app'
       },
       {
         '@type': 'WebSite',
-        '@id': 'https://popcornfliks.vercel.app/#website',
-        url: 'https://popcornfliks.vercel.app',
-        name: 'Popcornflix™ - Online. Stream. Download. ',
+        '@id': 'https://123moviesonline.vercel.app/#website',
+        url: 'https://123moviesonline.vercel.app',
+        name: '123 Movies™ - Online. Stream. Download. ',
         publisher: {
           '@type': 'Organization',
-          '@id': 'https://popcornfliks.vercel.app/#organization'
+          '@id': 'https://123moviesonline.vercel.app/#organization'
         },
         potentialAction: {
           '@type': 'SearchAction',
-          target: 'https://popcornfliks.vercel.app/?s={search_term_string}',
+          target: 'https://123moviesonline.vercel.app/?s={search_term_string}',
           'query-input': 'required name=search_term_string'
         }
       },
       {
         '@type': 'WebPage',
-        '@id': 'https://popcornfliks.vercel.app/#webpage',
-        url: 'https://popcornfliks.vercel.app/',
+        '@id': 'https://123moviesonline.vercel.app/#webpage',
+        url: 'https://123moviesonline.vercel.app/',
         name: 'Movie',
         datePublished: '2024-01-13T13:00:00+00:00',
         dateModified: '2024-01-13T13:13:00+00:00',
@@ -90,15 +91,15 @@ export default function HomePage () {
           }
         },
         isPartOf: {
-          '@id': 'https://popcornfliks.vercel.app/#website'
+          '@id': 'https://123moviesonline.vercel.app/#website'
         },
         inLanguage: 'en-US',
         mainEntity: [
           {
             '@type': 'Article',
-            '@id': 'https://popcornfliks.vercel.app/',
-            url: 'https://popcornfliks.vercel.app/',
-            headline: 'Popcornflix™ - Online. Stream. Download. ',
+            '@id': 'https://123moviesonline.vercel.app/',
+            url: 'https://123moviesonline.vercel.app/',
+            headline: '123 Movies™ - Online. Stream. Download. ',
             datePublished: '2024-01-13T13:00:00+00:00',
             dateModified: '2024-01-13T13:13:00+00:00',
             author: {
@@ -116,16 +117,16 @@ export default function HomePage () {
             },
             publisher: {
               '@type': 'Organization',
-              '@id': 'https://popcornfliks.vercel.app/#organization',
-              name: 'Popcornflix™ - Online. Stream. Download. ',
-              url: 'https://popcornfliks.vercel.app'
+              '@id': 'https://123moviesonline.vercel.app/#organization',
+              name: '123 Movies™ - Online. Stream. Download. ',
+              url: 'https://123moviesonline.vercel.app'
             }
           },
           {
             '@type': 'Article',
-            '@id': 'https://popcornfliks.vercel.app/',
-            url: 'https://popcornfliks.vercel.app/',
-            headline: 'Popcornflix™ - Online. Stream. Download. ',
+            '@id': 'https://123moviesonline.vercel.app/',
+            url: 'https://123moviesonline.vercel.app/',
+            headline: '123 Movies™ - Online. Stream. Download. ',
             datePublished: '2024-01-13T13:00:00+00:00',
             dateModified: '2024-01-13T13:13:00+00:00',
             author: {
@@ -143,16 +144,16 @@ export default function HomePage () {
             },
             publisher: {
               '@type': 'Organization',
-              '@id': 'https://popcornfliks.vercel.app/#organization',
-              name: 'Popcornflix™ - Online. Stream. Download. ',
-              url: 'https://popcornfliks.vercel.app'
+              '@id': 'https://123moviesonline.vercel.app/#organization',
+              name: '123 Movies™ - Online. Stream. Download. ',
+              url: 'https://123moviesonline.vercel.app'
             }
           },
           {
             '@type': 'Article',
-            '@id': 'https://popcornfliks.vercel.app/',
-            url: 'https://popcornfliks.vercel.app/',
-            headline: 'Popcornflix™ - Online. Stream. Download. ',
+            '@id': 'https://123moviesonline.vercel.app/',
+            url: 'https://123moviesonline.vercel.app/',
+            headline: '123 Movies™ - Online. Stream. Download. ',
             datePublished: '2024-01-13T13:00:00+00:00',
             dateModified: '2024-01-13T13:13:00+00:00',
             author: {
@@ -177,19 +178,19 @@ export default function HomePage () {
   const languagesSchema = JSON.stringify({
     '@context': 'https://schema.org',
     '@type': 'WebPage',
-    url: 'https://popcornfliks.vercel.app/',
-    name: 'Popcornflix™ - Online. Stream. Download.',
+    url: 'https://123moviesonline.vercel.app/',
+    name: '123 Movies™ - Online. Stream. Download.',
     alternateName: [
-      'Popcornflix™ - Explorar. Transmitir. En línea.',
-      'Popcornflix™ - Explorer. Diffuser. En ligne.',
-      'Popcornflix™ - Entdecken. Streamen. Online.',
-      'Popcornflix™ - 探索。串流。在线。',
-      'Popcornflix™ - 探索する。ストリーミング。オンライン。',
-      'Popcornflix™ - 탐험하다. 스트리밍. 온라인.',
-      'Popcornflix™ - Explorar. Transmitir. Online.',
-      'Popcornflix™ - Esplora. Streaming. Online.',
-      'Popcornflix™ - Исследовать. Поток. Онлайн.',
-      'Popcornflix™ - استكشاف. بث. اون لاين.'
+      '123 Movies™ - Explorar. Transmitir. En línea.',
+      '123 Movies™ - Explorer. Diffuser. En ligne.',
+      '123 Movies™ - Entdecken. Streamen. Online.',
+      '123 Movies™ - 探索。串流。在线。',
+      '123 Movies™ - 探索する。ストリーミング。オンライン。',
+      '123 Movies™ - 탐험하다. 스트리밍. 온라인.',
+      '123 Movies™ - Explorar. Transmitir. Online.',
+      '123 Movies™ - Esplora. Streaming. Online.',
+      '123 Movies™ - Исследовать. Поток. Онлайн.',
+      '123 Movies™ - استكشاف. بث. اون لاين.'
     ],
     inLanguage: [
       'es',
@@ -207,13 +208,13 @@ export default function HomePage () {
   return (
     <>
       <Head>
-        <title>Popcornflix™ - Online. Stream. Download.</title>
+        <title>123 Movies™ - Online. Stream. Download.</title>
 
         <link
           rel='sitemap'
           type='application/xml'
           title='Sitemap'
-          href='https://popcornfliks.vercel.app/sitemap.xml'
+          href='https://123moviesonline.vercel.app/sitemap.xml'
         />
         <meta name='viewport' content='width=device-width, initial-scale=1.0' />
         <link rel='icon' type='image/x-icon' href='/favicon.ico' />
@@ -244,34 +245,34 @@ export default function HomePage () {
         />
         <meta
           name='keywords'
-          content='popcornflix,popcornflix movies,movies free,movies, watch movie online, free movies, free movies online, free movie streaming, free streaming, download free'
+          content='123movies,123 movies,123 movies free,movies, watch movie online, free movies, free movies online, free movie streaming, free streaming, download free'
         />
         <meta
           name='description'
-          content='Stream HD movies and TV series for free on Popcornflix. Online. Stream. Download. full-length movies and shows in HD quality without registration.'
+          content='Stream HD movies and TV series for free on 123 Movies. Explore, stream, and download full-length movies and shows in HD quality without registration.'
         />
-        <link rel='canonical' href='https://popcornfliks.vercel.app/' />
+        <link rel='canonical' href='https://123moviesonline.vercel.app/' />
         <meta property='og:locale' content='en_US' />
         <meta property='og:type' content='website' />
         <meta
           property='og:title'
-          content='Popcornflix™ - Online. Stream. Download. '
+          content='123 Movies™ - Online. Stream. Download. '
         />
-        <meta property='og:url' content='https://popcornfliks.vercel.app' />
+        <meta property='og:url' content='https://123moviesonline.vercel.app' />
         <meta
           property='og:site_name'
-          content='Popcornflix™ - Online. Stream. Download. '
+          content='123 Movies™ - Online. Stream. Download. '
         />
         <meta
           property='og:image'
-          content='https://popcornfliks.vercel.app/og_image.jpg'
+          content='https://123moviesonline.vercel.app/og_image.jpg'
         />
         <meta property='og:image:width' content='1200' />
         <meta property='og:image:height' content='630' />
         <meta property='og:image:type' content='image/jpg' />
         <meta
           name='application-name'
-          content='Popcornflix™ - Online. Stream. Download. '
+          content='123 Movies™ - Online. Stream. Download. '
         />
         <meta
           property='article:modified_time'
@@ -281,24 +282,24 @@ export default function HomePage () {
           rel='sitemap'
           type='application/xml'
           title='Sitemap'
-          href='https://popcornfliks.vercel.app/sitemap.xml'
+          href='https://123moviesonline.vercel.app/sitemap.xml'
         />
         <meta name='twitter:card' content='summary_large_image' />
         <meta
           name='twitter:title'
-          content='Popcornflix™ - Online. Stream. Download.  HD Movies and TV Series Free'
+          content='123 Movies™ - Online. Stream. Download.  HD Movies and TV Series Free'
         />
         <meta
           name='twitter:description'
-          content='Stream HD movies and TV series for free on Popcornflix™. Online. Stream. Download. full-length movies and shows in HD quality without registration.'
+          content='Stream HD movies and TV series for free on 123 Movies™. Explore, stream, and download full-length movies and shows in HD quality without registration.'
         />
         <meta
           name='twitter:image'
-          content='https://popcornfliks.vercel.app/og_image.jpg'
+          content='https://123moviesonline.vercel.app/og_image.jpg'
         />
         <meta
           name='google-site-verification'
-          content='RNN2teFhD-lV1TQ9qcLQiSO5BLBB4DmztyYJS6QLqDg'
+          content='o8uNsADswyHnNPA69n9gI7u6L4_cdjN4iT5lRhHHtMU'
         />
 
         <meta
@@ -327,35 +328,35 @@ export default function HomePage () {
 
       <div className='container'>
         <div className='content'>
-          <h1 className='title'> Popcornflix™ - Online. Stream. Download.</h1>
+          <h1 className='title'> 123 Movies™ - Online. Stream. Download.</h1>
           <h2 className='highlight'>
-            Discover the Best Movies and TV Shows to Stream on Popcornflix™
+            Discover the Best Movies and TV Shows to Stream on 123 Movies™
           </h2>
           <p className='description'>
-            Welcome to <strong>Popcornflix™</strong>, your premier destination
+            Welcome to <strong>123 Movies™</strong>, your premier destination
             for streaming the latest and most popular movies and TV shows. Our
             platform offers an extensive collection of entertainment options,
             allowing you to explore a wide variety of genres and discover new
             favorites. Whether you're looking for action-packed thrillers,
             heartwarming dramas, or laugh-out-loud comedies,{' '}
-            <strong>Popcornflix™</strong> has something for everyone.
+            <strong>123 Movies™</strong> has something for everyone.
           </p>
           <p className='description'>
             With a user-friendly interface and high-quality streaming,{' '}
-            <strong>Popcornflix™</strong> makes it easy to find and enjoy your
+            <strong>123 Movies™</strong> makes it easy to find and enjoy your
             favorite content. Our library is regularly updated with the latest
             releases, ensuring that you have access to the newest movies and TV
             shows as soon as they are available. Stream online seamlessly and
             enjoy an immersive viewing experience from the comfort of your home.
           </p>
           <p className='description'>
-            At <strong>Popcornflix™</strong>, we are committed to providing a
+            At <strong>123 Movies™</strong>, we are committed to providing a
             top-notch streaming service that meets all your entertainment needs.
             Join us today and explore the vast world of movies and TV shows
             available at your fingertips. Whether you're a casual viewer or a
-            dedicated binge-watcher, <strong>Popcornflix™</strong> is the
-            perfect place to stream online and stay entertained. Enjoy the world
-            of Entertainment.
+            dedicated binge-watcher, <strong>123 Movies™</strong> is the perfect
+            place to stream online and stay entertained. Enjoy the world of
+            Entertainment.
           </p>
 
           <a
@@ -384,7 +385,7 @@ export default function HomePage () {
             The premier platform for the latest releases and secure downloads.
           </p>
           <Link href='/home/page1'>
-            <div className='cta-button'>Enter Popcornflix™</div>
+            <div className='cta-button'>Enter 123 Movies™</div>
           </Link>
         </div>
       </div>

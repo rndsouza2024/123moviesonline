@@ -19,16 +19,9 @@
 }
 
 .image {
-  width: 200px; /* Default image size for desktops */
+  width: 200px; /* Adjust image size */
   height: 200px;
-  border-radius: 50%; /* Perfect circular image */
+  border-radius: 50%; /* Make images circular */
   border: 2px solid #a5a9b4; /* Add border with color */
   margin: 0 auto; /* Center each image */
-}
-
-@media (max-width: 768px) {
-  .image {
-    width: 180px; /* Adjust image size for mobile devices */
-    height: 180px; /* Maintain equal width and height */
-  }
 }

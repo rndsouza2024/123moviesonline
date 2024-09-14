@@ -17,7 +17,7 @@ import styles from '@styles/iframeStyles.module.css'
 
 // Fetch data from movieszipItems.json
 const fetchmovieszipData = async () => {
-  const response = await fetch('https://popcornfliks.vercel.app/moviesfull.json')
+  const response = await fetch('https://123moviesonline.vercel.app/moviesfull.json')
   return await response.json()
 }
 
@@ -109,7 +109,7 @@ const movieszipDetail = ({ movieszipItem }) => {
   // Function to fetch data and set state
   const fetchData = async () => {
     try {
-      const response = await fetch('https://popcornfliks.vercel.app/moviesfull.json')
+      const response = await fetch('https://123moviesonline.vercel.app/moviesfull.json')
       const data = await response.json()
 
       // Get 6 random TV Series s
@@ -297,12 +297,12 @@ const movieszipDetail = ({ movieszipItem }) => {
     {
       '@context': 'https://schema.org',
       '@type': 'Organization',
-      name: 'Popcornflix???',
-      url: 'https://popcornfliks.vercel.app/',
-      image: ['https://popcornfliks.vercel.app/favicon.ico'],
+      name: '123 Movies???',
+      url: 'https://123moviesonline.vercel.app/',
+      image: ['https://123moviesonline.vercel.app/favicon.ico'],
       logo: {
         '@type': 'ImageObject',
-        url: 'https://popcornfliks.vercel.app/logo.png',
+        url: 'https://123moviesonline.vercel.app/logo.png',
         width: 280,
         height: 100
       }
@@ -310,12 +310,12 @@ const movieszipDetail = ({ movieszipItem }) => {
     {
       '@context': 'https://schema.org',
       '@type': 'WebSite',
-      url: 'https://popcornfliks.vercel.app/',
+      url: 'https://123moviesonline.vercel.app/',
       potentialAction: {
         '@type': 'SearchAction',
         target: {
           '@type': 'EntryPoint',
-          urlTemplate: 'https://popcornfliks.vercel.app/search?q={search_term_string}'
+          urlTemplate: 'https://123moviesonline.vercel.app/search?q={search_term_string}'
         },
         'query-input': 'required name=search_term_string'
       }
@@ -329,8 +329,8 @@ const movieszipDetail = ({ movieszipItem }) => {
       {
         '@type': 'ListItem',
         position: 1,
-        name: 'Popcornflix???',
-        item: 'https://popcornfliks.vercel.app/'
+        name: '123 Movies???',
+        item: 'https://123moviesonline.vercel.app/'
       },
       {
         '@type': 'ListItem',
@@ -357,9 +357,9 @@ const movieszipDetail = ({ movieszipItem }) => {
       },
       {
         '@type': 'WebSite',
-        '@id': 'https://popcornfliks.vercel.app#website',
-        url: 'https://popcornfliks.vercel.app',
-        name: 'Popcornflix???',
+        '@id': 'https://123moviesonline.vercel.app#website',
+        url: 'https://123moviesonline.vercel.app',
+        name: '123 Movies???',
         publisher: {
           '@id': 'https://gravatar.com/drtrailer2022/#person'
         },
@@ -369,11 +369,11 @@ const movieszipDetail = ({ movieszipItem }) => {
         '@type': 'WebPage',
         '@id': `${movieszipItem.siteurl}#webpage`,
         url: movieszipItem.siteurl,
-        name: `${movieszipItem.name} | Popcornflix???`,
+        name: `${movieszipItem.name} | 123 Movies???`,
         datePublished: movieszipItem.datePublished,
         dateModified: movieszipItem.dateModified,
         isPartOf: {
-          '@id': 'https://popcornfliks.vercel.app#website'
+          '@id': 'https://123moviesonline.vercel.app#website'
         },
         inLanguage: 'en-US'
       },
@@ -389,12 +389,12 @@ const movieszipDetail = ({ movieszipItem }) => {
           caption: 'Dr Trailer',
           inLanguage: 'en-US'
         },
-        sameAs: ['https://popcornfliks.vercel.app']
+        sameAs: ['https://123moviesonline.vercel.app']
       },
       {
         '@type': 'Article',
         '@id': `${movieszipItem.siteurl}#article`,
-        headline: ` ${movieszipItem.name} | Popcornflix???`,
+        headline: ` ${movieszipItem.name} | 123 Movies???`,
         datePublished: movieszipItem.datePublished,
         dateModified: movieszipItem.dateModified,
         articleSection: 'movieszipItems',
@@ -406,7 +406,7 @@ const movieszipDetail = ({ movieszipItem }) => {
         },
         description: movieszipItem.synopsis,
         image: movieszipItem.image,
-        name: ` ${movieszipItem.name} | Popcornflix???`,
+        name: ` ${movieszipItem.name} | 123 Movies???`,
         isPartOf: {
           '@id': `${movieszipItem.siteurl}#webpage`
         },
@@ -418,7 +418,7 @@ const movieszipDetail = ({ movieszipItem }) => {
       {
         '@type': 'BlogPosting',
         '@id': `${movieszipItem.siteurl}#blogPost`,
-        headline: ` ${movieszipItem.name} | Popcornflix???`,
+        headline: ` ${movieszipItem.name} | 123 Movies???`,
         datePublished: movieszipItem.datePublished,
         dateModified: movieszipItem.dateModified,
         articleSection: 'movieszipItems',
@@ -430,7 +430,7 @@ const movieszipDetail = ({ movieszipItem }) => {
         },
         description: movieszipItem.synopsis,
         image: movieszipItem.image,
-        name: ` ${movieszipItem.name} | Popcornflix???`,
+        name: ` ${movieszipItem.name} | 123 Movies???`,
         '@id': `${movieszipItem.siteurl}#richSnippet`,
         isPartOf: {
           '@id': `${movieszipItem.siteurl}#webpage`
@@ -471,10 +471,10 @@ const movieszipDetail = ({ movieszipItem }) => {
     },
     publisher: {
       '@type': 'Organization',
-      name: 'Popcornflix???',
+      name: '123 Movies???',
       logo: {
         '@type': 'ImageObject',
-        url: 'https://popcornfliks.vercel.app/og_image.jpg'
+        url: 'https://123moviesonline.vercel.app/og_image.jpg'
       }
     },
     additionalProperty: {
@@ -532,10 +532,10 @@ const movieszipDetail = ({ movieszipItem }) => {
     },
     publisher: {
       '@type': 'Organization',
-      name: 'Popcornflix???',
+      name: '123 Movies???',
       logo: {
         '@type': 'ImageObject',
-        url: 'https://popcornfliks.vercel.app/og_image.jpg'
+        url: 'https://123moviesonline.vercel.app/og_image.jpg'
       }
     },
     additionalProperty: {
@@ -564,7 +564,7 @@ const movieszipDetail = ({ movieszipItem }) => {
           name='robots'
           content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1'
         />
-        <title> {movieszipItem.name} | Popcornflix???</title>
+        <title> {movieszipItem.name} | 123 Movies???</title>
         <link rel='canonical' href={movieszipItem && movieszipItem.siteurl} />
         <meta name='robots' content='index, follow' />
         <meta name='googlebot' content='index,follow' />
@@ -572,15 +572,15 @@ const movieszipDetail = ({ movieszipItem }) => {
         <meta property='og:locale' content='en_US' />
         <meta
           property='og:title'
-          content={`${movieszipItem && movieszipItem.name} - Popcornflix???`}
+          content={`${movieszipItem && movieszipItem.name} - 123 Movies???`}
         />
         <meta
           property='og:description'
-          content='Stream HD movieszipItems and TV series for free on Popcornflix???. Online. Stream. Download. full-length movieszipItems and shows in HD quality without registration.'
+          content='Stream HD movieszipItems and TV series for free on 123 Movies???. Online. Stream. Download. full-length movieszipItems and shows in HD quality without registration.'
         />
         <meta
           name='description'
-          content={`${movieszipItem.title} available on Popcornflix???. Enjoy free streaming of full-length movieszipItems and TV series online with no registration required.`}
+          content={`${movieszipItem.title} available on 123 Movies???. Enjoy free streaming of full-length movieszipItems and TV series online with no registration required.`}
         />
         <meta
           property='og:url'
@@ -590,7 +590,7 @@ const movieszipDetail = ({ movieszipItem }) => {
           name='keywords'
           content={`${movieszipItem && movieszipItem.keywords}`}
         />
-        <meta property='og:site_name' content='Popcornflix???' />
+        <meta property='og:site_name' content='123 Movies???' />
         <meta
           property='og:image:alt'
           content={`${movieszipItem && movieszipItem.name}`}
@@ -625,11 +625,11 @@ const movieszipDetail = ({ movieszipItem }) => {
         <meta name='twitter:card' content='summary_large_image' />
         <meta
           name='twitter:title'
-          content='Popcornflix??? - Explore. Discover. Online.'
+          content='123 Movies??? - Explore. Discover. Online.'
         />
         <meta
           name='twitter:description'
-          content='Stream HD movieszipItems and TV series for free on Popcornflix???. Online. Stream. Download. full-length movieszipItems and shows in HD quality without registration.'
+          content='Stream HD movieszipItems and TV series for free on 123 Movies???. Online. Stream. Download. full-length movieszipItems and shows in HD quality without registration.'
         />
         <meta
           name='twitter:image'
@@ -653,7 +653,7 @@ const movieszipDetail = ({ movieszipItem }) => {
             __html: JSON.stringify({
               '@context': 'https://schema.org',
               '@type': 'WebSite', // Specify that this is a website
-              name: 'Popcornflix???',
+              name: '123 Movies???',
               url: `${movieszipItem && movieszipItem.siteurl}`,
               potentialAction: {
                 '@type': 'SearchAction',
@@ -738,7 +738,7 @@ const movieszipDetail = ({ movieszipItem }) => {
               Explore the captivating world of{' '}
               <strong>{movieszipItem.title}</strong>, the TV series that has
               everyone talking. At
-              <strong> Popcornflix???</strong>, you can stream{' '}
+              <strong> 123 Movies???</strong>, you can stream{' '}
               <strong>{movieszipItem.title}</strong> and immerse yourself in its
               exciting episodes, whether you're catching up on past seasons or
               tuning in to the latest releases. Our platform offers a seamless
@@ -747,10 +747,10 @@ const movieszipDetail = ({ movieszipItem }) => {
             </p>
             <p className='text-lg text-yellow-500 mt-4'>
               Streaming <strong>{movieszipItem.title}</strong> on{' '}
-              <strong>Popcornflix???</strong> ensures that you won't miss a single
+              <strong>123 Movies???</strong> ensures that you won't miss a single
               moment of the action, drama, or comedy that makes this TV series a
               must-watch. With high-quality streaming and user-friendly
-              navigation, <strong>Popcornflix???</strong> provides everything you
+              navigation, <strong>123 Movies???</strong> provides everything you
               need to enjoy <strong>{movieszipItem.title}</strong>
               and other top TV series. Our library is frequently updated, so you
               can always find the latest episodes as soon as they air.
@@ -758,10 +758,10 @@ const movieszipDetail = ({ movieszipItem }) => {
             <p className='text-lg text-yellow-500 mt-4'>
               Whether you're binge-watching or following along weekly,{' '}
               <strong>{movieszipItem.title}</strong> on{' '}
-              <strong>Popcornflix???</strong> is your go-to destination for
+              <strong>123 Movies???</strong> is your go-to destination for
               streaming TV series online. Join our community of viewers and
               start watching <strong>{movieszipItem.title}</strong> today. With{' '}
-              <strong>Popcornflix???</strong>, your favorite TV series is just a
+              <strong>123 Movies???</strong>, your favorite TV series is just a
               click away.
             </p>
           </>
@@ -776,7 +776,7 @@ const movieszipDetail = ({ movieszipItem }) => {
             <p className='text-lg text-yellow-500 mt-4'>
               Indulge in the finest selection of adult entertainment with{' '}
               <strong>{movieszipItem.title}</strong>. At{' '}
-              <strong>Popcornflix???</strong>, we offer a vast library of premium
+              <strong>123 Movies???</strong>, we offer a vast library of premium
               adult content, including the latest and most popular titles like{' '}
               <strong>{movieszipItem.title}</strong>. Our platform is designed
               for those who seek high-quality, discreet streaming of adult
@@ -784,7 +784,7 @@ const movieszipDetail = ({ movieszipItem }) => {
             </p>
             <p className='text-lg text-yellow-500 mt-4'>
               Streaming <strong>{movieszipItem.title}</strong> on{' '}
-              <strong>Popcornflix???</strong> provides you with a user-friendly
+              <strong>123 Movies???</strong> provides you with a user-friendly
               interface and crystal-clear video quality. Our adult content is
               regularly updated, giving you access to new releases as soon as
               they become available. Whether you're exploring new genres or
@@ -795,10 +795,10 @@ const movieszipDetail = ({ movieszipItem }) => {
             <p className='text-lg text-yellow-500 mt-4'>
               For a premium experience in adult entertainment, look no further
               than <strong>{movieszipItem.title}</strong> on{' '}
-              <strong>Popcornflix???</strong>. Our platform ensures your privacy
+              <strong>123 Movies???</strong>. Our platform ensures your privacy
               and security while you enjoy the content you love. Start streaming{' '}
               <strong>{movieszipItem.title}</strong> today and discover why{' '}
-              <strong>Popcornflix???</strong> is the trusted choice for adult
+              <strong>123 Movies???</strong> is the trusted choice for adult
               content.
             </p>
           </>
@@ -813,7 +813,7 @@ const movieszipDetail = ({ movieszipItem }) => {
             <p className='text-lg text-yellow-500 mt-4'>
               Dive into the world of cinema with{' '}
               <strong>{movieszipItem.title}</strong>, available to stream right
-              here. At <strong>Popcornflix???</strong>, we bring you the best in
+              here. At <strong>123 Movies???</strong>, we bring you the best in
               entertainment, offering an extensive library of movieszipItems and
               TV shows, including the latest blockbusters like{' '}
               <strong>{movieszipItem.title}</strong>. Whether you're a fan of
@@ -822,7 +822,7 @@ const movieszipDetail = ({ movieszipItem }) => {
             </p>
             <p className='text-lg text-yellow-500 mt-4'>
               Streaming <strong>{movieszipItem.title}</strong> on{' '}
-              <strong>Popcornflix???</strong> guarantees a seamless viewing
+              <strong>123 Movies???</strong> guarantees a seamless viewing
               experience with high-definition quality and uninterrupted
               playback. Our platform is designed to make it easy for you to
               discover and enjoy your favorite films. With regularly updated
@@ -833,11 +833,11 @@ const movieszipDetail = ({ movieszipItem }) => {
             <p className='text-lg text-yellow-500 mt-4'>
               Whether you're revisiting a classic or catching a new release,{' '}
               <strong>{movieszipItem.title}</strong> on{' '}
-              <strong>Popcornflix???</strong> is the perfect way to enjoy your
+              <strong>123 Movies???</strong> is the perfect way to enjoy your
               movieszipItem night. Join the countless users who trust us for
               their streaming needs and start watching{' '}
               <strong>{movieszipItem.title}</strong> online today. At{' '}
-              <strong>Popcornflix???</strong>, your entertainment is just a click
+              <strong>123 Movies???</strong>, your entertainment is just a click
               away.
             </p>
           </>

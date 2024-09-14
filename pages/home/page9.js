@@ -42,12 +42,12 @@ const page9 = ({ items }) => {
     {
       '@context': 'https://schema.org',
       '@type': 'Organization',
-      name: 'Popcornflix™ - Online. Stream. Download.',
-      url: 'https://popcornfliks.vercel.app/',
-      image: ['https://popcornfliks.vercel.app/favicon.ico'],
+      name: '123Movies - Explore. Discover. Download.',
+      url: 'https://123moviesonline.vercel.app/',
+      image: ['https://123moviesonline.vercel.app/favicon.ico'],
       logo: {
         '@type': 'ImageObject',
-        url: 'https://popcornfliks.vercel.app/logo.png',
+        url: 'https://123moviesonline.vercel.app/logo.png',
         width: 280,
         height: 80
       }
@@ -55,12 +55,12 @@ const page9 = ({ items }) => {
     {
       '@context': 'https://schema.org',
       '@type': 'WebSite',
-      url: 'https://popcornfliks.vercel.app/',
+      url: 'https://123moviesonline.vercel.app/',
       potentialAction: {
         '@type': 'SearchAction',
         target: {
           '@type': 'EntryPoint',
-          urlTemplate: 'https://popcornfliks.vercel.app/search?q={search_term_string}'
+          urlTemplate: 'https://123moviesonline.vercel.app/search?q={search_term_string}'
         },
         'query-input': 'required name=search_term_string'
       }
@@ -70,12 +70,12 @@ const page9 = ({ items }) => {
   const softwareSchema = JSON.stringify({
     '@context': 'https://schema.org',
     '@type': 'Article',
-    '@id': 'https://popcornfliks.vercel.app/page9',
-    headline: 'Page 9 | Popcornflix™',
-    url: 'https://popcornfliks.vercel.app/page9',
+    '@id': 'https://123moviesonline.vercel.app/page9',
+    headline: 'Page 9 | 123Movies™',
+    url: 'https://123moviesonline.vercel.app/page9',
     description:
-      'Popcornflix™ - Stream HD movies and TV series for free on Popcornflix™ Online. Online. Stream. Download. full-length movies and shows in HD quality without registration.',
-    image: 'https://popcornfliks.vercel.app/og_image.jpg',
+      '123Movies - Stream HD movies and TV series for free on 123Movies Online. Explore, stream, and download full-length movies and shows in HD quality without registration.',
+    image: 'https://123moviesonline.vercel.app/og_image.jpg',
     author: {
       '@type': 'Person',
       name: 'DrTrailer',
@@ -83,17 +83,17 @@ const page9 = ({ items }) => {
     },
     publisher: {
       '@type': 'Organization',
-      name: 'Popcornflix™ - Online. Stream. Download.',
+      name: '123Movies - Explore. Discover. Download.',
       logo: {
         '@type': 'ImageObject',
-        url: 'https://popcornfliks.vercel.app/og_image.jpg'
+        url: 'https://123moviesonline.vercel.app/og_image.jpg'
       }
     },
     datePublished: '2024-06-02',
     dateModified: '2024-06-02',
     mainEntityOfPage: {
       '@type': 'WebPage',
-      '@id': 'https://popcornfliks.vercel.app/page9'
+      '@id': 'https://123moviesonline.vercel.app/page9'
     },
     additionalProperty: {
       '@type': 'PropertyValue',
@@ -110,13 +110,13 @@ const page9 = ({ items }) => {
         '@type': 'ListItem',
         position: 1,
         name: 'Home',
-        item: 'https://popcornfliks.vercel.app/'
+        item: 'https://123moviesonline.vercel.app/'
       },
       {
         '@type': 'ListItem',
         position: 2,
         name: 'movies',
-        item: 'https://popcornfliks.vercel.app/page9'
+        item: 'https://123moviesonline.vercel.app/page9'
       }
     ]
   })
@@ -124,8 +124,8 @@ const page9 = ({ items }) => {
   return (
     <div className='w-full' style={{ backgroundColor: '#000' }}>
       <Head>
-        <title> Page 9 | Popcornflix™</title>
-        <link rel='canonical' href='https://popcornfliks.vercel.app/page9' />
+        <title> Page 9 | 123Movies™</title>
+        <link rel='canonical' href='https://123moviesonline.vercel.app/page9' />
         <meta
           name='robots'
           content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1'
@@ -135,22 +135,22 @@ const page9 = ({ items }) => {
         <meta name='revisit-after' content='1 days' />
         <meta property='og:locale' content='en_US' />
         <meta property='og:type' content='website' />
-        <meta property='og:title' content=' Page 9 | Popcornflix™' />
+        <meta property='og:title' content=' Page 9 | 123Movies™' />
         <meta
           property='og:description'
-          content='Popcornflix™ - Stream HD movies and TV series for free on Popcornflix™ Online. Online. Stream. Download. full-length movies and shows in HD quality without registration.'
+          content='123Movies™ - Stream HD movies and TV series for free on 123Movies Online. Explore, stream, and download full-length movies and shows in HD quality without registration.'
         />
 
-        <meta property='og:url' content='https://popcornfliks.vercel.app/page9' />
+        <meta property='og:url' content='https://123moviesonline.vercel.app/page9' />
 
-        <meta property='og:site_name' content='Popcornflix™' />
+        <meta property='og:site_name' content='123Movies™' />
         <meta property='og:type' content='article' />
         <meta
           property=' og:image:alt'
-          content='https://popcornfliks.vercel.app/og_image.jpg'
+          content='https://123moviesonline.vercel.app/og_image.jpg'
         />
         <meta name='mobile-web-app-capable' content='yes' />
-        <meta property='article:section' content='Popcornflix™' />
+        <meta property='article:section' content='123Movies™' />
         <meta name='author' content='admin' />
         <meta
           property='article:modified_time'
@@ -158,11 +158,11 @@ const page9 = ({ items }) => {
         />
       <meta
           name='keywords'
-          content='popcornflix,popcornflix movies,movies free,movies, watch movie online, free movies, free movies online, free movie streaming, free streaming, download free'
+         content='123movies,123 movies,123 movies free,movies, watch movie online, free movies, free movies online, free movie streaming, free streaming, download free'
         />
         <meta
           property='og:image'
-          content='https://popcornfliks.vercel.app/og_image.jpg'
+          content='https://123moviesonline.vercel.app/og_image.jpg'
         />
         <meta property='og:image:width' content='1280px' />
         <meta property='og:image:height' content='720px' />
@@ -172,7 +172,7 @@ const page9 = ({ items }) => {
         <meta name='twitter:data1' content='1 minute' />
         <meta
           name='google-site-verification'
-          content='RNN2teFhD-lV1TQ9qcLQiSO5BLBB4DmztyYJS6QLqDg-RNN2teFhD-lV1TQ9qcLQiSO5BLBB4DmztyYJS6QLqDg'
+          content='o8uNsADswyHnNPA69n9gI7u6L4_cdjN4iT5lRhHHtMU-o8uNsADswyHnNPA69n9gI7u6L4_cdjN4iT5lRhHHtMU'
         />
         <meta
           name='facebook-domain-verification'
@@ -213,7 +213,7 @@ const page9 = ({ items }) => {
           marginBottom: '15px',
         }}
       >
-        Popcornflix™ Page 9
+        123 Movies Page 9
       </h1>
       <a
         href='https://t.me/watchmovietvshow/'
@@ -442,7 +442,7 @@ const page9 = ({ items }) => {
 
 export async function getStaticProps() {
   try {
-    const res = await fetch('https://popcornfliks.vercel.app/moviesp5.json');
+    const res = await fetch('https://123moviesonline.vercel.app/moviesp5.json');
     const data = await res.json();
 
     return {

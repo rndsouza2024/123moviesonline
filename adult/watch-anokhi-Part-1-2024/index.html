@@ -31,7 +31,7 @@
   <meta property="article:section" content="Movie" >
   <meta name="author" content="admin" >
   <meta property="article:modified_time" content="2024-01-01T13:13:13+00:00" >
-  <meta property="og:image" content="" id="ogImage">
+  <meta property="og:image" content="https://res.cloudinary.com/db36kfuq3/image/upload/v1723338125/Anokhi_2024_part_1__o2vzbi.webp" >
   <meta property="og:image:width" content="303" >
   <meta property="og:image:height" content="430" >
   <meta property="og:image:type" content="image/webp" >
@@ -775,9 +775,7 @@
             movieImage.srcset = `${movie.image} 303w, ${movie.image} 211w`; // Set srcset
             movieImage.sizes = "(max-width: 303px) 100vw, 303px"; // Set sizes
 
-            // Update Open Graph image meta tag using JSON property
-            const ogImageMeta = document.getElementById('ogImage');
-            ogImageMeta.setAttribute('content', movie.image1); // Use image1 from JSON
+            
 
             // Update the direct trailer link
             const videoIframe = document.getElementById('videoIframe');

@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://123moviesonline.vercel.app/sitemap.xml

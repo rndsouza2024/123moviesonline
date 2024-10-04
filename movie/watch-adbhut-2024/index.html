@@ -11,7 +11,7 @@
 
 
   <link rel="manifest" href="/site.webmanifest">
-<meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
   </link>
   <meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1'>
   <title> Watch Adbhut (2024) | MovieFree™</title>
@@ -26,7 +26,7 @@
   <meta property="og:url" content="https://moviefree.vercel.app/movie/watch-adbhut-2024/">
   <meta name="keywords"
     content="Adbhut,Adbhut 2024,index of Adbhut,Adbhut streaming,Adbhut online,watch Adbhut,stream Adbhut">
-    <meta name="keywords"
+  <meta name="keywords"
     content="moviefree, movie free 2024, free movie, free tv shows, watch movie online, free movies online, free movie streaming, movie free streaming, download free">
   <meta property="og:site_name" content="MovieFree">
   <meta property="og:type" content="article">
@@ -66,7 +66,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Play&display=swap" rel="stylesheet">
-  <script type="application/ld+json" class="rank-math-schema"> 
+  <script type="application/ld+json" class="rank-math-schema">
     { 
       "@context": "https://schema.org", 
       "@graph": [ 
@@ -134,77 +134,77 @@
       ] 
     } 
     </script>
-    
-    <script class="yoast-schema-graph">
-      function fetchMovieJsonLD(movieId) {
-        fetch("/movies.json")
-          .then((response) => response.json())
-          .then((data) => {
-            // Find the movie data with the specified ID
-            const movie = data.find((item) => item.id === movieId);
-    
-            if (movie) {
-              const schemaData = {
-                "@context": "https://schema.org",
-                "@type": "Movie",
-                "name": movie.title,
-                "image": movie.image1,
-                "url": `/${movie["movie.watch"]}`,
-                "description": movie.synopsis,
-                "director": {
-                  "@type": "Person",
-                  "name": movie.director
-                },
-                "actor": movie.starring.map((actor) => ({
-                  "@type": "Person",
-                  "name": actor
-                })),
-                "datePublished": movie.startDate,
-                "locationCreated": movie.country,
-                "contentRating": movie.contentRating,
-                "duration": movie.time,
-                "inLanguage": movie.language,
-                "genre": movie.genre,
-                "aggregateRating": movie.aggregateRating,
-                "author": {
-                  "@type": "Person",
-                  "name": "DrTrailer",
-                  "url": "https://moviefree.vercel.app/DrTrailer.png"
-                },
-                "publisher": {
-                  "@type": "Organization",
-                  "name": "MovieFree™",
-                  "logo": {
-                    "@type": "ImageObject",
-                    "url": "https://moviefree.vercel.app/og_image.jpg"
-                  }
-                },
-                "additionalProperty": {
-                  "@type": "PropertyValue",
-                  "name": "Action Platform",
-                  "value": ["Desktop Web Platform", "iOS Platform", "Android Platform"]
+
+  <script class="yoast-schema-graph">
+    function fetchMovieJsonLD(movieId) {
+      fetch("/movies.json")
+        .then((response) => response.json())
+        .then((data) => {
+          // Find the movie data with the specified ID
+          const movie = data.find((item) => item.id === movieId);
+
+          if (movie) {
+            const schemaData = {
+              "@context": "https://schema.org",
+              "@type": "Movie",
+              "name": movie.title,
+              "image": movie.image1,
+              "url": `/${movie["movie.watch"]}`,
+              "description": movie.synopsis,
+              "director": {
+                "@type": "Person",
+                "name": movie.director
+              },
+              "actor": movie.starring.map((actor) => ({
+                "@type": "Person",
+                "name": actor
+              })),
+              "datePublished": movie.startDate,
+              "locationCreated": movie.country,
+              "contentRating": movie.contentRating,
+              "duration": movie.time,
+              "inLanguage": movie.language,
+              "genre": movie.genre,
+              "aggregateRating": movie.aggregateRating,
+              "author": {
+                "@type": "Person",
+                "name": "DrTrailer",
+                "url": "https://moviefree.vercel.app/DrTrailer.png"
+              },
+              "publisher": {
+                "@type": "Organization",
+                "name": "MovieFree™",
+                "logo": {
+                  "@type": "ImageObject",
+                  "url": "https://moviefree.vercel.app/og_image.jpg"
                 }
-              };
-    
-              // Create a script element for JSON-LD
-              const scriptElement = document.createElement("script");
-              scriptElement.type = "application/ld+json";
-              scriptElement.textContent = JSON.stringify(schemaData);
-    
-              // Append the script element to the head of the document
-              document.head.appendChild(scriptElement);
-            } else {
-              console.error("Movie with ID " + movieId + " not found.");
-            }
-          })
-          .catch((error) => {
-            console.error("Error fetching movie data:", error);
-          });
-      }
-    
-      // Example usage:
-      fetchMovieJsonLD("INDEX001"); 
-    </script>
+              },
+              "additionalProperty": {
+                "@type": "PropertyValue",
+                "name": "Action Platform",
+                "value": ["Desktop Web Platform", "iOS Platform", "Android Platform"]
+              }
+            };
+
+            // Create a script element for JSON-LD
+            const scriptElement = document.createElement("script");
+            scriptElement.type = "application/ld+json";
+            scriptElement.textContent = JSON.stringify(schemaData);
+
+            // Append the script element to the head of the document
+            document.head.appendChild(scriptElement);
+          } else {
+            console.error("Movie with ID " + movieId + " not found.");
+          }
+        })
+        .catch((error) => {
+          console.error("Error fetching movie data:", error);
+        });
+    }
+
+    // Example usage:
+    fetchMovieJsonLD("INDEX001"); 
+  </script>
 </head>
 
 <body class="bg-gray-900">
@@ -494,7 +494,8 @@
               </h2>
               <div class="embed-responsive embed-responsive-16by9 vcurve curve">
                 <iframe id="videoIframe" class="embed-responsive-item rounded-2xl" src="" frameborder="0" scrolling="no"
-                  allowfullscreen mozRequestFullScreen webkitRequestFullscreen style="margin-top: 10px; filter: contrast(1.1) saturate(1.3) brightness(1) hue-rotate(0deg);"></iframe>
+                  allowfullscreen mozRequestFullScreen webkitRequestFullscreen
+                  style="margin-top: 10px; filter: contrast(1.1) saturate(1.3) brightness(1) hue-rotate(0deg);"></iframe>
               </div>
 
               <p
@@ -622,20 +623,20 @@
                 style="margin-top: 10px; color: #FF0000; font-weight: bold; font-size: 25px; cursor: pointer;"
                 onclick="closePopup()">Close</span>
 
-                <div id="video-container">
-                  <div id="video-player">
-                    <iframe id="popup-iframe" src="" poster="" allowfullscreen></iframe>
-                    <p
+              <div id="video-container">
+                <div id="video-player">
+                  <iframe id="popup-iframe" src="" poster="" allowfullscreen></iframe>
+                  <p
                     style="color: #40D7BC; display: flex; justify-content: center; align-items: center; text-shadow: 3px 5px 5px #000; font-size: 15px; font-weight:bold; ">
                     *Note: Use Setting in Player to improve the Quality of video to HD Quality 1080p.</p>
-                  </div>
+                </div>
               </div>
 
               <!-- <iframe id="popup-iframe" src="" poster="" frameborder="0" scrolling="no" allowfullscreen
                 mozRequestFullScreen webkitRequestFullscreen width="100%" height="100%" class="vcurve curve"
                 style="cursor: pointer; border-radius: 20px; overflow: hidden; display: none;"></iframe> -->
             </div>
-         
+
           </div>
 
           <div id="buttons-container"
@@ -716,7 +717,15 @@
       </div>
     </div>
     </div>
+    <!-- Form to submit comments -->
+    <form id="commentForm">
+      <input type="text" id="author" placeholder="Your Name" required>
+      <textarea id="comment" placeholder="Your Comment" required></textarea>
+      <button type="submit">Submit</button>
+    </form>
 
+    <!-- Container for displaying comments -->
+    <div id="commentsContainer"></div>
 
 
   </main>
@@ -938,39 +947,55 @@
     // Call the function to fetch and render buttons
     fetchAndRenderButtons();
   </script>
- <style>
-  /* Body styles */
-  body {
-      margin: 0; /* Remove default margin */
-      background-color: #f0f0f0; /* Optional background color */
-      text-align: center; /* Center text in the body */
-  }
-  
-  /* Container for centering the iframe */
-  #video-container {
-      display: flex; /* Use Flexbox */
-      justify-content: center; /* Center horizontally */
-      margin-top: 20px; /* Add some spacing from the top */
-  }
-  
-  /* Style for the player container */
-  #video-player {
+  <style>
+    /* Body styles */
+    body {
+      margin: 0;
+      /* Remove default margin */
+      background-color: #f0f0f0;
+      /* Optional background color */
+      text-align: center;
+      /* Center text in the body */
+    }
+
+    /* Container for centering the iframe */
+    #video-container {
+      display: flex;
+      /* Use Flexbox */
+      justify-content: center;
+      /* Center horizontally */
+      margin-top: 20px;
+      /* Add some spacing from the top */
+    }
+
+    /* Style for the player container */
+    #video-player {
       width: 100%;
-      max-width: 800px; /* Set max width for the player */
-      height: 450px; /* Set height for the player */
-      border-radius: 25px; /* Rounded corners */
-      overflow: hidden; /* Hide overflow */
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Optional shadow */
-  }
-  
-  iframe {
-      width: 100%; /* Make iframe fill the player */
-      height: 100%; /* Make iframe fill the player */
-      border: none; /* Remove border */
-      border-radius: 25px; /* Round iframe corners */
-      filter: contrast(1.1) saturate(1.3) brightness(1) hue-rotate(0deg); /* Apply enhanced visual effects */
-  }
-</style>
+      max-width: 800px;
+      /* Set max width for the player */
+      height: 450px;
+      /* Set height for the player */
+      border-radius: 25px;
+      /* Rounded corners */
+      overflow: hidden;
+      /* Hide overflow */
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+      /* Optional shadow */
+    }
+
+    iframe {
+      width: 100%;
+      /* Make iframe fill the player */
+      height: 100%;
+      /* Make iframe fill the player */
+      border: none;
+      /* Remove border */
+      border-radius: 25px;
+      /* Round iframe corners */
+      filter: contrast(1.1) saturate(1.3) brightness(1) hue-rotate(0deg);
+      /* Apply enhanced visual effects */
+    }
+  </style>
   <style>
     .custom-message {
       position: fixed;
@@ -1031,7 +1056,76 @@
       /* Green on hover */
     }
   </style>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f0f4f8;
+      margin: 0;
+      padding: 20px;
+      color: #333;
+    }
 
+    h1 {
+      text-align: center;
+      color: #2c3e50;
+    }
+
+    form {
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      margin-bottom: 20px;
+    }
+
+    input[type="text"],
+    textarea {
+      width: 100%;
+      padding: 15px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      margin-top: 10px;
+      font-size: 16px;
+      resize: vertical;
+      /* Allow vertical resizing */
+    }
+
+    textarea {
+      height: 150px;
+      /* Make textarea taller */
+    }
+
+    button {
+      background-color: #40D7BC;
+      color: white;
+      border: none;
+      padding: 15px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background-color 0.3s;
+      width: 100%;
+      margin-top: 10px;
+      /* Add margin above the button */
+    }
+
+    button:hover {
+      background-color: #36b6a7;
+    }
+
+    .comment-box {
+      background: #ffffff;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      margin: 10px 0;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+  </style>
+  <script src='/js/comments.js'></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js"></script>
   <script src='/js/movie.js' async defer></script>
   <script src='/js/maxmain.js' async defer></script>
   <script src='/js/audio.js'></script>
